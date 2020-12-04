@@ -8,6 +8,7 @@ public class HeartManager : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public Sprite halfFullHeart;
     public FloatValue heartContainers;
     public FloatValue playerCurrentHealth;
 
@@ -26,7 +27,7 @@ public class HeartManager : MonoBehaviour
     }
     public void UpdateHearts()
     {
-        float tempHealth = playerCurrentHealth.RuntimeValue;
+        float tempHealth = playerCurrentHealth.RuntimeValue / 2;
         for (int i = 0; i < heartContainers.RuntimeValue; i ++)
         {
             if(i <= tempHealth-1)
@@ -37,6 +38,11 @@ public class HeartManager : MonoBehaviour
             {
                 //empty heart
                 hearts[i].sprite = emptyHeart;
+            }
+            else
+            {
+                //half full heart
+                hearts[i].sprite = halfFullHeart;
             }
         }
     }
