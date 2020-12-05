@@ -34,6 +34,7 @@ public class textItem : Interactable
     {
         //dialog on
         dialogBox.SetActive(true);
+        dialogText.text = dialog;
 
         //this is for if you only want it once
         //  isShown = true;

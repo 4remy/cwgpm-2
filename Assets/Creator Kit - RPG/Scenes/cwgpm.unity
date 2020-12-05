@@ -21332,7 +21332,7 @@ MonoBehaviour:
   isShowing: 0
   dialogBox: {fileID: 428718938}
   dialogText: {fileID: 2143218727}
-  dialog: i am a naught cat
+  dialog: testint testint
 --- !u!61 &1628886544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22443,7 +22443,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008259886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b72a8a113b4a340dbbbb8df6ecb50717, type: 2}
   m_CullingMode: 0
@@ -22641,7 +22641,7 @@ GameObject:
   - component: {fileID: 2143218728}
   - component: {fileID: 2143218727}
   m_Layer: 5
-  m_Name: dialogText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22668,7 +22668,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c1b94c93cb93f3c4e8c25762bd5e47ad, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -22680,9 +22680,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'I am a naughty little cat
-
-'
+  m_Text: dialog
 --- !u!222 &2143218728
 CanvasRenderer:
   m_ObjectHideFlags: 0
