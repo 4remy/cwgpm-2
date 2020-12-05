@@ -9,8 +9,8 @@ public class snowPile : Interactable
     public bool isDug;
     public Signal raiseItem;
     public Inventory playerInventory;
-    //public GameObject dialogBox;
-    //public Text dialogText;
+    public GameObject dialogBox;
+    public Text dialogText;
     private Animator animator;
 
     // Start is called before the first frame update
@@ -39,9 +39,9 @@ public class snowPile : Interactable
     public void DigSnow()
     {
         //dialog on
-        //dialogBox.SetActive(true);
-        //dialog text = contents text
-        //dialogText.text = contents.itemDescription;
+        dialogBox.SetActive(true);
+       // dialog text = contents text;
+        dialogText.text = contents.itemDescription;
 
         //add contents to the inventory
         playerInventory.AddItem(contents);
@@ -56,7 +56,7 @@ public class snowPile : Interactable
     public void SnowDug()
     {
        //turn dialog off
-       //dialogBox.SetActive(false);
+       dialogBox.SetActive(false);
        //raise the signal to the player to stop animating
        raiseItem.Raise();
         

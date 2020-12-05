@@ -23,6 +23,7 @@ namespace RPGM.Gameplay
         public float knockTime;
         public Inventory playerInventory;
         public SpriteRenderer receivedItemSprite;
+        public VectorValue startingPosition;
         //
 
         Rigidbody2D rigidbody2D;
@@ -111,9 +112,12 @@ namespace RPGM.Gameplay
         void Awake()
         {
             rigidbody2D = GetComponent<Rigidbody2D>();
-            spriteRenderer = GetComponent<SpriteRenderer>(); 
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            transform.position = startingPosition.initialValue;
             pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
+            
         }
+
 
         public void RaiseItem()
         {

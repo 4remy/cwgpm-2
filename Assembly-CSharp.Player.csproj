@@ -115,6 +115,7 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/powerUp.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/InputController.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/BusStop.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/textItem.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/UI/SpriteButton.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/Inventory.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/FadingSprite.cs" />
@@ -124,7 +125,8 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/NPCController.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/UI/DialogLayout.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/HeapQueue.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/textItem.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/SceneTransition.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/VectorValue.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" />
