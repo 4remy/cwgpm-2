@@ -1,8 +1,12 @@
-﻿<Properties StartupConfiguration="{60F6A66B-65F2-8D6E-F150-16EB7FE62449}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/textItem.cs">
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ImageTime.cs">
     <Files>
       <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Interactable.cs" Line="1" Column="1" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/textItem.cs" Line="8" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/textItem.cs" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ImageTime.cs" Line="20" Column="30" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/Gameplay/CharacterController2D.cs" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/Item.cs" Line="8" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

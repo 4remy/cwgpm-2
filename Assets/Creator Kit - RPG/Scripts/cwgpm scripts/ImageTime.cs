@@ -14,9 +14,10 @@ using RPGM.UI;
 
 public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
 {
-    private float waitTime = 5.0f;
+    private float waitTime = 2.0f;
     private float timer = 0.0f;
     public GameObject CustomImage;
+
     public bool playerInRange;
     public bool disableWhenDiscovered = false;
     public HashSet<StoryItem> requiredStoryItems;
@@ -24,6 +25,7 @@ public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
 
     [SerializeField] StoryItem[] _requiredStoryItems;
     [SerializeField] InventoryItem[] _requiredInventoryItems;
+   // [SerializeField] private Image image = default;
 
     GameModel model = Schedule.GetModel<GameModel>();
 
@@ -34,7 +36,7 @@ public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
     }
 
     // Update is called once per frame
- 
+
     void Update()
     {
         timer += Time.deltaTime;
@@ -61,7 +63,14 @@ public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
 
         }
     }
- 
+
+    /*
+    private void ChangeImageSprite(Sprite sprite)
+    {
+        image.sprite = sprite;
+    }
+    */
+
     //note: the foreeach section needs to be in a different place, then it will work properly.
 
     void OnTriggerEnter2D(Collider2D other)
