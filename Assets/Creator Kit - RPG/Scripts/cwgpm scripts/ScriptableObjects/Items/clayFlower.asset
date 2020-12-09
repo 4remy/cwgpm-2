@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1607134bcf7454b44910be78ef6747c9, type: 3}
   m_Name: clayFlower
   m_EditorClassIdentifier: 
-  itemSprite: {fileID: 21300000, guid: 09e172231f1ab45d6ac0f7082909e255, type: 3}
+  itemSprite: {fileID: 21300000, guid: 87df9ee17e698472384b778d5f26cf45, type: 3}
   itemDescription: It's a clay flower.
   isKey: 0

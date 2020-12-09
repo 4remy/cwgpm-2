@@ -126,8 +126,9 @@ namespace RPGM.Gameplay
                 if (state != State.Interact)
                 {
                     // there's an issue with leaving the interact state here
-                    // animator.SetBool("ReceiveItem", true);
+                    animator.SetBool("ReceiveItem", true);
                     state = State.Interact;
+                    //animator.speed = 0;
                     rigidbody2D.velocity = Vector2.zero;
                     receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
                 }
@@ -137,6 +138,7 @@ namespace RPGM.Gameplay
                     state = State.Idle;
                     receivedItemSprite.sprite = null;
                     playerInventory.currentItem = null;
+                    animator.speed = 1;
                 }
             }
 
@@ -144,11 +146,11 @@ namespace RPGM.Gameplay
         public void SittingAnimate()
         {
             rigidbody2D.velocity = Vector2.zero;
+            animator.SetBool("IsSitting", true);
             //
             Vector3 sittingPosition1 = new Vector3(-5, 4, 0); 
             gameObject.transform.position = sittingPosition1;
             //
-            animator.SetBool("IsSitting", true);
             Debug.Log("should be animating a sitting animation");
         }
 
@@ -171,6 +173,7 @@ namespace RPGM.Gameplay
         public void Interact()
         {
             Debug.Log("interact state");
+            //animator.speed = 0;
             //rigidbody2D.velocity = Vector2.zero;
 
         }
