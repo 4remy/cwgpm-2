@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 757
-  m_MinSize: {x: 678, y: 571}
-  m_MaxSize: {x: 14000, y: 18021}
+  m_MinSize: {x: 679, y: 613}
+  m_MaxSize: {x: 14002, y: 18063}
   vertical: 0
-  controlID: 45893
+  controlID: 378
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1164
     height: 757
-  m_MinSize: {x: 403, y: 571}
-  m_MaxSize: {x: 10000, y: 18021}
+  m_MinSize: {x: 403, y: 613}
+  m_MaxSize: {x: 10001, y: 18063}
   vertical: 1
-  controlID: 45847
+  controlID: 379
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 45784
+  controlID: 335
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,10 +220,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 253}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 32faffff4cfbffffa03a0000c83a0000d23a00000a3b0000263b0000443b0000
+      m_ExpandedIDs: 4cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -313,9 +313,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.960144, y: -6.00568, z: -45.54129}
+    m_Target: {x: 2.3535492, y: -0.69777167, z: -47.747715}
     speed: 2
-    m_Value: {x: -2.960144, y: -6.00568, z: -45.54129}
+    m_Value: {x: 2.3535492, y: -0.69777167, z: -47.747715}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -366,9 +366,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.9248009
+    m_Target: 6.637496
     speed: 2
-    m_Value: 2.9248009
+    m_Value: 6.637496
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -440,9 +440,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 264
+    x: 263
     y: 75
-    width: 898
+    width: 899
     height: 344
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
@@ -457,14 +457,14 @@ MonoBehaviour:
     - {fileID: 8698133014565026342, guid: b72a8a113b4a340dbbbb8df6ecb50717, type: 2}
     - {fileID: -5204902400376073879, guid: 76348752c0eed43cebedf0f0326f0bd9, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.47638047
+    - e00: 0.5419883
       e01: 0
       e02: 0
-      e03: 5.2297363
+      e03: -69.26883
       e10: 0
-      e11: 0.47638047
+      e11: 0.5419883
       e12: 0
-      e13: 82.181206
+      e13: -41.923126
       e20: 0
       e21: 0
       e22: 1
@@ -585,14 +585,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.5442234
+    - e00: 1.9933599
       e01: 0
       e02: 0
-      e03: 88.58371
+      e03: -485.0183
       e10: 0
-      e11: 0.5442234
+      e11: 1.9933599
       e12: 0
-      e13: 164.13716
+      e13: -64.4949
       e20: 0
       e21: 0
       e22: 1
@@ -602,10 +602,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 76348752c0eed43cebedf0f0326f0bd9,
+  m_AnimatorController: {fileID: 9100000, guid: 3978bface3e374a91b3f9ff70d5eabe8,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -5204902400376073879, guid: 76348752c0eed43cebedf0f0326f0bd9,
+  - m_Target: {fileID: 1107872371772665676, guid: 3978bface3e374a91b3f9ff70d5eabe8,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -638,8 +638,8 @@ MonoBehaviour:
     y: 365
     width: 1164
     height: 121
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -766,21 +766,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Creator Kit - RPG/Gameplay Prefabs/cwgPrefabs
+    - Assets/Creator Kit - RPG/Art/Animations/Characters/Cat Character
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 56
   m_LastFolders:
-  - Assets/Creator Kit - RPG/Gameplay Prefabs/cwgPrefabs
+  - Assets/Creator Kit - RPG/Art/Animations/Characters/Cat Character
   m_LastFoldersGridSize: 56
   m_LastProjectPath: /Users/nervana/Desktop/cwgpm
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 330.00037}
-    m_SelectedIDs: 20410000
-    m_LastClickedID: 16672
-    m_ExpandedIDs: 00000000ba400000bc400000be400000c0400000c2400000c4400000c6400000c840000000ca9a3b
+    scrollPos: {x: 0, y: 191}
+    m_SelectedIDs: 14420000
+    m_LastClickedID: 16916
+    m_ExpandedIDs: 00000000d0400000d2400000d4400000d6400000d8400000da400000dc400000de4000000a4100001642000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -808,7 +808,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ba400000bc400000be400000c0400000c2400000c4400000c6400000c840000000ca9a3b
+    m_ExpandedIDs: 00000000d0400000d2400000d4400000d6400000d8400000da400000dc400000de40000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -835,7 +835,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300006e480000e4480000f0480000f8480000f04c000096560000a65500003479000028790000107900003a79000010420000c63d0000ba3d0000de3f000064440000424400001c3c0000ae3b0000c23b0000ca3b00008e3b0000543c0000843b0000f2420000523c0000763b0000d4480000a2490000403d0000b63c0000283c00002a400000546100006a47000002400000d03c0000be3c0000c43c000080450000f63c00007a500000865000008a3e0000b8440000d6570000b0670000c0440000cc440000b4440000a0440000944400009c440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
