@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{60F6A66B-65F2-8D6E-F150-16EB7FE62449}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/Gameplay/CharacterController2D.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/textItem.cs">
     <Files>
       <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/SceneTransition.cs" Line="17" Column="31" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/VectorValue.cs" Line="10" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/VectorValue.cs" />
       <File FileName="Assets/Creator Kit - RPG/Scripts/Gameplay/CharacterController2D.cs" Line="176" Column="15" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/textItem.cs" Line="20" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="84e0af0b-c7fa-4e21-9ee9-f5f4af3b7b99" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ad2f45f2-c17c-41db-8d42-691d19f4b8a7" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
