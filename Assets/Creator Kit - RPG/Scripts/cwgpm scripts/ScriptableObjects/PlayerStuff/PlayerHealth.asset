@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d00e13e496694625be28b434f35c5d5, type: 3}
-  m_Name: PlayerInventory
+  m_Script: {fileID: 11500000, guid: 04259f1f136464e7da47dcf6c2290659, type: 3}
+  m_Name: PlayerHealth
   m_EditorClassIdentifier: 
-  currentItem: {fileID: 0}
-  items: []
-  numberOfKeys: 0
+  initialValue: 8
+  RuntimeValue: 8

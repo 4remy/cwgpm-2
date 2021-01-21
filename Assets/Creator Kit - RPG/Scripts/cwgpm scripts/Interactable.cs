@@ -20,7 +20,6 @@ public abstract class Interactable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player in range");
             playerInRange = true;
         }
     }

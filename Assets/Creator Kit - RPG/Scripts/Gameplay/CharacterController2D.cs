@@ -134,7 +134,7 @@ namespace RPGM.Gameplay
                 }
                 else
                 {
-                    // animator.SetBool("ReceiveItem", false);
+                    animator.SetBool("ReceiveItem", false);
                     state = State.Idle;
                     receivedItemSprite.sprite = null;
                     playerInventory.currentItem = null;
