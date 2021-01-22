@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/Gameplay/CharacterController2D.cs">
     <Files>
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs" Line="1" Column="1" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Door.cs" Line="20" Column="11" NotebookId="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs" Line="4" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Door.cs" Line="59" Column="10" NotebookId="1" />
       <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Interactable.cs" Line="22" Column="10" NotebookId="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/Gameplay/CharacterController2D.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

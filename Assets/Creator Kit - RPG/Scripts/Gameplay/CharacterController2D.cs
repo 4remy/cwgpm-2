@@ -173,8 +173,8 @@ namespace RPGM.Gameplay
         public void Interact()
         {
             Debug.Log("interact state");
-            //animator.speed = 0;
-            //rigidbody2D.velocity = Vector2.zero;
+            animator.speed = 0;
+            rigidbody2D.velocity = Vector2.zero;
 
         }
 
