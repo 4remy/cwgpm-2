@@ -1,15 +1,15 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/Gameplay/CharacterController2D.cs">
+﻿<Properties StartupConfiguration="{60F6A66B-65F2-8D6E-F150-16EB7FE62449}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Coin.cs">
     <Files>
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs" Line="4" Column="1" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Door.cs" Line="59" Column="10" NotebookId="1" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Interactable.cs" Line="22" Column="10" NotebookId="1" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/Gameplay/CharacterController2D.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Coin.cs" Line="12" Column="10" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/Inventory.cs" Line="11" Column="22" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/CoinManager.cs" Line="14" Column="2" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/powerUp.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f56a51f1-70ef-4f29-bfc0-89d17d69183e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="259ef7bb-a5fe-443e-b2f1-45dd656ffb7b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
