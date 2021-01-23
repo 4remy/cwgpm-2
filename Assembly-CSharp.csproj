@@ -75,6 +75,7 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Wanderer.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Rule Tile/Scripts/RuleTile.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/StartQuest.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Coin.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/ConversationPiece.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ImageTime.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/StopTalking.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/Signal.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/Quest.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Door.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/FadingSpriteSystem.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Weighted Random Tile/WeightedRandomTile.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/AnimationBatchController.cs" />
@@ -122,14 +124,13 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/Inventory.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/FadingSprite.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/ConversationOption.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/CoinTextManager.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Isometric Rule Tile/IsometricRuleTile.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/FloatValue.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/NPCController.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/UI/DialogLayout.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/HeapQueue.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Door.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Coin.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/CoinTextManager.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Room.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" />
@@ -756,6 +757,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

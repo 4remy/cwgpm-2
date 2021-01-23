@@ -28,7 +28,7 @@ namespace RPGM.Gameplay
 
         Rigidbody2D rigidbody2D;
         SpriteRenderer spriteRenderer;
-        PixelPerfectCamera pixelPerfectCamera;
+      //  PixelPerfectCamera pixelPerfectCamera;
 
         enum State
         {
@@ -101,20 +101,20 @@ namespace RPGM.Gameplay
 
 
 
-        void LateUpdate()
+      /* void LateUpdate()
         {
             if (pixelPerfectCamera != null)
             {
                 transform.position = pixelPerfectCamera.RoundToPixel(transform.position);
             }
         }
-
+      */
         void Awake()
         {
             rigidbody2D = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             transform.position = startingPosition.initialValue;
-            pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
+       //     pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
             
         }
 
