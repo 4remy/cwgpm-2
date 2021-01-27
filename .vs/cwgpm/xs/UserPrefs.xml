@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{60F6A66B-65F2-8D6E-F150-16EB7FE62449}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/VectorValue.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/MainMenu.cs">
     <Files>
       <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/SceneTransition.cs" Line="1" Column="1" />
       <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/VectorValue.cs" Line="12" Column="36" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/MainMenu.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1ffe8f64-fc87-4b9e-a2a3-ff6f9856bc72" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6f23eb3c-969a-4dbb-a257-791724d07f78" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
