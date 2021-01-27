@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{60F6A66B-65F2-8D6E-F150-16EB7FE62449}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Room.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/VectorValue.cs">
     <Files>
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Room.cs" Line="26" Column="2" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/Gameplay/CharacterController2D.cs" Line="106" Column="29" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/SceneTransition.cs" Line="1" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/VectorValue.cs" Line="12" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8fa987f9-6edc-42cf-9d8e-5a85d8854ae8" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1ffe8f64-fc87-4b9e-a2a3-ff6f9856bc72" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

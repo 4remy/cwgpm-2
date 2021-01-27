@@ -22949,7 +22949,7 @@ PrefabInstance:
     - target: {fileID: 5795382943506249075, guid: 230105c1dba7d44d1888be81ee37fe2c,
         type: 3}
       propertyPath: m_LookaheadTime
-      value: 0.55
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 5795382943506249075, guid: 230105c1dba7d44d1888be81ee37fe2c,
         type: 3}
@@ -23001,6 +23001,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: dcfc3991317a44c5bae2b36da5d9d6d2,
         type: 2}
+    - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
+        type: 3}
+      propertyPath: fadeInPanel
+      value: 
+      objectReference: {fileID: 2360217536349382194, guid: 777478d710439404689126472442ef04,
+        type: 3}
+    - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
+        type: 3}
+      propertyPath: fadeOutPanel
+      value: 
+      objectReference: {fileID: 6381111927633495540, guid: fbf528878de5042bbbe12420d3f24b70,
+        type: 3}
+    - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
+        type: 3}
+      propertyPath: fadeWait
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 7541805090073677898, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
       propertyPath: m_LocalPosition.x
