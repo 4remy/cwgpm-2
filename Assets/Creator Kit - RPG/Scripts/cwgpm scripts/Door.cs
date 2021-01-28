@@ -15,20 +15,33 @@ public class Door : Interactable
     [Header("Door variables")]
     public DoorType thisDoorType;
     public bool open = false;
+    public BoolValue storedOpen;
+
+    [Header("Inventory")]
     public Inventory playerInventory;
     //public SpriteRenderer doorSprite;
+
+    [Header("Signals and Dialog")]
     public BoxCollider2D physicsCollider;
-    private Animator animator;
     public Item contents;
     public Signal raiseItem;
     public GameObject dialogBox;
     public Text dialogText;
+
+    [Header("Animation")]
+    private Animator animator;
 
     // Start is called before the first frame update
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        open = storedOpen.RuntimeValue;
+        if(open)
+        {
+            animator.SetBool("Open", true);
+        }
+ 
 
     }
 
@@ -66,6 +79,8 @@ public class Door : Interactable
 
         //change to different sprite
         animator.SetBool("Open", true);
+
+        storedOpen.RuntimeValue = open;
         //the door needs an animator for open
         open = true;
         //the box collider block is diabled
@@ -93,8 +108,10 @@ public class Door : Interactable
 
         //change to different sprite
         animator.SetBool("Open", true);
-        //set open to true
-
+        //set saved open value to true
+        storedOpen.RuntimeValue = open;
+        //turn off dialog if its annoying you
+        dialogBox.SetActive(false);
     }
 
     public void Close()

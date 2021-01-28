@@ -21255,6 +21255,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eed34757efe8149009b05f2391e1c1fa, type: 2}
   - {fileID: 11400000, guid: 51b54f598f20e4cf686c31971593498b, type: 2}
   - {fileID: 11400000, guid: c9df1eee99310409b8ed88c1f348d99d, type: 2}
+  - {fileID: 11400000, guid: 2d121f527041c4cc4a28a63643aa11ad, type: 2}
 --- !u!4 &1728089589
 Transform:
   m_ObjectHideFlags: 0
@@ -22233,6 +22234,11 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 2143218727}
+    - target: {fileID: 1296582202303517412, guid: e9ce64d9972dc41b8ad4fd02cf3250ab,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1296582202303517413, guid: e9ce64d9972dc41b8ad4fd02cf3250ab,
         type: 3}
       propertyPath: m_Name
@@ -22308,6 +22314,12 @@ PrefabInstance:
       propertyPath: contents
       value: 
       objectReference: {fileID: 11400000, guid: bfbd800cabb184061b59bab386630e6c,
+        type: 2}
+    - target: {fileID: 1296582202303517438, guid: e9ce64d9972dc41b8ad4fd02cf3250ab,
+        type: 3}
+      propertyPath: storedOpen
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d121f527041c4cc4a28a63643aa11ad,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9ce64d9972dc41b8ad4fd02cf3250ab, type: 3}
@@ -22780,6 +22792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3871160448078324559, guid: 2c28cc3860b854b399b460f26e4ed5b4,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3871160448307610476, guid: 2c28cc3860b854b399b460f26e4ed5b4,
         type: 3}

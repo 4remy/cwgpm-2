@@ -99,7 +99,7 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/StopTalking.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/Signal.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/Quest.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Door.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Door.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/FadingSpriteSystem.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Weighted Random Tile/WeightedRandomTile.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/AnimationBatchController.cs" />
