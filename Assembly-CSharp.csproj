@@ -90,6 +90,7 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/UI/UserInterfaceAudio.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/DamagingItem.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Event.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/MainMenu.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Custom/PipelineTile.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Rule Override Tile/Scripts/RuleOverrideTile.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/GameModel.cs" />
@@ -131,7 +132,8 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/NPCController.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/UI/DialogLayout.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/HeapQueue.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/MainMenu.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/GameSaveManager.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/BoolValue.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" />

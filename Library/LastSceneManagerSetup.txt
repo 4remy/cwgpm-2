@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Creator Kit - RPG/Scenes/cwgpm.unity
+- path: Assets/Creator Kit - RPG/Scenes/StartMenu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
