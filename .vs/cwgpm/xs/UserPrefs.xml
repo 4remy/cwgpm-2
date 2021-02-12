@@ -1,15 +1,18 @@
 ﻿<Properties StartupConfiguration="{60F6A66B-65F2-8D6E-F150-16EB7FE62449}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/HeartManager.cs">
     <Files>
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/BoolValue.cs" Line="11" Column="31" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/FloatValue.cs" Line="7" Column="1" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs" Line="27" Column="1" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Pot.cs" Line="1" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/GameSaveManager.cs" Line="34" Column="27" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/BoolValue.cs" Line="6" Column="21" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/FloatValue.cs" Line="12" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/Inventory.cs" Line="6" Column="21" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/Item.cs" Line="6" Column="21" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/VectorValue.cs" Line="1" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/HeartManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0e59f710-030e-441c-ab80-f7088c0a0daf" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="50b0c71a-4a5d-480e-b6df-3f5f5a4d7a7c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
