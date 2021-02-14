@@ -22,6 +22,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("cwgpm");
     }
 
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("cwgpm");
+    } 
+
+
     public void QuitToDesktop()
     {
         Application.Quit();

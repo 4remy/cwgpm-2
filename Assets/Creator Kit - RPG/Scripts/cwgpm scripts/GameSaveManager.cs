@@ -23,6 +23,16 @@ public class GameSaveManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
     */
+    public void ResetScriptables()
+    {
+        for(int i = 0; i < objects.Count; i++)
+        {
+            if(File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
+            {
+                File.Delete(Application.persistentDataPath + string.Format("/{0}.json", i));
+            }
+        }
+    }
 
     private void OnEnable()
     {
@@ -38,7 +48,7 @@ public class GameSaveManager : MonoBehaviour
     {
         for (int i = 0; i < objects.Count; i ++)
         {
-            FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.dat", i));
+            FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.json", i));
             BinaryFormatter binary = new BinaryFormatter();
             var json = JsonUtility.ToJson(objects[i]);
             binary.Serialize(file, json);
@@ -50,9 +60,9 @@ public class GameSaveManager : MonoBehaviour
     {
         for(int i = 0; i < objects.Count; i ++)
         {
-            if(File.Exists(Application.persistentDataPath + string.Format("/{0}.dat", i)))
+            if(File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
             {
-                FileStream file = File.Open(Application.persistentDataPath + string.Format("/{0}.dat", i), FileMode.Open);
+                FileStream file = File.Open(Application.persistentDataPath + string.Format("/{0}.json", i), FileMode.Open);
                 BinaryFormatter binary = new BinaryFormatter();
                 JsonUtility.FromJsonOverwrite((string)binary.Deserialize(file), objects[i]);
                 file.Close();
