@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{60F6A66B-65F2-8D6E-F150-16EB7FE62449}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Coin.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/InventorySlot.cs">
     <Files>
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/GameSaveManager.cs" Line="34" Column="27" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Coin.cs" Line="27" Column="13" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Pot.cs" Line="30" Column="9" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/InventorySlot.cs" Line="10" Column="56" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/Inventory2Manager.cs" Line="39" Column="18" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/Inventory2Item.cs" Line="5" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/PlayerInventory2.cs" Line="5" Column="87" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="50b0c71a-4a5d-480e-b6df-3f5f5a4d7a7c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ca3411b2-74f0-4c56-a0b0-be4e9b9f5e78" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
