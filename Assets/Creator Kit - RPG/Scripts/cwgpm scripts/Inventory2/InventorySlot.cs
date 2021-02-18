@@ -29,15 +29,12 @@ public class InventorySlot : MonoBehaviour
             itemNumberText.text = "" + thisItem.numberHeld;
         }
     }
-        // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void ClickedOn()
     {
-        
+        if(thisItem)
+        {
+            thisManager.SetupDescriptionAndButton(thisItem.itemDescription, thisItem.usable, thisItem);
+        }
     }
 }
