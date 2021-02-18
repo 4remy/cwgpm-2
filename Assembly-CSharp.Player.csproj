@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/InstanceRegister.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Interactable.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/PlayerInventory2.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/InventoryItem.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Cross.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/SignalListener.cs" />
@@ -74,10 +75,12 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/UI/TranslationAnimation.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Heart.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Wanderer.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/Inventory2Manager.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Rule Tile/Scripts/RuleTile.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/StartQuest.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/cwgpm objects/Coin.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/ConversationPiece.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/InventorySlot.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ScriptableObjects/BoolValue.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/ImageTime.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/snowPile.cs" />
@@ -136,9 +139,7 @@
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Gameplay/NPCController.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/UI/DialogLayout.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/HeapQueue.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/InventorySlot.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/Inventory2Manager.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/PlayerInventory2.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/HealthReaction.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" />
