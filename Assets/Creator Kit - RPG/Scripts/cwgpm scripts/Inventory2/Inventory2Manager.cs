@@ -32,20 +32,25 @@ public class Inventory2Manager : MonoBehaviour
         {
             for(int i = 0; i < playerInventory2.myInventory.Count; i++)
             {
-                GameObject temp =
-                    Instantiate(blankInventorySlot, inventoryPanelContent.transform.position, Quaternion.identity);
-                temp.transform.SetParent(inventoryPanelContent.transform);
-                InventorySlot newSlot = temp.GetComponent<InventorySlot>();
-                if(newSlot)
+                if (playerInventory2.myInventory[i].numberHeld > 0)
                 {
-                    newSlot.Setup(playerInventory2.myInventory[i], this);
+                    GameObject temp =
+                        Instantiate(blankInventorySlot, inventoryPanelContent.transform.position, Quaternion.identity);
+                    temp.transform.SetParent(inventoryPanelContent.transform);
+                    InventorySlot newSlot = temp.GetComponent<InventorySlot>();
+                    if (newSlot)
+                    {
+                        newSlot.Setup(playerInventory2.myInventory[i], this);
+                    }
                 }
+
             }
         }
     }
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+        ClearInventorySlots();
         MakeInventorySlots();
         SetTextAndButton("", false);
     }
@@ -58,11 +63,26 @@ public class Inventory2Manager : MonoBehaviour
         useButton.SetActive(isButtonUsable);
     }
 
+    void ClearInventorySlots()
+    {
+        for(int i = 0; i < inventoryPanelContent.transform.childCount; i ++)
+        {
+            Destroy(inventoryPanelContent.transform.GetChild(i).gameObject);
+        }
+    }
     public void UseButtonPressed()
     {
         if(currentItem)
         {
             currentItem.Use();
+            //clear all of the inventory slots
+            ClearInventorySlots();
+            //refill all of the slots to update them
+            MakeInventorySlots();
+            if(currentItem.numberHeld == 0)
+            {
+                SetTextAndButton("", false);
+            }
         }
     }
 }

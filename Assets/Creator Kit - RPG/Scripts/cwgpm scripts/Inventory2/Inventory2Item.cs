@@ -17,7 +17,18 @@ public class Inventory2Item : ScriptableObject
 
     public void Use ()
     {
-        Debug.Log("Using Item");
-        thisEvent.Invoke();
+
+            Debug.Log("Using " + itemName);
+            thisEvent.Invoke();
+
+    }
+
+    public void DecreaseAmount(int amountToDecrease)
+    {
+        numberHeld -= amountToDecrease;
+        if (numberHeld< 0)
+        {
+            numberHeld = 0;
+        }
     }
 }
