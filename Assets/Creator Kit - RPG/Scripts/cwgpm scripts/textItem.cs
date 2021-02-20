@@ -10,6 +10,7 @@ public class textItem : Interactable
     public bool isShowing;
     public GameObject dialogBox;
     public Text dialogText;
+    [Multiline]
     public string dialog;
 
     protected override void Interact()
