@@ -33,6 +33,8 @@ public class Inventory2Manager : MonoBehaviour
             for(int i = 0; i < playerInventory2.myInventory.Count; i++)
             {
                 if (playerInventory2.myInventory[i].numberHeld > 0)
+                    //for objects to keep displaying at 0
+                    // || playerInventory.myInventory[i].itemName == "bottle")
                 {
                     GameObject temp =
                         Instantiate(blankInventorySlot, inventoryPanelContent.transform.position, Quaternion.identity);

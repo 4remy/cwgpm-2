@@ -21053,6 +21053,25 @@ MonoBehaviour:
   outroCutscenePrefab: {fileID: 0}
   isStarted: 0
   isFinished: 0
+--- !u!1 &1156765256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 399764430589016217, guid: b492ca805184a462a8c166dd4e939521,
+    type: 3}
+  m_PrefabInstance: {fileID: 399764431008478570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1156765258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156765256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4aa22aa0a1224ff6a1b900eca0c5f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myInventory: {fileID: 11400000, guid: 339b59ca0d2f94ceab0256f6ebfda8ed, type: 2}
 --- !u!1 &1170696364
 GameObject:
   m_ObjectHideFlags: 0
@@ -22151,7 +22170,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 399764431008478570}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1156765256}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3bf3d67cac9e43a893205464fbc470d, type: 3}
@@ -24582,8 +24601,8 @@ PrefabInstance:
     - target: {fileID: 7759892399214953817, guid: 4cd046fec3f2749f3a9c1a5019cc2c2f,
         type: 3}
       propertyPath: dialog
-      value: "I would like this to display. \nWhat if it's too long to fit iin the\n
-        box like a really long news item."
+      value: "I would like this to display. \nWhat if it's too long to fit iin the\nbox
+        like a really long news item."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cd046fec3f2749f3a9c1a5019cc2c2f, type: 3}
