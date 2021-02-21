@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{60F6A66B-65F2-8D6E-F150-16EB7FE62449}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/textItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/Inventory2Item.cs">
     <Files>
-      <File FileName="Assets/Creator Kit - RPG/Scripts/Gameplay/StoryItem.cs" Line="3" Column="1" />
-      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/textItem.cs" Line="5" Column="1" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/Inventory2Manager.cs" Line="37" Column="79" />
+      <File FileName="Assets/Creator Kit - RPG/Scripts/cwgpm scripts/Inventory2/Inventory2Item.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="84e1f5fb-f14f-4caf-b71b-aced8b1a982b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="264d7ba9-2812-4212-ac78-d9530a8d9ac8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
