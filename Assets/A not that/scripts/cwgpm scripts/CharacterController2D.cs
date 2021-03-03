@@ -68,15 +68,18 @@ public class CharacterController2D : MonoBehaviour
 
     void MoveState()
     {
-        // animator.SetFloat("WalkX", change.x);
-        // animator.SetFloat("WalkY", change.y);
+        animator.SetBool("moving", true);
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("WalkX", change.x < 0 ? -1 : change.x > 0 ? 1 : 0);
         animator.SetFloat("WalkY", change.y < 0 ? 1 : change.y > 0 ? -1 : 0);
         myRigidbody.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
-        animator.SetBool("moving", true); 
-    }
+            if (change == Vector3.zero)
+            {
+                 state = State.Idle;
+             }
+
+        }
 
     void FixedUpdate()
     {
@@ -112,9 +115,10 @@ public class CharacterController2D : MonoBehaviour
       */
     void Awake()
     {
-        animator.SetBool("moving", false);
+ 
         Debug.Log("Awake");
         myRigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         transform.position = startingPosition.initialValue;
     //     pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
