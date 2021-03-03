@@ -4,15 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 //added
 using System.Linq;
-using RPGM.Core;
-using RPGM.Gameplay;
-using RPGM.UI;
+
 //end of added
 
 //this is too complicated to add to the interactable class, sorry.
 //if a storyitem, dialog, or message is running while this is running, it throws off the timing
 
-public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
+public class ImageTime : MonoBehaviour
+    //ISerializationCallbackReceiver
 {
     private float waitTime = 2.0f;
     private float timer = 0.0f;
@@ -20,14 +19,14 @@ public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
 
     public bool playerInRange;
     public bool disableWhenDiscovered = false;
-    public HashSet<StoryItem> requiredStoryItems;
-    public HashSet<InventoryItem> requiredInventoryItems;
+  //  public HashSet<StoryItem> requiredStoryItems;
+   // public HashSet<InventoryItem> requiredInventoryItems;
 
-    [SerializeField] StoryItem[] _requiredStoryItems;
-    [SerializeField] InventoryItem[] _requiredInventoryItems;
+   // [SerializeField] StoryItem[] _requiredStoryItems;
+   // [SerializeField] InventoryItem[] _requiredInventoryItems;
    // [SerializeField] private Image image = default;
 
-    GameModel model = Schedule.GetModel<GameModel>();
+  //  GameModel model = Schedule.GetModel<GameModel>();
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +41,7 @@ public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
         timer += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange && (timer > waitTime))
         {
-            foreach (var requiredInventoryItem in requiredInventoryItems)
+          /*  foreach (var requiredInventoryItem in requiredInventoryItems)
                 if (requiredInventoryItem != null)
                     if (!model.HasInventoryItem(requiredInventoryItem.name))
                         return;
@@ -50,6 +49,7 @@ public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
                 if (requiredStoryItem != null)
                     if (!model.HasSeenStoryItem(requiredStoryItem.ID))
                         return;
+          */
             if (CustomImage.activeInHierarchy)
             {
                 CustomImage.SetActive(false);
@@ -93,6 +93,7 @@ public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
         }
     }
 
+    /*
     public void OnBeforeSerialize()
     {
         if (requiredInventoryItems != null)
@@ -112,5 +113,5 @@ public class ImageTime : MonoBehaviour, ISerializationCallbackReceiver
         requiredInventoryItems = new HashSet<InventoryItem>();
         if (_requiredInventoryItems != null)
             foreach (var i in _requiredInventoryItems) requiredInventoryItems.Add(i);
+    */
     }
-}

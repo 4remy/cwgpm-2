@@ -1,32 +1,30 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using RPGM.Gameplay;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.U2D;
 
-namespace RPGM.Gameplay
+
+public class CharacterController2D : MonoBehaviour
 {
-    /// <summary>
-    /// A simple controller for animating a 4 directional sprite using Physics.
-    /// </summary>
-    public class CharacterController2D : MonoBehaviour
-    {
         public float speed = 1;
         public float acceleration = 2;
-        public Vector3 nextMoveCommand;
+
+         //public Vector3 nextMoveCommand;
+         //added
+        public Vector3 change;
+         // ^added
         public Animator animator;
         public bool flipX = false;
-        //added
+        
         public FloatValue currentHealth;
         public Signal playerHealthSignal;
         public float knockTime;
         public Inventory playerInventory;
         public SpriteRenderer receivedItemSprite;
         public VectorValue startingPosition;
+
+
         //
 
-        Rigidbody2D rigidbody2D;
+        private Rigidbody2D myRigidbody;
         SpriteRenderer spriteRenderer;
       //  PixelPerfectCamera pixelPerfectCamera;
 
@@ -36,65 +34,68 @@ namespace RPGM.Gameplay
         }
 
         State state = State.Idle;
-        Vector3 start, end;
-        Vector2 currentVelocity;
-        float startTime;
-        float distance;
-        float velocity;
+      //  Vector3 start, end;
+    //    Vector2 currentVelocity;
+     //   float startTime;
+     //   float distance;
+     //   float velocity;
 
-        void IdleState()
+    void IdleState()
+      { animator.SetBool("moving", false);
+        change = Vector3.zero;
+        change.x = Input.GetAxisRaw("Horizontal");
+        change.y = Input.GetAxisRaw("Vertical");
+        if (change != Vector3.zero)
         {
-            if (nextMoveCommand != Vector3.zero)
-            {
-                //
-                playerHealthSignal.Raise();
-                //
-                start = transform.position;
-                end = start + nextMoveCommand;
-                distance = (end - start).magnitude;
-                velocity = 0;
-                UpdateAnimator(nextMoveCommand);
-                nextMoveCommand = Vector3.zero;
-                state = State.Moving;
-            }
-        }
+            playerHealthSignal.Raise();
+            animator.SetBool("moving", true);
+            state = State.Moving;
 
-        void MoveState()
-        {
-            velocity = Mathf.Clamp01(velocity + Time.deltaTime * acceleration);
+            /*
+            start = transform.position;
+            end = start + nextMoveCommand;
+            distance = (end - start).magnitude;
+            velocity = 0;
+
             UpdateAnimator(nextMoveCommand);
-            rigidbody2D.velocity = Vector2.SmoothDamp(rigidbody2D.velocity, nextMoveCommand * speed, ref currentVelocity, acceleration, speed);
-            spriteRenderer.flipX = rigidbody2D.velocity.x >= 0 ? true : false;
+
+            nextMoveCommand = Vector3.zero;
+
+                state = State.Moving;
+                */
         }
+    }
 
-        void UpdateAnimator(Vector3 direction)
+    void MoveState()
+    {
+        // animator.SetFloat("WalkX", change.x);
+        // animator.SetFloat("WalkY", change.y);
+        change.x = Input.GetAxisRaw("Horizontal");
+        change.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("WalkX", change.x < 0 ? -1 : change.x > 0 ? 1 : 0);
+        animator.SetFloat("WalkY", change.y < 0 ? 1 : change.y > 0 ? -1 : 0);
+        myRigidbody.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
+        animator.SetBool("moving", true); 
+    }
+
+    void FixedUpdate()
+    {
+        switch (state)
         {
-            if (animator)
-            {
-                animator.SetInteger("WalkX", direction.x < 0 ? -1 : direction.x > 0 ? 1 : 0);
-                animator.SetInteger("WalkY", direction.y < 0 ? 1 : direction.y > 0 ? -1 : 0);
-            }
+            case State.Idle:
+                IdleState();
+                break;
+            case State.Moving:
+                MoveState();
+                break;
+            case State.Sitting:
+                SittingAnimate();
+                break;
+            case State.Interact:
+                Interact();
+                break;
 
         }
-
-        void Update()
-        {
-            switch (state)
-            {
-                case State.Idle:
-                    IdleState();
-                    break;
-                case State.Moving:
-                    MoveState();
-                    break;
-                case State.Sitting:
-                    SittingAnimate();
-                    break;
-                case State.Interact:
-                    Interact();
-                    break;
-
-            }
             //Debug.Log("animator.IsSitting = " + animator.GetBool("IsSitting"));
             //animator.SetBool("IsSitting", true);
         }
@@ -109,99 +110,105 @@ namespace RPGM.Gameplay
             }
         }
       */
-        void Awake()
-        {
-            rigidbody2D = GetComponent<Rigidbody2D>();
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            transform.position = startingPosition.initialValue;
-       //     pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
+    void Awake()
+    {
+        animator.SetBool("moving", false);
+        Debug.Log("Awake");
+        myRigidbody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        transform.position = startingPosition.initialValue;
+    //     pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
             
-        }
+    }
 
 
-        public void RaiseItem()
+    public void RaiseItem()
+    {
+        if (playerInventory.currentItem != null)
         {
-            if (playerInventory.currentItem != null)
+            if (state != State.Interact)
             {
-                if (state != State.Interact)
-                {
-                    // there's an issue with leaving the interact state here
-                    animator.SetBool("ReceiveItem", true);
-                    state = State.Interact;
-                    //animator.speed = 0;
-                    rigidbody2D.velocity = Vector2.zero;
-                    receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
-                }
-                else
-                {
-                    animator.SetBool("ReceiveItem", false);
-                    state = State.Idle;
-                    receivedItemSprite.sprite = null;
-                    playerInventory.currentItem = null;
-                    animator.speed = 1;
-                }
-            }
-
-        }
-        public void SittingAnimate()
-        {
-            rigidbody2D.velocity = Vector2.zero;
-            animator.SetBool("IsSitting", true);
-            //
-            Vector3 sittingPosition1 = new Vector3(-5, 4, 0); 
-            gameObject.transform.position = sittingPosition1;
-            //
-            Debug.Log("should be animating a sitting animation");
-        }
-
-        public void SittingState()
-        {
-            if (animator.GetBool("IsSitting") == false)
-            {
-                state = State.Sitting;
-                animator.SetBool("IsSitting", true);
+                // there's an issue with leaving the interact state here
+                animator.SetBool("ReceiveItem", true);
+                state = State.Interact;
+                //animator.speed = 0;
+                speed = 0;
+                // ADD MOVEMENT ZERO !!
+                //  myRigidbody.velocity = Vector2.zero;
+                receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
             }
             else
+            {
+                animator.SetBool("ReceiveItem", false);
+                state = State.Idle;
+                receivedItemSprite.sprite = null;
+                playerInventory.currentItem = null;
+                animator.speed = 1;
+            }
+        }
+     }
+
+    public void SittingAnimate()
+    {
+        // ADD MOVEMENT ZERO!!
+        speed = 0;
+        // myRigidbody.velocity = Vector2.zero;
+        animator.SetBool("IsSitting", true);
+        //
+        Vector3 sittingPosition1 = new Vector3(-5, 4, 0); 
+        gameObject.transform.position = sittingPosition1;
+        //
+        Debug.Log("should be animating a sitting animation");
+    }
+
+    public void SittingState()
+    {
+        if (animator.GetBool("IsSitting") == false)
+        {
+            state = State.Sitting;
+            animator.SetBool("IsSitting", true);
+        }
+        else
+        {
+            state = State.Idle;
+            Vector3 standingPosition1 = new Vector3(-5, 3, 0);
+            gameObject.transform.position = standingPosition1;
+            animator.SetBool("IsSitting", false);
+        }
+    }
+
+    public void Interact()
+    {
+        Debug.Log("interact state");
+        speed = 0;
+            // ADD MOVEMENT ZERO
+        // myRigidbody.velocity = Vector2.zero;
+
+    }
+
+    public void Knock(float knockTime, float damage)
+    {
+        playerHealthSignal.Raise();
+        currentHealth.RuntimeValue -= damage;
+        if (currentHealth.RuntimeValue > 0)
+        {
+            StartCoroutine(KnockCo(knockTime, damage));
+        }
+        else
+        {
+            Debug.Log("no cats");
+        }
+    }
+
+    private IEnumerator KnockCo(float knockTime, float damage)
+    {
+        {
+            yield return new
+            WaitForSeconds(knockTime);
+            if (state != State.Interact)
             {
                 state = State.Idle;
-                Vector3 standingPosition1 = new Vector3(-5, 3, 0);
-                gameObject.transform.position = standingPosition1;
-                animator.SetBool("IsSitting", false);
-            }
-        }
-
-        public void Interact()
-        {
-            Debug.Log("interact state");
-            animator.speed = 0;
-            rigidbody2D.velocity = Vector2.zero;
-
-        }
-
-        public void Knock(float knockTime, float damage)
-        {
-            playerHealthSignal.Raise();
-            currentHealth.RuntimeValue -= damage;
-            if (currentHealth.RuntimeValue > 0)
-            {
-                StartCoroutine(KnockCo(knockTime, damage));
-            }
-            else
-            {
-                Debug.Log("no cats");
-            }
-        }
-
-        private IEnumerator KnockCo(float knockTime, float damage)
-        {
-            {
-                yield return new
-                WaitForSeconds(knockTime);
-                if (state != State.Interact)
-                {
-                    state = State.Idle;
-                }
             }
         }
     }
-} 
+}
