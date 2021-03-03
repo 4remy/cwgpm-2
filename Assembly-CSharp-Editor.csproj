@@ -55,30 +55,29 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Creator Kit - RPG/Cutscene/Editor/CutsceneEditor.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Cutscene/Editor/CutsceneEventDrawer.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/Editor/CutsceneEditor.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/Editor/CutsceneEventDrawer.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Rule Override Tile/Scripts/Editor/RuleOverrideTileEditor.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Isometric Rule Tile/Editor/IsometricRuleTileEditor.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Brushes/GameObject Brush/Scripts/Editor/GameObjectBrush.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Brushes/Prefab Brush/Scripts/Editor/PrefabBrush.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Brushes/Group Brush/Scripts/Editor/GroupBrush.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Brushes/Coordinate Brush/Scripts/Editor/CoordinateBrush.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Editor/ConversationPieceDrawer.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/ConversationPieceDrawer.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Brushes/Tint Brush Smooth/Scripts/Editor/TintBrushSmooth.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Brushes/Tint Brush/Scripts/Editor/TintBrush.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Editor/MechanicsGizmos.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/MechanicsGizmos.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Rule Tile/Scripts/Editor/RuleTileEditor.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Rule Tile/Scripts/Editor/CustomRuleTileMenu.cs" />
-    <Compile Include="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Editor/StoryItemSearchDialog.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/StoryItemSearchDialog.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Hexagonal Rule Tile/Editor/HexagonalRuleTileEditor.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Editor/ConversationScriptEditor.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/ConversationScriptEditor.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Brushes/Line Brush/Scripts/Editor/LineBrush.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Editor/InventoryItemSearchDialog.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/InventoryItemSearchDialog.cs" />
     <Compile Include="Assets/Creator Kit - RPG/Scripts/Tiles/Brushes/Random Brush/Scripts/Editor/RandomBrush.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Editor/ConversationPieceDialog.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Editor/StoryItemEditor.cs" />
-    <Compile Include="Assets/Creator Kit - RPG/Editor/SceneContext.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/ConversationPieceDialog.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/StoryItemEditor.cs" />
+    <Compile Include="Assets/Creator Kit - RPG/Scripts/Core/Editor/SceneContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
