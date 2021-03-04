@@ -121,7 +121,7 @@ public class CharacterController2D : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         transform.position = startingPosition.initialValue;
-    //     pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
+    //  pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
             
     }
 
@@ -135,9 +135,9 @@ public class CharacterController2D : MonoBehaviour
                 // there's an issue with leaving the interact state here
                 animator.SetBool("ReceiveItem", true);
                 state = State.Interact;
-                //animator.speed = 0;
-                speed = 0;
-                // ADD MOVEMENT ZERO !!
+                //animator.speed = 0; no , adding change instead
+                change = Vector3.zero;
+                // ADD change ZERO !!
                 //  myRigidbody.velocity = Vector2.zero;
                 receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
             }
@@ -147,15 +147,19 @@ public class CharacterController2D : MonoBehaviour
                 state = State.Idle;
                 receivedItemSprite.sprite = null;
                 playerInventory.currentItem = null;
+                //maybe remove older line below
                 animator.speed = 1;
+                //maybe remove line above 
             }
         }
      }
 
     public void SittingAnimate()
     {
-        // ADD MOVEMENT ZERO!!
-        speed = 0;
+        // speed = 0; is bad
+        // adding line below instead
+        change = Vector3.zero;
+        //just added the line above
         // myRigidbody.velocity = Vector2.zero;
         animator.SetBool("IsSitting", true);
         //
@@ -178,14 +182,17 @@ public class CharacterController2D : MonoBehaviour
             Vector3 standingPosition1 = new Vector3(-5, 3, 0);
             gameObject.transform.position = standingPosition1;
             animator.SetBool("IsSitting", false);
+            //adding line below (didn't do anything)
+            //change = Vector3.zero;
+            //adding line above
         }
     }
 
     public void Interact()
     {
         Debug.Log("interact state");
-        speed = 0;
-            // ADD MOVEMENT ZERO
+        change = Vector3.zero;
+        // ADD MOVEMENT ZERO
         // myRigidbody.velocity = Vector2.zero;
 
     }
