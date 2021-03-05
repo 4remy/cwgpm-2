@@ -4110,7 +4110,7 @@ PrefabInstance:
     - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
       propertyPath: sceneToLoad
-      value: cwgpmScene3
+      value: cwgpmScene2
       objectReference: {fileID: 0}
     - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
