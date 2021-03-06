@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/A not that/scenes/cwgpmScene2.unity
+- path: Assets/A not that/scenes/cwgpm.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
