@@ -7,18 +7,6 @@ public class PhysicalInventoryItem : MonoBehaviour
     [SerializeField] private PlayerInventory2 playerInventory2;
     [SerializeField] private Inventory2Item thisItem;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Player"))

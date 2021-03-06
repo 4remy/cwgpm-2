@@ -27,7 +27,7 @@ public class InventorySaver : MonoBehaviour
             File.Delete(Application.persistentDataPath + string.Format("/{0}.inv", i));
             i++;
         }
-        
+
     }
 
     public void SaveScriptables()

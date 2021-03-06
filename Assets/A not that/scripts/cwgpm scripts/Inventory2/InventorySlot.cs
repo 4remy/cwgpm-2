@@ -13,9 +13,9 @@ public class InventorySlot : MonoBehaviour
 
     [Header("Variables from the item")]
     //public Sprite itemSprite;
-    //    public Sprite closeSprite;
+    //public Sprite closeSprite;
    // public int numberHeld;
-    public string itemDescription;
+   // public string itemDescription;
     public Inventory2Item thisItem;
     public Inventory2Manager thisManager;
 

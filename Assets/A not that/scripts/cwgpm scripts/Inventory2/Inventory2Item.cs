@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory2/Items")]
+[System.Serializable]
+
 public class Inventory2Item : ScriptableObject
 {
     public string itemName;

@@ -30,10 +30,11 @@ public class Inventory2Manager : MonoBehaviour
     {
         if(playerInventory2)
         {
-            for(int i = 0; i < playerInventory2.myInventory.Count; i++)
+            for (int i = 0; i < playerInventory2.myInventory.Count; i++)
             {
                 if (playerInventory2.myInventory[i].numberHeld > 0)
                     //for objects to keep displaying at 0
+                    //paste the below before the ')' sign above
                     // || playerInventory.myInventory[i].itemName == "bottle")
                 {
                     GameObject temp =
@@ -54,6 +55,7 @@ public class Inventory2Manager : MonoBehaviour
     {
         ClearInventorySlots();
         MakeInventorySlots();
+        Debug.Log("made inventory");
         SetTextAndButton("", false);
     }
 
