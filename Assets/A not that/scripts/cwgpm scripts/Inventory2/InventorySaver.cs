@@ -13,6 +13,8 @@ public class InventorySaver : MonoBehaviour
         myInventory.myInventory.Clear();
         LoadScriptables();
     }
+    //Inventory doesn't reset on "new game"
+    // (unless you delete any existing .inv files).
 
     private void OnDisable()
     {
