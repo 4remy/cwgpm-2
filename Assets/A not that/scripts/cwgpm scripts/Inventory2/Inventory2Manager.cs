@@ -7,12 +7,19 @@ public class Inventory2Manager : MonoBehaviour
 {
     [Header("Inventory Information")]
     public PlayerInventory2 playerInventory2;
+    //
+    [SerializeField] private ItemDatabase itemDatabase;
+    //
     [SerializeField] private GameObject blankInventorySlot;
     [SerializeField] private GameObject inventoryPanelContent;
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private GameObject useButton;
     public Inventory2Item currentItem;
-
+    //
+    //
+    private List<int> saveIDList = new List<int>();
+    //
+    //
     public void SetTextAndButton(string description, bool buttonActive)
     {
         descriptionText.text = description;
@@ -29,7 +36,20 @@ public class Inventory2Manager : MonoBehaviour
     void MakeInventorySlots()
     {
         if(playerInventory2)
-        {
+        {//
+         //
+         /*
+            saveIDList.Clear(); //To do clean state. 
+            saveIDList = LoadIDList("player_inventory"); //Because the LoadIDList is of return type and it returns List<int> value. So, we can do this.
+
+            //If saveIDList got no list at all then by all means stop this method and continue with something else.
+            if (saveIDList.count <= 0)
+                return;
+            */
+            //
+            //
+            //
+
             for (int i = 0; i < playerInventory2.myInventory.Count; i++)
             {
                 if (playerInventory2.myInventory[i].numberHeld > 0)
@@ -48,6 +68,23 @@ public class Inventory2Manager : MonoBehaviour
                 }
 
             }
+            //
+            //
+            //
+            /*
+            for (int i = 0; i < saveIDList.Count; i++)
+            {
+                if (saveIDList[i] == itemDatabase.itemDB[i].itemID)
+                {
+                    inventory2.inventoryContainer.Add(itemDatabase.itemDB[i]);
+                    //if the loaded IDs are matched with itemDatabase's items (which holds all your items so obviously they have itemID), then
+                    //Load the exact item to the inventory. 
+                }
+            }
+            */
+            //
+            //
+            //
         }
     }
     // Start is called before the first frame update

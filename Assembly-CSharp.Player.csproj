@@ -98,6 +98,7 @@
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/Inventory.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/CoinTextManager.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/FloatValue.cs" />
+    <Compile Include="Assets/A not that/scripts/cwgpm scripts/Inventory2/ItemDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/A not that/TextMesh Pro/Resources/Shaders/TMPro.cginc" />

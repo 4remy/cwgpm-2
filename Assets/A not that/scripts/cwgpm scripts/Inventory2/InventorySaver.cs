@@ -47,6 +47,7 @@ public class InventorySaver : MonoBehaviour
 
     public void LoadScriptables()
     {
+        //ResetScriptables();
         int i = 0;
         while (File.Exists(Application.persistentDataPath + string.Format("/{0}.inv", i)))
         {
