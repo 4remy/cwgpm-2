@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eccee4a4d00e34509bfa8d6ef4753e95, type: 3}
-  m_Name: Item Database
+  m_Script: {fileID: 11500000, guid: 2722359cfd8970f48a401dc33143a3fd, type: 3}
+  m_Name: UnityEventNexus
   m_EditorClassIdentifier: 
-  itemDB: []
