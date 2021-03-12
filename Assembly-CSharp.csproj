@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{60F6A66B-65F2-8D6E-F150-16EB7FE62449}</ProjectGuid>
+    <ProjectGuid>{B71307E6-5CA0-7D4D-8050-7E7FDC7C2C1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -68,6 +68,7 @@
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/Inventory2/Inventory2Manager.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/cwgpm objects/Coin.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/Inventory2/InventorySlot.cs" />
+    <Compile Include="Assets/A not that/schwer-scripts-master/SchwerScripts/ItemSystem/Demo/UI/ItemSlot.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/Inventory2/PhysicalInventoryItem.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/BoolValue.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ImageTime.cs" />
@@ -77,28 +78,35 @@
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/VectorValue.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/cwgpm objects/DamagingItem.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/GameSaveManager.cs" />
+    <Compile Include="Assets/A not that/schwer-scripts-master/SchwerScripts/ItemSystem/ScriptableObjects/ItemDatabase.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/MainMenu.cs" />
+    <Compile Include="Assets/A not that/schwer-scripts-master/SchwerScripts/Common/DDOLSingleton.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/Inventory2/HealthReaction.cs" />
     <Compile Include="Assets/Creator Kit - RPG/LearningCode/GameModeController.cs" />
+    <Compile Include="Assets/A not that/schwer-scripts-master/SchwerScripts/Common/MonoBehaviourSingleton.cs" />
+    <Compile Include="Assets/A not that/schwer-scripts-master/SchwerScripts/ItemSystem/ScriptableObjects/InventorySO.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/Signal.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/Door.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/FadingSpriteSystem.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/Inventory2/InventorySaver.cs" />
+    <Compile Include="Assets/A not that/schwer-scripts-master/SchwerScripts/ItemSystem/ScriptableObjects/Item.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/Item.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/cwgpm objects/PlayerHit.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/cwgpm objects/Pot.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/Knockback.cs" />
     <Compile Include="Assets/Creator Kit - RPG/LearningCode/ColorChecker.cs" />
+    <Compile Include="Assets/A not that/schwer-scripts-master/SchwerScripts/ItemSystem/Demo/UI/InventoryManager.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/CharacterController2D.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/cwgpm objects/powerUp.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/cwgpm objects/BusStop.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/textItem.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/Inventory2/Inventory2Item.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/Inventory.cs" />
+    <Compile Include="Assets/A not that/schwer-scripts-master/SchwerScripts/Advanced/ReflectionUtility.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/CoinTextManager.cs" />
+    <Compile Include="Assets/A not that/schwer-scripts-master/SchwerScripts/ItemSystem/Inventory.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/FloatValue.cs" />
-    <Compile Include="Assets/A not that/scripts/cwgpm scripts/Inventory2/ItemDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/A not that/TextMesh Pro/Resources/Shaders/TMPro.cginc" />

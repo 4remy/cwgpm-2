@@ -13,5 +13,27 @@ namespace Schwer.ItemSystem {
         public Sprite sprite => _sprite;
         [SerializeField] private bool _stackable = true;
         public bool stackable => _stackable;
+        [SerializeField] private bool _usable = false;
+        public bool usable => _usable;
+        [SerializeField] private bool _unique = false;
+        public bool unique => _unique;
+
+          public void Use ()
+    {
+
+            Debug.Log("Using " + itemName);
+            thisEvent.Invoke();
+
+    }
+
+            public void DecreaseAmount(int amountToDecrease)
+    {
+        numberHeld -= amountToDecrease;
+        if (numberHeld< 0)
+        {
+            numberHeld = 0;
+        }
+    }
+        
     }
 }
