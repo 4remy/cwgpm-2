@@ -12,7 +12,6 @@ namespace Schwer.ItemSystem.Demo {
         [Header("Item Display components")]
         [SerializeField] private Text nameDisplay = default;
         [SerializeField] private Text descriptionDisplay = default;
-        [SerializeField] private GameObject useButton;
 
         private List<ItemSlot> itemSlots = new List<ItemSlot>();
 
@@ -45,64 +44,31 @@ namespace Schwer.ItemSystem.Demo {
         }
 
         public void UpdateSlots() => UpdateSlots(null, 0);
-        private void UpdateSlots(Item item, int count, bool buttonActive)
-        {
-            //
-            for (int i = 0; i < itemSlots.Count; i++)
-            {
-                if (i < inventory.Count)
-                {
+        private void UpdateSlots(Item item, int count) {
+            for (int i = 0; i < itemSlots.Count; i++) {
+                if (i < inventory.Count) {
                     var entry = inventory.ElementAt(i);
                     itemSlots[i].SetItem(entry.Key, entry.Value);
                 }
-                else
-                {
+                else {
                     itemSlots[i].Clear();
-                }
-                if (buttonActive)
-                {
-                    useButton.SetActive(true);
-                }
-                else
-                {
-                    useButton.SetActive(false);
                 }
             }
 
             var current = EventSystem.current.currentSelectedGameObject?.GetComponent<ItemSlot>();
-            if (current != null)
-            {
+            if (current != null) {
                 UpdateDisplay(current.item);
             }
         }
 
-        public void UpdateDisplay(bool isButtonusable, Item item)
-        {
-            if (item != null)
-            {
+        public void UpdateDisplay(Item item) {
+            if (item != null) {
                 nameDisplay.text = item.name;
                 descriptionDisplay.text = item.description;
-                useButton.SetActive(isButtonUsable);
             }
-            else
-            {
+            else {
                 nameDisplay.text = "";
                 descriptionDisplay.text = "";
-            }
-        }
-
-        public void UseButtonPressed()
-        {
-            if (currentItem)
-            {
-                currentItem.Use();
-                //clear all of the inventory slot
-                //refill all of the slots to update them
-                if (currentItem.numberHeld == 0)
-                {
-                    UpdateDisplay("", false);
-                    //are those arguments correct
-                }
             }
         }
     }
