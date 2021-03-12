@@ -12,8 +12,11 @@ namespace Schwer.ItemSystem.Demo {
         [Header("Item Display components")]
         [SerializeField] private Text nameDisplay = default;
         [SerializeField] private Text descriptionDisplay = default;
+        [SerializeField] private GameObject useButton = default;
 
         private List<ItemSlot> itemSlots = new List<ItemSlot>();
+
+        private Item selectedItem;
 
         private void OnEnable() {
             inventory.OnContentsChanged += UpdateSlots;
@@ -62,6 +65,8 @@ namespace Schwer.ItemSystem.Demo {
         }
 
         public void UpdateDisplay(Item item) {
+            selectedItem = item;
+
             if (item != null) {
                 nameDisplay.text = item.name;
                 descriptionDisplay.text = item.description;
@@ -69,6 +74,25 @@ namespace Schwer.ItemSystem.Demo {
             else {
                 nameDisplay.text = "";
                 descriptionDisplay.text = "";
+            }
+
+            // UpdateDisplay handles displaying information about
+            // the currently selected item.
+            // ∴ the active status of the use button should be
+            //   handled here, since it depends on the selected item.
+            useButton.SetActive((item is UsableItem));
+        }
+
+        // Called by the use button's OnClick UnityEvent
+        public void UseButtonPressed() {
+            if (selectedItem is UsableItem selectedUsable) {
+                selectedUsable.Use();
+                inventory[selectedUsable]--;
+
+                // Need to set the selected item to null and update the display to reflect this.
+                if (inventory[selectedItem] <= 0) {
+                    UpdateDisplay(null);
+                }
             }
         }
     }
