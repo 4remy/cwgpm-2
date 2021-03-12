@@ -4,10 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Schwer.ItemSystem.Demo
-{
-    public class InventoryManager : MonoBehaviour
-    {
+namespace Schwer.ItemSystem.Demo {
+    public class InventoryManager : MonoBehaviour {
         [SerializeField] private InventorySO _inventory = default;
         private Inventory inventory => _inventory.value;
 
@@ -18,13 +16,11 @@ namespace Schwer.ItemSystem.Demo
 
         private List<ItemSlot> itemSlots = new List<ItemSlot>();
 
-        private void OnEnable()
-        {
+        private void OnEnable() {
             inventory.OnContentsChanged += UpdateSlots;
 
             var selected = EventSystem.current.currentSelectedGameObject;
-            if (selected == null || !selected.transform.IsChildOf(this.transform))
-            {
+            if (selected == null || !selected.transform.IsChildOf(this.transform)) {
                 EventSystem.current.SetSelectedGameObject(itemSlots[0].gameObject);
             }
 
@@ -33,21 +29,17 @@ namespace Schwer.ItemSystem.Demo
 
         private void OnDisable() => inventory.OnContentsChanged -= UpdateSlots;
 
-        private void Awake()
-        {
+        private void Awake() {
             GetComponentsInChildren<ItemSlot>(itemSlots);
 
-            foreach (var slot in itemSlots)
-            {
+            foreach (var slot in itemSlots) {
                 slot.manager = this;
             }
         }
 
-        private void Initialise()
-        {
+        private void Initialise() {
             UpdateDisplay(null);
-            if (inventory != null)
-            {
+            if (inventory != null) {
                 UpdateSlots();
             }
         }
