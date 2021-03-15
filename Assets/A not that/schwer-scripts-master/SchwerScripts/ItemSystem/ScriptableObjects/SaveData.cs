@@ -1,17 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using static Schwer.ItemSystem.Inventory;
-using static Schwer.ItemSystem.ItemDatabase;
 using Schwer.ItemSystem;
 
 [System.Serializable]
 public class SaveData
 {
     [SerializeField] private SerializableInventory inventory;
-
 
     // Construct new save data.
     public SaveData()
@@ -20,17 +15,18 @@ public class SaveData
     }
 
     // Construct save data from an Inventory.
-    public SaveData(Inventory inventory)
+    public SaveData(Schwer.ItemSystem.Inventory inventory)
     {
         this.inventory = inventory.Serialize();
     }
 
     // Load save data 
-    public void Load(out Inventory inventory, ItemDatabase itemDB)
+    public void Load(out Schwer.ItemSystem.Inventory inventory, ItemDatabase itemDB)
     {
         inventory = this.inventory.Deserialize(itemDB);
     }
 }
+
 public static class SaveReadWriter
 {
     // Returns save data from the file at the specified location (if possible).
