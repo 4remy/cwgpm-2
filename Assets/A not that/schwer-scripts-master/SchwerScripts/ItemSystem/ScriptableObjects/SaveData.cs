@@ -4,18 +4,18 @@ using System.Runtime.Serialization.Formatters.Binary;
 using Schwer.ItemSystem;
 
 [System.Serializable]
-public class SaveData
+public class SchwerSaveData 
 {
     [SerializeField] private SerializableInventory inventory;
 
     // Construct new save data.
-    public SaveData()
+    public SchwerSaveData()
     {
         inventory = new SerializableInventory();
     }
 
     // Construct save data from an Inventory.
-    public SaveData(Schwer.ItemSystem.Inventory inventory)
+    public SchwerSaveData(Schwer.ItemSystem.Inventory inventory)
     {
         this.inventory = inventory.Serialize();
     }
@@ -30,14 +30,14 @@ public class SaveData
 public static class SaveReadWriter
 {
     // Returns save data from the file at the specified location (if possible).
-    public static SaveData ReadSaveDataFile(string filePath)
+    public static SchwerSaveData ReadSaveDataFile(string filePath)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         using (FileStream stream = new FileStream(filePath, FileMode.Open))
         {
             try
             {
-                return formatter.Deserialize(stream) as SaveData;
+                return formatter.Deserialize(stream) as SchwerSaveData;
             }
             catch (System.Runtime.Serialization.SerializationException e)
             {
@@ -48,7 +48,7 @@ public static class SaveReadWriter
     }
 
     // Writes the save data to a file at the specified location.
-    public static void WriteSaveDataFile(SaveData saveData, string filePath)
+    public static void WriteSaveDataFile(SchwerSaveData saveData, string filePath)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         using (FileStream stream = new FileStream(filePath, FileMode.Create))
