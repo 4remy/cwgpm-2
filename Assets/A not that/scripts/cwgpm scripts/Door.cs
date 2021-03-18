@@ -14,7 +14,8 @@ public class Door : Interactable
 {
     [Header("Door variables")]
     public DoorType thisDoorType;
-    public bool open = false;
+    public bool open;
+    //test
     public BoolValue storedOpen;
 
     [Header("Inventory")]
