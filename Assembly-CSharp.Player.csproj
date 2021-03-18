@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{83B7CB12-656D-57DC-EC00-9931828C4242}</ProjectGuid>
+    <ProjectGuid>{4C247E72-C351-35B4-1CE2-FBDC51156094}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -98,7 +98,6 @@
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/Inventory.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/CoinTextManager.cs" />
     <Compile Include="Assets/A not that/scripts/cwgpm scripts/ScriptableObjects/FloatValue.cs" />
-    <Compile Include="Assets/A not that/scripts/cwgpm scripts/Inventory2/ItemDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/A not that/TextMesh Pro/Resources/Shaders/TMPro.cginc" />
