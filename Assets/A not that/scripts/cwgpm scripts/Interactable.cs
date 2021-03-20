@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public bool playerInRange;
+    protected CharacterController2D player { get; private set; }
+    protected bool playerInRange => player != null;
+
     protected abstract void Interact();
-    protected virtual void Exit() { }
+    protected virtual void Exit() {}
 
     protected virtual void Update()
     {
@@ -18,17 +18,18 @@ public abstract class Interactable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        var player = other.GetComponent<CharacterController2D>();
+        if (player != null)
         {
-            playerInRange = true;
+            this.player = player;
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<CharacterController2D>() != null)
         {
-            playerInRange = false;
+            player = null;
             Exit();
         }
     }

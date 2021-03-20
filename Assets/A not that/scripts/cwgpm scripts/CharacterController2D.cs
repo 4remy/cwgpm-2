@@ -1,48 +1,50 @@
 ﻿using System.Collections;
-using UnityEngine;
 using Schwer.ItemSystem;
+using UnityEngine;
+using SchwerInventory = Schwer.ItemSystem.Inventory;
+using SchwerItem = Schwer.ItemSystem.Item;
 
 public class CharacterController2D : MonoBehaviour
 {
-        public float speed = 1;
-        public float acceleration = 2;
+    public float speed = 1;
+    public float acceleration = 2;
 
     //public Vector3 nextMoveCommand;
     //added
-       [SerializeField] private Schwer.ItemSystem.Item item = default;
-        public Vector3 change;
-         // ^added
-        public Animator animator;
-        public bool flipX = false;
-        
-        public FloatValue currentHealth;
-        public Signal playerHealthSignal;
-        public float knockTime;
-        //public Inventory playerInventory;
-        public SpriteRenderer receivedItemSprite;
-        public VectorValue startingPosition;
+    [SerializeField] private InventorySO _inventory = default;
+    public SchwerInventory inventory => _inventory.value;
 
+    public Vector3 change;
+    // ^added
+    public Animator animator;
+    public bool flipX = false;
 
-        //
+    public FloatValue currentHealth;
+    public Signal playerHealthSignal;
+    public float knockTime;
+    //public Inventory playerInventory;
+    public SpriteRenderer receivedItemSprite;
+    public VectorValue startingPosition;
 
-        private Rigidbody2D myRigidbody;
-        SpriteRenderer spriteRenderer;
-      //  PixelPerfectCamera pixelPerfectCamera;
+    private Rigidbody2D myRigidbody;
+    SpriteRenderer spriteRenderer;
+    //  PixelPerfectCamera pixelPerfectCamera;
 
-        enum State
-        {
-            Idle, Moving, Interact, Sitting
-        }
+    enum State
+    {
+        Idle, Moving, Interact, Sitting
+    }
 
-        State state = State.Idle;
-      //  Vector3 start, end;
+    State state = State.Idle;
+    //  Vector3 start, end;
     //    Vector2 currentVelocity;
-     //   float startTime;
-     //   float distance;
-     //   float velocity;
+    //   float startTime;
+    //   float distance;
+    //   float velocity;
 
     void IdleState()
-      { animator.SetBool("moving", false);
+    {
+        animator.SetBool("moving", false);
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
@@ -75,12 +77,11 @@ public class CharacterController2D : MonoBehaviour
         animator.SetFloat("WalkX", change.x < 0 ? -1 : change.x > 0 ? 1 : 0);
         animator.SetFloat("WalkY", change.y < 0 ? 1 : change.y > 0 ? -1 : 0);
         myRigidbody.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
-            if (change == Vector3.zero)
-            {
-                 state = State.Idle;
-             }
-
+        if (change == Vector3.zero)
+        {
+            state = State.Idle;
         }
+    }
 
     void FixedUpdate()
     {
@@ -98,65 +99,60 @@ public class CharacterController2D : MonoBehaviour
             case State.Interact:
                 Interact();
                 break;
-
         }
-            //Debug.Log("animator.IsSitting = " + animator.GetBool("IsSitting"));
-            //animator.SetBool("IsSitting", true);
-        }
+        //Debug.Log("animator.IsSitting = " + animator.GetBool("IsSitting"));
+        //animator.SetBool("IsSitting", true);
+    }
 
+    /* void LateUpdate()
+      {
+          if (pixelPerfectCamera != null)
+          {
+              transform.position = pixelPerfectCamera.RoundToPixel(transform.position);
+          }
+      }
+    */
 
-
-      /* void LateUpdate()
-        {
-            if (pixelPerfectCamera != null)
-            {
-                transform.position = pixelPerfectCamera.RoundToPixel(transform.position);
-            }
-        }
-      */
     void Awake()
     {
- 
         Debug.Log("Awake");
         myRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         transform.position = startingPosition.initialValue;
-    //  pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
-            
+        //  pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
     }
 
 
-    public void RaiseItem()
+    public void RaiseItem(SchwerItem item)
     {
         //if (playerInventory.currentItem != null)
         //if (player.inventory.currentItem != null)
-        
-            if (state != State.Interact)
-            {
-                // there's an issue with leaving the interact state here
-                animator.SetBool("ReceiveItem", true);
-                state = State.Interact;
-                //do not use animator.speed = 0; use below
-                change = Vector3.zero;
-                //  myRigidbody.velocity = Vector2.zero;
-                //previous item system below
-                //receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
-                //
-                //below is the target code which doesn't work:
-                receivedItemSprite.sprite = item.sprite;
-                 Debug.Log("should be recieving item");
-            }
-            else
-            {
-                animator.SetBool("ReceiveItem", false);
-                state = State.Idle;
-               // receivedItemSprite.sprite = null;
-                 Debug.Log("finishing recieving item");
+
+        if (state != State.Interact && item != null)
+        {
+            // there's an issue with leaving the interact state here
+            animator.SetBool("ReceiveItem", true);
+            state = State.Interact;
+            //do not use animator.speed = 0; use below
+            change = Vector3.zero;
+            //  myRigidbody.velocity = Vector2.zero;
+            //previous item system below
+            //receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+            //
+            //below is the target code which doesn't work:
+            receivedItemSprite.sprite = item.sprite;
+            Debug.Log("should be recieving item");
+        }
+        else
+        {
+            animator.SetBool("ReceiveItem", false);
+            state = State.Idle;
+            receivedItemSprite.sprite = null;
+            Debug.Log("finishing recieving item");
             //playerInventory.currentItem = null;
             //player.inventory.currentItem = null;
         }
-
     }
 
     public void SittingAnimate()
@@ -168,7 +164,7 @@ public class CharacterController2D : MonoBehaviour
         // myRigidbody.velocity = Vector2.zero;
         animator.SetBool("IsSitting", true);
         //
-        Vector3 sittingPosition1 = new Vector3(-5, 4, 0); 
+        Vector3 sittingPosition1 = new Vector3(-5, 4, 0);
         gameObject.transform.position = sittingPosition1;
         //
         Debug.Log("should be animating a sitting animation");
@@ -198,7 +194,6 @@ public class CharacterController2D : MonoBehaviour
         change = Vector3.zero;
         // ADD MOVEMENT ZERO
         // myRigidbody.velocity = Vector2.zero;
-
     }
 
     public void Knock(float knockTime, float damage)
@@ -218,8 +213,7 @@ public class CharacterController2D : MonoBehaviour
     private IEnumerator KnockCo(float knockTime, float damage)
     {
         {
-            yield return new
-            WaitForSeconds(knockTime);
+            yield return new WaitForSeconds(knockTime);
             if (state != State.Interact)
             {
                 state = State.Idle;

@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using Schwer.ItemSystem;
 
 public class snowPile : Interactable
 {
@@ -13,9 +10,6 @@ public class snowPile : Interactable
     public bool isDug;
     //this is how the status of the pile gets remembered
     public BoolValue storedDug;
-
-    [Header("Signals and Dialog")]
-    public Signal raiseItem;
     //old inventory
     //public Inventory playerInventory;
     public GameObject dialogBox;
@@ -29,18 +23,17 @@ public class snowPile : Interactable
     {
         animator = GetComponent<Animator>();
         isDug = storedDug.RuntimeValue;
-        if(isDug)
+        if (isDug)
         {
             animator.SetBool("isDug", true);
         }
-
     }
 
     protected override void Interact()
     {
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
-            if(!isDug)
+            if (!isDug)
             {
                 DigSnow();
             }
@@ -49,42 +42,34 @@ public class snowPile : Interactable
                 SnowDug();
             }
         }
-
     }
 
-    public void DigSnow()
+    private void DigSnow()
     {
         //dialog on
         dialogBox.SetActive(true);
-       // dialog text = contents text;
+        // dialog text = contents text;
         dialogText.text = item.description;
 
         //add contents to the inventory
-        var player = GetComponent<Player>();
-        if (player != null)
-        {
-            player.inventory[item]++;
-        }
+        player.inventory[item]++;
+
         //old inventory system
         //playerInventory.AddItem(contents);
         //playerInventory.currentItem = contents;
         //add schwer inventory item
-        //
 
-        //raise the signal to the player
-        raiseItem.Raise();
+        player.RaiseItem(item);
         //set the snow to dug
         isDug = true;
         animator.SetBool("isDug", true);
         storedDug.RuntimeValue = isDug;
-
     }
-    public void SnowDug()
+
+    private void SnowDug()
     {
-       //turn dialog off
-       dialogBox.SetActive(false);
-       //raise the signal to the player to stop animating
-       raiseItem.Raise();
-        
+        //turn dialog off
+        dialogBox.SetActive(false);
+        player.RaiseItem(null);
     }
 }
