@@ -148,7 +148,7 @@ public class CharacterController2D : MonoBehaviour
         {
             animator.SetBool("ReceiveItem", false);
             state = State.Idle;
-            // receivedItemSprite.sprite = null;
+            receivedItemSprite.sprite = null;
             Debug.Log("finishing recieving item");
             //playerInventory.currentItem = null;
             //player.inventory.currentItem = null;
