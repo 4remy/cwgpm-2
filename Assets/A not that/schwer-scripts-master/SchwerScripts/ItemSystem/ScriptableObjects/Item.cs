@@ -3,6 +3,7 @@
 namespace Schwer.ItemSystem {
     [CreateAssetMenu(menuName = "Item System/Item")]
     public class Item : ScriptableObject {
+        // currentItem here?
         [SerializeField] private int _id = default;
         public int id => _id;
         [SerializeField] private string _name = default;
@@ -13,5 +14,7 @@ namespace Schwer.ItemSystem {
         public Sprite sprite => _sprite;
         [SerializeField] private bool _stackable = true;
         public bool stackable => _stackable;
+        //[SerializeField] private bool _isKey = false;
+        //public bool isKey => isKey;
     }
 }

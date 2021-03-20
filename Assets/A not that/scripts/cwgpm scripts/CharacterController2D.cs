@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
-
+using Schwer.ItemSystem;
 
 public class CharacterController2D : MonoBehaviour
 {
         public float speed = 1;
         public float acceleration = 2;
 
-         //public Vector3 nextMoveCommand;
-         //added
+    //public Vector3 nextMoveCommand;
+    //added
+       [SerializeField] private Schwer.ItemSystem.Item item = default;
         public Vector3 change;
          // ^added
         public Animator animator;
@@ -17,7 +18,7 @@ public class CharacterController2D : MonoBehaviour
         public FloatValue currentHealth;
         public Signal playerHealthSignal;
         public float knockTime;
-        public Inventory playerInventory;
+        //public Inventory playerInventory;
         public SpriteRenderer receivedItemSprite;
         public VectorValue startingPosition;
 
@@ -128,31 +129,35 @@ public class CharacterController2D : MonoBehaviour
 
     public void RaiseItem()
     {
-        if (playerInventory.currentItem != null)
-        {
+        //if (playerInventory.currentItem != null)
+        //if (player.inventory.currentItem != null)
+        
             if (state != State.Interact)
             {
                 // there's an issue with leaving the interact state here
                 animator.SetBool("ReceiveItem", true);
                 state = State.Interact;
-                //animator.speed = 0; no , adding change instead
+                //do not use animator.speed = 0; use below
                 change = Vector3.zero;
-                // ADD change ZERO !!
                 //  myRigidbody.velocity = Vector2.zero;
-                receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+                //previous item system below
+                //receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+                //
+                //below is the target code which doesn't work:
+                receivedItemSprite.sprite = item.sprite;
+                 Debug.Log("should be recieving item");
             }
             else
             {
                 animator.SetBool("ReceiveItem", false);
                 state = State.Idle;
-                receivedItemSprite.sprite = null;
-                playerInventory.currentItem = null;
-                //maybe remove older line below
-                animator.speed = 1;
-                //maybe remove line above 
-            }
+               // receivedItemSprite.sprite = null;
+                 Debug.Log("finishing recieving item");
+            //playerInventory.currentItem = null;
+            //player.inventory.currentItem = null;
         }
-     }
+
+    }
 
     public void SittingAnimate()
     {
@@ -190,7 +195,6 @@ public class CharacterController2D : MonoBehaviour
 
     public void Interact()
     {
-        Debug.Log("interact state");
         change = Vector3.zero;
         // ADD MOVEMENT ZERO
         // myRigidbody.velocity = Vector2.zero;

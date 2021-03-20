@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Schwer.ItemSystem;
 
 public class snowPile : Interactable
 {
     [Header("Contents")]
-    public Item contents;
+    [SerializeField] private Schwer.ItemSystem.Item item = default;
+    //old item
+    // public Item contents;
     public bool isDug;
     //this is how the status of the pile gets remembered
     public BoolValue storedDug;
 
     [Header("Signals and Dialog")]
     public Signal raiseItem;
-    public Inventory playerInventory;
+    //old inventory
+    //public Inventory playerInventory;
     public GameObject dialogBox;
     public Text dialogText;
 
@@ -53,11 +57,20 @@ public class snowPile : Interactable
         //dialog on
         dialogBox.SetActive(true);
        // dialog text = contents text;
-        dialogText.text = contents.itemDescription;
+        dialogText.text = item.description;
 
         //add contents to the inventory
-        playerInventory.AddItem(contents);
-        playerInventory.currentItem = contents;
+        var player = GetComponent<Player>();
+        if (player != null)
+        {
+            player.inventory[item]++;
+        }
+        //old inventory system
+        //playerInventory.AddItem(contents);
+        //playerInventory.currentItem = contents;
+        //add schwer inventory item
+        //
+
         //raise the signal to the player
         raiseItem.Raise();
         //set the snow to dug
