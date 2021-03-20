@@ -2,6 +2,7 @@
 using Schwer.ItemSystem;
 using UnityEngine;
 using SchwerInventory = Schwer.ItemSystem.Inventory;
+using SchwerItem = Schwer.ItemSystem.Item;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private InventorySO _inventory = default;
     public SchwerInventory inventory => _inventory.value;
 
-    [SerializeField] private Schwer.ItemSystem.Item item = default;
     public Vector3 change;
     // ^added
     public Animator animator;
@@ -124,12 +124,12 @@ public class CharacterController2D : MonoBehaviour
     }
 
 
-    public void RaiseItem()
+    public void RaiseItem(SchwerItem item)
     {
         //if (playerInventory.currentItem != null)
         //if (player.inventory.currentItem != null)
 
-        if (state != State.Interact)
+        if (state != State.Interact && item != null)
         {
             // there's an issue with leaving the interact state here
             animator.SetBool("ReceiveItem", true);

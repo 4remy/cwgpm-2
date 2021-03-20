@@ -58,10 +58,8 @@ public class snowPile : Interactable
         //playerInventory.AddItem(contents);
         //playerInventory.currentItem = contents;
         //add schwer inventory item
-        //
 
-        //raise the signal to the player
-        // raiseItem.Raise();
+        player.RaiseItem(item);
         //set the snow to dug
         isDug = true;
         animator.SetBool("isDug", true);
@@ -72,7 +70,6 @@ public class snowPile : Interactable
     {
         //turn dialog off
         dialogBox.SetActive(false);
-        //raise the signal to the player to stop animating
-        // raiseItem.Raise();
+        player.RaiseItem(null);
     }
 }
