@@ -10,9 +10,6 @@ public class snowPile : Interactable
     public bool isDug;
     //this is how the status of the pile gets remembered
     public BoolValue storedDug;
-
-    [Header("Signals and Dialog")]
-    public Signal raiseItem;
     //old inventory
     //public Inventory playerInventory;
     public GameObject dialogBox;
@@ -64,7 +61,7 @@ public class snowPile : Interactable
         //
 
         //raise the signal to the player
-        raiseItem.Raise();
+        // raiseItem.Raise();
         //set the snow to dug
         isDug = true;
         animator.SetBool("isDug", true);
@@ -76,6 +73,6 @@ public class snowPile : Interactable
         //turn dialog off
         dialogBox.SetActive(false);
         //raise the signal to the player to stop animating
-        raiseItem.Raise();
+        // raiseItem.Raise();
     }
 }
