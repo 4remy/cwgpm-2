@@ -47,7 +47,7 @@ public class snowPile : Interactable
         }
     }
 
-    public void DigSnow()
+    private void DigSnow()
     {
         //dialog on
         dialogBox.SetActive(true);
@@ -55,11 +55,8 @@ public class snowPile : Interactable
         dialogText.text = item.description;
 
         //add contents to the inventory
-        var player = GetComponent<CharacterController2D>();
-        if (player != null)
-        {
-            player.inventory[item]++;
-        }
+        player.inventory[item]++;
+
         //old inventory system
         //playerInventory.AddItem(contents);
         //playerInventory.currentItem = contents;
@@ -74,7 +71,7 @@ public class snowPile : Interactable
         storedDug.RuntimeValue = isDug;
     }
 
-    public void SnowDug()
+    private void SnowDug()
     {
         //turn dialog off
         dialogBox.SetActive(false);

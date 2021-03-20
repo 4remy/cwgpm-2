@@ -2,7 +2,7 @@
 
 public abstract class Interactable : MonoBehaviour
 {
-    private CharacterController2D player;
+    protected CharacterController2D player { get; private set; }
     protected bool playerInRange => player != null;
 
     protected abstract void Interact();
