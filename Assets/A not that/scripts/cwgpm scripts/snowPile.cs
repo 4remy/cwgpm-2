@@ -55,7 +55,7 @@ public class snowPile : Interactable
         dialogText.text = item.description;
 
         //add contents to the inventory
-        var player = GetComponent<Player>();
+        var player = GetComponent<CharacterController2D>();
         if (player != null)
         {
             player.inventory[item]++;

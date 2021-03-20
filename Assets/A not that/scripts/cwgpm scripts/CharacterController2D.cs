@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using Schwer.ItemSystem;
 using UnityEngine;
+using SchwerInventory = Schwer.ItemSystem.Inventory;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class CharacterController2D : MonoBehaviour
 
     //public Vector3 nextMoveCommand;
     //added
+    [SerializeField] private InventorySO _inventory = default;
+    public SchwerInventory inventory => _inventory.value;
+
     [SerializeField] private Schwer.ItemSystem.Item item = default;
     public Vector3 change;
     // ^added

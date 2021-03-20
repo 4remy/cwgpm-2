@@ -6,7 +6,7 @@ public class ItemDrop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var player = other.GetComponent<Player>();
+        var player = other.GetComponent<CharacterController2D>();
         if (player != null)
         {
             player.inventory[item]++;
