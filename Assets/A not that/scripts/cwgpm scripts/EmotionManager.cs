@@ -35,6 +35,10 @@ public class EmotionManager : MonoBehaviour
                 angrySate();
                 break;
         }
+        //this is just an example that shows you an 'if' case where the state gets changed
+        //you can put your own condition into the brackets below
+        //some example, if the number of sadItem in the inventory are greater than zero
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
                 sadSate();
