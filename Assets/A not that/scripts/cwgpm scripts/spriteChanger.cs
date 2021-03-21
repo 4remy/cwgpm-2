@@ -15,20 +15,14 @@ public class spriteChanger : MonoBehaviour
     public BehaviourType thisBehaviourType;
 
     public SpriteRenderer spriteRenderer;
-    //public Sprite newSprite;
+    [Header("Random Sprites")]
     public Sprite[] spriteArray;
     private bool spriteChanged = false;
+    [Header("Specific/onClick sprite")]
     public Sprite clickedSprite;
     public Sprite specificSprite;
-    /*void Update()
-    {
-         change sprite when clicked
-        if (Input.GetMouseButtonDown(0))
-        {
-            ChangeSprite(newSprite);
-        }
-        
-    }*/
+
+
     void Update()
     {
         if (thisBehaviourType == BehaviourType.random)
@@ -75,4 +69,12 @@ public class spriteChanger : MonoBehaviour
     {
         spriteRenderer.sprite = specificSprite;
     }
+    // item dependent sprite
+    //you should include the schwer namespace inventory
+    //it shows a different sprite/detects it
+
+    //another public enum which is 'emotion'
+    //and they have a corresponding sprite
+    // i think you should make a separate script for this
+    //and it would have a fixed update to check state
 }
