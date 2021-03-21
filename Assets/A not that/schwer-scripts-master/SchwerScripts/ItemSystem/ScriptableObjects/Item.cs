@@ -14,7 +14,7 @@ namespace Schwer.ItemSystem {
         public Sprite sprite => _sprite;
         [SerializeField] private bool _stackable = true;
         public bool stackable => _stackable;
-        //[SerializeField] private bool _isKey = false;
-        //public bool isKey => isKey;
+        [SerializeField] private bool _isKey = false;
+        public bool isKey => _isKey;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SchwerInventory = Schwer.ItemSystem.Inventory;
 
 public enum DoorType
 {
@@ -15,16 +16,21 @@ public class Door : Interactable
     [Header("Door variables")]
     public DoorType thisDoorType;
     public bool open;
-    //test
     public BoolValue storedOpen;
 
     [Header("Inventory")]
-    public Inventory playerInventory;
+    [SerializeField] private Schwer.ItemSystem.InventorySO _inventory = default;
+    public SchwerInventory inventory => _inventory.value;
+    // public Inventory playerInventory;
     //public SpriteRenderer doorSprite;
+
+    [Header("Contents")]
+    [SerializeField] private Schwer.ItemSystem.Item item = default;
+    [Header("Key")]
+    [SerializeField] private Schwer.ItemSystem.Item key = default;
 
     [Header("Signals and Dialog")]
     public BoxCollider2D physicsCollider;
-    public Item contents;
     public Signal raiseItem;
     public GameObject dialogBox;
     public Text dialogText;
@@ -48,7 +54,8 @@ public class Door : Interactable
 
     protected override void Interact()
     {
-        if (playerInventory.numberOfKeys > 0)
+       // if inventory.item.isKey = true
+        if (player.inventory[key] > 0)
         {
             if (Input.GetKeyDown(KeyCode.Space) && playerInRange && thisDoorType == DoorType.keyBox)
             {
@@ -76,11 +83,11 @@ public class Door : Interactable
     public void OpenDoor()
     {
         //minus one key
-        playerInventory.numberOfKeys--;
+        player.inventory[key]--;
 
         //change to different sprite
         animator.SetBool("Open", true);
-
+        Debug.Log("door Opened");
         storedOpen.RuntimeValue = open;
         //the door needs an animator for open
         open = true;
@@ -91,19 +98,16 @@ public class Door : Interactable
     public void OpenBox()
     {
         //minus one key
-        playerInventory.numberOfKeys--;
+        player.inventory[key]--;
 
         Debug.Log("box should open");
-        //dialog on
         dialogBox.SetActive(true);
-        // dialog text = contents text;
-        dialogText.text = contents.itemDescription;
+        dialogText.text = item.description;
 
         //add contents to the inventory
-        playerInventory.AddItem(contents);
-        playerInventory.currentItem = contents;
+        player.inventory[item]++;
         //raise the signal to the player
-        raiseItem.Raise();
+        player.RaiseItem(item);
 
         open = true;
 
@@ -121,7 +125,7 @@ public class Door : Interactable
         //turn dialog off
         dialogBox.SetActive(false);
         //raise the signal to the player to stop animating
-        raiseItem.Raise();
+        player.RaiseItem(null);
     }
 
 
