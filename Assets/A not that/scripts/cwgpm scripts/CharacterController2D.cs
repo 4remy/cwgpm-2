@@ -28,7 +28,6 @@ public class CharacterController2D : MonoBehaviour
 
     private Rigidbody2D myRigidbody;
     SpriteRenderer spriteRenderer;
-    //  PixelPerfectCamera pixelPerfectCamera;
 
     enum State
     {
@@ -100,18 +99,7 @@ public class CharacterController2D : MonoBehaviour
                 Interact();
                 break;
         }
-        //Debug.Log("animator.IsSitting = " + animator.GetBool("IsSitting"));
-        //animator.SetBool("IsSitting", true);
     }
-
-    /* void LateUpdate()
-      {
-          if (pixelPerfectCamera != null)
-          {
-              transform.position = pixelPerfectCamera.RoundToPixel(transform.position);
-          }
-      }
-    */
 
     void Awake()
     {
@@ -120,27 +108,20 @@ public class CharacterController2D : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         transform.position = startingPosition.initialValue;
-        //  pixelPerfectCamera = GameObject.FindObjectOfType<PixelPerfectCamera>();
     }
 
 
     public void RaiseItem(SchwerItem item)
     {
-        //if (playerInventory.currentItem != null)
-        //if (player.inventory.currentItem != null)
 
         if (state != State.Interact && item != null)
         {
-            // there's an issue with leaving the interact state here
             animator.SetBool("ReceiveItem", true);
             state = State.Interact;
             //do not use animator.speed = 0; use below
             change = Vector3.zero;
-            //  myRigidbody.velocity = Vector2.zero;
             //previous item system below
             //receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
-            //
-            //below is the target code which doesn't work:
             receivedItemSprite.sprite = item.sprite;
             Debug.Log("should be recieving item");
         }
@@ -150,7 +131,6 @@ public class CharacterController2D : MonoBehaviour
             state = State.Idle;
             receivedItemSprite.sprite = null;
             Debug.Log("finishing recieving item");
-            //playerInventory.currentItem = null;
             //player.inventory.currentItem = null;
         }
     }
