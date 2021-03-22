@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 81453981}
   - component: {fileID: 81453980}
   - component: {fileID: 81453979}
+  - component: {fileID: 81453983}
   m_Layer: 0
   m_Name: emotionMushroom
   m_TagString: Untagged
@@ -234,6 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b71899d6d194e2f9120645db4633fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventory: {fileID: 11400000, guid: 19a63ed173fed413285668fc4c4bcf65, type: 2}
+  specialItem: {fileID: 11400000, guid: 61637725da2f849e1a3b53d91dd29333, type: 2}
 --- !u!212 &81453981
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -293,12 +296,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81453978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.73511004, y: -6.7100754, z: 0}
+  m_LocalPosition: {x: 2.38, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &81453983
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81453978}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.37, y: 1.11}
+    newSize: {x: 1.37, y: 1.11}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.37, y: 1.11}
+  m_EdgeRadius: 0
 --- !u!1 &118540070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,12 +2993,12 @@ PrefabInstance:
     - target: {fileID: 7035078662530712089, guid: a4a1c30542854427f80961baa081dddc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.46669912
+      value: -2.0899997
       objectReference: {fileID: 0}
     - target: {fileID: 7035078662530712089, guid: a4a1c30542854427f80961baa081dddc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.10898409
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7035078662530712089, guid: a4a1c30542854427f80961baa081dddc,
         type: 3}

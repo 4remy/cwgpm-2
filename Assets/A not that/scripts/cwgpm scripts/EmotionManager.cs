@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using SchwerInventory = Schwer.ItemSystem.Inventory;
 
-public class EmotionManager : MonoBehaviour
+/* This has been changed to set emotion once character interacts with spacebar press. 
+ */
+//remember: your NPC/character needs a collision2D on it
+//set the collider to trigger
+public class EmotionManager : Interactable
 {
     enum State
     {
-        happy, sad, angry
+        happy, sad, angry, sawItem
     }
 
     State state = State.happy;
@@ -14,34 +20,56 @@ public class EmotionManager : MonoBehaviour
     [Header("Animation")]
     private Animator animator;
 
+    [Header("Inventory")]
+    [SerializeField] private Schwer.ItemSystem.InventorySO _inventory = default;
+    public SchwerInventory inventory => _inventory.value;
+
+    [Header("Special Item")]
+    [SerializeField] private Schwer.ItemSystem.Item specialItem = default;
+
     void Start()
     {
         animator = GetComponent<Animator>();
 
     }
 
-    void FixedUpdate()
+    protected override void Interact()
     {
-        //automatically starts as happy
-        switch (state)
+        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
-            case State.happy:
-                happyState();
-                break;
-            case State.sad:
-                sadSate();
-                break;
-            case State.angry:
-                angrySate();
-                break;
-        }
-        //this is just an example that shows you an 'if' case where the state gets changed
-        //you can put your own condition into the brackets below
-        //some example, if the number of sadItem in the inventory are greater than zero
+            //automatically starts as happy
+            switch (state)
+            {
+                case State.happy:
+                    happyState();
+                    break;
+                case State.sad:
+                    sadSate();
+                    break;
+                case State.angry:
+                    angryState();
+                    break;
+                case State.sawItem:
+                    sawItemState();
+                    break;
+            }
+            //this is just an example that shows you an 'if' case where the state gets changed
+            //you can put your own condition into the brackets below
+            //some example, if the number of sadItem in the inventory are greater than zero
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+            if (Input.GetMouseButtonDown(0))
+            {
                 sadSate();
+            }
+
+            if (player.inventory[specialItem] > 0)
+            {
+                sawItemState();
+                //it doesn't 'use up' the item,
+                //save that for later
+
+            }
+
         }
     }
 
@@ -57,10 +85,16 @@ public class EmotionManager : MonoBehaviour
         Debug.Log("emotion changed to sad");
     }
 
-    public void angrySate()
+    public void angryState()
     {
         animator.SetBool("angry", true);
         Debug.Log("emotion changed to angry");
+    }
+
+    public void sawItemState()
+    {
+            animator.SetBool("sawItem", true);
+            Debug.Log("emotion changed to sawitem");
     }
 }
 
