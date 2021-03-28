@@ -500,6 +500,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &189634817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4422342603853615777, guid: 1e9c6a1ff34ba420dbb45b6bb6bfdd5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2727662760959913183}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &229061733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3871160447985254050, guid: 2c28cc3860b854b399b460f26e4ed5b4,
@@ -2116,6 +2128,7 @@ MonoBehaviour:
   dialogValue: {fileID: 11400000, guid: 991d28859413e48e5823f3bbe8f8b59e, type: 2}
   dialogHolder: {fileID: 1077459864}
   choiceholder: {fileID: 265116385}
+  dialogScroll: {fileID: 189634817}
 --- !u!1 &2017966381
 GameObject:
   m_ObjectHideFlags: 0
