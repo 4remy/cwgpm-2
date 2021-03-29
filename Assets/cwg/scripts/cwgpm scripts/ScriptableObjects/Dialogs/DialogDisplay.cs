@@ -24,6 +24,8 @@ public class DialogDisplay : MonoBehaviour
         OnNewConversation += InitialiseConversation;
     }
 
+    private void OnDestroy() => OnNewConversation -= InitialiseConversation;
+
     private void InitialiseConversation(Conversation conversation)
     {
         if (conversation == null)
