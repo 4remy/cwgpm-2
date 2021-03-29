@@ -1,58 +1,75 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class DialogDisplay : MonoBehaviour
 {
-    public Conversation conversation;
+    private static event Action<Conversation> OnNewConversation;
+    public static void NewConversation(Conversation conversation) => OnNewConversation?.Invoke(conversation);
 
-    public GameObject speakerLeft;
-    public GameObject speakerRight;
+    [SerializeField] private GameObject speakerLeft;
+    [SerializeField] private GameObject speakerRight;
 
     private SpeakerUI speakerUILeft;
     private SpeakerUI speakerUIRight;
 
+    private Conversation activeConversation;
     private int activeLineIndex = 0;
 
-    void Start()
+    private void Awake()
     {
         speakerUILeft = speakerLeft.GetComponent<SpeakerUI>();
         speakerUIRight = speakerRight.GetComponent<SpeakerUI>();
+        InitialiseConversation(null);
 
-        speakerUILeft.Speaker = conversation.speakerLeft;
-        speakerUIRight.Speaker = conversation.speakerRight;
-        speakerUILeft.Hide();
-        speakerUIRight.Hide();
+        OnNewConversation += InitialiseConversation;
     }
 
-    void Update()
+    private void OnDestroy() => OnNewConversation -= InitialiseConversation;
+
+    private void InitialiseConversation(Conversation conversation)
     {
-        if (Input.GetKeyDown("space"))
+        if (conversation == null)
+        {
+            ClearDialog();
+        }
+        else if (conversation != activeConversation)
+        {
+            activeConversation = conversation;
+            gameObject.SetActive(true);
+
+            speakerUILeft.Speaker = activeConversation.speakerLeft;
+            speakerUIRight.Speaker = activeConversation.speakerRight;
+
+            // Show the first line
+            AdvanceConversation();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("space") && activeConversation != null)
         {
             AdvanceConversation();
         }
     }
 
-    void AdvanceConversation()
+    private void AdvanceConversation()
     {
-        if (activeLineIndex < conversation.lines.Length)
+        if (activeLineIndex < activeConversation.lines.Length)
         {
-            DisplayLine();
-            activeLineIndex += 1;
+            DisplayLine(activeConversation.lines[activeLineIndex]);
+            activeLineIndex++;
         }
         else
         {
-            speakerUILeft.Hide();
-            speakerUIRight.Hide();
-            activeLineIndex = 0;
+            ClearDialog();
         }
     }
 
     //assumptions: only two characters
-    void DisplayLine()
+    private void DisplayLine(Line line)
     {
-        Line line = conversation.lines[activeLineIndex];
-        Character character = line.character;
-
-        if (speakerUILeft.SpeakerIs(character))
+        if (speakerUILeft.SpeakerIs(line.character))
         {
             SetDialog(speakerUILeft, speakerUIRight, line.text);
         }
@@ -62,18 +79,19 @@ public class DialogDisplay : MonoBehaviour
         }
     }
 
-    void SetDialog(
-        SpeakerUI activeSpeakerUI,
-        SpeakerUI inactiveSpeakerUI,
-        string text)
+    private void SetDialog(SpeakerUI activeSpeakerUI, SpeakerUI inactiveSpeakerUI, string text)
     {
         activeSpeakerUI.Dialog = text;
         activeSpeakerUI.Show();
         inactiveSpeakerUI.Hide();
     }
 
-    public void GotSignal()
+    private void ClearDialog()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
+        speakerUILeft.Hide();
+        speakerUIRight.Hide();
+        activeLineIndex = 0;
+        activeConversation = null;
     }
 }
