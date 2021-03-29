@@ -6,6 +6,7 @@ public class SpeakerUI : MonoBehaviour
     public Image portrait;
     public Text fullName;
     public Text dialog;
+    //  public Animator animator;
 
     private Character speaker;
     public Character Speaker
@@ -18,6 +19,7 @@ public class SpeakerUI : MonoBehaviour
             fullName.text = speaker.fullName;
         }
     }
+
     public string Dialog
     {
         set { dialog.text = value; }
@@ -35,6 +37,7 @@ public class SpeakerUI : MonoBehaviour
 
     public void Show()
     {
+        // // animator = GetComponent<Animator>();
         gameObject.SetActive(true);
     }
     public void Hide()

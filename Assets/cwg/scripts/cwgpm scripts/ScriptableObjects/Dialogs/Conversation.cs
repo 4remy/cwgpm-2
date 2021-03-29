@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public struct Line
 {
     public Character character;
-
+    //dialog expression value
+    //aka animation state
+    //animator set trigger
     [TextArea(2, 5)]
     public string text;
 }
