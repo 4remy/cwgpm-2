@@ -145,8 +145,6 @@ public class CharacterController2D : MonoBehaviour
         //
         Vector3 sittingPosition1 = new Vector3(-5, 4, 0);
         gameObject.transform.position = sittingPosition1;
-        //
-        Debug.Log("should be animating a sitting animation");
     }
 
     public void SittingState()
