@@ -1485,18 +1485,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2123689034}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &967898785 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5477017035014398210, guid: 6387a9c6a2c0a418cb36300590338c55,
-    type: 3}
-  m_PrefabInstance: {fileID: 8205816586764665126}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77e750f25b6c5437e98e4ffc1ee139f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1009818936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,9 +1555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fa623a848b242c3995d3b2cc16e81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myConversation: {fileID: 11400000, guid: 0e52d46b1a6f342dc8e51567087de73e, type: 2}
-  conversation: {fileID: 11400000, guid: a70725247c71d4c078fe2a91054bdd82, type: 2}
-  DialogNotification: {fileID: 11400000, guid: 538bca99c971a4a95b06ea97d3370e31, type: 2}
+  conversation: {fileID: 11400000, guid: 0e52d46b1a6f342dc8e51567087de73e, type: 2}
 --- !u!1 &1097033767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,40 +1653,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   knockTime: 0
---- !u!1 &1118024418 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2860669719933861479, guid: 6387a9c6a2c0a418cb36300590338c55,
-    type: 3}
-  m_PrefabInstance: {fileID: 8205816586764665126}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1118024423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118024418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aff107f0a1ba442a4a6b1c8db49da206, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 11400000, guid: 538bca99c971a4a95b06ea97d3370e31, type: 2}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 967898785}
-        m_TargetAssemblyTypeName: DialogDisplay, Assembly-CSharp
-        m_MethodName: GotSignal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1173152327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8205816587936146273, guid: 6387a9c6a2c0a418cb36300590338c55,
