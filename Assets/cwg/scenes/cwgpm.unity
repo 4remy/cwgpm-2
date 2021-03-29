@@ -1590,6 +1590,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: {fileID: 11400000, guid: a70725247c71d4c078fe2a91054bdd82, type: 2}
+  isCompleted: 0
+  convoCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
+  thisNPCType: 1
 --- !u!1 &1097033767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,6 +4600,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8972711251415905843, guid: 042a790e512f247938240ac3429e5b70,
+        type: 3}
+      propertyPath: objects.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972711251415905843, guid: 042a790e512f247938240ac3429e5b70,
+        type: 3}
+      propertyPath: objects.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350,
+        type: 2}
     - target: {fileID: 8972711251415905844, guid: 042a790e512f247938240ac3429e5b70,
         type: 3}
       propertyPath: m_Name
