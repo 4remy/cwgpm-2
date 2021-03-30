@@ -6,7 +6,8 @@ public class SpeakerUI : MonoBehaviour
     public Image portrait;
     public Text fullName;
     public Text dialog;
-    //  public Animator animator;
+    //
+    public Animator animator;
 
     private Character speaker;
     public Character Speaker
@@ -17,6 +18,8 @@ public class SpeakerUI : MonoBehaviour
             speaker = value;
             portrait.sprite = speaker.portrait;
             fullName.text = speaker.fullName;
+            //
+          //  Animator.animator = speaker.animator;
         }
     }
 

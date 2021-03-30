@@ -5,9 +5,18 @@ using UnityEngine.UI;
 public struct Line
 {
     public Character character;
-    //dialog expression value
-    //aka animation state
+    //animation clip not connected to sprite
+    //
+    //public AnimationClip anim;
+    //RuntimeAnimationController
     //animator set trigger
+    /*public struct EmotionType
+    {
+        tired,
+        sad,
+        specific
+    }
+    */
     [TextArea(2, 5)]
     public string text;
 }

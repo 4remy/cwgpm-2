@@ -49,6 +49,7 @@ public class DialogDisplay : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && activeConversation != null)
         {
+            //check animator triggers?
             AdvanceConversation();
         }
     }
