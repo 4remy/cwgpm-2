@@ -1,24 +1,26 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 [System.Serializable]
 public struct Line
 {
     public Character character;
-    //animation clip not connected to sprite
-    //
-    //public AnimationClip anim;
-    //RuntimeAnimationController
-    //animator set trigger
-    /*public struct EmotionType
-    {
-        tired,
-        sad,
-        specific
-    }
-    */
+
+    public Emotion emotion;
+
     [TextArea(2, 5)]
     public string text;
+
+    public enum Emotion
+    {
+        Default,
+        Happy,
+        Angry,
+        Annoyed,
+        Sad
+        // tired,
+        // sad,
+        // specific
+    }
 }
 
 [CreateAssetMenu(fileName = "New Conversation", menuName = "Conversation")]

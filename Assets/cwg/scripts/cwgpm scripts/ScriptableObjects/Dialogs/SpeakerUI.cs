@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class SpeakerUI : MonoBehaviour
@@ -6,8 +7,9 @@ public class SpeakerUI : MonoBehaviour
     public Image portrait;
     public Text fullName;
     public Text dialog;
-    //
-    public Animator animator;
+
+    public Animator animator { get; private set; }
+    private AnimatorOverrideController overrideController;
 
     private Character speaker;
     public Character Speaker
@@ -18,14 +20,19 @@ public class SpeakerUI : MonoBehaviour
             speaker = value;
             portrait.sprite = speaker.portrait;
             fullName.text = speaker.fullName;
-            //
-          //  Animator.animator = speaker.animator;
+            UpdateAnimator(value);
         }
     }
 
     public string Dialog
     {
         set { dialog.text = value; }
+    }
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        overrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
     }
 
     public bool HasSpeaker()
@@ -40,11 +47,18 @@ public class SpeakerUI : MonoBehaviour
 
     public void Show()
     {
-        // // animator = GetComponent<Animator>();
         gameObject.SetActive(true);
     }
     public void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    private void UpdateAnimator(Character character)
+    {
+        var overrides = new List<KeyValuePair<AnimationClip, AnimationClip>>();
+        character.overrideController.GetOverrides(overrides);
+        overrideController.ApplyOverrides(overrides);
+        animator.runtimeAnimatorController = overrideController;
     }
 }

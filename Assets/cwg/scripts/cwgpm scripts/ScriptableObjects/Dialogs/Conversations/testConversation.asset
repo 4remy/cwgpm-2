@@ -16,8 +16,11 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 178f0192b936a45128784dc16e760317, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 268c28b84cf264813aecb5bc6e737e8c, type: 2}
+    emotion: 1
     text: i'm happy
   - character: {fileID: 11400000, guid: 178f0192b936a45128784dc16e760317, type: 2}
+    emotion: 3
     text: Why are you telling me that
   - character: {fileID: 11400000, guid: 268c28b84cf264813aecb5bc6e737e8c, type: 2}
+    emotion: 4
     text: I just wanted you to know.

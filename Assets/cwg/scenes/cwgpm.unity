@@ -1496,6 +1496,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 712903477}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &718392464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6329274199723263531, guid: 6387a9c6a2c0a418cb36300590338c55,
+    type: 3}
+  m_PrefabInstance: {fileID: 8205816586764665126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &718392465
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718392464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8d15e8a014a8d14cb010e82aa51b416, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &769289304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,6 +2263,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6199907651032973032}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1936727734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3338220124178021710, guid: 6387a9c6a2c0a418cb36300590338c55,
+    type: 3}
+  m_PrefabInstance: {fileID: 8205816586764665126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1936727735
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936727734}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8d15e8a014a8d14cb010e82aa51b416, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2008259886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8205816588166650888, guid: 6387a9c6a2c0a418cb36300590338c55,
@@ -4285,6 +4335,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3090287262998577421, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: m_Name
+      value: Portrait
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496667183297403979, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: m_Name
+      value: Name Panel
+      objectReference: {fileID: 0}
     - target: {fileID: 4289757159090006835, guid: 6387a9c6a2c0a418cb36300590338c55,
         type: 3}
       propertyPath: m_IsActive
@@ -4629,6 +4689,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124048269681827648, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: m_Name
+      value: Dialog Panel
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8455477106866942295, guid: 6387a9c6a2c0a418cb36300590338c55, type: 3}
