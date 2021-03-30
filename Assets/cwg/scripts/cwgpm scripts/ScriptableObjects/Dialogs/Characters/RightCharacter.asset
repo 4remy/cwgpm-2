@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: RightBoy
   portrait: {fileID: 21300000, guid: 32f99dafd36354e6d9029570b482c78f, type: 3}
-  _overrideController: {fileID: 22100000, guid: 0a25b2ac562d5b64aa89732f3ab0ec8d,
+  _overrideController: {fileID: 22100000, guid: 6e898729f472dd7409e78a3410082979,
     type: 2}
