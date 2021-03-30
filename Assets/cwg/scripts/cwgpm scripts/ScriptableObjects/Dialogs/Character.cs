@@ -5,8 +5,7 @@ public class Character : ScriptableObject
 {
     public string fullName;
     public Sprite portrait;
-   // public Animator animator;
-   // public RuntimeAnimatorController controller;
-   // AnimatorOverrideController overrideController;
-   // Animator.runtimeAnimationController = someNewController;
+    
+    [SerializeField] private AnimatorOverrideController _overrideController;
+    public AnimatorOverrideController overrideController => _overrideController;
 }
