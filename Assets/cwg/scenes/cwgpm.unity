@@ -4285,6 +4285,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3090287262998577421, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: m_Name
+      value: Portrait
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496667183297403979, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: m_Name
+      value: Name Panel
+      objectReference: {fileID: 0}
     - target: {fileID: 4289757159090006835, guid: 6387a9c6a2c0a418cb36300590338c55,
         type: 3}
       propertyPath: m_IsActive
@@ -4629,6 +4639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124048269681827648, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: m_Name
+      value: Dialog Panel
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8455477106866942295, guid: 6387a9c6a2c0a418cb36300590338c55, type: 3}
