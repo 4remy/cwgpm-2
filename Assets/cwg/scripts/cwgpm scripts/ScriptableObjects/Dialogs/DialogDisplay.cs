@@ -72,19 +72,20 @@ public class DialogDisplay : MonoBehaviour
     {
         if (speakerUILeft.SpeakerIs(line.character))
         {
-            SetDialog(speakerUILeft, speakerUIRight, line.text);
+            SetDialog(speakerUILeft, speakerUIRight, line);
         }
         else
         {
-            SetDialog(speakerUIRight, speakerUILeft, line.text);
+            SetDialog(speakerUIRight, speakerUILeft, line);
         }
     }
 
-    private void SetDialog(SpeakerUI activeSpeakerUI, SpeakerUI inactiveSpeakerUI, string text)
+    private void SetDialog(SpeakerUI activeSpeakerUI, SpeakerUI inactiveSpeakerUI, Line line)
     {
-        activeSpeakerUI.Dialog = text;
+        activeSpeakerUI.Dialog = line.text;
         activeSpeakerUI.Show();
         inactiveSpeakerUI.Hide();
+        activeSpeakerUI.animator.Play(line.emotion.ToString());
     }
 
     private void ClearDialog()
