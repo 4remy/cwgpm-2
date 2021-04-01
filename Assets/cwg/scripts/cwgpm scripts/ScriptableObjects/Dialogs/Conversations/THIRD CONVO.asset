@@ -16,4 +16,5 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 178f0192b936a45128784dc16e760317, type: 2}
   lines:
   - character: {fileID: 11400000, guid: 268c28b84cf264813aecb5bc6e737e8c, type: 2}
+    emotion: 1
     text: I met the requirement

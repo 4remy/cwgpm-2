@@ -296,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81453978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.74, y: -0.2, z: 0}
+  m_LocalPosition: {x: 7.46, y: -2.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fa623a848b242c3995d3b2cc16e81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 0e52d46b1a6f342dc8e51567087de73e, type: 2}
+  conversation: {fileID: 11400000, guid: 0cb1104ea83abe3499ef9010d10f9bd3, type: 2}
   isCompleted: 0
   convoCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
   thisSpeechType: 0
@@ -4875,7 +4875,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objects.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 8f102794046244c32873000fb649fc07,
+      objectReference: {fileID: 11400000, guid: 09ff16c9c152b435199a6560c05be581,
         type: 2}
     - target: {fileID: 8972711251415905844, guid: 042a790e512f247938240ac3429e5b70,
         type: 3}
