@@ -22,6 +22,8 @@ public class DialogNPC : Interactable
     public bool requiresPrior;
     [HideInInspector]
     public bool requiredToBeCompleted;
+
+    [HideInInspector]
     public BoolValue requiredCompleted;
 
     [HideInInspector]
@@ -58,7 +60,10 @@ public class DialogNPC : Interactable
          {
          //requires reference for non static
          //this line below is broken
-            DialogNPC.requiredCompleted.BoolValue = EditorGUILayout.ObjectField("requiredCompleted", DialogNPC.requiredCompleted, typeof(ScriptableObject));
+            DialogNPC.requiredToBeCompleted.BoolValue = EditorGUILayout.Toggle("requiredToBeCompleted", script.requiredToBeCompleted);
+         }
+         {
+            DialogNPC.requiredCompleted.BoolValue = EditorGUILayout.Toggle("Bool Value Initial Value", DialogNPC.requiredCompleted.initialValue) as BoolValue;
          }
      }
  }
