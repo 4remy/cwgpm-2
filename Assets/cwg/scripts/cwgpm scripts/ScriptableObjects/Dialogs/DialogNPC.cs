@@ -12,22 +12,16 @@ public enum SpeechType
         //then check the the required conversation boolvalue is true, otherwise print a debug log that it the required convo hadn't been completeld
 }
 
-#if UNITY_EDITOR
-#endif
 
 public class DialogNPC : Interactable
 {
     [Header("Requirements")]
    // HideInInspector makes sure the default inspector won't show these fields.
     public bool requiresPrior;
-    [HideInInspector]
     public bool requiredToBeCompleted;
 
-    [HideInInspector]
     public BoolValue requiredCompleted;
 
-    [HideInInspector]
-    public GameObject Template;
 
 
     //reference to the NPC's dialog
@@ -44,33 +38,6 @@ public class DialogNPC : Interactable
     //how do you make it wait a coroutine if it requires a prior, and the prior is also on the same character
     //maybe it would work good 2 convos on same character
 
-#if UNITY_EDITOR
- [CustomEditor(typeof(DialogNPC))]
- public class DialogNPC_Editor : Editor
- {
-     public override void OnInspectorGUI()
-     {
-         DrawDefaultInspector(); // for other non-HideInInspector fields
- 
-         DialogNPC script = (DialogNPC)target;
- 
-         // draw checkbox for the bool
-         script.requiresPrior = EditorGUILayout.Toggle("Requires Prior", script.requiresPrior);
-         if (script.requiresPrior) // if bool is true, show other fields
-         {
-            if ( DialogNPC.requiredToBeCompleted.BoolValue != null)
-            {
-            //object reference is required for non-static
-                DialogNPC.requiredToBeCompleted.BoolValue = EditorGUILayout.Toggle("requiredToBeCompleted", script.requiredToBeCompleted);
-            }
-            {
-                 DialogNPC.requiredCompleted.BoolValue = EditorGUILayout.Toggle("Bool Value Initial Value", DialogNPC.requiredCompleted.initialValue) as BoolValue;
-            }
-         }
-         
-     }
- }
-#endif
 
     private void Start()
     {
