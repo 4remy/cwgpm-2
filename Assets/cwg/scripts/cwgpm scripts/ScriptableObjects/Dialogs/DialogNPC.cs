@@ -58,13 +58,16 @@ public class DialogNPC : Interactable
          script.requiresPrior = EditorGUILayout.Toggle("Requires Prior", script.requiresPrior);
          if (script.requiresPrior) // if bool is true, show other fields
          {
-         //requires reference for non static
-         //this line below is broken
-            DialogNPC.requiredToBeCompleted.BoolValue = EditorGUILayout.Toggle("requiredToBeCompleted", script.requiredToBeCompleted);
+            if ( DialogNPC.requiredToBeCompleted.BoolValue != null)
+            {
+            //object reference is required for non-static
+                DialogNPC.requiredToBeCompleted.BoolValue = EditorGUILayout.Toggle("requiredToBeCompleted", script.requiredToBeCompleted);
+            }
+            {
+                 DialogNPC.requiredCompleted.BoolValue = EditorGUILayout.Toggle("Bool Value Initial Value", DialogNPC.requiredCompleted.initialValue) as BoolValue;
+            }
          }
-         {
-            DialogNPC.requiredCompleted.BoolValue = EditorGUILayout.Toggle("Bool Value Initial Value", DialogNPC.requiredCompleted.initialValue) as BoolValue;
-         }
+         
      }
  }
 #endif
