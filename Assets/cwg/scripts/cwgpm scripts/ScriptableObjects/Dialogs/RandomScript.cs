@@ -8,7 +8,7 @@ using UnityEditor;
 public class RandomScript : MonoBehaviour
 {
     [HideInInspector] // HideInInspector makes sure the default inspector won't show these fields.
-    public bool StartTemp;
+    public BoolValue boolValue;
 
     [HideInInspector]
     public InputField iField;
@@ -29,12 +29,16 @@ public class RandomScript_Editor : Editor
 
         RandomScript script = (RandomScript)target;
 
-        // draw checkbox for the bool
-        script.StartTemp = EditorGUILayout.Toggle("Start Temp", script.StartTemp);
-        if (script.StartTemp) // if bool is true, show other fields
+        script.boolValue = EditorGUILayout.ObjectField("Bool Value", script.boolValue, typeof(BoolValue), false) as BoolValue;
+        if (script.boolValue != null)
         {
-            script.iField = EditorGUILayout.ObjectField("I Field", script.iField, typeof(InputField), true) as InputField;
-            script.Template = EditorGUILayout.ObjectField("Template", script.Template, typeof(GameObject), true) as GameObject;
+            // draw checkbox for the bool
+            script.boolValue.initialValue = EditorGUILayout.Toggle("Bool Value Initial Value", script.boolValue.initialValue);
+            if (script.boolValue.initialValue) // if bool is true, show other fields
+            {
+                script.iField = EditorGUILayout.ObjectField("I Field", script.iField, typeof(InputField), true) as InputField;
+                script.Template = EditorGUILayout.ObjectField("Template", script.Template, typeof(GameObject), true) as GameObject;
+            }
         }
     }
 }
