@@ -950,13 +950,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fa623a848b242c3995d3b2cc16e81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requiresPrior: 1
+  requiredToBeCompleted: 1
+  requiredCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
   conversation: {fileID: 11400000, guid: 8f102794046244c32873000fb649fc07, type: 2}
   isCompleted: 0
   convoCompleted: {fileID: 11400000, guid: 09ff16c9c152b435199a6560c05be581, type: 2}
-  thisSpeechType: 0
-  requiresPrior: 1
-  requiredToBeCompleted: 0
-  requiredCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
+  thisSpeechType: 1
 --- !u!61 &544022979
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1847,13 +1847,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fa623a848b242c3995d3b2cc16e81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 0cb1104ea83abe3499ef9010d10f9bd3, type: 2}
-  isCompleted: 0
-  convoCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
-  thisSpeechType: 0
   requiresPrior: 0
   requiredToBeCompleted: 0
   requiredCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
+  conversation: {fileID: 11400000, guid: 0cb1104ea83abe3499ef9010d10f9bd3, type: 2}
+  isCompleted: 0
+  convoCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
+  thisSpeechType: 1
 --- !u!1 &1097033767
 GameObject:
   m_ObjectHideFlags: 0
