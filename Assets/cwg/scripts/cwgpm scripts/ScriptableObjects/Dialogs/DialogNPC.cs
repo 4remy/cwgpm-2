@@ -15,11 +15,11 @@ public enum SpeechType
 
 public class DialogNPC : Interactable
 {
-    [Header("Requirements")]
-    public bool requiresPrior;
-    public bool requiredToBeCompleted;
+    //[Header("Requirements")]
+    //public bool requiresPrior;
+    //public bool requiredToBeCompleted;
 
-    public BoolValue requiredCompleted;
+//    public BoolValue requiredCompleted;
 
 
 
@@ -42,39 +42,39 @@ public class DialogNPC : Interactable
     private void Start()
     {
         isCompleted = convoCompleted.RuntimeValue;
-        requiredToBeCompleted = requiredCompleted.RuntimeValue;
+        //requiredToBeCompleted = requiredCompleted.RuntimeValue;
 
 
     }
     protected override void Interact()
     {
-            if (requiresPrior)
-            {
-                if (requiredToBeCompleted)
-                {
-                    if (thisSpeechType == SpeechType.linearConvo)
-                    {
-                        if (!isCompleted)
-                        {
-                            Debug.Log("interacting");
-                            DialogDisplay.NewConversation(conversation);
-                            isCompleted = true;
-                            convoCompleted.RuntimeValue = isCompleted;
-                        }
-                        else
-                        {
-                            Debug.Log("finished Talking");
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log("interacting");
-                        DialogDisplay.NewConversation(conversation);
-                    }
-                }
-                Debug.Log("hasn't completed required prior conversation");
-            }
-            else
+           // if (requiresPrior)
+            //{
+               // if (requiredToBeCompleted)
+                //{
+                //    if (thisSpeechType == SpeechType.linearConvo)
+                  //  {
+                    //    if (!isCompleted)
+                      //  {
+                        //    Debug.Log("interacting");
+                          //  DialogDisplay.NewConversation(conversation);
+                            //isCompleted = true;
+                            //convoCompleted.RuntimeValue = isCompleted;
+                        //}
+                        //else
+                        //{
+                         //   Debug.Log("finished Talking");
+                        //}
+                    //}
+                    //else
+                    //{
+                      //  Debug.Log("interacting");
+                       // DialogDisplay.NewConversation(conversation);
+                    //}
+                //}
+               // Debug.Log("hasn't completed required prior conversation");
+            //}
+            //else
         //check BoolValue for convoCompleted is true
         //if it is, do the below
         if (thisSpeechType == SpeechType.linearConvo)
