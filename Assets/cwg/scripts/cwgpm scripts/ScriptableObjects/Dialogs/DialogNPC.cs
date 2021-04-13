@@ -81,8 +81,8 @@ public class DialogNPC : Interactable
         //if it is, do the below
         if (thisSpeechType == SpeechType.linearConvo)
             {
-                if (!isCompleted)
-                {
+                 if (!isCompleted)
+                 {
                     Debug.Log("interacting");
                     DialogDisplay.NewConversation(conversation);
                     isCompleted = true;
@@ -93,14 +93,11 @@ public class DialogNPC : Interactable
                         Debug.Log("the prior conversation is false");
 
                     }
-                    else {
+                    else
+                    {
                         Debug.Log("prior conversation is true");
                     }
-                }
-                else
-                {
-                    Debug.Log("finished Talking");
-                }
+                 }
             }
 
 
