@@ -30,7 +30,9 @@ public class DialogNPC : Interactable
     public BoolValue convoCompleted;
     public SpeechType thisSpeechType;
     //do you want your conversation to pre-require another convo before it?
-
+    [Header("Reliant on prior Event")]
+    public BoolValue priorEvent;
+    public bool priorSuccess;
 
 
 
@@ -42,39 +44,39 @@ public class DialogNPC : Interactable
     private void Start()
     {
         isCompleted = convoCompleted.RuntimeValue;
+        priorSuccess = priorEvent.RuntimeValue;
         //requiredToBeCompleted = requiredCompleted.RuntimeValue;
-
 
     }
     protected override void Interact()
     {
-           // if (requiresPrior)
-            //{
-               // if (requiredToBeCompleted)
-                //{
-                //    if (thisSpeechType == SpeechType.linearConvo)
-                  //  {
-                    //    if (!isCompleted)
-                      //  {
-                        //    Debug.Log("interacting");
-                          //  DialogDisplay.NewConversation(conversation);
-                            //isCompleted = true;
-                            //convoCompleted.RuntimeValue = isCompleted;
-                        //}
-                        //else
-                        //{
-                         //   Debug.Log("finished Talking");
-                        //}
-                    //}
-                    //else
-                    //{
-                      //  Debug.Log("interacting");
-                       // DialogDisplay.NewConversation(conversation);
-                    //}
-                //}
-               // Debug.Log("hasn't completed required prior conversation");
-            //}
-            //else
+        // if (requiresPrior)
+        //{
+        // if (requiredToBeCompleted)
+        //{
+        //    if (thisSpeechType == SpeechType.linearConvo)
+        //  {
+        //    if (!isCompleted)
+        //  {
+        //    Debug.Log("interacting");
+        //  DialogDisplay.NewConversation(conversation);
+        //isCompleted = true;
+        //convoCompleted.RuntimeValue = isCompleted;
+        //}
+        //else
+        //{
+        //   Debug.Log("finished Talking");
+        //}
+        //}
+        //else
+        //{
+        //  Debug.Log("interacting");
+        // DialogDisplay.NewConversation(conversation);
+        //}
+        //}
+        // Debug.Log("hasn't completed required prior conversation");
+        //}
+        //else
         //check BoolValue for convoCompleted is true
         //if it is, do the below
         if (thisSpeechType == SpeechType.linearConvo)
@@ -85,6 +87,15 @@ public class DialogNPC : Interactable
                     DialogDisplay.NewConversation(conversation);
                     isCompleted = true;
                     convoCompleted.RuntimeValue = isCompleted;
+                    // priorEvent.RuntimeValue = priorSuccess;
+                    if (!priorSuccess)
+                    {
+                        Debug.Log("the prior conversation is false");
+
+                    }
+                    else {
+                        Debug.Log("prior conversation is true");
+                    }
                 }
                 else
                 {
