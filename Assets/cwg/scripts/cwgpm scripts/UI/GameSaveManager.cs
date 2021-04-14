@@ -26,6 +26,8 @@ public class GameSaveManager : MonoBehaviour
     */
     public void ResetScriptables()
     {
+        // this needs to reset the boolvalues to false
+        //or do i just do it by hand
         for(int i = 0; i < objects.Count; i++)
         {
             if(File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
@@ -40,10 +42,11 @@ public class GameSaveManager : MonoBehaviour
         LoadScriptables();
     }
 
-    private void OnDisable()
+   /* private void OnDisable()
     {
         SaveScriptables();
     }
+   */
 
     public void SaveScriptables()
     {
