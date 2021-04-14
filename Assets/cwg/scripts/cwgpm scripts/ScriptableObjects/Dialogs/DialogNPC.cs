@@ -87,7 +87,9 @@ public class DialogNPC : Interactable
                     DialogDisplay.NewConversation(conversation);
                     isCompleted = true;
                     convoCompleted.RuntimeValue = isCompleted;
-                    // priorEvent.RuntimeValue = priorSuccess;
+                    //this line below added
+                    //needed to update the runtime value
+                    priorSuccess = priorEvent.RuntimeValue;
                     if (!priorSuccess)
                     {
                         Debug.Log("the prior conversation is false");

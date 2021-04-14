@@ -9,8 +9,9 @@ public class BoolValue : ScriptableObject
     //, ISerializationCallbackReceiver
 {
     public bool initialValue;
-  //  [NonSerialized]
+    //  [NonSerialized]
     public bool RuntimeValue;
+
 /*
     public void OnAfterDeserialize()
     {
