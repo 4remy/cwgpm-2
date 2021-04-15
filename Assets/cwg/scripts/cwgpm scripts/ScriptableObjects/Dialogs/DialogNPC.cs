@@ -5,32 +5,31 @@ using UnityEditor;
 public enum SpeechType
 {
     loopingConvo,
-    //change to loopingConvo
-    linearConvo
-        //change to oneOffConvo
-        //add dependentConvo
-        //then check the the required conversation boolvalue is true, otherwise print a debug log that it the required convo hadn't been completeld
+    oneOffConvo
 }
-
 
 public class DialogNPC : Interactable
 {
-    //[Header("Requirements")]
-    //public bool requiresPrior;
-    //public bool requiredToBeCompleted;
-
-//    public BoolValue requiredCompleted;
-
-
 
     //reference to the NPC's dialog
     [SerializeField] private Conversation conversation;
     public bool isCompleted;
-    //this is how the status of the convo is saved
+    // i want to hide onlyOnce from editor
+    private bool onlyOnce;
+
+    //this is how the status of your conversation is saved
     public BoolValue convoCompleted;
     public SpeechType thisSpeechType;
-    //do you want your conversation to pre-require another convo before it?
-    [Header("Reliant on prior Event")]
+
+    [Header("Happens independently? Or needs priors")]
+    //set independent to TRUE if you aren't running checks.
+    public bool independent;
+
+    [Header("Reliant on earlier things being completed?")]
+
+    //do you want your conversation to be triggered only after something else
+    // was completed? it can be an earlier convo, but could be any bool value
+    //check the bool value is added to your gamesaver manager
     public BoolValue priorEvent;
     public bool priorSuccess;
 
@@ -45,78 +44,47 @@ public class DialogNPC : Interactable
     {
         isCompleted = convoCompleted.RuntimeValue;
         priorSuccess = priorEvent.RuntimeValue;
-        //requiredToBeCompleted = requiredCompleted.RuntimeValue;
 
     }
     protected override void Interact()
     {
-        // if (requiresPrior)
-        //{
-        // if (requiredToBeCompleted)
-        //{
-        //    if (thisSpeechType == SpeechType.linearConvo)
-        //  {
-        //    if (!isCompleted)
-        //  {
-        //    Debug.Log("interacting");
-        //  DialogDisplay.NewConversation(conversation);
-        //isCompleted = true;
-        //convoCompleted.RuntimeValue = isCompleted;
-        //}
-        //else
-        //{
-        //   Debug.Log("finished Talking");
-        //}
-        //}
-        //else
-        //{
-        //  Debug.Log("interacting");
-        // DialogDisplay.NewConversation(conversation);
-        //}
-        //}
-        // Debug.Log("hasn't completed required prior conversation");
-        //}
-        //else
-        //check BoolValue for convoCompleted is true
-        //if it is, do the below
-        if (thisSpeechType == SpeechType.linearConvo)
+        if (!independent)
+        {
+            priorSuccess = priorEvent.RuntimeValue;
+            if (!priorSuccess)
             {
-                 if (!isCompleted)
-                 {
-                    Debug.Log("interacting");
-                    DialogDisplay.NewConversation(conversation);
-                    isCompleted = true;
-                    convoCompleted.RuntimeValue = isCompleted;
-                    //this line below added
-                    //needed to update the runtime value
-                    priorSuccess = priorEvent.RuntimeValue;
-                    if (!priorSuccess)
-                    {
-                        Debug.Log("the prior conversation is false");
-
-                    }
-                    else
-                    {
-                        Debug.Log("prior conversation is true");
-                    }
-                 }
+                Debug.Log("the prior conversation is set to" + priorSuccess);
+                return;
             }
-
-
-
-            //
-            //else (thisSpeechType == SpeechType.loopingConvo)
-            else
+        }
+        if (thisSpeechType == SpeechType.oneOffConvo)
+        {
+            if (!onlyOnce)
             {
-                Debug.Log("interacting");
+                Debug.Log("one off convo");
                 DialogDisplay.NewConversation(conversation);
+                isCompleted = true;
+                onlyOnce = true;
             }
+            Debug.Log("already did one off convo");
+        }
+        else
+        {
+            Debug.Log("looping convo");
+            DialogDisplay.NewConversation(conversation);
+            isCompleted = true;
+            convoCompleted.RuntimeValue = isCompleted;
+        }
 
-        
     }
-        
-
-
-    //Debug.Log("hasn't completed required prior conversation");
 }
+/*
+if (!priorSuccess)
+{
+    Debug.Log("the prior conversation is set to" + priorSuccess);
 
+}
+else
+{
+    Debug.Log("prior conversation is set to" + priorSuccess);
+} */
