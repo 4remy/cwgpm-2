@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23acdc549ebe0469f8c628e5832ae9ba, type: 3}
   m_Name: faleConvoBool
   m_EditorClassIdentifier: 
-  initialValue: 1
-  RuntimeValue: 1
+  initialValue: 0
+  RuntimeValue: 0

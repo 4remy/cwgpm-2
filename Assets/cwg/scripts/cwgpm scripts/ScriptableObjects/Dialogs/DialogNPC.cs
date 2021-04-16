@@ -64,6 +64,7 @@ public class DialogNPC : Interactable
                 Debug.Log("one off convo");
                 DialogDisplay.NewConversation(conversation);
                 isCompleted = true;
+                convoCompleted.RuntimeValue = isCompleted;
                 onlyOnce = true;
             }
             Debug.Log("already did one off convo");
