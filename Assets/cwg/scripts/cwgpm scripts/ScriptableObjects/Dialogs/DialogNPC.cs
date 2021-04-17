@@ -21,6 +21,11 @@ public class DialogNPC : Interactable
     public BoolValue convoCompleted;
     public SpeechType thisSpeechType;
 
+    [Header("give item?")]
+    //set itemless to TRUE if it doesn't give stuff.
+    public bool itemless;
+    [SerializeField] private Schwer.ItemSystem.Item item = default;
+
     [Header("Happens independently? Or needs priors")]
     //set independent to TRUE if you aren't running checks.
     public bool independent;
@@ -65,6 +70,11 @@ public class DialogNPC : Interactable
                 DialogDisplay.NewConversation(conversation);
                 isCompleted = true;
                 convoCompleted.RuntimeValue = isCompleted;
+                onlyOnce = true;
+                if (!itemless)
+                {
+                    player.inventory[item]++;
+                }
                 onlyOnce = true;
             }
             Debug.Log("already did one off convo");

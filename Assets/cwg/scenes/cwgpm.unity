@@ -920,6 +920,8 @@ MonoBehaviour:
   isCompleted: 0
   convoCompleted: {fileID: 11400000, guid: 09ff16c9c152b435199a6560c05be581, type: 2}
   thisSpeechType: 1
+  itemless: 0
+  item: {fileID: 11400000, guid: 71ade5fecab4a4aad865bd740cd3a7d3, type: 2}
   independent: 0
   priorEvent: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
   priorSuccess: 0
@@ -1792,6 +1794,8 @@ MonoBehaviour:
   isCompleted: 0
   convoCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
   thisSpeechType: 0
+  itemless: 1
+  item: {fileID: 0}
   independent: 1
   priorEvent: {fileID: 11400000, guid: 94986f1bd8d8a4b7bb969aa2435ff1d2, type: 2}
   priorSuccess: 0
