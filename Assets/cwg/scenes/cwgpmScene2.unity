@@ -1389,7 +1389,7 @@ GameObject:
   - component: {fileID: 795969448}
   - component: {fileID: 795969447}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3144,6 +3144,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1936601259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2997571705817187426, guid: 0f59576c74f4f41f1a5fd5626475ede5,
+    type: 3}
+  m_PrefabInstance: {fileID: 21237307}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1936601260
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936601259}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f21713b775db44432a4f318d5e4e8b8f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1968188601
 GameObject:
   m_ObjectHideFlags: 0
