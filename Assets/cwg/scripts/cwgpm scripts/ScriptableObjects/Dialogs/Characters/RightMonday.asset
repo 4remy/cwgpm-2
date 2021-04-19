@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d57c1f3fa9bd497b9776b71f8244bd3, type: 3}
   m_Name: RightMonday
   m_EditorClassIdentifier: 
-  fullName: RightBoy
+  fullName: Monday
   portrait: {fileID: 21300000, guid: 109555e39a103456c9984dc8ac17bdd0, type: 3}
-  _overrideController: {fileID: 22100000, guid: 3fd9e8b7a798446b7819ca7f8479aa03,
+  _overrideController: {fileID: 22100000, guid: 5595198db84164ca8ac3e6d84c12461c,
     type: 2}

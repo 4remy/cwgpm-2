@@ -23,4 +23,4 @@ MonoBehaviour:
     text: im sad
   - character: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
     emotion: 3
-    text: im sad!! i hate you!!
+    text: im sad!!
