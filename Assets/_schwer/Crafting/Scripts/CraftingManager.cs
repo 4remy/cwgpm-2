@@ -29,6 +29,7 @@ namespace Schwer.ItemSystem
 
         private void OnEnable() {
             inventory.OnContentsChanged += UpdateInventorySlots;
+            ingredients.OnContentsChanged += UpdateIngredientSlots;
 
             var selected = EventSystem.current.currentSelectedGameObject;
             if (selected == null || !selected.transform.IsChildOf(this.transform)) {
@@ -38,7 +39,10 @@ namespace Schwer.ItemSystem
             Initialise();
         }
 
-        private void OnDisable() => inventory.OnContentsChanged -= UpdateInventorySlots;
+        private void OnDisable() {
+            inventory.OnContentsChanged -= UpdateInventorySlots;
+            ingredients.OnContentsChanged -= UpdateIngredientSlots;
+        }
 
         private void Awake() {
             inventorySlotsHolder.GetComponentsInChildren<ItemSlot>(inventorySlots);
@@ -53,13 +57,14 @@ namespace Schwer.ItemSystem
             OnItemSelected(null);
             if (inventory != null) {
                 UpdateInventorySlots(null, 0);
-                UpdateIngredientSlots();
+                UpdateIngredientSlots(null, 0);
             }
         }
 
+        // Parameters unused but necessary for Inventory.OnContentsChanged event
         private void UpdateInventorySlots(Item item, int count) => UpdateItemSlots(inventorySlots, inventory);
-
-        private void UpdateIngredientSlots() => UpdateItemSlots(ingredientSlots, ingredients);
+        // Parameters unused but necessary for Inventory.OnContentsChanged event
+        private void UpdateIngredientSlots(Item item, int count) => UpdateItemSlots(ingredientSlots, ingredients);
 
         private void UpdateItemSlots(List<ItemSlot> itemSlots, Inventory inventory) {
             for (int i = 0; i < itemSlots.Count; i++) {
@@ -84,6 +89,26 @@ namespace Schwer.ItemSystem
                 nameDisplay.text = "";
                 addButton.SetActive(false);
             }
+        }
+
+        // Called by the 'add' button's OnClick UnityEvent
+        public void AddIngredient() {
+            if (selectedItem != null) {
+                ingredients[selectedItem]++;
+                inventory[selectedItem]--;
+
+                // Clear the current selection if item is fully depleted
+                if (inventory[selectedItem] <= 0) {
+                    OnItemSelected(null);
+                }
+            }
+        }
+
+        public void ClearIngredients() {
+            foreach (var item in ingredients) {
+                inventory[item.Key] += item.Value;
+            }
+            ingredients.Clear();
         }
     }
 }

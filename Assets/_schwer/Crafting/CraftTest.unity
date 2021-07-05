@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 867526204}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6148516425112632840}
+        m_TargetAssemblyTypeName: Schwer.ItemSystem.CraftingManager, Assembly-CSharp
+        m_MethodName: ClearIngredients
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &867526204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7781,4 +7793,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6610930657996559575}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6148516425112632840}
+        m_TargetAssemblyTypeName: Schwer.ItemSystem.CraftingManager, Assembly-CSharp
+        m_MethodName: AddIngredient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
