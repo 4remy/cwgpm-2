@@ -31,11 +31,6 @@ namespace Schwer.ItemSystem
             inventory.OnContentsChanged += UpdateInventorySlots;
             ingredients.OnContentsChanged += UpdateIngredientSlots;
 
-            var selected = EventSystem.current.currentSelectedGameObject;
-            if (selected == null || !selected.transform.IsChildOf(this.transform)) {
-                EventSystem.current.SetSelectedGameObject(inventorySlots[0].gameObject);
-            }
-
             Initialise();
         }
 
@@ -54,10 +49,19 @@ namespace Schwer.ItemSystem
         }
 
         private void Initialise() {
-            OnItemSelected(null);
-            if (inventory != null) {
-                UpdateInventorySlots(null, 0);
-                UpdateIngredientSlots(null, 0);
+            UpdateInventorySlots(null, 0);
+            UpdateIngredientSlots(null, 0);
+
+            SelectFirstSlot();
+        }
+
+        private void SelectFirstSlot() {
+            // Need to set selection to null then select first slot to
+            // ensure the item slot button properly highlights
+            EventSystem.current.SetSelectedGameObject(null);
+            var selected = EventSystem.current.currentSelectedGameObject;
+            if (selected == null || !selected.transform.IsChildOf(inventorySlotsHolder.transform)) {
+                EventSystem.current.SetSelectedGameObject(inventorySlots[0].gameObject);
             }
         }
 
@@ -100,6 +104,7 @@ namespace Schwer.ItemSystem
                 // Clear the current selection if item is fully depleted
                 if (inventory[selectedItem] <= 0) {
                     OnItemSelected(null);
+                    SelectFirstSlot();
                 }
             }
         }
