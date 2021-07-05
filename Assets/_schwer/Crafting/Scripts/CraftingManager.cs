@@ -13,8 +13,8 @@ namespace Schwer.ItemSystem
 
         [Header("Components")]
         [SerializeField] private Text nameDisplay = default;
-        [SerializeField] private GameObject addButton = default;
-        [SerializeField] private GameObject clearButton = default;
+        [SerializeField] private Button addButton = default;
+        [SerializeField] private Button clearButton = default;
 
         [Header("Containers")]
         [SerializeField] private GameObject inventorySlotsHolder = default;
@@ -68,7 +68,11 @@ namespace Schwer.ItemSystem
         // Parameters unused but necessary for Inventory.OnContentsChanged event
         private void UpdateInventorySlots(Item item, int count) => UpdateItemSlots(inventorySlots, inventory);
         // Parameters unused but necessary for Inventory.OnContentsChanged event
-        private void UpdateIngredientSlots(Item item, int count) => UpdateItemSlots(ingredientSlots, ingredients);
+        private void UpdateIngredientSlots(Item item, int count) {
+            UpdateItemSlots(ingredientSlots, ingredients);
+
+            clearButton.interactable = (ingredients.Count > 0);
+        }
 
         private void UpdateItemSlots(List<ItemSlot> itemSlots, Inventory inventory) {
             for (int i = 0; i < itemSlots.Count; i++) {
@@ -87,11 +91,11 @@ namespace Schwer.ItemSystem
 
             if (item != null) {
                 nameDisplay.text = item.name;
-                addButton.SetActive(true);
+                addButton.interactable = true;
             }
             else {
                 nameDisplay.text = "";
-                addButton.SetActive(false);
+                addButton.interactable = false;
             }
         }
 
