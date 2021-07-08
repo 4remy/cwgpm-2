@@ -35,6 +35,9 @@ namespace Schwer.ItemSystem
         }
 
         private void OnDisable() {
+            // Move any ingredients back into player inventory when closing crafting menu
+            ClearIngredients();
+
             inventory.OnContentsChanged -= UpdateInventorySlots;
             ingredients.OnContentsChanged -= UpdateIngredientSlots;
         }
@@ -99,7 +102,7 @@ namespace Schwer.ItemSystem
             }
         }
 
-        // Called by the 'add' button's OnClick UnityEvent
+        // Called by the add button's OnClick UnityEvent
         public void AddIngredient() {
             if (selectedItem != null) {
                 ingredients[selectedItem]++;
@@ -113,6 +116,7 @@ namespace Schwer.ItemSystem
             }
         }
 
+        // Called by the clear button's OnClick UnityEvent
         public void ClearIngredients() {
             foreach (var item in ingredients) {
                 inventory[item.Key] += item.Value;
