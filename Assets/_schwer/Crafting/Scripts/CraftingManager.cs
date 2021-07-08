@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Schwer.ItemSystem
-{
+namespace Schwer.ItemSystem {
     public class CraftingManager : MonoBehaviour, IItemSlotManager {
+        [SerializeField] private RecipeDatabase recipeDatabase;
         [SerializeField] private InventorySO _inventory = default;
         private Inventory inventory => _inventory.value;
 
