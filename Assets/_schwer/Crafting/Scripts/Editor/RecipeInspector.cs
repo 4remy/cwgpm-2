@@ -43,14 +43,6 @@ namespace SchwerEditor.ItemSystem {
                 recipe.input[item] = amount;
                 Debug.Log("Set " + invName + " " + itemName + " to " + amount + "x.");
             }
-            if (GUILayout.Button("Add " + amount + "x " + itemName)) {
-                recipe.input[item] += amount;
-                Debug.Log("Added " + amount + "x " + itemName + " to " + invName + ".");
-            }
-            if (GUILayout.Button("Subtract " + amount + "x " + itemName)) {
-                recipe.input[item] -= amount;
-                Debug.Log("Removed " + amount + "x " + itemName + " from " + invName + ".");
-            }
             if (GUILayout.Button("Remove all of " + itemName)) {
                 if (recipe.input.Remove(item)) {
                     Debug.Log("Removed all of " + itemName + " from " + invName + ".");
