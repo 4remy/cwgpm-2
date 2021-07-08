@@ -14,6 +14,7 @@ namespace Schwer.ItemSystem {
         [Header("Components")]
         [SerializeField] private Text nameDisplay = default;
         [SerializeField] private Button addButton = default;
+        [SerializeField] private Button craftButton = default;
         [SerializeField] private Button clearButton = default;
 
         [Header("Containers")]
@@ -74,6 +75,7 @@ namespace Schwer.ItemSystem {
         private void UpdateIngredientSlots(Item item, int count) {
             UpdateItemSlots(ingredientSlots, ingredients);
 
+            craftButton.interactable = (ingredients.Count > 0);
             clearButton.interactable = (ingredients.Count > 0);
         }
 
@@ -122,6 +124,22 @@ namespace Schwer.ItemSystem {
                 inventory[item.Key] += item.Value;
             }
             ingredients.Clear();
+        }
+
+        // Called by the craft button's OnClick UnityEvent
+        public void TryCraft() {
+            var recipes = recipeDatabase.GetRecipes();
+            for (int i = 0; i < recipes.Count; i++) {
+                if (recipes[i].Matches(ingredients)) {
+                    ingredients.Clear();
+                    inventory[recipes[i].output] += recipes[i].outputAmount;
+
+                    Debug.Log($"Crafted {recipes[i].output}!");
+                    return;
+                }
+            }
+
+            Debug.Log($"The ingredients didn't yield anything...");
         }
     }
 }

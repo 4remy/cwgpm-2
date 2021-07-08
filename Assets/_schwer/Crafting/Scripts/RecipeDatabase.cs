@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 namespace Schwer.ItemSystem {
@@ -8,5 +9,7 @@ namespace Schwer.ItemSystem {
         public void Initialise(List<Recipe> recipes) {
             this.recipes = recipes;
         }
+
+        public ReadOnlyCollection<Recipe> GetRecipes() => recipes.AsReadOnly();
     }
 }
