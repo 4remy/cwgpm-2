@@ -134,7 +134,7 @@ namespace Schwer.ItemSystem {
                     ingredients.Clear();
                     inventory[recipes[i].output] += recipes[i].outputAmount;
 
-                    Debug.Log($"Crafted {recipes[i].output}!");
+                    Debug.Log($"Crafted {recipes[i].outputAmount}x {recipes[i].output.name}!");
                     return;
                 }
             }
