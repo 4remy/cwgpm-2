@@ -8,6 +8,18 @@ namespace Schwer.ItemSystem {
         [Space]
         public Inventory input = new Inventory();
 
+        public bool Matches(Inventory ingredients) {
+            // Exit early if the number of different items do not match
+            if (input.Count != ingredients.Count) return false;
+
+            // Compare amounts for each item
+            foreach (var item in ingredients.Keys) {
+                if (input[item] != ingredients[item]) return false;
+            }
+
+            return true;
+        }
+
 #if UNITY_EDITOR
         // Needed in order to allow changes to the Inventory in the editor to be saved.
 
