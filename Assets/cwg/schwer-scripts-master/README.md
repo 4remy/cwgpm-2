@@ -1,38 +1,32 @@
 # schwer-scripts
-[![Source](https://img.shields.io/badge/Source-schwer--scripts-0366D6.svg)](https://github.com/itsschwer/schwer-scripts) [![Showcase](https://img.shields.io/badge/Demo-Showcase-0366D6.svg)](https://github.com/itsschwer/Showcase) [![Donate](https://img.shields.io/badge/Donate-PayPal-brightgreen.svg)](https://www.paypal.com/donate?hosted_button_id=NYFKAS24D4MJS)
+[![Showcase](https://img.shields.io/badge/Demo-Showcase-blue.svg)](https://github.com/itsschwer/Showcase) [![Donate](https://img.shields.io/badge/Donate-PayPal-brightgreen.svg)](https://www.paypal.com/donate?hosted_button_id=NYFKAS24D4MJS)
 
 Open-source code for Unity.
 
-A demonstration of how this repository could be used, including a playable demo, is available from the [Showcase](https://github.com/itsschwer/Showcase) repository.
+A demonstration of how this repository could be used, including a playable demo, is available in the [Showcase](https://github.com/itsschwer/Showcase) repository.
 
 ## About
 This repository contains skeleton implementations of various features. Feel free to use this as a reference or a base for your own project(s).
 
 I'm just a hobbyist, so if you have any improvements or suggestions, let me know!
 ## Contents
-* [Item System](/schwer-scripts/ItemSystem) (serializable!)
-* [Editor scripts](/schwer-scripts/Editor)
+* Serializable Item System (using Scriptable Objects)
+* [Editor scripts](https://github.com/itsschwer/schwer-scripts/tree/master/SchwerScripts/Editor)
     * `PrefabMenu` (menu items to speed up prefab workflow)
     * `AssetsUtility` (work with assets via code)
     * `ScriptableObjectUtility` (work with Scriptable Object assets via code)
     * TBA
-* [Common scripts](/schwer-scripts/Common)
-    * `BinaryIO` (wrapper for reading and writing binary files)
+* [Common scripts](https://github.com/itsschwer/schwer-scripts/tree/master/SchwerScripts/Common)
     * `MonoBehaviourSingleton` & `DDOLSingleton`
 * TBA (WebGL save/loading!)
 
-<br/>
-
-***The rest of this readme is copied from the [ItemSystem readme](/schwer-scripts/ItemSystem/README.md)!***
-# schwer-scripts: item system
-A skeleton implementation of items and (serializable!) inventories using Scriptable Objects, as well as several supporting editor tools.
-
+# Serializable Item System
+An skeleton implementation of items and inventories using Scriptable Objects, as well as several supporting editor scripts.
 ## Features
 * Items and inventories in Unity using Scriptable Objects
 * Inventories that support saving and loading (i.e. serializable)
 * An Item Database that is simple to generate and regenerate
 * An Item Editor (custom editor window)
-
 ## Limitations
 * Inventories are implemented using a `Dictionary`, which Unity does not serialize. This means that:
     * `Inventory` assets cannot be edited via the Inspector.
@@ -42,17 +36,15 @@ A skeleton implementation of items and (serializable!) inventories using Scripta
 * By default, inventories do not support fixed inventory sizes, item weighting systems, or the like (though developers may try to implement such functionalities).
     * For reference, as may be evident from the demo prefab, this system was modelled after the one in *Breath of the Wild*.
         * *(Different inventory sections could be handled with front-end sorting code, e.g. through use of an `ItemType` enum).*
-
 ## Notes
 * This implementation only provides the bare bones of an item system.
 * It is expected that developers will extend the `Item` class in order for items to be usable in a game (e.g. consumables).
 * The contents of the provided Demo folder is intended only for developers to familiarise themselves with the system.
     * Developers should implement their own system for displaying inventory to the UI, items that can be placed in the world, etc.
 * As `Inventory` assets are Scriptable Objects, there must be a reference to each `Inventory` asset at all times during runtime in order for their values to persist, or Unity will unload them the next time it unloads unused resources.
-
 ## Getting started
-Download this repository and add the `schwer-scripts` folder to your Unity project.
-Familiarise yourself with the system by dragging the prefab `Inventory` (`schwer-scripts/ItemSystem/Demo/UI/Prefabs/Inventory`) into a new Scene and following along with this section.
+Download this repository and add the `SchwerScripts` folder to your Unity project.
+Familiarise yourself with the system by dragging the prefab `Inventory` (`SchwerScripts/ItemSystem/Demo/UI/Prefabs/Inventory`) into a new Scene and following along with this section.
 
 You may need to create an Event System (`Right-click in the Hierarchy > UI/Event System`) in order to interact with the demo UI. Also note that the UI was designed for a 16:9 game window.
 
@@ -87,7 +79,6 @@ Enter Play mode and select your `Inventory` asset to experiment with the demo co
 
 ## Usage guide
 Non-editor scripts are in the namespace `Schwer.ItemSystem`, so remember to add that as a `using` when working with the Item System.
-
 ### Item Database
 Generate or regenerate by:
 * Menu item `Item System/Generate Item Database`
@@ -158,7 +149,7 @@ public void RemoveItem(Item item) {
 ```
 
 ## Saving and Loading
-Saving and loading has successfully been done using a `BinaryFormatter` approach *(refer to [`BinaryIO`](/schwer-scripts/Common/NonMono/BinaryIO.cs))*. Ensure that the object you serialize uses `SerializableInventory` and not `Inventory`.
+Saving and loading has successfully been done using a `BinaryFormatter` approach. Ensure that the object you serialize uses `SerializableInventory` and not `Inventory`.
 ##### Example code:
 ```csharp
 using Schwer.ItemSystem;
@@ -180,6 +171,31 @@ public class SaveData {
     // Load save data 
     public void Load(out Inventory inventory, ItemDatabase itemDB) {
         inventory = this.inventory.Deserialize(itemDB);
+    }
+}
+```
+```csharp
+public static class SaveReadWriter {
+    // Returns save data from the file at the specified location (if possible).
+    public static SaveData ReadSaveDataFile(string filePath) {
+        BinaryFormatter formatter = new BinaryFormatter();
+        using (FileStream stream = new FileStream(filePath, FileMode.Open)) {
+            try {
+                return formatter.Deserialize(stream) as SaveData;
+            }
+            catch (System.Runtime.Serialization.SerializationException e) {
+                Debug.Log("File at: " + filePath + " is incompatible. " + e);
+            }
+        }
+        return null;
+    }
+
+    // Writes the save data to a file at the specified location.
+    public static void WriteSaveDataFile(SaveData saveData, string filePath) {
+        BinaryFormatter formatter = new BinaryFormatter();
+        using (FileStream stream = new FileStream(filePath, FileMode.Create)) {
+            formatter.Serialize(stream, saveData);
+        }
     }
 }
 ```
