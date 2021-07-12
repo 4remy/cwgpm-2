@@ -54,9 +54,9 @@ public class Door : Interactable
 
     protected override void Interact()
     {
-       // if inventory.item.isKey = true
         if (player.inventory[key] > 0)
         {
+            Debug.Log("you had a key!");
             if (Input.GetKeyDown(KeyCode.Space) && playerInRange && thisDoorType == DoorType.keyBox)
             {
                 if (!open)
@@ -71,12 +71,17 @@ public class Door : Interactable
             }
             if (Input.GetKeyDown(KeyCode.Space) && playerInRange && thisDoorType == DoorType.keyDoor)
             {
+                Debug.Log("open door called!");
                 OpenDoor();
             }
         }
         else
         {
             Close();
+        }
+        if (player.inventory[key] == 0)
+        {
+            Debug.Log("no keys");
         }
     }
 
