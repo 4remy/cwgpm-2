@@ -7,9 +7,9 @@ using Schwer.ItemSystem;
 public class GameSaveManager : MonoBehaviour
 {
     public static GameSaveManager gameSave;
+    [SerializeField] private ItemDatabase itemDB = default;
     public List<ScriptableObject> objects = new List<ScriptableObject>();
     [SerializeField] private InventorySO playerInventory = default;
-
 
     /*
     private void Awake()
@@ -74,10 +74,7 @@ public class GameSaveManager : MonoBehaviour
             FileStream invFile = File.Open(Application.persistentDataPath + "/player.inv", FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             var serializedInvData = (SerializableInventory)bf.Deserialize(invFile);
-            Inventory Deserialize(ItemDatabase itemDatabase)
-            inventory = this.SerializableInventory.Deserialize(itemDB);
-            playerInventory.value = invData;
-            // turn serialised inv data into inventory
+            playerInventory.value = serializedInvData.Deserialize(itemDB);
         }
         for (int i = 0; i < objects.Count; i++)
         {
