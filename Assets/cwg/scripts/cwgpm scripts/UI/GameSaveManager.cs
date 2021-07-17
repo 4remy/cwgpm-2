@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -8,9 +7,9 @@ using Schwer.ItemSystem;
 public class GameSaveManager : MonoBehaviour
 {
     public static GameSaveManager gameSave;
+    [SerializeField] private ItemDatabase itemDB = default;
     public List<ScriptableObject> objects = new List<ScriptableObject>();
     [SerializeField] private InventorySO playerInventory = default;
-
 
     /*
     private void Awake()
@@ -30,11 +29,12 @@ public class GameSaveManager : MonoBehaviour
     {
         // this needs to reset the boolvalues to false
         //or do i just do it by hand
-        for(int i = 0; i < objects.Count; i++)
+        for (int i = 0; i < objects.Count; i++)
         {
-            if(File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
+            var path = Application.persistentDataPath + string.Format("/{0}.json", i);
+            if (File.Exists(path))
             {
-                File.Delete(Application.persistentDataPath + string.Format("/{0}.json", i));
+                File.Delete(path);
             }
         }
     }
@@ -44,11 +44,11 @@ public class GameSaveManager : MonoBehaviour
         LoadScriptables();
     }
 
-   /* private void OnDisable()
-    {
-        SaveScriptables();
-    }
-   */
+    /* private void OnDisable()
+     {
+         SaveScriptables();
+     }
+    */
 
     public void SaveScriptables()
     {
@@ -56,35 +56,33 @@ public class GameSaveManager : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         var invData = playerInventory.value.Serialize();
         bf.Serialize(invFile, invData);
+        invFile.Close();
 
-        for (int i = 0; i < objects.Count; i ++)
+        for (int i = 0; i < objects.Count; i++)
         {
             FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.json", i));
-            BinaryFormatter binary = new BinaryFormatter();
             var json = JsonUtility.ToJson(objects[i]);
-            binary.Serialize(file, json);
+            bf.Serialize(file, json);
             file.Close();
         }
-
     }
 
     public void LoadScriptables()
     {
-        if(File.Exists(Application.persistentDataPath + "/player.inv"))
+        var invPath = Application.persistentDataPath + "/player.inv";
+        if (File.Exists(invPath))
         {
-            FileStream invFile = File.Open(Application.persistentDataPath + "/player.inv", FileMode.Open);
+            FileStream invFile = File.Open(invPath, FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             var serializedInvData = (SerializableInventory)bf.Deserialize(invFile);
-            Inventory Deserialize(ItemDatabase itemDatabase)
-            inventory = this.SerializableInventory.Deserialize(itemDB);
-            playerInventory.value = invData;
-            // turn serialised inv data into inventory
+            playerInventory.value = serializedInvData.Deserialize(itemDB);
         }
-        for(int i = 0; i < objects.Count; i ++)
+        for (int i = 0; i < objects.Count; i++)
         {
-            if(File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
+            var objPath = Application.persistentDataPath + string.Format("/{0}.json", i);
+            if (File.Exists(objPath))
             {
-                FileStream file = File.Open(Application.persistentDataPath + string.Format("/{0}.json", i), FileMode.Open);
+                FileStream file = File.Open(objPath, FileMode.Open);
                 BinaryFormatter binary = new BinaryFormatter();
                 JsonUtility.FromJsonOverwrite((string)binary.Deserialize(file), objects[i]);
                 file.Close();
