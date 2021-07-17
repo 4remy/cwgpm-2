@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -30,9 +29,9 @@ public class GameSaveManager : MonoBehaviour
     {
         // this needs to reset the boolvalues to false
         //or do i just do it by hand
-        for(int i = 0; i < objects.Count; i++)
+        for (int i = 0; i < objects.Count; i++)
         {
-            if(File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
+            if (File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
             {
                 File.Delete(Application.persistentDataPath + string.Format("/{0}.json", i));
             }
@@ -44,11 +43,11 @@ public class GameSaveManager : MonoBehaviour
         LoadScriptables();
     }
 
-   /* private void OnDisable()
-    {
-        SaveScriptables();
-    }
-   */
+    /* private void OnDisable()
+     {
+         SaveScriptables();
+     }
+    */
 
     public void SaveScriptables()
     {
@@ -57,7 +56,7 @@ public class GameSaveManager : MonoBehaviour
         var invData = playerInventory.value.Serialize();
         bf.Serialize(invFile, invData);
 
-        for (int i = 0; i < objects.Count; i ++)
+        for (int i = 0; i < objects.Count; i++)
         {
             FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.json", i));
             BinaryFormatter binary = new BinaryFormatter();
@@ -70,7 +69,7 @@ public class GameSaveManager : MonoBehaviour
 
     public void LoadScriptables()
     {
-        if(File.Exists(Application.persistentDataPath + "/player.inv"))
+        if (File.Exists(Application.persistentDataPath + "/player.inv"))
         {
             FileStream invFile = File.Open(Application.persistentDataPath + "/player.inv", FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
@@ -80,9 +79,9 @@ public class GameSaveManager : MonoBehaviour
             playerInventory.value = invData;
             // turn serialised inv data into inventory
         }
-        for(int i = 0; i < objects.Count; i ++)
+        for (int i = 0; i < objects.Count; i++)
         {
-            if(File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
+            if (File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
             {
                 FileStream file = File.Open(Application.persistentDataPath + string.Format("/{0}.json", i), FileMode.Open);
                 BinaryFormatter binary = new BinaryFormatter();
