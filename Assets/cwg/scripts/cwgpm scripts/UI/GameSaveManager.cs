@@ -31,9 +31,10 @@ public class GameSaveManager : MonoBehaviour
         //or do i just do it by hand
         for (int i = 0; i < objects.Count; i++)
         {
-            if (File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
+            var path = Application.persistentDataPath + string.Format("/{0}.json", i);
+            if (File.Exists(path))
             {
-                File.Delete(Application.persistentDataPath + string.Format("/{0}.json", i));
+                File.Delete(path);
             }
         }
     }
@@ -55,32 +56,33 @@ public class GameSaveManager : MonoBehaviour
         BinaryFormatter bf = new BinaryFormatter();
         var invData = playerInventory.value.Serialize();
         bf.Serialize(invFile, invData);
+        invFile.Close();
 
         for (int i = 0; i < objects.Count; i++)
         {
             FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.json", i));
-            BinaryFormatter binary = new BinaryFormatter();
             var json = JsonUtility.ToJson(objects[i]);
-            binary.Serialize(file, json);
+            bf.Serialize(file, json);
             file.Close();
         }
-
     }
 
     public void LoadScriptables()
     {
-        if (File.Exists(Application.persistentDataPath + "/player.inv"))
+        var invPath = Application.persistentDataPath + "/player.inv";
+        if (File.Exists(invPath))
         {
-            FileStream invFile = File.Open(Application.persistentDataPath + "/player.inv", FileMode.Open);
+            FileStream invFile = File.Open(invPath, FileMode.Open);
             BinaryFormatter bf = new BinaryFormatter();
             var serializedInvData = (SerializableInventory)bf.Deserialize(invFile);
             playerInventory.value = serializedInvData.Deserialize(itemDB);
         }
         for (int i = 0; i < objects.Count; i++)
         {
-            if (File.Exists(Application.persistentDataPath + string.Format("/{0}.json", i)))
+            var objPath = Application.persistentDataPath + string.Format("/{0}.json", i);
+            if (File.Exists(objPath))
             {
-                FileStream file = File.Open(Application.persistentDataPath + string.Format("/{0}.json", i), FileMode.Open);
+                FileStream file = File.Open(objPath, FileMode.Open);
                 BinaryFormatter binary = new BinaryFormatter();
                 JsonUtility.FromJsonOverwrite((string)binary.Deserialize(file), objects[i]);
                 file.Close();
