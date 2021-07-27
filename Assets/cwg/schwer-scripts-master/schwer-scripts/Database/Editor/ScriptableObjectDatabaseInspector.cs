@@ -18,7 +18,7 @@ namespace SchwerEditor.Database {
             var arrayProperty = new SerializedObject((TDatabase)target).GetIterator();
             // `Base`(?) to `Script`
             arrayProperty.NextVisible(true);
-            // to list
+            // to array — relies on the first serializable property being an array (or list)
             arrayProperty.NextVisible(true);
             if (arrayProperty.isArray) {
                 var listCount = arrayProperty.arraySize;
