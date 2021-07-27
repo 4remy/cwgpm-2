@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Schwer.Database {
     public abstract class ScriptableObjectDatabase<T> : ScriptableObject where T : ScriptableObject {
