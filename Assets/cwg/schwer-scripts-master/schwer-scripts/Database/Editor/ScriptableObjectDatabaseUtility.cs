@@ -15,18 +15,17 @@ namespace SchwerEditor.Database {
             }
             GUILayout.Space(5);
 
-            var listProperty = new SerializedObject((TDatabase)target).GetIterator();
+            var arrayProperty = new SerializedObject((TDatabase)target).GetIterator();
             // `Base`(?) to `Script`
-            listProperty.NextVisible(true);
+            arrayProperty.NextVisible(true);
             // to list
-            listProperty.NextVisible(true);
-            if (listProperty.propertyType == SerializedPropertyType.Generic) {
-                // Use Copy() to avoid unwanted iterating.
-                var listCount = listProperty.arraySize;
-                var listName = listProperty.displayName;
+            arrayProperty.NextVisible(true);
+            if (arrayProperty.isArray) {
+                var listCount = arrayProperty.arraySize;
+                var listName = arrayProperty.displayName;
                 GUILayout.Label($"{listName} ({listCount})");
 
-                foreach (SerializedProperty elementProperty in listProperty) {
+                foreach (SerializedProperty elementProperty in arrayProperty) {
                     if (elementProperty.propertyType == SerializedPropertyType.ObjectReference) {
                         using (new EditorGUI.DisabledScope(true)) {
                             EditorGUILayout.PropertyField(elementProperty, GUIContent.none);
@@ -35,7 +34,7 @@ namespace SchwerEditor.Database {
                 }
             }
             else {
-                EditorGUILayout.HelpBox($"Expected first property in `{typeof(TDatabase).Name} to be of type {SerializedPropertyType.Generic.ToString()}` but got {listProperty.propertyType.ToString()} instead.", MessageType.Error);
+                EditorGUILayout.HelpBox($"Expected first property in `{typeof(TDatabase).Name}` to be an array", MessageType.Error);
             }
         }
     }
