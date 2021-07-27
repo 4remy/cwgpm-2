@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using UnityEngine;
 
 namespace Schwer.ItemSystem {
-    public class RecipeDatabase : ScriptableObject {
+    using Schwer.Database;
+
+    public class RecipeDatabase : ScriptableObjectDatabase<Recipe> {
         // Generated via RecipeDatabaseUtility
-        [field:SerializeField] private List<Recipe> recipes;
-        public void Initialise(List<Recipe> recipes) {
+        [SerializeField] private Recipe[] recipes;
+
+        public override void Initialise(Recipe[] recipes) {
             this.recipes = recipes;
         }
 
-        public ReadOnlyCollection<Recipe> GetRecipes() => recipes.AsReadOnly();
+        public ReadOnlyCollection<Recipe> GetRecipes() => System.Array.AsReadOnly(recipes);
     }
 }
