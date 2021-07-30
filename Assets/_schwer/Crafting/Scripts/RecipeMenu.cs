@@ -47,8 +47,12 @@ namespace Schwer.ItemSystem {
             this.manager = manager;
             if (manager != null) {
                 manager.GetComponent<Canvas>().enabled = false;
+                chooseButton.gameObject.SetActive(true);
             }
-            
+            else {
+                chooseButton.gameObject.SetActive(false);
+            }
+
             this.GetComponent<Canvas>().enabled = true;
         }
 
