@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 
 namespace Schwer.ItemSystem {
-    public class RecipeMenu : MonoBehaviour, IRecipeSlotManager {
+    public class RecipeMenu : MonoBehaviour {
         [SerializeField] private RecipeDatabase recipeDatabase = default;
         [SerializeField] private InventorySO _inventory = default;
         private Inventory inventory => _inventory.value;
@@ -13,7 +13,6 @@ namespace Schwer.ItemSystem {
         private CraftingManager manager;
 
         private RecipeSlot[] recipeSlots;
-        private Recipe selectedRecipe;
 
         private void Awake() => GenerateSlots();
 
@@ -26,7 +25,8 @@ namespace Schwer.ItemSystem {
                     //! Should enforce layout in Instantiate to avoid unnecessary transform changes?
                     var slot = Instantiate(recipeSlot.gameObject, this.transform);
                     recipeSlots[i] = slot.GetComponent<RecipeSlot>();
-                    recipeSlots[i].button.onClick.AddListener(OnRecipeClick);
+                    //! recipeSlots[i].Initialise();
+                    recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipeSlots[i].recipe));
                 }
             }
 
@@ -73,16 +73,12 @@ namespace Schwer.ItemSystem {
             }
         }
 
-        public void OnRecipeSelected(Recipe recipe) {
-            // if recipe is discovered
-            if (true) selectedRecipe = recipe;
-        }
-
         // Called when a recipe slot is clicked on.
-        public void OnRecipeClick() {
-            if (selectedRecipe != null && manager != null) {
-                if (selectedRecipe.IsSubsetOf(inventory, manager.ingredients)) {
-                    foreach (var item in selectedRecipe.input) {
+        public void OnRecipeClick(Recipe recipe) {
+            //! if recipe != null && discovered && manager != null
+            if (recipe != null && manager != null) {
+                if (recipe.IsSubsetOf(inventory, manager.ingredients)) {
+                    foreach (var item in recipe.input) {
                         manager.ingredients[item.Key] += item.Value;
                         inventory[item.Key] -= item.Value;
                     }
