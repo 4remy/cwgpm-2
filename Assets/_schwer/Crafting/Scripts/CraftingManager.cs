@@ -119,7 +119,6 @@ namespace Schwer.ItemSystem {
                 // Clear the current selection if item is fully depleted
                 if (inventory[selectedItem] <= 0) {
                     OnItemSelected(null);
-                    SelectFirstSlot();
                 }
             }
         }
