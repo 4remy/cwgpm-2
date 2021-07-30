@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Schwer.ItemSystem {
@@ -7,36 +8,17 @@ namespace Schwer.ItemSystem {
         [SerializeField] private InventorySO _inventory = default;
         private Inventory inventory => _inventory.value;
 
-        [Header("Prefabs")]
-        [SerializeField] private RecipeSlot recipeSlot = default;
-
         private CraftingManager manager;
 
-        private RecipeSlot[] recipeSlots;
+        private List<RecipeSlot> recipeSlots = new List<RecipeSlot>();
 
-        private void Awake() => GenerateSlots();
+        private void Awake() {
+            GetComponentsInChildren<RecipeSlot>(recipeSlots);
 
-        private void GenerateSlots() {
             var recipes = recipeDatabase.GetRecipes();
-            if (recipeSlots == null) {
-                recipeSlots = new RecipeSlot[recipes.Count - 1];
-
-                for (int i = 0; i < recipeSlots.Length; i++) {
-                    //! Should enforce layout in Instantiate to avoid unnecessary transform changes?
-                    var slot = Instantiate(recipeSlot.gameObject, this.transform);
-                    recipeSlots[i] = slot.GetComponent<RecipeSlot>();
-                    //! recipeSlots[i].Initialise();
-                    recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipeSlots[i].recipe));
-                }
-            }
-
-            LayOutSlots();
-        }
-
-        private void LayOutSlots() {
-            //! width, height, spacing, rows, columns
-            for (int i = 0; i < recipeSlots.Length; i++) {
-                var transform = (RectTransform)recipeSlots[i].transform;
+            for (int i = 0; i < recipeSlots.Count; i++) {
+                // recipeSlots[i].Initialise();
+                recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipeSlots[i].recipe));
             }
         }
 
