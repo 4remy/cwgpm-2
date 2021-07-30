@@ -17,8 +17,9 @@ namespace Schwer.ItemSystem {
 
             var recipes = recipeDatabase.GetRecipes();
             for (int i = 0; i < recipeSlots.Count; i++) {
-                // recipeSlots[i].Initialise();
-                recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipeSlots[i].recipe));
+                var recipe = (i < recipes.Count) ? recipes[i] : null;
+                recipeSlots[i].Initialise(recipe, true); //!
+                recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipe));
             }
         }
 
