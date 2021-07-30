@@ -5464,7 +5464,7 @@ MonoBehaviour:
   craftButton: {fileID: 13454037}
   clearButton: {fileID: 867526203}
   inventorySlotsHolder: {fileID: 6148516424912367020}
-  ingredientSlotsHolder: {fileID: 1590751856}
+  ingredientSlotsHolder: {fileID: 1809307769}
 --- !u!1001 &6148516425132082008
 PrefabInstance:
   m_ObjectHideFlags: 0
