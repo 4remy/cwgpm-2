@@ -22,7 +22,8 @@ namespace Schwer.ItemSystem {
         [SerializeField] private GameObject inventorySlotsHolder = default;
         [SerializeField] private GameObject ingredientSlotsHolder = default;
 
-        public Canvas canvas { get; private set; }
+        private Canvas canvas;
+        private CanvasGroup canvasGroup;
         private List<ItemSlot> inventorySlots = new List<ItemSlot>();
 
         public Inventory ingredients { get; private set; } = new Inventory();
@@ -47,6 +48,8 @@ namespace Schwer.ItemSystem {
 
         private void Awake() {
             canvas = GetComponent<Canvas>();
+            canvasGroup = GetComponent<CanvasGroup>();
+
             inventorySlotsHolder.GetComponentsInChildren<ItemSlot>(inventorySlots);
             ingredientSlotsHolder.GetComponentsInChildren<ItemSlot>(ingredientSlots);
 
@@ -147,5 +150,12 @@ namespace Schwer.ItemSystem {
 
         // Called by the recipe button's OnClick UnityEvent
         public void OpenRecipeMenu() => recipeMenu.Open(this);
+
+        public void Enable(bool value) {
+            // Disable canvas rather than game object
+            // so that ingredients pouch is persistent
+            canvas.enabled = value;
+            canvasGroup.interactable = value;
+        }
     }
 }

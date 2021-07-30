@@ -27,9 +27,7 @@ namespace Schwer.ItemSystem {
 
         private void OnDisable() {
             if (manager != null) {
-                // Disable canvas rather than game object
-                // so that ingredients pouch is persistent
-                manager.canvas.enabled = true;
+                manager.Enable(true);
                 manager = null;
             }
         }
@@ -47,9 +45,7 @@ namespace Schwer.ItemSystem {
         public void Open(CraftingManager manager) {
             this.manager = manager;
             if (manager != null) {
-                // Disable canvas rather than game object
-                // so that ingredients pouch is persistent
-                manager.canvas.enabled = false;
+                manager.Enable(false);
             }
 
             this.gameObject.SetActive(true);
