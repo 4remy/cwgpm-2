@@ -23,7 +23,7 @@ namespace Schwer.ItemSystem {
 
         private List<ItemSlot> inventorySlots = new List<ItemSlot>();
 
-        private Inventory ingredients = new Inventory();
+        public Inventory ingredients { get; private set; } = new Inventory();
         private List<ItemSlot> ingredientSlots = new List<ItemSlot>();
 
         private Item selectedItem;
