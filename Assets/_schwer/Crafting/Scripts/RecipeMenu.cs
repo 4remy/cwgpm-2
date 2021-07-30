@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Schwer.ItemSystem {
@@ -17,6 +18,8 @@ namespace Schwer.ItemSystem {
 
         private RecipeSlot[] recipeSlots;
         private Recipe selectedRecipe;
+
+        private void Awake() => GenerateSlots();
 
         private void GenerateSlots() {
             var recipes = recipeDatabase.GetRecipes();
@@ -40,6 +43,16 @@ namespace Schwer.ItemSystem {
             }
         }
 
+        private void SelectFirstSlot() {
+            // Need to set selection to null then select first slot to
+            // ensure the item slot button properly highlights
+            EventSystem.current.SetSelectedGameObject(null);
+            var selected = EventSystem.current.currentSelectedGameObject;
+            if (selected == null || !selected.transform.IsChildOf(this.transform)) {
+                EventSystem.current.SetSelectedGameObject(recipeSlots[0].gameObject);
+            }
+        }
+
         private void OnEnable() => Open(null);
         private void OnDisable() => Close();
 
@@ -54,6 +67,8 @@ namespace Schwer.ItemSystem {
             }
 
             this.GetComponent<Canvas>().enabled = true;
+
+            SelectFirstSlot();
         }
 
         public void Close() {
