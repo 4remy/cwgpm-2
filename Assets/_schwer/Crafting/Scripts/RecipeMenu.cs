@@ -23,6 +23,17 @@ namespace Schwer.ItemSystem {
             }
         }
 
+        private void OnEnable() => SelectFirstSlot();
+
+        private void OnDisable() {
+            if (manager != null) {
+                // Disable canvas rather than game object
+                // so that ingredients pouch is persistent
+                manager.canvas.enabled = true;
+                manager = null;
+            }
+        }
+
         private void SelectFirstSlot() {
             // Need to set selection to null then select first slot to
             // ensure the item slot button properly highlights
@@ -33,9 +44,6 @@ namespace Schwer.ItemSystem {
             }
         }
 
-        private void OnEnable() => Open(null);
-        private void OnDisable() => Close();
-
         public void Open(CraftingManager manager) {
             this.manager = manager;
             if (manager != null) {
@@ -45,19 +53,6 @@ namespace Schwer.ItemSystem {
             }
 
             this.gameObject.SetActive(true);
-
-            SelectFirstSlot();
-        }
-
-        public void Close() {
-            this.gameObject.SetActive(false);
-
-            if (manager != null) {
-                // Disable canvas rather than game object
-                // so that ingredients pouch is persistent
-                manager.canvas.enabled = true;
-                manager = null;
-            }
         }
 
         // Called when a recipe slot is clicked on.
@@ -70,7 +65,7 @@ namespace Schwer.ItemSystem {
                         manager.ingredients[item.Key] += item.Value;
                         inventory[item.Key] -= item.Value;
                     }
-                    Close();
+                    this.gameObject.SetActive(false);
                 }
                 else {
                     Debug.Log("Insufficient ingredients!");
