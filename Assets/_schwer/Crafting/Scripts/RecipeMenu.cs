@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace Schwer.ItemSystem {
     public class RecipeMenu : MonoBehaviour, IRecipeSlotManager {
@@ -10,9 +9,6 @@ namespace Schwer.ItemSystem {
 
         [Header("Prefabs")]
         [SerializeField] private RecipeSlot recipeSlot = default;
-
-        [Header("Components")]
-        [SerializeField] private Button chooseButton = default;
 
         private CraftingManager manager;
 
@@ -30,6 +26,7 @@ namespace Schwer.ItemSystem {
                     //! Should enforce layout in Instantiate to avoid unnecessary transform changes?
                     var slot = Instantiate(recipeSlot.gameObject, this.transform);
                     recipeSlots[i] = slot.GetComponent<RecipeSlot>();
+                    recipeSlots[i].button.onClick.AddListener(OnRecipeClick);
                 }
             }
 
@@ -60,10 +57,6 @@ namespace Schwer.ItemSystem {
             this.manager = manager;
             if (manager != null) {
                 manager.GetComponent<Canvas>().enabled = false;
-                chooseButton.gameObject.SetActive(true);
-            }
-            else {
-                chooseButton.gameObject.SetActive(false);
             }
 
             this.GetComponent<Canvas>().enabled = true;
@@ -80,21 +73,13 @@ namespace Schwer.ItemSystem {
             }
         }
 
-        public void OnRecipeSelected(Recipe recipe) => UpdateSelection(recipe);
-
-        public void UpdateSelection(Recipe recipe) {
-            selectedRecipe = recipe;
-
-            if (recipe != null) {
-                if (chooseButton != null) chooseButton.interactable = true;
-            }
-            else {
-                if (chooseButton != null) chooseButton.interactable = false;
-            }
+        public void OnRecipeSelected(Recipe recipe) {
+            // if recipe is discovered
+            if (true) selectedRecipe = recipe;
         }
 
-        // Called by the choose button's OnClick UnityEvent
-        public void ChooseButtonPressed() {
+        // Called when a recipe slot is clicked on.
+        public void OnRecipeClick() {
             if (selectedRecipe != null && manager != null) {
                 if (selectedRecipe.IsSubsetOf(inventory, manager.ingredients)) {
                     foreach (var item in selectedRecipe.input) {

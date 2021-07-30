@@ -7,6 +7,8 @@ namespace Schwer.ItemSystem
     public class RecipeSlot : MonoBehaviour, ISelectHandler {
         [Header("Components")]
         [SerializeField] private Image sprite = default;
+        [SerializeField] private Button _button = default;
+        public Button button => _button;
 
         public IRecipeSlotManager manager { get; set; }
         public Recipe recipe { get; private set; }
