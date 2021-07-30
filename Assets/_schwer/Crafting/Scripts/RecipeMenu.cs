@@ -39,19 +39,23 @@ namespace Schwer.ItemSystem {
         public void Open(CraftingManager manager) {
             this.manager = manager;
             if (manager != null) {
-                manager.GetComponent<Canvas>().enabled = false;
+                // Disable canvas rather than game object
+                // so that ingredients pouch is persistent
+                manager.canvas.enabled = false;
             }
 
-            this.GetComponent<Canvas>().enabled = true;
+            this.gameObject.SetActive(true);
 
             SelectFirstSlot();
         }
 
         public void Close() {
-            this.GetComponent<Canvas>().enabled = false;
+            this.gameObject.SetActive(false);
 
             if (manager != null) {
-                manager.GetComponent<Canvas>().enabled = true;
+                // Disable canvas rather than game object
+                // so that ingredients pouch is persistent
+                manager.canvas.enabled = true;
                 manager = null;
             }
         }
@@ -61,6 +65,7 @@ namespace Schwer.ItemSystem {
             //! if recipe != null && discovered && manager != null
             if (recipe != null && manager != null) {
                 if (recipe.IsSubsetOf(inventory, manager.ingredients)) {
+                    manager.ClearIngredients();
                     foreach (var item in recipe.input) {
                         manager.ingredients[item.Key] += item.Value;
                         inventory[item.Key] -= item.Value;

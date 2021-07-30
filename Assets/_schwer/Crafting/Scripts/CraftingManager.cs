@@ -16,11 +16,13 @@ namespace Schwer.ItemSystem {
         [SerializeField] private Button addButton = default;
         [SerializeField] private Button craftButton = default;
         [SerializeField] private Button clearButton = default;
+        [SerializeField] private RecipeMenu recipeMenu = default;
 
         [Header("Containers")]
         [SerializeField] private GameObject inventorySlotsHolder = default;
         [SerializeField] private GameObject ingredientSlotsHolder = default;
 
+        public Canvas canvas { get; private set; }
         private List<ItemSlot> inventorySlots = new List<ItemSlot>();
 
         public Inventory ingredients { get; private set; } = new Inventory();
@@ -44,6 +46,7 @@ namespace Schwer.ItemSystem {
         }
 
         private void Awake() {
+            canvas = GetComponent<Canvas>();
             inventorySlotsHolder.GetComponentsInChildren<ItemSlot>(inventorySlots);
             ingredientSlotsHolder.GetComponentsInChildren<ItemSlot>(ingredientSlots);
 
@@ -141,5 +144,8 @@ namespace Schwer.ItemSystem {
 
             Debug.Log($"The ingredients didn't yield anything...");
         }
+
+        // Called by the recipe button's OnClick UnityEvent
+        public void OpenRecipeMenu() => recipeMenu.Open(this);
     }
 }
