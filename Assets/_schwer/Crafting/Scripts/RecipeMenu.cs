@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Schwer.ItemSystem {
     public class RecipeMenu : MonoBehaviour, IRecipeSlotManager {
@@ -8,6 +9,9 @@ namespace Schwer.ItemSystem {
 
         [Header("Prefabs")]
         [SerializeField] private RecipeSlot recipeSlot = default;
+
+        [Header("Components")]
+        [SerializeField] private Button chooseButton = default;
 
         private CraftingManager manager;
 
@@ -57,28 +61,23 @@ namespace Schwer.ItemSystem {
             }
         }
 
-        public void OnRecipeSelected(Recipe recipe) => UpdateSelectionDisplay(recipe);
+        public void OnRecipeSelected(Recipe recipe) => UpdateSelection(recipe);
 
-        public void UpdateSelectionDisplay(Recipe recipe) {
+        public void UpdateSelection(Recipe recipe) {
             selectedRecipe = recipe;
 
             if (recipe != null) {
-                // Set name and description
-                // Enable choose button
+                if (chooseButton != null) chooseButton.interactable = true;
             }
             else {
-                // Clear name and description
-                // Disable choose button
+                if (chooseButton != null) chooseButton.interactable = false;
             }
         }
 
         // Called by the choose button's OnClick UnityEvent
         public void ChooseButtonPressed() {
-            if (selectedRecipe != null) {
-                var hasIngredients = (manager != null) ?
-                    selectedRecipe.IsSubsetOf(inventory, manager.ingredients) :
-                    selectedRecipe.IsSubsetOf(inventory);
-                if (hasIngredients) {
+            if (selectedRecipe != null && manager != null) {
+                if (selectedRecipe.IsSubsetOf(inventory, manager.ingredients)) {
                     foreach (var item in selectedRecipe.input) {
                         manager.ingredients[item.Key] += item.Value;
                         inventory[item.Key] -= item.Value;
