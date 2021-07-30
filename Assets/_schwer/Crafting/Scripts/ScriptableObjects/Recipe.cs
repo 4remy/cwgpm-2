@@ -20,6 +20,14 @@ namespace Schwer.ItemSystem {
             return true;
         }
 
+        public bool IsSubsetOf(Inventory ingredients) {
+            foreach (var item in input.Keys) {
+                if (ingredients[item] < input[item]) return false;
+            }
+
+            return true;
+        }
+
 #if UNITY_EDITOR
         // Needed in order to allow changes to the Inventory in the editor to be saved.
 
