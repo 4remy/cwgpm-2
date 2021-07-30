@@ -20,9 +20,19 @@ namespace Schwer.ItemSystem {
             return true;
         }
 
-        public bool IsSubsetOf(Inventory ingredients) {
+        public bool IsSubsetOf(Inventory inventory) {
             foreach (var item in input.Keys) {
-                if (ingredients[item] < input[item]) return false;
+                if (inventory[item] < input[item]) return false;
+            }
+
+            return true;
+        }
+
+        // Use this for checking inventory and ingredients
+        // to avoid having to create a separate inventory
+        public bool IsSubsetOf(Inventory inventory1, Inventory inventory2) {
+            foreach (var item in input.Keys) {
+                if ((inventory1[item] + inventory2[item]) < input[item]) return false;
             }
 
             return true;
