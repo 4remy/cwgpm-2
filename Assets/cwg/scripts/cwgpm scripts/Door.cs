@@ -47,6 +47,7 @@ public class Door : Interactable
         if(open)
         {
             animator.SetBool("Open", true);
+            physicsCollider.enabled = false;
         }
  
 
@@ -93,11 +94,12 @@ public class Door : Interactable
         //change to different sprite
         animator.SetBool("Open", true);
         Debug.Log("door Opened");
-        storedOpen.RuntimeValue = open;
+
         //the door needs an animator for open
         open = true;
         //the box collider block is diabled
         physicsCollider.enabled = false;
+        storedOpen.RuntimeValue = open;
     }
 
     public void OpenBox()
