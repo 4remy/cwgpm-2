@@ -13,5 +13,7 @@ namespace Schwer.ItemSystem {
         }
 
         public ReadOnlyCollection<Recipe> GetRecipes() => System.Array.AsReadOnly(recipes);
+
+        public Recipe GetRecipeByID(int id) => GetFromID(id, recipes);
     }
 }
