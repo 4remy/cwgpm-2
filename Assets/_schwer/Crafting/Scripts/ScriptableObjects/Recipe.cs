@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Schwer.Database;
+using UnityEngine;
 
 namespace Schwer.ItemSystem {
     [CreateAssetMenu(menuName = "Item System/Crafting Recipe")]
-    public class Recipe : ScriptableObject {
+    public class Recipe : ScriptableObject, IID {
         [SerializeField] private int _id = default;
         public int id => _id;
         [Space]

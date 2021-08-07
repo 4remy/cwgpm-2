@@ -5,5 +5,7 @@ namespace Schwer.Database {
         // Generated via ScriptableObjectDatabaseUtility
 
         public abstract void Initialise(T[] elements);
+    public interface IID {
+        int id { get; }
     }
 }
