@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Scriptable Objects/Int List")]
 public class IntListSO : ScriptableObject {
     [SerializeField] private List<int> _ints = new List<int>();
-    public List<int> ints => _ints;
+    public List<int> ints { get => _ints; set => _ints = value; }
 
     public bool Contains(int item) => ints.Contains(item);
 
