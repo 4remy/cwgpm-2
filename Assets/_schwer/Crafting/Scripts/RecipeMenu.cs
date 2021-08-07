@@ -16,7 +16,22 @@ namespace Schwer.ItemSystem {
 
         private void Awake() {
             GetComponentsInChildren<RecipeSlot>(recipeSlots);
+            InitialiseSlots();
+        }
 
+        private void OnEnable() {
+            UpdateSlots();
+            SelectFirstSlot();
+        }
+
+        private void OnDisable() {
+            if (manager != null) {
+                manager.Enable(true);
+                manager = null;
+            }
+        }
+
+        private void InitialiseSlots() {
             var recipes = recipeDatabase.GetRecipes();
             for (int i = 0; i < recipeSlots.Count; i++) {
                 var recipe = (i < recipes.Count) ? recipes[i] : null;
@@ -29,12 +44,12 @@ namespace Schwer.ItemSystem {
             }
         }
 
-        private void OnEnable() => SelectFirstSlot();
-
-        private void OnDisable() {
-            if (manager != null) {
-                manager.Enable(true);
-                manager = null;
+        private void UpdateSlots() {
+            for (int i = 0; i < recipeSlots.Count; i++) {
+                var recipe = recipeSlots[i].recipe;
+                if (recipe != null) {
+                    recipeSlots[i].Initialise(recipe, discoveredRecipes.Contains(recipe.id));
+                }
             }
         }
 
