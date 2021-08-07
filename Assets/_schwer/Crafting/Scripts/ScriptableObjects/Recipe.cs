@@ -3,10 +3,16 @@
 namespace Schwer.ItemSystem {
     [CreateAssetMenu(menuName = "Item System/Crafting Recipe")]
     public class Recipe : ScriptableObject {
-        public Item output = default;
-        [Min(1)]public int outputAmount = 1;
+        [SerializeField] private int _id = default;
+        public int id => _id;
         [Space]
-        public Inventory input = new Inventory();
+        [SerializeField] private Item _output = default;
+        public Item output => _output;
+        [SerializeField] [Min(1)] private int _outputAmount = 1;
+        public int outputAmount => _outputAmount;
+        [Space]
+        [SerializeField] private Inventory _input = new Inventory();
+        public Inventory input => _input;
 
         public bool Matches(Inventory ingredients) {
             // Exit early if the number of different items do not match

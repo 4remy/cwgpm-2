@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4479eeee9660b794dbea29663999c5a0, type: 3}
   m_Name: TestRecipeSchwerBurger
   m_EditorClassIdentifier: 
-  output: {fileID: 11400000, guid: e90f8c5570efb47118255095eed39d2c, type: 2}
-  outputAmount: 1
-  input:
+  _id: 0
+  _output: {fileID: 11400000, guid: e90f8c5570efb47118255095eed39d2c, type: 2}
+  _outputAmount: 1
+  _input:
     keys:
     - {fileID: 11400000, guid: ba483179f48c1482b90cd8c91665939f, type: 2}
     - {fileID: 11400000, guid: 9d908ac592f844b78a9d7c7fc3b8ac4c, type: 2}
