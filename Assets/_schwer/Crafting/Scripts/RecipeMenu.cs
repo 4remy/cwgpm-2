@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 namespace Schwer.ItemSystem {
     public class RecipeMenu : MonoBehaviour {
         [SerializeField] private RecipeDatabase recipeDatabase = default;
+        [Header("Save Data")]
+        [SerializeField] private IntListSO discoveredRecipes = default;
         [SerializeField] private InventorySO _inventory = default;
         private Inventory inventory => _inventory.value;
 
@@ -18,8 +20,12 @@ namespace Schwer.ItemSystem {
             var recipes = recipeDatabase.GetRecipes();
             for (int i = 0; i < recipeSlots.Count; i++) {
                 var recipe = (i < recipes.Count) ? recipes[i] : null;
-                recipeSlots[i].Initialise(recipe, true); //!
-                recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipe));
+                var discovered = (recipe != null) ? discoveredRecipes.Contains(recipe.id) : false;
+                recipeSlots[i].Initialise(recipe, discovered);
+
+                if (recipe != null) {
+                    recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipe));
+                }
             }
         }
 
@@ -53,8 +59,7 @@ namespace Schwer.ItemSystem {
 
         // Called when a recipe slot is clicked on.
         public void OnRecipeClick(Recipe recipe) {
-            //! if recipe != null && discovered && manager != null
-            if (recipe != null && manager != null) {
+            if (recipe != null && manager != null && discoveredRecipes.Contains(recipe.id)) {
                 if (recipe.IsSubsetOf(inventory, manager.ingredients)) {
                     manager.ClearIngredients();
                     foreach (var item in recipe.input) {

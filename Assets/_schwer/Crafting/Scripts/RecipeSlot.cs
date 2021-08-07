@@ -14,10 +14,17 @@ namespace Schwer.ItemSystem {
         public void Initialise(Recipe recipe, bool discovered) {
             this.recipe = recipe;
             if (recipe != null) {
-                text.text = recipe.output.name;
                 sprite.sprite = recipe.output.sprite;
                 sprite.enabled = true;
-                sprite.color = discovered ? Color.white : Color.black;
+
+                if (discovered) {
+                    sprite.color = Color.white;
+                    text.text = recipe.output.name;
+                }
+                else {
+                    sprite.color = Color.black;
+                    text.text = "???";
+                }
             }
             else {
                 text.text = "";

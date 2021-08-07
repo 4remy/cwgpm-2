@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 namespace Schwer.ItemSystem {
     public class CraftingManager : MonoBehaviour, IItemSlotManager {
-        [SerializeField] private RecipeDatabase recipeDatabase;
+        [SerializeField] private RecipeDatabase recipeDatabase = default;
+        [Header("Save Data")]
+        [SerializeField] private IntListSO discoveredRecipes = default;
         [SerializeField] private InventorySO _inventory = default;
         private Inventory inventory => _inventory.value;
 
@@ -138,6 +140,8 @@ namespace Schwer.ItemSystem {
                 if (recipes[i].Matches(ingredients)) {
                     ingredients.Clear();
                     inventory[recipes[i].output] += recipes[i].outputAmount;
+
+                    discoveredRecipes.Add(recipes[i].id);
 
                     Debug.Log($"Crafted {recipes[i].outputAmount}x {recipes[i].output.name}!");
                     return;

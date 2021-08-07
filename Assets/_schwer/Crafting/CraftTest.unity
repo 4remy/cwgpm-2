@@ -527,6 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipeDatabase: {fileID: 11400000, guid: 49fb988e705b04c4f94a518055326e55, type: 2}
+  discoveredRecipes: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac, type: 2}
   _inventory: {fileID: 11400000, guid: 19a63ed173fed413285668fc4c4bcf65, type: 2}
 --- !u!223 &201991250
 Canvas:
@@ -7924,6 +7925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipeDatabase: {fileID: 11400000, guid: 49fb988e705b04c4f94a518055326e55, type: 2}
+  discoveredRecipes: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac, type: 2}
   _inventory: {fileID: 11400000, guid: 19a63ed173fed413285668fc4c4bcf65, type: 2}
   nameDisplay: {fileID: 5043543584696163390}
   addButton: {fileID: 9135732567913899236}
