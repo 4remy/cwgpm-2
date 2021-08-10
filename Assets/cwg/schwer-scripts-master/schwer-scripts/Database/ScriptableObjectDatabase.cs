@@ -34,7 +34,7 @@ namespace Schwer.Database {
                 }
 
                 if (element.id == id) {
-                    result =element;
+                    result = element;
                 }
             }
             if (result == null) Debug.LogWarning($"{typeof(I).Name} with ID '{id}' was not found in the {this.GetType().Name}.");
