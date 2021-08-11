@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 namespace Schwer.ItemSystem {
     public class CraftingManager : MonoBehaviour, IItemSlotManager {
-        [SerializeField] private RecipeDatabase recipeDatabase;
+        [SerializeField] private RecipeDatabase recipeDatabase = default;
+        [Header("Save Data")]
+        [SerializeField] private IntListSO discoveredRecipes = default;
         [SerializeField] private InventorySO _inventory = default;
         private Inventory inventory => _inventory.value;
 
@@ -16,14 +18,17 @@ namespace Schwer.ItemSystem {
         [SerializeField] private Button addButton = default;
         [SerializeField] private Button craftButton = default;
         [SerializeField] private Button clearButton = default;
+        [SerializeField] private RecipeMenu recipeMenu = default;
 
         [Header("Containers")]
         [SerializeField] private GameObject inventorySlotsHolder = default;
         [SerializeField] private GameObject ingredientSlotsHolder = default;
 
+        private Canvas canvas;
+        private CanvasGroup canvasGroup;
         private List<ItemSlot> inventorySlots = new List<ItemSlot>();
 
-        private Inventory ingredients = new Inventory();
+        public Inventory ingredients { get; private set; } = new Inventory();
         private List<ItemSlot> ingredientSlots = new List<ItemSlot>();
 
         private Item selectedItem;
@@ -44,6 +49,9 @@ namespace Schwer.ItemSystem {
         }
 
         private void Awake() {
+            canvas = GetComponent<Canvas>();
+            canvasGroup = GetComponent<CanvasGroup>();
+
             inventorySlotsHolder.GetComponentsInChildren<ItemSlot>(inventorySlots);
             ingredientSlotsHolder.GetComponentsInChildren<ItemSlot>(ingredientSlots);
 
@@ -113,7 +121,6 @@ namespace Schwer.ItemSystem {
                 // Clear the current selection if item is fully depleted
                 if (inventory[selectedItem] <= 0) {
                     OnItemSelected(null);
-                    SelectFirstSlot();
                 }
             }
         }
@@ -134,12 +141,24 @@ namespace Schwer.ItemSystem {
                     ingredients.Clear();
                     inventory[recipes[i].output] += recipes[i].outputAmount;
 
+                    discoveredRecipes.Add(recipes[i].id);
+
                     Debug.Log($"Crafted {recipes[i].outputAmount}x {recipes[i].output.name}!");
                     return;
                 }
             }
 
             Debug.Log($"The ingredients didn't yield anything...");
+        }
+
+        // Called by the recipe button's OnClick UnityEvent
+        public void OpenRecipeMenu() => recipeMenu.Open(this);
+
+        public void Enable(bool value) {
+            // Disable canvas rather than game object
+            // so that ingredients pouch is persistent
+            canvas.enabled = value;
+            canvasGroup.interactable = value;
         }
     }
 }

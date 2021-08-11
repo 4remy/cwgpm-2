@@ -10,6 +10,7 @@ public class GameSaveManager : MonoBehaviour
     [SerializeField] private ItemDatabase itemDB = default;
     public List<ScriptableObject> objects = new List<ScriptableObject>();
     [SerializeField] private InventorySO playerInventory = default;
+    [SerializeField] private IntListSO discoveredRecipes = default;
 
     /*
     private void Awake()
@@ -58,6 +59,8 @@ public class GameSaveManager : MonoBehaviour
         bf.Serialize(invFile, invData);
         invFile.Close();
 
+        Schwer.IO.BinaryIO.WriteFile(discoveredRecipes.ints, $"{Application.persistentDataPath}/recipes.dat");
+
         for (int i = 0; i < objects.Count; i++)
         {
             FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.json", i));
@@ -88,5 +91,7 @@ public class GameSaveManager : MonoBehaviour
                 file.Close();
             }
         }
+
+        discoveredRecipes.ints = Schwer.IO.BinaryIO.ReadFile<List<int>>($"{Application.persistentDataPath}/recipes.dat");
     }
 }
