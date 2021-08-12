@@ -9435,6 +9435,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
         type: 3}
+      propertyPath: itemDB
+      value: 
+      objectReference: {fileID: 11400000, guid: b394a2896f54f43f7b6762c9a7957618,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 11400000, guid: 19a63ed173fed413285668fc4c4bcf65,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: discoveredRecipes
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
       propertyPath: objects.Array.size
       value: 7
       objectReference: {fileID: 0}
