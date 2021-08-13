@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4479eeee9660b794dbea29663999c5a0, type: 3}
-  m_Name: TestRecipe3 SchwerBurger
+  m_Name: Bidiburger Recipe
   m_EditorClassIdentifier: 
   _id: 3
   _output: {fileID: 11400000, guid: e90f8c5570efb47118255095eed39d2c, type: 2}

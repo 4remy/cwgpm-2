@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b56bfdfafb04440a3a329a7d54c648f4, type: 3}
-  m_Name: Lettuce
+  m_Name: Caraburgo
   m_EditorClassIdentifier: 
-  _id: 12
-  _name: Lettuce
-  _description: Crispy and delicious
-  _sprite: {fileID: 0}
+  _id: 14
+  _name: Caraburgo
+  _description: A carabino burger.
+  _sprite: {fileID: 21300000, guid: bd589810c30e14e69ad9be3ff01ef286, type: 3}
   _stackable: 1
   _isKey: 0

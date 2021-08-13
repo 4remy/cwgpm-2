@@ -16,7 +16,7 @@ MonoBehaviour:
   _name: FloorBurger
   _description: 'I need it, I crave it.
 
-'
+    This is a test of a healing item.'
   _sprite: {fileID: 21300000, guid: 303c7c85295d6498aa1105cfd2726382, type: 3}
   _stackable: 1
   _isKey: 0

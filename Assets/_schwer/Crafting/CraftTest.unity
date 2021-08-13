@@ -3000,18 +3000,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8972711251415905843, guid: 042a790e512f247938240ac3429e5b70,
-        type: 3}
-      propertyPath: objects.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8972711251415905844, guid: 042a790e512f247938240ac3429e5b70,
         type: 3}
       propertyPath: m_Name
       value: GameSaveManager
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8972711250919812493, guid: 042a790e512f247938240ac3429e5b70, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042a790e512f247938240ac3429e5b70, type: 3}
 --- !u!1001 &1517437038
 PrefabInstance:

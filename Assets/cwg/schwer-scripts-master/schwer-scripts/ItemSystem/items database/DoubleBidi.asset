@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b56bfdfafb04440a3a329a7d54c648f4, type: 3}
-  m_Name: Tomato
+  m_Name: DoubleBidi
   m_EditorClassIdentifier: 
-  _id: 13
-  _name: 
-  _description: Red
-  _sprite: {fileID: 21300000, guid: b9556b1350d7142e7bc087d2bcd739f6, type: 3}
+  _id: 15
+  _name: Double Bidi
+  _description: Double the issues.
+  _sprite: {fileID: 21300000, guid: af2c416714168472fb4e5eb682f870b1, type: 3}
   _stackable: 1
   _isKey: 0
