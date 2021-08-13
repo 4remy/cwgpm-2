@@ -45,11 +45,11 @@ public class GameSaveManager : MonoBehaviour
         LoadScriptables();
     }
 
-    /* private void OnDisable()
+    private void OnDisable()
      {
          SaveScriptables();
      }
-    */
+    
 
     public void SaveScriptables()
     {
