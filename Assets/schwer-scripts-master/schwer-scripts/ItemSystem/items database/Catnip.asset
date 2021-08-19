@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56bfdfafb04440a3a329a7d54c648f4, type: 3}
+  m_Name: Catnip
+  m_EditorClassIdentifier: 
+  _id: 21
+  _name: Catnip
+  _description: 'Some sprigs of cat''s nip.
+
+'
+  _sprite: {fileID: 21300000, guid: 9ba22f1e2c546462a8ae835f3ae549cf, type: 3}
+  _stackable: 1
+  _isKey: 0

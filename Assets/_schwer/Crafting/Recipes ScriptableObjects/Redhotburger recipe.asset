@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4479eeee9660b794dbea29663999c5a0, type: 3}
+  m_Name: Redhotburger recipe
+  m_EditorClassIdentifier: 
+  _id: 10
+  _output: {fileID: 11400000, guid: 2708d3d01fa354978a00c7ab2b583d93, type: 2}
+  _outputAmount: 1
+  _input:
+    keys:
+    - {fileID: 11400000, guid: ba483179f48c1482b90cd8c91665939f, type: 2}
+    - {fileID: 11400000, guid: 9d908ac592f844b78a9d7c7fc3b8ac4c, type: 2}
+    - {fileID: 11400000, guid: f5e7197ffb48f4814b4cfb874260abef, type: 2}
+    - {fileID: 11400000, guid: 31f568523777c4451b08fc50c4d0f630, type: 2}
+    values: 01000000010000000100000001000000
