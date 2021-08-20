@@ -43,9 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bf3d67cac9e43a893205464fbc470d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemDB: {fileID: 11400000, guid: b394a2896f54f43f7b6762c9a7957618, type: 2}
   objects:
   - {fileID: 11400000, guid: f66042cb1b30c4b728efdd27c872c2df, type: 2}
   - {fileID: 11400000, guid: eed34757efe8149009b05f2391e1c1fa, type: 2}
   - {fileID: 11400000, guid: 51b54f598f20e4cf686c31971593498b, type: 2}
   - {fileID: 11400000, guid: c9df1eee99310409b8ed88c1f348d99d, type: 2}
-  - {fileID: 11400000, guid: 2d121f527041c4cc4a28a63643aa11ad, type: 2}
+  - {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
+  - {fileID: 11400000, guid: 09ff16c9c152b435199a6560c05be581, type: 2}
+  - {fileID: 11400000, guid: 94986f1bd8d8a4b7bb969aa2435ff1d2, type: 2}
+  - {fileID: 11400000, guid: c49d348d7e3f741e2a1ca2539378b613, type: 2}
+  - {fileID: 11400000, guid: 67df99a7cd52d4416b15e267d65c75d5, type: 2}
+  playerInventory: {fileID: 11400000, guid: 19a63ed173fed413285668fc4c4bcf65, type: 2}
+  discoveredRecipes: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac, type: 2}
