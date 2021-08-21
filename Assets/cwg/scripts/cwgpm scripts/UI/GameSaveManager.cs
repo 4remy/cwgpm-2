@@ -79,6 +79,7 @@ public class GameSaveManager : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter();
             var serializedInvData = (SerializableInventory)bf.Deserialize(invFile);
             playerInventory.value = serializedInvData.Deserialize(itemDB);
+            invFile.Close();
         }
         for (int i = 0; i < objects.Count; i++)
         {
