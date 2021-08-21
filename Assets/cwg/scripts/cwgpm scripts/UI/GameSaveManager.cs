@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using Schwer.ItemSystem;
+using Schwer.IO;
 
 public class GameSaveManager : MonoBehaviour
 {
@@ -26,6 +26,7 @@ public class GameSaveManager : MonoBehaviour
         DontDestroyOnLoad(this);
     }
     */
+
     public void ResetScriptables()
     {
         // this needs to reset the boolvalues to false
@@ -46,53 +47,50 @@ public class GameSaveManager : MonoBehaviour
     }
 
     private void OnDisable()
-     {
-         SaveScriptables();
-     }
-    
+    {
+        SaveScriptables();
+    }
 
     public void SaveScriptables()
     {
-        FileStream invFile = File.Create(Application.persistentDataPath + "/player.inv");
-        BinaryFormatter bf = new BinaryFormatter();
-        var invData = playerInventory.value.Serialize();
-        bf.Serialize(invFile, invData);
-        invFile.Close();
-
-        Schwer.IO.BinaryIO.WriteFile(discoveredRecipes.ints, $"{Application.persistentDataPath}/recipes.dat");
+        BinaryIO.WriteFile(playerInventory.value.Serialize(), $"{Application.persistentDataPath}/player.inv");
+        BinaryIO.WriteFile(discoveredRecipes.ints, $"{Application.persistentDataPath}/recipes.dat");
 
         for (int i = 0; i < objects.Count; i++)
         {
-            FileStream file = File.Create(Application.persistentDataPath + string.Format("/{0}.json", i));
             var json = JsonUtility.ToJson(objects[i]);
-            bf.Serialize(file, json);
-            file.Close();
+            BinaryIO.WriteFile(json, Application.persistentDataPath + string.Format("/{0}.json", i));
         }
     }
 
     public void LoadScriptables()
     {
-        var invPath = Application.persistentDataPath + "/player.inv";
-        if (File.Exists(invPath))
-        {
-            FileStream invFile = File.Open(invPath, FileMode.Open);
-            BinaryFormatter bf = new BinaryFormatter();
-            var serializedInvData = (SerializableInventory)bf.Deserialize(invFile);
-            playerInventory.value = serializedInvData.Deserialize(itemDB);
-            invFile.Close();
-        }
+        LoadInventory();
+        LoadRecipes();
+
         for (int i = 0; i < objects.Count; i++)
         {
             var objPath = Application.persistentDataPath + string.Format("/{0}.json", i);
             if (File.Exists(objPath))
             {
-                FileStream file = File.Open(objPath, FileMode.Open);
-                BinaryFormatter binary = new BinaryFormatter();
-                JsonUtility.FromJsonOverwrite((string)binary.Deserialize(file), objects[i]);
-                file.Close();
+                var json = BinaryIO.ReadFile<string>(objPath);
+                JsonUtility.FromJsonOverwrite(json, objects[i]);
             }
         }
+    }
 
-        discoveredRecipes.ints = Schwer.IO.BinaryIO.ReadFile<List<int>>($"{Application.persistentDataPath}/recipes.dat");
+    private void LoadInventory() {
+        var path = $"{Application.persistentDataPath}/player.inv";
+        if (File.Exists(path))
+        {
+            playerInventory.value = BinaryIO.ReadFile<SerializableInventory>(path).Deserialize(itemDB);
+        }
+    }
+
+    private void LoadRecipes() {
+        var path = $"{Application.persistentDataPath}/recipes.dat";
+        if (File.Exists(path)) {
+            discoveredRecipes.ints = BinaryIO.ReadFile<List<int>>(path);
+        }
     }
 }
