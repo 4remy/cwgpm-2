@@ -16,7 +16,8 @@ public class ItemChanger : Interactable
     //[Header("New item")]
     [SerializeField] private Schwer.ItemSystem.Item newItem = default;
 
-
+    //[Header("Animation")]
+   // public Animator anim;
 
     //public BoxCollider2D box;
 
@@ -24,7 +25,9 @@ public class ItemChanger : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        //get animators here
+        //anim = GetComponent<Animator>();
+        //anim = gameObject.transform.GetChild (0).GetComponent<Animator>();
+        // anim.SetBool("cooking", false);
     }
 
 
@@ -32,7 +35,8 @@ public class ItemChanger : Interactable
     {
         if (player.inventory[oldItem] > 0)
         {
-
+           // anim.SetBool("cooking", true);
+            //StartCoroutine(cookingCo());
             Debug.Log("you had the item I was looking for!");
             player.inventory[oldItem]--;
             player.inventory[newItem]++;
@@ -43,4 +47,11 @@ public class ItemChanger : Interactable
             Debug.Log("item not found");
         }
     }
+    /*
+    IEnumerator cookingCo()
+    {
+        yield return new WaitForSeconds(2f);
+        anim.SetBool("cooking", false);
+    }
+    */
 }

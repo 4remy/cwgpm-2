@@ -39,19 +39,14 @@ public class ItemChecker : MonoBehaviour
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
 
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                      dialogBox.SetActive(false);
-                    //this bit (turning off dialog box isn't working yet
-                    //rest is all good tho
-                      Debug.Log("space pressed");
-                }
-
+                //i would substitue this for a gameobject thats like an exclamation mark over the grill you turn on and off
             }
+
             else
             {
                 Debug.Log("fuck you no meat");
             }
+
         }
     }
 
