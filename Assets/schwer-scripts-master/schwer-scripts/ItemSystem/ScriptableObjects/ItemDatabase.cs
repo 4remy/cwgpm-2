@@ -3,7 +3,7 @@
 namespace Schwer.ItemSystem {
     using Schwer.Database;
 
-    public class ItemDatabase : ScriptableObjectDatabase<Item> {
+    public class ItemDatabase : ScriptableDatabase<Item> {
         // Generated via ItemDatabaseUtility
         [SerializeField] private Item[] items;
 
@@ -11,6 +11,6 @@ namespace Schwer.ItemSystem {
             this.items = FilterByID(items);
         }
 
-        public Item GetItem(int itemID) => GetFromID(itemID, items);
+        public Item GetItem(int id) => GetFromID(id, items);
     }
 }

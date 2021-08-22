@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Schwer.ItemSystem {
     using Schwer.Database;
 
-    public class RecipeDatabase : ScriptableObjectDatabase<Recipe> {
+    public class RecipeDatabase : ScriptableDatabase<Recipe> {
         // Generated via RecipeDatabaseUtility
         [SerializeField] private Recipe[] recipes;
 

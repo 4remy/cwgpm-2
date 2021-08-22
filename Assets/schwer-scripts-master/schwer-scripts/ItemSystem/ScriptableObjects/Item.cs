@@ -1,7 +1,8 @@
-﻿using Schwer.Database;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Schwer.ItemSystem {
+    using Schwer.Database;
+
     [CreateAssetMenu(menuName = "Item System/Item")]
     public class Item : ScriptableObject, IID {
         // currentItem here?
