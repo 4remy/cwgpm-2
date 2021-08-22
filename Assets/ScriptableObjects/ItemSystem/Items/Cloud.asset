@@ -15,6 +15,6 @@ MonoBehaviour:
   _id: 6
   _name: Cloud
   _description: A lonely cloud.
-  _sprite: {fileID: 21300000, guid: c5051bdc15dea46d2aae99c208403958, type: 3}
+  _sprite: {fileID: 21300000, guid: 1402a09d380d44d6ba9a2ba1f9fcea84, type: 3}
   _stackable: 1
   _isKey: 0

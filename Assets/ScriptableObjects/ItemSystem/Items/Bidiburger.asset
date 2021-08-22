@@ -15,6 +15,6 @@ MonoBehaviour:
   _id: 3
   _name: Bidiburger
   _description: Bidiburger with cheese.
-  _sprite: {fileID: 21300000, guid: a6eab0bfdc0064af1ac0c11e7ff4a64d, type: 3}
+  _sprite: {fileID: 21300000, guid: a595375dfd8d4458f9720e2cdc7ed0ce, type: 3}
   _stackable: 0
   _isKey: 0
