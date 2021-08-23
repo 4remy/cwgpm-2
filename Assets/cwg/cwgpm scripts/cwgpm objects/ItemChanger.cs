@@ -19,6 +19,9 @@ public class ItemChanger : Interactable
     [Header("Animation")]
     public Animator anim;
 
+    [Header("Animation")]
+    public Animator effect;
+
     //public BoxCollider2D box;
 
 
@@ -27,7 +30,9 @@ public class ItemChanger : Interactable
     {
        // anim = GetComponent<Animator>();
         anim = gameObject.transform.GetChild (0).GetComponent<Animator>();
-         anim.SetBool("Cooking", false);
+        effect = gameObject.transform.GetChild(1).GetComponent<Animator>();
+        anim.SetBool("Cooking", false);
+        effect.SetBool("Effect", false);
     }
 
 
@@ -38,10 +43,8 @@ public class ItemChanger : Interactable
             if (player.inventory[oldItem] > 0)
             {
                 anim.SetBool("Cooking", true);
-                //StartCoroutine(cookingCo());
+                StartCoroutine(cookingCo());
                 Debug.Log("you had the item I was looking for!");
-                player.inventory[oldItem]--;
-                player.inventory[newItem]++;
                 //put animation here
             }
             else
@@ -51,11 +54,16 @@ public class ItemChanger : Interactable
         }
 
     }
-    /*
+    
     IEnumerator cookingCo()
     {
+        yield return new WaitForSeconds(0.1f);
+        effect.SetBool("Effect", true);
         yield return new WaitForSeconds(2f);
         anim.SetBool("Cooking", false);
+        player.inventory[oldItem]--;
+        player.inventory[newItem]++;
+        effect.SetBool("Effect", false);
     }
-    */
+    
 }
