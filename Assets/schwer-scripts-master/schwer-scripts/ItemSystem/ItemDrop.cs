@@ -4,6 +4,7 @@
 public class ItemDrop : MonoBehaviour
 {
     [SerializeField] private Schwer.ItemSystem.Item item = default;
+    public string soundEffectToPlay;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,7 +14,8 @@ public class ItemDrop : MonoBehaviour
             //FindObjectOfType<SoundManager>().Play("itemget");
             player.inventory[item]++;
 
-            FindObjectOfType<AudioManager>().Play("ItemGet");
+            //FindObjectOfType<AudioManager>().Play("ItemGet");
+            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
 
             Destroy(this.gameObject);
 

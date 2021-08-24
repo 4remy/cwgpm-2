@@ -6,6 +6,12 @@ using SchwerInventory = Schwer.ItemSystem.Inventory;
 
 public class ItemChanger : Interactable
 {
+
+    /*this script goes on a Trigger - an empty child with a box collider2D set to trigger. give it two children which are sprites with animators. the first child (0) is the animation of the item changing! the second child (1) is the FX/effect of the item changing (eg sizzling oil).
+     * 
+     * Cooker1 in the restaurant is an example of the item changer 
+     */
+
     [Header("Inventory")]
     [SerializeField] private Schwer.ItemSystem.InventorySO _inventory = default;
     public SchwerInventory inventory => _inventory.value;
@@ -16,11 +22,17 @@ public class ItemChanger : Interactable
     //[Header("New item")]
     [SerializeField] private Schwer.ItemSystem.Item newItem = default;
 
-    [Header("Animation")]
-    public Animator anim;
 
     [Header("Animation")]
+   
+    public Animator anim;
+
+ 
+    [Header("Animation")]
     public Animator effect;
+
+    //plays WHILE ITEM is changing
+    public string soundEffectToPlay;
 
     //public BoxCollider2D box;
 
@@ -57,7 +69,7 @@ public class ItemChanger : Interactable
     
     IEnumerator cookingCo()
     {
-
+        FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
         yield return new WaitForSeconds(0.1f);
         effect.SetBool("Effect", true);
         yield return new WaitForSeconds(2f);
