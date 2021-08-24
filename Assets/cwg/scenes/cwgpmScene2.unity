@@ -3480,6 +3480,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &784632853 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 808602031928301387, guid: 12727b4ea739f42ceb210d8e4df6b9b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 808602031937059111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &795969445
 GameObject:
   m_ObjectHideFlags: 0
@@ -4644,6 +4650,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1050312237 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 808602033642036309, guid: 12727b4ea739f42ceb210d8e4df6b9b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 808602031937059111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1131955723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9896,6 +9908,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 350326716}
     m_Modifications:
+    - target: {fileID: 808602031783941585, guid: 12727b4ea739f42ceb210d8e4df6b9b6,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1050312237}
+    - target: {fileID: 808602031783941585, guid: 12727b4ea739f42ceb210d8e4df6b9b6,
+        type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 784632853}
     - target: {fileID: 808602031783941585, guid: 12727b4ea739f42ceb210d8e4df6b9b6,
         type: 3}
       propertyPath: soundEffectToPlay
