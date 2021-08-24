@@ -60,6 +60,7 @@ public class snowPile : Interactable
         //add schwer inventory item
 
         player.RaiseItem(item);
+        FindObjectOfType<AudioManager>().Play("ItemGet");
         //set the snow to dug
         isDug = true;
         animator.SetBool("isDug", true);

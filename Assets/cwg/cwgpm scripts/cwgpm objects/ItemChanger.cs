@@ -57,12 +57,14 @@ public class ItemChanger : Interactable
     
     IEnumerator cookingCo()
     {
+
         yield return new WaitForSeconds(0.1f);
         effect.SetBool("Effect", true);
         yield return new WaitForSeconds(2f);
         anim.SetBool("Cooking", false);
         player.inventory[oldItem]--;
         player.inventory[newItem]++;
+        FindObjectOfType<AudioManager>().Play("ItemGet");
         effect.SetBool("Effect", false);
     }
     
