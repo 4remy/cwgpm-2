@@ -73,7 +73,7 @@ public class ImageTime : MonoBehaviour
 
     //note: the foreeach section needs to be in a different place, then it will work properly.
 
-    void OnTriggerEnter2D(Collider2D other)
+   private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
