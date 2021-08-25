@@ -16,7 +16,7 @@ public class ImageTime : MonoBehaviour
     private float waitTime = 2.0f;
     private float timer = 0.0f;
     public GameObject CustomImage;
-
+    public string soundEffectToPlay;
     public bool playerInRange;
     public bool disableWhenDiscovered = false;
   //  public HashSet<StoryItem> requiredStoryItems;
@@ -58,6 +58,7 @@ public class ImageTime : MonoBehaviour
             else
             {
                 CustomImage.SetActive(true);
+                FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
                 timer = timer - waitTime;
             }
 

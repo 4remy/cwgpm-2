@@ -15,6 +15,7 @@ public class SceneTransition : MonoBehaviour
     public GameObject fadeInPanel;
     public GameObject fadeOutPanel;
     public float fadeWait;
+    public string soundEffectToPlay;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class SceneTransition : MonoBehaviour
         if(other.CompareTag("Player") && !other.isTrigger)
         {
             playerMemory.initialValue = playerPosition;
+            
             StartCoroutine(FadeCo());
             //SceneManager.LoadScene(sceneToLoad);
         }
@@ -45,8 +47,11 @@ public class SceneTransition : MonoBehaviour
         if(fadeOutPanel !=null)
         {
             Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
+            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
+
         }
         yield return new WaitForSeconds(fadeWait);
+
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
         while(!asyncOperation.isDone)
         {
@@ -57,6 +62,7 @@ public class SceneTransition : MonoBehaviour
 
     public void runTransfer()
     {
+        
         playerMemory.initialValue = playerPosition;
         StartCoroutine(FadeCo());
     }

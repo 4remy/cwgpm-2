@@ -12,6 +12,7 @@ public class PauseManager : MonoBehaviour
     public GameObject mainCanvas;
     public string mainMenu;
     public bool usingPausePanel;
+    public string soundEffectToPlay;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class PauseManager : MonoBehaviour
 
         if (isPaused)
         {
+            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
             pausePanel.SetActive(true);
             mainCanvas.SetActive(false);
             Time.timeScale = 0f;
@@ -44,6 +46,7 @@ public class PauseManager : MonoBehaviour
         }
         else
         {
+            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
             inventoryPanel.SetActive(false);
             pausePanel.SetActive(false);
             mainCanvas.SetActive(true);

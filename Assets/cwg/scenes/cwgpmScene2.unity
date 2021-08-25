@@ -1516,6 +1516,7 @@ MonoBehaviour:
   storedDug: {fileID: 11400000, guid: 67df99a7cd52d4416b15e267d65c75d5, type: 2}
   dialogBox: {fileID: 1694775782}
   dialogText: {fileID: 2132345960}
+  soundEffectToPlay: 
 --- !u!1 &155703487
 GameObject:
   m_ObjectHideFlags: 0
@@ -6199,6 +6200,7 @@ MonoBehaviour:
   fadeOutPanel: {fileID: 6381111927633495540, guid: fbf528878de5042bbbe12420d3f24b70,
     type: 3}
   fadeWait: 0.33
+  soundEffectToPlay: Achieve
 --- !u!1 &1317897028
 GameObject:
   m_ObjectHideFlags: 0
@@ -10593,6 +10595,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playerPosition.y
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
+        type: 3}
+      propertyPath: soundEffectToPlay
+      value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 7541805090073677898, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}

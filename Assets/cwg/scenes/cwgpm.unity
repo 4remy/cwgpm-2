@@ -1250,6 +1250,11 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 2143218727}
+    - target: {fileID: 6199907649177515492, guid: b82038598501a47eea4fb841b00812dd,
+        type: 3}
+      propertyPath: soundEffectToPlay
+      value: Snow
+      objectReference: {fileID: 0}
     - target: {fileID: 6199907649177515503, guid: b82038598501a47eea4fb841b00812dd,
         type: 3}
       propertyPath: m_Name
@@ -1644,6 +1649,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[6].volume
+      value: 0.61
+      objectReference: {fileID: 0}
     - target: {fileID: 5150497678663909773, guid: 9990bade1d5894b8aadde235ebdbd412,
         type: 3}
       propertyPath: m_RootOrder
@@ -1971,6 +1981,7 @@ MonoBehaviour:
   dialogBox: {fileID: 428718938}
   dialogText: {fileID: 2143218727}
   playerInRange: 0
+  soundEffectToPlay: Paper
   dialog: test estets test
 --- !u!61 &1139941003
 BoxCollider2D:
@@ -3024,6 +3035,11 @@ PrefabInstance:
       propertyPath: inventoryPanel
       value: 
       objectReference: {fileID: 1742999726}
+    - target: {fileID: 37173835647192124, guid: 82ca771f5e196411d9430edc5ab548d3,
+        type: 3}
+      propertyPath: soundEffectToPlay
+      value: Settings
+      objectReference: {fileID: 0}
     - target: {fileID: 37173835647192127, guid: 82ca771f5e196411d9430edc5ab548d3,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3253,6 +3269,16 @@ PrefabInstance:
       propertyPath: CustomImage
       value: 
       objectReference: {fileID: 1173152327}
+    - target: {fileID: 304336325196833365, guid: c9cde5f43426d43f4a98bf988fdd094f,
+        type: 3}
+      propertyPath: soundEffectToPlay
+      value: Paper
+      objectReference: {fileID: 0}
+    - target: {fileID: 304336325196833365, guid: c9cde5f43426d43f4a98bf988fdd094f,
+        type: 3}
+      propertyPath: disableWhenDiscovered
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9cde5f43426d43f4a98bf988fdd094f, type: 3}
 --- !u!1001 &1296582202709579883
@@ -4253,6 +4279,11 @@ PrefabInstance:
       propertyPath: playerPosition.y
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
+        type: 3}
+      propertyPath: soundEffectToPlay
+      value: Exit
+      objectReference: {fileID: 0}
     - target: {fileID: 7541805090073677898, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
       propertyPath: m_RootOrder
@@ -4420,6 +4451,11 @@ PrefabInstance:
       propertyPath: dialogText
       value: 
       objectReference: {fileID: 2143218727}
+    - target: {fileID: 6199907649177515492, guid: b82038598501a47eea4fb841b00812dd,
+        type: 3}
+      propertyPath: soundEffectToPlay
+      value: Snow
+      objectReference: {fileID: 0}
     - target: {fileID: 6199907649177515503, guid: b82038598501a47eea4fb841b00812dd,
         type: 3}
       propertyPath: m_Name

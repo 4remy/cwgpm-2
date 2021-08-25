@@ -17,6 +17,7 @@ public class OpenCraft : Interactable
     public GameObject fadeInPanel;
     public GameObject fadeOutPanel;
     public float fadeWait;
+    public string soundEffectToPlay;
 
     private void Awake()
     {
@@ -36,7 +37,8 @@ public class OpenCraft : Interactable
                 if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
                 {
                     playerMemory.initialValue = playerPosition;
-                    StartCoroutine(FadeCo());
+            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
+            StartCoroutine(FadeCo());
                 }
                 else
                     Debug.Log("space not pressed");

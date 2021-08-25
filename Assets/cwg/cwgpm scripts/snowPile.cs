@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+
 public class snowPile : Interactable
 {
     [Header("Contents")]
@@ -14,6 +15,8 @@ public class snowPile : Interactable
     //public Inventory playerInventory;
     public GameObject dialogBox;
     public Text dialogText;
+    // effect of snow digging OR bin opening etc
+    public string soundEffectToPlay;
 
     [Header("Animation")]
     private Animator animator;
@@ -35,6 +38,7 @@ public class snowPile : Interactable
         {
             if (!isDug)
             {
+                FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
                 DigSnow();
             }
             else
@@ -46,6 +50,7 @@ public class snowPile : Interactable
 
     private void DigSnow()
     {
+        
         //dialog on
         dialogBox.SetActive(true);
         // dialog text = contents text;
@@ -60,11 +65,14 @@ public class snowPile : Interactable
         //add schwer inventory item
 
         player.RaiseItem(item);
-        FindObjectOfType<AudioManager>().Play("ItemGet");
+       
         //set the snow to dug
         isDug = true;
         animator.SetBool("isDug", true);
         storedDug.RuntimeValue = isDug;
+
+        
+        //FindObjectOfType<AudioManager>().Play("ItemGet");
     }
 
     private void SnowDug()

@@ -8,6 +8,7 @@ public class Sign : MonoBehaviour
     public GameObject dialogBox;
     public Text dialogText;
     public bool playerInRange;
+    public string soundEffectToPlay;
     [Multiline]
     public string dialog;
 
@@ -29,6 +30,7 @@ public class Sign : MonoBehaviour
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
             }
