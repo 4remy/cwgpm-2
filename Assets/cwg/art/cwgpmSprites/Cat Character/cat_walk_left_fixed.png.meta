@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: 9fc9d8d25dcf4490497496ded6ca8818
+guid: 5e4ed3655ab294434863a919c33dac51
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4952751930219157248
-    second: cat_walk_down_0
+      213: -1035671446407845520
+    second: cat_walk_left_fixed_0
   - first:
-      213: 2093514563583668664
-    second: cat_walk_down_1
+      213: -4120204992439745335
+    second: cat_walk_left_fixed_1
   - first:
-      213: 1575768432774096462
-    second: cat_walk_down_2
+      213: 329149607210375900
+    second: cat_walk_left_fixed_2
   - first:
-      213: -5722658890684557481
-    second: cat_walk_down_3
+      213: 9209189457978840435
+    second: cat_walk_left_fixed_3
   - first:
-      213: 8566912398735866358
-    second: cat_walk_down_4
+      213: 368919704878280782
+    second: cat_walk_left_fixed_4
   - first:
-      213: 6444354699480573299
-    second: cat_walk_down_5
+      213: 5228256435685205337
+    second: cat_walk_left_fixed_5
+  - first:
+      213: 5715583367728760937
+    second: cat_walk_left_fixed_6
+  - first:
+      213: 2902559181619348472
+    second: cat_walk_left_fixed_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -84,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,7 +102,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,117 +125,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_walk_down_0
+      name: cat_walk_left_fixed_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 79
-        width: 241
-        height: 441
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00928aa3c5a444bb0800000000000000
-      internalID: -4952751930219157248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_walk_down_1
-      rect:
-        serializedVersion: 2
-        x: 729
-        y: 82
-        width: 236
-        height: 428
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b1f2865768ad0d10800000000000000
-      internalID: 2093514563583668664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_walk_down_2
-      rect:
-        serializedVersion: 2
-        x: 1365
-        y: 84
-        width: 242
-        height: 426
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4626c37a014ed510800000000000000
-      internalID: 1575768432774096462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_walk_down_3
-      rect:
-        serializedVersion: 2
-        x: 2008
-        y: 82
-        width: 240
-        height: 436
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75714021f080590b0800000000000000
-      internalID: -5722658890684557481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_walk_down_4
-      rect:
-        serializedVersion: 2
-        x: 2651
-        y: 75
-        width: 238
-        height: 440
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f97a8cef69c3e670800000000000000
-      internalID: 8566912398735866358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_walk_down_5
-      rect:
-        serializedVersion: 2
-        x: 3285
-        y: 75
-        width: 242
+        x: 213
+        y: 8
+        width: 224
         height: 431
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -226,8 +139,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 375a82d9472fe6950800000000000000
-      internalID: 6444354699480573299
+      spriteID: 07968d48e4e80a1f0800000000000000
+      internalID: -1035671446407845520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_walk_left_fixed_1
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 51
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c486df936712d6c0800000000000000
+      internalID: -4120204992439745335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_walk_left_fixed_2
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 6
+        width: 227
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdadbb7e2df519400800000000000000
+      internalID: 329149607210375900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_walk_left_fixed_3
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 4
+        width: 224
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375d918050d9dcf70800000000000000
+      internalID: 9209189457978840435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_walk_left_fixed_4
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 6
+        width: 224
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4079e7548aae1500800000000000000
+      internalID: 368919704878280782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_walk_left_fixed_5
+      rect:
+        serializedVersion: 2
+        x: 2529
+        y: 6
+        width: 225
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955aaab178f7e8840800000000000000
+      internalID: 5228256435685205337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_walk_left_fixed_6
+      rect:
+        serializedVersion: 2
+        x: 3103
+        y: 1
+        width: 224
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9688a9d5ac4d15f40800000000000000
+      internalID: 5715583367728760937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_walk_left_fixed_7
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 5
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f348ff7236f74820800000000000000
+      internalID: 2902559181619348472
       vertices: []
       indices: 
       edges: []
