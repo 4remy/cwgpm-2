@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: fc46774c61b91416eb742c4657cdc51d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Le Murmure
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 356154a5e99b24bf6adf54bc2b2f99b8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
