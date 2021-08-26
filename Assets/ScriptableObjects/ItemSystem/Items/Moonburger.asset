@@ -15,6 +15,6 @@ MonoBehaviour:
   _id: 44
   _name: Moonburger
   _description: It has driven many a good man wild.
-  _sprite: {fileID: 21300000, guid: 4f1311e9aadd44c758b345772888cdd0, type: 3}
+  _sprite: {fileID: 21300000, guid: daa4fbb9f05be4415bd41bec289d6e29, type: 3}
   _stackable: 1
   _isKey: 0

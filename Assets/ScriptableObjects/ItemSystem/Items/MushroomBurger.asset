@@ -15,6 +15,6 @@ MonoBehaviour:
   _id: 48
   _name: Mushroom Burger
   _description: Is this type of mushroom even okay to eat?
-  _sprite: {fileID: 21300000, guid: e75332223409843c89f0d28d5561b149, type: 3}
+  _sprite: {fileID: 21300000, guid: 465e5ea4de9c441a096bde0cc80c1611, type: 3}
   _stackable: 1
   _isKey: 0

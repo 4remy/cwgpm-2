@@ -15,6 +15,6 @@ MonoBehaviour:
   _id: 37
   _name: 
   _description: Delicate moonbeans.
-  _sprite: {fileID: 21300000, guid: 64ecb699e5549483c85464a076f46388, type: 3}
+  _sprite: {fileID: 21300000, guid: b26ffe37f62ae4c098c092f2ec8a70b4, type: 3}
   _stackable: 1
   _isKey: 0
