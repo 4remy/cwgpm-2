@@ -14,10 +14,7 @@ namespace Schwer.ItemSystem.Demo {
         [SerializeField] private Text descriptionDisplay = default;
         [SerializeField] private GameObject useButton = default;
 <<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 44d11e30 ('Use button')
 =======
 >>>>>>> parent of 44d11e30 ('Use button')
 
@@ -94,9 +91,6 @@ namespace Schwer.ItemSystem.Demo {
             // ∴ the active status of the use button should be
             //   handled here, since it depends on the selected item.
             useButton.SetActive((item is UsableItem));
-<<<<<<< HEAD
->>>>>>> parent of 44d11e30 ('Use button')
-=======
 >>>>>>> parent of 44d11e30 ('Use button')
         }
 
@@ -113,10 +107,7 @@ namespace Schwer.ItemSystem.Demo {
             }
         }
 <<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 44d11e30 ('Use button')
 =======
 >>>>>>> parent of 44d11e30 ('Use button')
     }
