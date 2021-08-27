@@ -3197,12 +3197,15 @@ MonoBehaviour:
   conversation: {fileID: 11400000, guid: a70725247c71d4c078fe2a91054bdd82, type: 2}
   isCompleted: 0
   convoCompleted: {fileID: 11400000, guid: 94986f1bd8d8a4b7bb969aa2435ff1d2, type: 2}
-  thisSpeechType: 0
-  itemless: 1
-  item: {fileID: 11400000, guid: 18ffadfad41aa4049a552d015bbdfca9, type: 2}
+  thisSpeechType: 1
+  noItemLock: 1
+  noItemTaking: 1
+  item1: {fileID: 11400000, guid: 233ddf07002494c859d8c2137b13afb6, type: 2}
+  itemless: 0
+  item2: {fileID: 11400000, guid: 233ddf07002494c859d8c2137b13afb6, type: 2}
   independent: 1
   priorEvent: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
-  priorSuccess: 0
+  priorSuccess: 1
 --- !u!61 &795969448
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7829,12 +7832,12 @@ PrefabInstance:
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3075962
+      value: -0.36192322
       objectReference: {fileID: 0}
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07578063
+      value: 0.044162035
       objectReference: {fileID: 0}
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
@@ -9364,6 +9367,16 @@ PrefabInstance:
       propertyPath: inventoryPanel
       value: 
       objectReference: {fileID: 873575698}
+    - target: {fileID: 753767055180302616, guid: 1a89d08f07d6e477280da633ebf22e2c,
+        type: 3}
+      propertyPath: usingPausePanel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753767055180302616, guid: 1a89d08f07d6e477280da633ebf22e2c,
+        type: 3}
+      propertyPath: soundEffectToPlay
+      value: Settings
+      objectReference: {fileID: 0}
     - target: {fileID: 753767055180302618, guid: 1a89d08f07d6e477280da633ebf22e2c,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -10116,7 +10129,7 @@ PrefabInstance:
     - target: {fileID: 5795382942830587807, guid: 230105c1dba7d44d1888be81ee37fe2c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.667477
+      value: -10.549412
       objectReference: {fileID: 0}
     - target: {fileID: 5795382942830587807, guid: 230105c1dba7d44d1888be81ee37fe2c,
         type: 3}
