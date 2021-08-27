@@ -808,20 +808,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1779157348794249605, guid: c9023359dec1a5c4e8430f8b31a745fc,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000056398414
+      objectReference: {fileID: 0}
     - target: {fileID: 2778633449183442230, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2778633449183442230, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2778633449183442230, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6148516425531417237, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
@@ -961,17 +966,27 @@ PrefabInstance:
     - target: {fileID: 6148516425531417239, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294589649816600078, guid: c9023359dec1a5c4e8430f8b31a745fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9071520442569820775, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9071520442569820775, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071520442569820775, guid: c9023359dec1a5c4e8430f8b31a745fc,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9135732568030967925, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
@@ -2721,6 +2736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b21f67526c7649618eb660f95d850c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GiveableCollided: 0
 --- !u!61 &1999932169
 BoxCollider2D:
   m_ObjectHideFlags: 0

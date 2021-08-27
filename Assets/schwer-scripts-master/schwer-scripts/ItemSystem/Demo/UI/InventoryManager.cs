@@ -13,11 +13,7 @@ namespace Schwer.ItemSystem.Demo {
         [SerializeField] private Text nameDisplay = default;
         [SerializeField] private Text descriptionDisplay = default;
         [SerializeField] private GameObject useButton = default;
-        [SerializeField] private GameObject giveButton = default;
-        // get the public bool GiveableCollided from Giveable.cs
-        //GetComponent<Giveable>().GiveableCollided
-        // public Giveable Gvb;
-        //private bool Giveable;
+
 
         private List<ItemSlot> itemSlots = new List<ItemSlot>();
 
@@ -83,24 +79,7 @@ namespace Schwer.ItemSystem.Demo {
                 descriptionDisplay.text = "";
             }
 
-            // UpdateDisplay handles displaying information about
-            // the currently selected item.
-            // ∴ the active status of the use button should be
-            //   handled here, since it depends on the selected item.
-            useButton.SetActive((item is UsableItem));
 
-            //if player is colliding with 'givable' character
-            //find public bool
-
-            /*
-            Giveable = gameObject.GetComponent<Giveable>().GiveableCollided;
-            if (Giveable)
-            {
-                    Debug.Log("give button active??");
-                    //giveButton.SetActive;
-                
-            }
-            */
 
         }
 
@@ -118,12 +97,5 @@ namespace Schwer.ItemSystem.Demo {
             }
         }
 
-        // Called by the use button's OnClick UnityEvent
-        public void GiveButtonPressed()
-        {
-            Debug.Log("give button pressed");
-            // call the give function on the character in overworld
-            //givable.give();
-        }
     }
 }
