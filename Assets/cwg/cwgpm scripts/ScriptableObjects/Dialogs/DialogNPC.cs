@@ -21,16 +21,22 @@ public class DialogNPC : Interactable
     public BoolValue convoCompleted;
     public SpeechType thisSpeechType;
 
-    [Header("Do they taken an item?")]
-
-    public bool noTake;
+    [Header("Paywall locked behind item?")]
+    //set unlocked to TRUE if it doesn't require an item.
+    public bool unlocked;
     [SerializeField] private Schwer.ItemSystem.Item item1 = default;
 
+
     [Header("Do they give you an item?")]
-    //set itemless to TRUE if it doesn't give stuff.
-    public bool itemless;
+    //set giftless to TRUE if it doesn't give stuff.
+    public bool giftless;
     [SerializeField] private Schwer.ItemSystem.Item item2 = default;
 
+  
+    [Header("Do they take an item?")]
+    //set to noTake TRUE if it doesn't remove any items.
+    public bool noTake;
+    [SerializeField] private Schwer.ItemSystem.Item item3 = default;
 
     [Header("Happens independently? untick if you need priors")]
     //set independent to TRUE if you aren't running checks.
@@ -68,6 +74,14 @@ public class DialogNPC : Interactable
                 return;
             }
         }
+        if (!unlocked)
+        {
+            if (player.inventory[item1] == 0)
+            {
+                Debug.Log("you don't have the item needed");
+                return;
+            }
+        }
         if (thisSpeechType == SpeechType.oneOffConvo)
         {
             if (!onlyOnce)
@@ -77,7 +91,7 @@ public class DialogNPC : Interactable
                 isCompleted = true;
                 convoCompleted.RuntimeValue = isCompleted;
                 onlyOnce = true;
-                if (!itemless)
+                if (!giftless)
                 {
                     player.inventory[item2]++;
 
@@ -86,7 +100,7 @@ public class DialogNPC : Interactable
                 }
                 if (!noTake)
                 {
-                    player.inventory[item1]--;
+                    player.inventory[item3]--;
 
 //I am hard coding these sound effects in
 //this needs a different sound effect for 'character taking item'

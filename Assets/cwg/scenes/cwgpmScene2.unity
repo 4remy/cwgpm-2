@@ -2804,10 +2804,12 @@ MonoBehaviour:
   isCompleted: 0
   convoCompleted: {fileID: 11400000, guid: 94986f1bd8d8a4b7bb969aa2435ff1d2, type: 2}
   thisSpeechType: 1
-  noTake: 0
+  unlocked: 0
   item1: {fileID: 11400000, guid: f27f189dee1134d3fb831707a685628b, type: 2}
-  itemless: 1
+  giftless: 1
   item2: {fileID: 11400000, guid: bdc5d6f4ef12a499f8dc8632206b8e87, type: 2}
+  noTake: 1
+  item3: {fileID: 11400000, guid: b19f29709200d4b74be67c33a5c8bd1d, type: 2}
   independent: 1
   priorEvent: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
   priorSuccess: 1
