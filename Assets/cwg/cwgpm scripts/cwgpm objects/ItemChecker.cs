@@ -13,8 +13,18 @@ public class ItemChecker : MonoBehaviour
     //[Header("item you are checking")]
     [SerializeField] private Schwer.ItemSystem.Item oldItem = default;
 
+    [HideInInspector]
     public bool playerInRange;
 
+    [Header("Show a Dialog or a Sprite?")]
+    public bool noDialog;
+    public bool noSprite;
+
+    [Header("Sprite to be Shown")]
+    //make an empty child gameobject with a sprite renderer
+    public GameObject chosenSprite;
+
+    [Header("Normal Dialog box goes here")]
     public GameObject dialogBox;
     public Text dialogText;
     [Multiline]
@@ -36,10 +46,19 @@ public class ItemChecker : MonoBehaviour
                 Debug.Log("You can cook now");
                 playerInRange = true;
 
-                dialogBox.SetActive(true);
-                dialogText.text = dialog;
+                if (!noDialog)
+                {
+                    dialogBox.SetActive(true);
+                    dialogText.text = dialog;
+                    Debug.Log("dialog box showing");
+                }
 
-                //i would substitue this for a gameobject thats like an exclamation mark over the grill you turn on and off
+                if(!noSprite)
+                {
+                    chosenSprite.SetActive(true);
+                    Debug.Log("sprite showing");
+                }
+
             }
 
             else
@@ -58,6 +77,7 @@ public class ItemChecker : MonoBehaviour
             playerInRange = false;
 
             dialogBox.SetActive(false);
+            chosenSprite.SetActive(false);
 
         }
     }
