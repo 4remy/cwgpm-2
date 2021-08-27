@@ -21,16 +21,22 @@ public class DialogNPC : Interactable
     public BoolValue convoCompleted;
     public SpeechType thisSpeechType;
 
-    [Header("give item?")]
+    [Header("Do they taken an item?")]
+
+    public bool noTake;
+    [SerializeField] private Schwer.ItemSystem.Item item1 = default;
+
+    [Header("Do they give you an item?")]
     //set itemless to TRUE if it doesn't give stuff.
     public bool itemless;
-    [SerializeField] private Schwer.ItemSystem.Item item = default;
+    [SerializeField] private Schwer.ItemSystem.Item item2 = default;
 
-    [Header("Happens independently? Or needs priors")]
+
+    [Header("Happens independently? untick if you need priors")]
     //set independent to TRUE if you aren't running checks.
     public bool independent;
 
-    [Header("Reliant on earlier things being completed?")]
+    [Header("Which prior event is needed?")]
 
     //do you want your conversation to be triggered only after something else
     // was completed? it can be an earlier convo, but could be any bool value
@@ -73,7 +79,19 @@ public class DialogNPC : Interactable
                 onlyOnce = true;
                 if (!itemless)
                 {
-                    player.inventory[item]++;
+                    player.inventory[item2]++;
+
+                    //I am hard coding these sound effects in
+                    FindObjectOfType<AudioManager>().Play("ItemGet");
+                }
+                if (!noTake)
+                {
+                    player.inventory[item1]--;
+
+//I am hard coding these sound effects in
+//this needs a different sound effect for 'character taking item'
+
+FindObjectOfType<AudioManager>().Play("Whp");
                 }
                 onlyOnce = true;
             }

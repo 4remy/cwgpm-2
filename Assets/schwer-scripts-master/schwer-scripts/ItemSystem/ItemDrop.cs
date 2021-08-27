@@ -11,7 +11,7 @@ public class ItemDrop : MonoBehaviour
         var player = other.GetComponent<CharacterController2D>();
         if (player != null)
         {
-            //FindObjectOfType<SoundManager>().Play("itemget");
+            //FindObjectOfType<AudioManager>().Play("itemget");
             player.inventory[item]++;
 
             //FindObjectOfType<AudioManager>().Play("ItemGet");
@@ -20,7 +20,7 @@ public class ItemDrop : MonoBehaviour
             Destroy(this.gameObject);
 
             // if you put the sound after destroy it wont play lol
-          //  GetComponent<SoundManager>().Play("itemget")
+            //  GetComponent<AudioManager>().Play("itemget")
         }
     }
 }
