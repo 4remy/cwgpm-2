@@ -811,7 +811,6 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
     - target: {fileID: 1779157348794249605, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -832,8 +831,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 44d11e30 ('Use button')
 =======
 >>>>>>> parent of 44d11e30 ('Use button')
 =======
@@ -982,7 +979,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
     - target: {fileID: 8294589649816600078, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_IsActive
@@ -1004,8 +1000,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 44d11e30 ('Use button')
 =======
 >>>>>>> parent of 44d11e30 ('Use button')
 =======
@@ -2716,7 +2710,6 @@ BoxCollider2D:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &1999932166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,8 +2860,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-=======
->>>>>>> parent of 44d11e30 ('Use button')
 =======
 >>>>>>> parent of 44d11e30 ('Use button')
 =======
