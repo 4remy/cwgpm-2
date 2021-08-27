@@ -808,7 +808,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD
     - target: {fileID: 1779157348794249605, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -829,8 +828,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 44d11e30 ('Use button')
     - target: {fileID: 6148516425531417237, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_SortingOrder
@@ -976,7 +973,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 9071520442569820775, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -992,8 +988,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-=======
->>>>>>> parent of 44d11e30 ('Use button')
     - target: {fileID: 9135732568030967925, guid: c9023359dec1a5c4e8430f8b31a745fc,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2441,6 +2435,7 @@ Transform:
   - {fileID: 693849097}
   - {fileID: 2029783697}
   - {fileID: 1749829775}
+  - {fileID: 1999932167}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2695,7 +2690,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5466666, y: 0.99333334}
   m_EdgeRadius: 0
-<<<<<<< HEAD
 --- !u!1 &1999932166
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,8 +2840,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-=======
->>>>>>> parent of 44d11e30 ('Use button')
 --- !u!1 &2008259886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2997571705817187426, guid: 0f59576c74f4f41f1a5fd5626475ede5,
