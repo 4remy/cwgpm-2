@@ -1179,7 +1179,7 @@ MonoBehaviour:
   storedDug: {fileID: 11400000, guid: 67df99a7cd52d4416b15e267d65c75d5, type: 2}
   dialogBox: {fileID: 1694775782}
   dialogText: {fileID: 2132345960}
-  soundEffectToPlay: 
+  soundEffectToPlay: Chwack
 --- !u!1 &155703487
 GameObject:
   m_ObjectHideFlags: 0
@@ -7815,12 +7815,12 @@ PrefabInstance:
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3075962
+      value: -0.36192322
       objectReference: {fileID: 0}
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07578063
+      value: 0.044162035
       objectReference: {fileID: 0}
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
@@ -10117,7 +10117,7 @@ PrefabInstance:
     - target: {fileID: 5795382942830587807, guid: 230105c1dba7d44d1888be81ee37fe2c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.667477
+      value: -10.549412
       objectReference: {fileID: 0}
     - target: {fileID: 5795382942830587807, guid: 230105c1dba7d44d1888be81ee37fe2c,
         type: 3}
