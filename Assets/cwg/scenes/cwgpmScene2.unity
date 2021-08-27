@@ -3198,11 +3198,8 @@ MonoBehaviour:
   isCompleted: 0
   convoCompleted: {fileID: 11400000, guid: 94986f1bd8d8a4b7bb969aa2435ff1d2, type: 2}
   thisSpeechType: 1
-  noItemLock: 1
-  noItemTaking: 1
-  item1: {fileID: 11400000, guid: 233ddf07002494c859d8c2137b13afb6, type: 2}
-  itemless: 0
-  item2: {fileID: 11400000, guid: 233ddf07002494c859d8c2137b13afb6, type: 2}
+  itemless: 1
+  item: {fileID: 11400000, guid: ba483179f48c1482b90cd8c91665939f, type: 2}
   independent: 1
   priorEvent: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
   priorSuccess: 1
