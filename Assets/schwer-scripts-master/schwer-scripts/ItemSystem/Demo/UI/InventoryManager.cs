@@ -13,16 +13,7 @@ namespace Schwer.ItemSystem.Demo {
         [SerializeField] private Text nameDisplay = default;
         [SerializeField] private Text descriptionDisplay = default;
         [SerializeField] private GameObject useButton = default;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 44d11e30 ('Use button')
-=======
->>>>>>> parent of 44d11e30 ('Use button')
-=======
->>>>>>> parent of 44d11e30 ('Use button')
 
         private List<ItemSlot> itemSlots = new List<ItemSlot>();
 
@@ -88,22 +79,9 @@ namespace Schwer.ItemSystem.Demo {
                 descriptionDisplay.text = "";
             }
 
-<<<<<<< HEAD
 
-
-=======
-            // UpdateDisplay handles displaying information about
-            // the currently selected item.
-            // ∴ the active status of the use button should be
-            //   handled here, since it depends on the selected item.
             useButton.SetActive((item is UsableItem));
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 44d11e30 ('Use button')
-=======
->>>>>>> parent of 44d11e30 ('Use button')
-=======
->>>>>>> parent of 44d11e30 ('Use button')
+
         }
 
         // Called by the use button's OnClick UnityEvent
@@ -118,15 +96,6 @@ namespace Schwer.ItemSystem.Demo {
                 }
             }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 44d11e30 ('Use button')
-=======
->>>>>>> parent of 44d11e30 ('Use button')
-=======
->>>>>>> parent of 44d11e30 ('Use button')
     }
 }
