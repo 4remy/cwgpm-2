@@ -6,16 +6,16 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mondayoverride
+  m_Name: MondayOverride
   m_Controller: {fileID: 9100000, guid: e8d15e8a014a8d14cb010e82aa51b416, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 5b613f500dcc3cc4686179c5c0718b19, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 02ae37972bfaa4332b0128935576526f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7dc1f16c3a95e45e3bc33180e4105272, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: afbf34598d33133469862d42e0070437, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: e8fa7ffd43e8b4902a0043b139849904, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: edeb2858e2aa44f3d93c53d3369db01f, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: d6f0ce4779b6f6946be25034fccb02a4, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: bebac20f3ddac419cb5c8fe5fb62e588, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 86aa1cecb39ff4206b273d2e7faf75a8, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 6d835dab529386a46a692a79b662f949, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: f5695fadb726848a882a6b5b59c09ca7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 45c3f2f2baf4a49eb83db5c7c615147c, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: a5c1a0b1e434f7c4fa48f0f51477254c, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 07263ac0a0707493d9273468feaadb1c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7ea39b7519fab40ffac7c59028f00f1f, type: 2}
