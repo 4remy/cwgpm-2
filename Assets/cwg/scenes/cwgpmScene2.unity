@@ -1715,6 +1715,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1533160272907443120}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &351163113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351163115}
+  - component: {fileID: 351163114}
+  m_Layer: 0
+  m_Name: AudioZoneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &351163114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351163113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f9bc61dd64c4cbea2dccd443c33615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theme1: theme1
+--- !u!4 &351163115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351163113}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9259943, y: 15.156148, z: -1193.9491}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410942008
 GameObject:
   m_ObjectHideFlags: 0
@@ -8623,7 +8667,7 @@ PrefabInstance:
     - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
         type: 3}
       propertyPath: sounds.Array.size
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
         type: 3}
@@ -8662,12 +8706,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
         type: 3}
+      propertyPath: sounds.Array.data[12].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0aa9cf0f0337d494ba21145c41b13d39, type: 3}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[12].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[12].name
+      value: Theme1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[13].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 14314f812ed8546249ef9e97b374ebb1, type: 3}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[13].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[13].name
+      value: Theme2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[14].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9738cf19c3fc84f9ca13e91c4788d861, type: 3}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[14].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[14].name
+      value: itemget
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
       propertyPath: sounds.Array.data[10].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
         type: 3}
       propertyPath: sounds.Array.data[11].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[12].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[13].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[14].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
@@ -8683,6 +8792,21 @@ PrefabInstance:
     - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
         type: 3}
       propertyPath: sounds.Array.data[11].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[12].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[13].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150497678663909772, guid: 9990bade1d5894b8aadde235ebdbd412,
+        type: 3}
+      propertyPath: sounds.Array.data[14].volume
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5150497678663909773, guid: 9990bade1d5894b8aadde235ebdbd412,
