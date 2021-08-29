@@ -98,15 +98,15 @@ public class AudioManager : MonoBehaviour
     {
         float startTime = Time.time;
         float endTime = startTime + durationSeconds;
-        float startVolume = sound.volume;
+        float startVolume = sound.source.volume;
 
-        while (sound.volume > 0)
+        while (sound.source.volume > 0)
         {
             // a value that goes from 1 to 0 in durationSeconds time
             float interp = Mathf.Max(0, (endTime - Time.time) / durationSeconds);
 
             // the sound will go from the start volume to 0 after durationSeconds pass
-            sound.volume = startVolume * interp;
+            sound.source.volume = startVolume * interp;
             yield return null;
         }
     }
