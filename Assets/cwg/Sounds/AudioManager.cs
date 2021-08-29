@@ -81,8 +81,10 @@ public class AudioManager : MonoBehaviour
 
         if (fades.ContainsKey(name))
         { // if this sound is already being faded
-            StopCoroutine(fades[name]); // stop fading it
+          //  StopCoroutine(fades[name]); // stop fading it
             fades.Remove(name);
+
+            //this bit makes it break lol
         }
 
         // start a new fade operation
