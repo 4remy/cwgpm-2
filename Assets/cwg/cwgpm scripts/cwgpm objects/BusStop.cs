@@ -8,6 +8,8 @@ public class BusStop : Interactable
     public Signal SittingSignal;
     private Animator anim;
 
+    //the character controller has coordinates for sitting position hardcoded in, this needs to be changed if you want to sit in more than one place
+
     // Start is called before the first frame update
     void Start()
     {

@@ -22,6 +22,9 @@ public class ItemChanger : Interactable
     //[Header("New item")]
     [SerializeField] private Schwer.ItemSystem.Item newItem = default;
 
+    //[Header("New item")]
+    [SerializeField] private Schwer.ItemSystem.Item emptySprite = default;
+
 
     [Header("Animation")]
    
@@ -69,6 +72,11 @@ public class ItemChanger : Interactable
     
     IEnumerator cookingCo()
     {
+
+        //BUG fix below
+        //makes it so character cannot move during this coroutine
+        player.RaiseItem(emptySprite);
+
         FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
         yield return new WaitForSeconds(0.1f);
         effect.SetBool("Effect", true);
@@ -76,8 +84,14 @@ public class ItemChanger : Interactable
         anim.SetBool("Cooking", false);
         player.inventory[oldItem]--;
         player.inventory[newItem]++;
-        FindObjectOfType<AudioManager>().Play("ItemGet");
+
+        player.RaiseItem(null);
+
+        //FindObjectOfType<AudioManager>().Play("ItemGet");
+        //not needed: raise item null creates the above sound effect
         effect.SetBool("Effect", false);
+
+        
     }
     
 }
