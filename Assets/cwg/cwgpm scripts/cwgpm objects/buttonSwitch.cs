@@ -5,10 +5,13 @@ using UnityEngine;
 public class buttonSwitch : Interactable
 {
     public bool switchPressed;
-    [Header("Animation")]
+    [Header("Animate Conveyor")]
     private Animator animator1;
+    [Header("Animate Grinder")]
     private Animator animator2;
-    //public GameObject hideOnSwitch;
+    [Header("Hidden unless switch ON")]
+    public GameObject hideOnSwitch1;
+    public GameObject hideOnSwitch2;
 
     void Start()
     {
@@ -27,14 +30,16 @@ public class buttonSwitch : Interactable
             animator1.SetBool("Switch", false);
             animator2.SetBool("Switch", false);
             FindObjectOfType<AudioManager>().Stop("Conveyor");
-            // hideOnSwitch.SetActive(true);
+            hideOnSwitch1.SetActive(false);
+            hideOnSwitch2.SetActive(false);
         }
         else
         {
             animator1.SetBool("Switch", true);
             animator2.SetBool("Switch", true);
 FindObjectOfType<AudioManager>().Play("Conveyor");
-            // hideOnSwitch.SetActive(false);
+            hideOnSwitch1.SetActive(true);
+            hideOnSwitch2.SetActive(true);
         }
     }
 }
