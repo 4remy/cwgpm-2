@@ -1085,7 +1085,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogBox
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 98786268}
     - target: {fileID: 6199907649177515492, guid: b82038598501a47eea4fb841b00812dd,
         type: 3}
       propertyPath: storedDug
@@ -1096,7 +1096,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 564246679}
     - target: {fileID: 6199907649177515492, guid: b82038598501a47eea4fb841b00812dd,
         type: 3}
       propertyPath: soundEffectToPlay
@@ -1495,89 +1495,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2123689034}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1009818936
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1009818937}
-  - component: {fileID: 1009818938}
-  - component: {fileID: 1009818939}
-  m_Layer: 0
-  m_Name: trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1009818937
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009818936}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2076579035}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1009818938
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009818936}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.49258852}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.985177}
-  m_EdgeRadius: 0
---- !u!114 &1009818939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009818936}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43fa623a848b242c3995d3b2cc16e81f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 0cb1104ea83abe3499ef9010d10f9bd3, type: 2}
-  isCompleted: 0
-  convoCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
-  thisSpeechType: 0
-  unlocked: 0
-  item1: {fileID: 0}
-  giftless: 0
-  item2: {fileID: 0}
-  noTake: 0
-  item3: {fileID: 0}
-  independent: 1
-  priorEvent: {fileID: 11400000, guid: 94986f1bd8d8a4b7bb969aa2435ff1d2, type: 2}
-  priorSuccess: 0
 --- !u!1001 &1013824408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2656,9 +2573,11 @@ GameObject:
   - component: {fileID: 2076579035}
   - component: {fileID: 2076579033}
   - component: {fileID: 2076579034}
+  - component: {fileID: 2076579037}
+  - component: {fileID: 2076579038}
   - component: {fileID: 2076579036}
   m_Layer: 0
-  m_Name: wanderer1
+  m_Name: DoorMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2745,8 +2664,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 38.026707, y: 8.004899, z: 0}
   m_LocalScale: {x: 1.7051356, y: 1.7051356, z: 1.7051356}
-  m_Children:
-  - {fileID: 1009818937}
+  m_Children: []
   m_Father: {fileID: 1551012748}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2763,7 +2681,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0077426434, y: -0.6387676}
+  m_Offset: {x: 0, y: 0.45668602}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2774,7 +2692,58 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90257406, y: 0.14246488}
+  m_Size: {x: 0.98, y: 0.50662804}
+  m_EdgeRadius: 0
+--- !u!114 &2076579037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076579032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fa623a848b242c3995d3b2cc16e81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation: {fileID: 11400000, guid: 0cb1104ea83abe3499ef9010d10f9bd3, type: 2}
+  isCompleted: 0
+  convoCompleted: {fileID: 11400000, guid: 9c06a0790a4054a5c8f210a1be1f9350, type: 2}
+  thisSpeechType: 0
+  unlocked: 1
+  item1: {fileID: 0}
+  giftless: 1
+  item2: {fileID: 0}
+  noTake: 1
+  item3: {fileID: 0}
+  independent: 1
+  priorEvent: {fileID: 11400000, guid: 94986f1bd8d8a4b7bb969aa2435ff1d2, type: 2}
+  priorSuccess: 1
+--- !u!61 &2076579038
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076579032}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.368927}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.98, y: 1.42}
+    newSize: {x: 0.98, y: 1.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.98, y: 2.157854}
   m_EdgeRadius: 0
 --- !u!1001 &2123689034
 PrefabInstance:
@@ -4232,7 +4201,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogBox
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 98786268}
     - target: {fileID: 6199907649177515492, guid: b82038598501a47eea4fb841b00812dd,
         type: 3}
       propertyPath: storedDug
@@ -4243,7 +4212,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialogText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 564246679}
     - target: {fileID: 6199907649177515492, guid: b82038598501a47eea4fb841b00812dd,
         type: 3}
       propertyPath: soundEffectToPlay
