@@ -7,7 +7,7 @@ using UnityEngine;
 //vcams have separate rooms too after all
 public class AudioZoneManager : MonoBehaviour
 {
-    public string Theme1;
+    public string Theme;
     //private string TheCollider1;
 
 
@@ -28,7 +28,7 @@ public class AudioZoneManager : MonoBehaviour
         var player = other.GetComponent<CharacterController2D>();
         if (player != null)
         {
-            FindObjectOfType<AudioManager>().Play(Theme1);
+            FindObjectOfType<AudioManager>().Play(Theme);
             Debug.Log("theme should play btw");
         }
     }
@@ -38,7 +38,7 @@ public class AudioZoneManager : MonoBehaviour
         var player = other.GetComponent<CharacterController2D>();
         if (player != null)
         {
-            FindObjectOfType<AudioManager>().Fade(Theme1);
+            FindObjectOfType<AudioManager>().Fade(Theme);
            // FindObjectOfType<AudioManager>().Stop(Theme1);
             Debug.Log("theme should stop btw");
         }

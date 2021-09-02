@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2391559289900922147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2391559289900922145}
+  - component: {fileID: 2391559289900922144}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2391559289900922145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391559289900922147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2391559289900922144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391559289900922147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84daba315ed5e46d985454e97efcbd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Exit
+    clip: {fileID: 8300000, guid: 06110061e059340659cd641ec693eb8c, type: 3}
+    volume: 0.16
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ItemGet
+    clip: {fileID: 8300000, guid: 9738cf19c3fc84f9ca13e91c4788d861, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Achieve
+    clip: {fileID: 8300000, guid: 9eac88416a0f44691be40279440be0fe, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Chwack
+    clip: {fileID: 8300000, guid: 49104209cbcdc4adc81642d063239943, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lighter
+    clip: {fileID: 8300000, guid: df4d2a756456d46199d99a3aaf94d8e1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Oink
+    clip: {fileID: 8300000, guid: fcc9f086ebcc6465daaa64e240cab8eb, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Paper
+    clip: {fileID: 8300000, guid: e30c89c56f3ec48dab4a3f905e9e4653, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Settings
+    clip: {fileID: 8300000, guid: 42bf9b059f30c459abcf2a8144f98fe7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Snow
+    clip: {fileID: 8300000, guid: 02c5e4191c3824448b0ee986f05b145c, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hiss
+    clip: {fileID: 8300000, guid: e4ce299615d0f4c69a9e9acefb562407, type: 3}
+    volume: 0.45
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Nice
+    clip: {fileID: 8300000, guid: 2ae955d3d202c4ee79c3ae3731230ffd, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Whp
+    clip: {fileID: 8300000, guid: 0f4e077aff2234061b559676e19dcd66, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Theme1
+    clip: {fileID: 8300000, guid: 0aa9cf0f0337d494ba21145c41b13d39, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Theme2
+    clip: {fileID: 8300000, guid: 14314f812ed8546249ef9e97b374ebb1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: itemget
+    clip: {fileID: 8300000, guid: 9738cf19c3fc84f9ca13e91c4788d861, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Meat
+    clip: {fileID: 8300000, guid: b0008f9ec00544d8d92fa0273e697cec, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Conveyor
+    clip: {fileID: 8300000, guid: 24345aa1ec1b74dc7b3cefa7104df9d3, type: 3}
+    volume: 0.37
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Theme3
+    clip: {fileID: 8300000, guid: 62fed3caecb404b2dad32c6a8268f3af, type: 3}
+    volume: 0.37
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

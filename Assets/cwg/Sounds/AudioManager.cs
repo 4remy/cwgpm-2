@@ -26,6 +26,10 @@ public class AudioManager : MonoBehaviour
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
+            if (s.source == null)
+            {
+                Debug.Log("Source assigning problem");
+            }
             s.source.clip = s.clip;
 
             s.source.volume = s.volume;
@@ -44,13 +48,25 @@ public class AudioManager : MonoBehaviour
 
     public void Play (string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        s.source.Play();
-        //turns volume on
-        s.source.volume = s.volume * (1);
+        Sound s = Array.Find(sounds, sound => sound == null ? false : sound.name == name);
         if (s == null)
+        {
             Debug.Log("sound not found");
             return;
+        }
+        if (s.source == null)
+        {
+            Debug.Log("source not found");
+            return;
+        }
+        else {
+        s.source.Play();
+
+        }
+        //turns volume on
+
+        s.source.volume = s.volume * (1);
+
 
     }
 
@@ -65,10 +81,16 @@ public class AudioManager : MonoBehaviour
 
         //make sound stop  IMMEDIATELY after leaving zone
         s.source.volume = s.volume * (0);
-        // how to make sound fade out?
         
 
     }
+
+    /*
+    public void StopAll()
+    {
+        //stop all sounds???
+    }
+    */
 
     public void Fade(string name)
     {
@@ -88,7 +110,7 @@ public class AudioManager : MonoBehaviour
         }
 
         // start a new fade operation
-        Coroutine fadeCoroutine = StartCoroutine(fadeCo(s, 1.5f, name));
+        Coroutine fadeCoroutine = StartCoroutine(fadeSoundCo(s, 1.5f, name));
         // track it in the map
     fades.Add(name, fadeCoroutine);
 
@@ -96,7 +118,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    IEnumerator fadeCo(Sound sound, float durationSeconds, string name)
+    IEnumerator fadeSoundCo(Sound sound, float durationSeconds, string name)
     {
         float startTime = Time.time;
         float endTime = startTime + durationSeconds;
@@ -113,32 +135,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    /*
-    public void Fade(string name)
-    {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.Log("sound not found");
-            return;
-        }
-        StartCoroutine(fadeCo());
-    }
-
-IEnumerator fadeCo(Sound sound, float durationSeconds, string name) {
-    float startTime = Time.time;
-    float endTime = startTime + durationSeconds;
-    float startVolume = sound.volume;
-
-    while (sound.volume > 0) {
-        // a value that goes from 1 to 0 in durationSeconds time
-        float interp = Mathf.Max(0, (endTime - Time.time) / durationSeconds);
-
-        // the sound will go from the start volume to 0 after durationSeconds pass
-        sound.volume = startVolume * interp;
-        yield return null;
-    }
-     */
 }
 
 /* this does something really fucking cool and weird
