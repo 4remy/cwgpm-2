@@ -1091,7 +1091,7 @@ MonoBehaviour:
   storedDug: {fileID: 11400000, guid: 67df99a7cd52d4416b15e267d65c75d5, type: 2}
   dialogBox: {fileID: 1694775782}
   dialogText: {fileID: 2132345960}
-  soundEffectToPlay: 
+  soundEffectToPlay: itemget
 --- !u!1 &109540557
 GameObject:
   m_ObjectHideFlags: 0
