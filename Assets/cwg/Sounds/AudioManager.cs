@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
+    private bool themePlaying;
     public static AudioManager instance;
     Dictionary<string, Coroutine> fades = new Dictionary<string, Coroutine>();
 
@@ -67,6 +68,34 @@ public class AudioManager : MonoBehaviour
 
         s.source.volume = s.volume * (1);
 
+
+    }
+
+    public void PlayTheme(string name)
+    {
+        if(!themePlaying)
+        {
+            Sound s = Array.Find(sounds, sound => sound == null ? false : sound.name == name);
+            if (s == null)
+            {
+                Debug.Log("sound not found");
+                return;
+            }
+            if (s.source == null)
+            {
+                Debug.Log("source not found");
+                return;
+            }
+            else
+            {
+                s.source.Play();
+                themePlaying = true;
+
+            }
+            //turns volume on
+
+            s.source.volume = s.volume * (1);
+        }
 
     }
 

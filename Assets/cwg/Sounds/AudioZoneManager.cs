@@ -28,7 +28,7 @@ public class AudioZoneManager : MonoBehaviour
         var player = other.GetComponent<CharacterController2D>();
         if (player != null)
         {
-            FindObjectOfType<AudioManager>().Play(Theme);
+            FindObjectOfType<AudioManager>().PlayTheme(Theme);
             Debug.Log("theme should play btw");
         }
     }
