@@ -96,7 +96,7 @@ public class DialogNPC : Interactable
                     player.inventory[item2]++;
 
                     //I am hard coding these sound effects in
-                    AudioManager.instance?.Play("ItemGet");
+                    AudioManager.Instance.Play("ItemGet");
                 }
                 if (!noTake)
                 {
@@ -105,7 +105,7 @@ public class DialogNPC : Interactable
 //I am hard coding these sound effects in
 //this needs a different sound effect for 'character taking item'
 
-AudioManager.instance?.Play("Whp");
+AudioManager.Instance.Play("Whp");
                 }
                 onlyOnce = true;
             }

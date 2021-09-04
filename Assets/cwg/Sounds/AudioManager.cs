@@ -1,28 +1,20 @@
-﻿using UnityEngine.Audio;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Schwer;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : DDOLSingleton<AudioManager>
 {
     public Sound[] sounds;
 
     private bool themePlaying;
-    public static AudioManager instance;
     Dictionary<string, Coroutine> fades = new Dictionary<string, Coroutine>();
 
     // Start is called before the first frame update
-    void Awake()
+    protected override void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
+        base.Awake();
 
         foreach (Sound s in sounds)
         {

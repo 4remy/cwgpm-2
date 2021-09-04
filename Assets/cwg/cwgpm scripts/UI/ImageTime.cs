@@ -58,7 +58,7 @@ public class ImageTime : MonoBehaviour
             else
             {
                 CustomImage.SetActive(true);
-                AudioManager.instance?.Play(soundEffectToPlay);
+                AudioManager.Instance.Play(soundEffectToPlay);
                 timer = timer - waitTime;
             }
 

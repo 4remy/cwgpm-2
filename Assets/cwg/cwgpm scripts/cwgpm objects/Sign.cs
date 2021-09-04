@@ -30,7 +30,7 @@ public class Sign : MonoBehaviour
             }
             else
             {
-                AudioManager.instance?.Play(soundEffectToPlay);
+                AudioManager.Instance.Play(soundEffectToPlay);
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
             }

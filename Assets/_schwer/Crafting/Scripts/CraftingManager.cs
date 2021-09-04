@@ -143,13 +143,13 @@ namespace Schwer.ItemSystem {
 
                     discoveredRecipes.Add(recipes[i].id);
 
-                    AudioManager.instance?.Play("Achieve");
+                    AudioManager.Instance.Play("Achieve");
                     Debug.Log($"Crafted {recipes[i].outputAmount}x {recipes[i].output.name}!");
                     return;
                 }
             }
 
-            AudioManager.instance?.Play("Oink");
+            AudioManager.Instance.Play("Oink");
             Debug.Log($"The ingredients didn't yield anything...");
         }
 

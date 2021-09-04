@@ -38,7 +38,7 @@ public class snowPile : Interactable
         {
             if (!isDug)
             {
-                AudioManager.instance?.Play(soundEffectToPlay);
+                AudioManager.Instance.Play(soundEffectToPlay);
                 DigSnow();
             }
             else
@@ -72,7 +72,7 @@ public class snowPile : Interactable
         storedDug.RuntimeValue = isDug;
 
         
-        //AudioManager.instance?.Play("ItemGet");
+        //AudioManager.instance.Play("ItemGet");
     }
 
     private void SnowDug()
