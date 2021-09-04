@@ -67,7 +67,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1296582202303517434}
   - component: {fileID: 1296582202303517435}
-  - component: {fileID: 1296582202303517412}
   - component: {fileID: 1296582202303517432}
   - component: {fileID: 1296582202303517433}
   - component: {fileID: 1296582202303517439}
@@ -145,23 +144,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1296582202303517412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296582202303517413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9018cdd690b4434e8f47c54913a9f59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInRange: 0
-  isShowing: 0
-  dialogBox: {fileID: 0}
-  dialogText: {fileID: 0}
-  dialog: An adequately sized attache.
 --- !u!61 &1296582202303517432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -245,12 +227,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103f1f1a7c7a3422e9671f66f95955b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInRange: 0
   thisDoorType: 1
   open: 0
-  playerInventory: {fileID: 11400000, guid: eed34757efe8149009b05f2391e1c1fa, type: 2}
+  storedOpen: {fileID: 0}
+  _inventory: {fileID: 0}
+  item: {fileID: 0}
+  key: {fileID: 0}
   physicsCollider: {fileID: 1296582202035780204}
-  contents: {fileID: 0}
   raiseItem: {fileID: 11400000, guid: 7613166bb78374e3d9108a061150134e, type: 2}
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}

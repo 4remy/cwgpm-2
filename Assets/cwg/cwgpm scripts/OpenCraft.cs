@@ -37,7 +37,7 @@ public class OpenCraft : Interactable
                 if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
                 {
                     playerMemory.initialValue = playerPosition;
-            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
+            AudioManager.Instance.Play(soundEffectToPlay);
             StartCoroutine(FadeCo());
                 }
                 else

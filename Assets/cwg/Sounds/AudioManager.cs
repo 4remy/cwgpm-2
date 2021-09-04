@@ -1,28 +1,19 @@
-﻿using UnityEngine.Audio;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Schwer;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : DDOLSingleton<AudioManager>
 {
     public Sound[] sounds;
 
     private bool themePlaying;
-    public static AudioManager instance;
     Dictionary<string, Coroutine> fades = new Dictionary<string, Coroutine>();
 
-    // Start is called before the first frame update
-    void Awake()
+    protected override void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
+        base.Awake();
 
         foreach (Sound s in sounds)
         {
@@ -38,80 +29,65 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
         }
     }
-/*
-    void Start()
-    {
-        //change theme according to scene
-        Play("Theme");
-        Debug.Log("theme should play btw");
-    }
-*/
+    /*
+        void Start()
+        {
+            //change theme according to scene
+            Play("Theme");
+            Debug.Log("theme should play btw");
+        }
+    */
 
-    public void Play (string name)
+    private Sound FindSound(string name)
     {
         Sound s = Array.Find(sounds, sound => sound == null ? false : sound.name == name);
         if (s == null)
         {
-            Debug.Log("sound not found");
-            return;
+            Debug.Log($"Sound '{name}' not found.");
         }
-        if (s.source == null)
+        else if (s.source == null)
         {
-            Debug.Log("source not found");
-            return;
+            Debug.Log($"Sound source '{name}' not found.");
         }
-        else {
+        else
+        {
+            return s;
+        }
+
+        return null;
+    }
+
+    public void Play(string name)
+    {
+        var s = FindSound(name);
+        if (s == null) return;
+
         s.source.Play();
-
-        }
         //turns volume on
-
         s.source.volume = s.volume * (1);
-
-
     }
 
     public void PlayTheme(string name)
     {
-        if(!themePlaying)
+        if (!themePlaying)
         {
-            Sound s = Array.Find(sounds, sound => sound == null ? false : sound.name == name);
-            if (s == null)
-            {
-                Debug.Log("sound not found");
-                return;
-            }
-            if (s.source == null)
-            {
-                Debug.Log("source not found");
-                return;
-            }
-            else
-            {
-                s.source.Play();
-                themePlaying = true;
+            var s = FindSound(name);
+            if (s == null) return;
 
-            }
+            s.source.Play();
+            themePlaying = true;
             //turns volume on
-
             s.source.volume = s.volume * (1);
         }
-
     }
 
     public void Stop(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.Log("sound not found");
-            return;
-        }
+        var s = FindSound(name);
+        if (s == null) return;
 
         //make sound stop  IMMEDIATELY after leaving zone
         s.source.volume = s.volume * (0);
-        
-
     }
 
     /*
@@ -123,12 +99,8 @@ public class AudioManager : MonoBehaviour
 
     public void Fade(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.Log("sound not found");
-            return;
-        }
+        var s = FindSound(name);
+        if (s == null) return;
 
         if (fades.ContainsKey(name))
         { // if this sound is already being faded
@@ -141,10 +113,7 @@ public class AudioManager : MonoBehaviour
         // start a new fade operation
         Coroutine fadeCoroutine = StartCoroutine(fadeSoundCo(s, 1.5f, name));
         // track it in the map
-    fades.Add(name, fadeCoroutine);
-
-
-
+        fades.Add(name, fadeCoroutine);
     }
 
     IEnumerator fadeSoundCo(Sound sound, float durationSeconds, string name)
@@ -163,7 +132,6 @@ public class AudioManager : MonoBehaviour
             yield return null;
         }
     }
-
 }
 
 /* this does something really fucking cool and weird
