@@ -38,7 +38,7 @@ public class AudioZoneManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Two theme playing?");
+            Debug.Log("Two themes playing?");
         }
     }
 
