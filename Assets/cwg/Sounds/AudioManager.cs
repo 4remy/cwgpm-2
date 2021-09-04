@@ -38,26 +38,32 @@ public class AudioManager : DDOLSingleton<AudioManager>
         }
     */
 
-    public void Play(string name)
+    private Sound FindSound(string name)
     {
         Sound s = Array.Find(sounds, sound => sound == null ? false : sound.name == name);
         if (s == null)
         {
-            Debug.Log("sound not found");
-            return;
+            Debug.Log($"Sound '{name}' not found.");
         }
-        if (s.source == null)
+        else if (s.source == null)
         {
-            Debug.Log("source not found");
-            return;
+            Debug.Log($"Sound source '{name}' not found.");
         }
         else
         {
-            s.source.Play();
-
+            return s;
         }
-        //turns volume on
 
+        return null;
+    }
+
+    public void Play(string name)
+    {
+        var s = FindSound(name);
+        if (s == null) return;
+
+        s.source.Play();
+        //turns volume on
         s.source.volume = s.volume * (1);
     }
 
@@ -65,37 +71,20 @@ public class AudioManager : DDOLSingleton<AudioManager>
     {
         if (!themePlaying)
         {
-            Sound s = Array.Find(sounds, sound => sound == null ? false : sound.name == name);
-            if (s == null)
-            {
-                Debug.Log("sound not found");
-                return;
-            }
-            if (s.source == null)
-            {
-                Debug.Log("source not found");
-                return;
-            }
-            else
-            {
-                s.source.Play();
-                themePlaying = true;
+            var s = FindSound(name);
+            if (s == null) return;
 
-            }
+            s.source.Play();
+            themePlaying = true;
             //turns volume on
-
             s.source.volume = s.volume * (1);
         }
     }
 
     public void Stop(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.Log("sound not found");
-            return;
-        }
+        var s = FindSound(name);
+        if (s == null) return;
 
         //make sound stop  IMMEDIATELY after leaving zone
         s.source.volume = s.volume * (0);
@@ -110,12 +99,8 @@ public class AudioManager : DDOLSingleton<AudioManager>
 
     public void Fade(string name)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null)
-        {
-            Debug.Log("sound not found");
-            return;
-        }
+        var s = FindSound(name);
+        if (s == null) return;
 
         if (fades.ContainsKey(name))
         { // if this sound is already being faded
