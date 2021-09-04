@@ -75,9 +75,13 @@ public class AudioManager : DDOLSingleton<AudioManager>
             if (s == null) return;
 
             s.source.Play();
-            themePlaying = true;
+           // themePlaying = true;
             //turns volume on
             s.source.volume = s.volume * (1);
+        }
+        else
+        {
+            Debug.Log("2 themes playing?");
         }
     }
 
@@ -88,6 +92,7 @@ public class AudioManager : DDOLSingleton<AudioManager>
 
         //make sound stop  IMMEDIATELY after leaving zone
         s.source.volume = s.volume * (0);
+       // themePlaying = false;
     }
 
     /*
@@ -114,6 +119,7 @@ public class AudioManager : DDOLSingleton<AudioManager>
         Coroutine fadeCoroutine = StartCoroutine(fadeSoundCo(s, 1.5f, name));
         // track it in the map
         fades.Add(name, fadeCoroutine);
+        
     }
 
     IEnumerator fadeSoundCo(Sound sound, float durationSeconds, string name)
@@ -130,6 +136,7 @@ public class AudioManager : DDOLSingleton<AudioManager>
             // the sound will go from the start volume to 0 after durationSeconds pass
             sound.source.volume = startVolume * interp;
             yield return null;
+            themePlaying = false;
         }
     }
 }

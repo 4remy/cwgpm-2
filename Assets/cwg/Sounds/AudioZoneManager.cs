@@ -8,6 +8,7 @@ using UnityEngine;
 public class AudioZoneManager : MonoBehaviour
 {
     public string Theme;
+    private bool themePlaying;
     //private string TheCollider1;
 
 
@@ -25,11 +26,19 @@ public class AudioZoneManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var player = other.GetComponent<CharacterController2D>();
-        if (player != null)
+        if(!themePlaying)
         {
-            AudioManager.Instance.PlayTheme(Theme);
-            Debug.Log("theme should play btw");
+            var player = other.GetComponent<CharacterController2D>();
+            if (player != null)
+            {
+                AudioManager.Instance.PlayTheme(Theme);
+                Debug.Log("theme should play btw");
+                themePlaying = true;
+            }
+        }
+        else
+        {
+            Debug.Log("Two theme playing?");
         }
     }
 
@@ -41,6 +50,7 @@ public class AudioZoneManager : MonoBehaviour
             AudioManager.Instance.Fade(Theme);
            // AudioManager.instance.Stop(Theme1);
             Debug.Log("theme should stop btw");
+            themePlaying = false;
         }
     }
 }
