@@ -11,11 +11,11 @@ public class ItemDrop : MonoBehaviour
         var player = other.GetComponent<CharacterController2D>();
         if (player != null)
         {
-            //FindObjectOfType<AudioManager>().Play("itemget");
+            //AudioManager.instance.Play("itemget");
             player.inventory[item]++;
 
-            //FindObjectOfType<AudioManager>().Play("ItemGet");
-            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
+            //AudioManager.instance.Play("ItemGet");
+            AudioManager.Instance.Play(soundEffectToPlay);
 
             Destroy(this.gameObject);
 
