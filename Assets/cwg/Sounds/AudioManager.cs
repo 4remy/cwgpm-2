@@ -11,7 +11,6 @@ public class AudioManager : DDOLSingleton<AudioManager>
     private bool themePlaying;
     Dictionary<string, Coroutine> fades = new Dictionary<string, Coroutine>();
 
-    // Start is called before the first frame update
     protected override void Awake()
     {
         base.Awake();
@@ -30,16 +29,16 @@ public class AudioManager : DDOLSingleton<AudioManager>
             s.source.loop = s.loop;
         }
     }
-/*
-    void Start()
-    {
-        //change theme according to scene
-        Play("Theme");
-        Debug.Log("theme should play btw");
-    }
-*/
+    /*
+        void Start()
+        {
+            //change theme according to scene
+            Play("Theme");
+            Debug.Log("theme should play btw");
+        }
+    */
 
-    public void Play (string name)
+    public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound == null ? false : sound.name == name);
         if (s == null)
@@ -52,20 +51,19 @@ public class AudioManager : DDOLSingleton<AudioManager>
             Debug.Log("source not found");
             return;
         }
-        else {
-        s.source.Play();
+        else
+        {
+            s.source.Play();
 
         }
         //turns volume on
 
         s.source.volume = s.volume * (1);
-
-
     }
 
     public void PlayTheme(string name)
     {
-        if(!themePlaying)
+        if (!themePlaying)
         {
             Sound s = Array.Find(sounds, sound => sound == null ? false : sound.name == name);
             if (s == null)
@@ -88,7 +86,6 @@ public class AudioManager : DDOLSingleton<AudioManager>
 
             s.source.volume = s.volume * (1);
         }
-
     }
 
     public void Stop(string name)
@@ -102,8 +99,6 @@ public class AudioManager : DDOLSingleton<AudioManager>
 
         //make sound stop  IMMEDIATELY after leaving zone
         s.source.volume = s.volume * (0);
-        
-
     }
 
     /*
@@ -133,10 +128,7 @@ public class AudioManager : DDOLSingleton<AudioManager>
         // start a new fade operation
         Coroutine fadeCoroutine = StartCoroutine(fadeSoundCo(s, 1.5f, name));
         // track it in the map
-    fades.Add(name, fadeCoroutine);
-
-
-
+        fades.Add(name, fadeCoroutine);
     }
 
     IEnumerator fadeSoundCo(Sound sound, float durationSeconds, string name)
@@ -155,7 +147,6 @@ public class AudioManager : DDOLSingleton<AudioManager>
             yield return null;
         }
     }
-
 }
 
 /* this does something really fucking cool and weird
