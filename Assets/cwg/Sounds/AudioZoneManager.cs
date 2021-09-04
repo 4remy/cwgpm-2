@@ -8,7 +8,6 @@ using UnityEngine;
 public class AudioZoneManager : MonoBehaviour
 {
     public string Theme;
-    //private string TheCollider1;
 
 
     // Start is called before the first frame update
@@ -38,8 +37,8 @@ public class AudioZoneManager : MonoBehaviour
         var player = other.GetComponent<CharacterController2D>();
         if (player != null)
         {
-            FindObjectOfType<AudioManager>().Fade(Theme);
-           // FindObjectOfType<AudioManager>().Stop(Theme1);
+            //FindObjectOfType<AudioManager>().Fade(Theme);
+           FindObjectOfType<AudioManager>().Stop(Theme);
             Debug.Log("theme should stop btw");
         }
     }

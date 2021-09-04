@@ -23,6 +23,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(transform.root);
+        Debug.Log("Thing reloaded");
 
         foreach (Sound s in sounds)
         {
@@ -30,6 +32,7 @@ public class AudioManager : MonoBehaviour
             if (s.source == null)
             {
                 Debug.Log("Source assigning problem");
+                //go to a 'reload' function
             }
             s.source.clip = s.clip;
 
@@ -58,6 +61,7 @@ public class AudioManager : MonoBehaviour
         if (s.source == null)
         {
             Debug.Log("source not found");
+            //reload();
             return;
         }
         else {
@@ -84,7 +88,9 @@ public class AudioManager : MonoBehaviour
             if (s.source == null)
             {
                 Debug.Log("source not found");
+                //reload();
                 return;
+
             }
             else
             {
@@ -98,6 +104,38 @@ public class AudioManager : MonoBehaviour
         }
 
     }
+
+    /*
+     *  I really thought this would fix it
+    public void reload()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(transform.root);
+        Debug.Log("Thing reloaded");
+
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            if (s.source == null)
+            {
+                Debug.Log("Source assigning problem");
+                //go to a 'reload' function
+            }
+            s.source.clip = s.clip;
+
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+        }
+    }
+    */
 
     public void Stop(string name)
     {
