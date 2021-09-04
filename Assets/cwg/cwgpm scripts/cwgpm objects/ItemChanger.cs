@@ -77,7 +77,7 @@ public class ItemChanger : Interactable
         //makes it so character cannot move during this coroutine
         player.RaiseItem(emptySprite);
 
-        FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
+        AudioManager.instance?.Play(soundEffectToPlay);
         yield return new WaitForSeconds(0.1f);
         effect.SetBool("Effect", true);
         yield return new WaitForSeconds(2f);
@@ -87,7 +87,7 @@ public class ItemChanger : Interactable
 
         player.RaiseItem(null);
 
-        //FindObjectOfType<AudioManager>().Play("ItemGet");
+        //AudioManager.instance?.Play("ItemGet");
         //not needed: raise item null creates the above sound effect
         effect.SetBool("Effect", false);
 

@@ -47,7 +47,7 @@ public class SceneTransition : MonoBehaviour
         if(fadeOutPanel !=null)
         {
             Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
-            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
+            AudioManager.instance?.Play(soundEffectToPlay);
 
         }
         yield return new WaitForSeconds(fadeWait);

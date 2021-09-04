@@ -38,7 +38,7 @@ public class PauseManager : MonoBehaviour
 
         if (isPaused)
         {
-            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
+            AudioManager.instance?.Play(soundEffectToPlay);
             pausePanel.SetActive(true);
             mainCanvas.SetActive(false);
             Time.timeScale = 0f;
@@ -46,7 +46,7 @@ public class PauseManager : MonoBehaviour
         }
         else
         {
-            FindObjectOfType<AudioManager>().Play(soundEffectToPlay);
+            AudioManager.instance?.Play(soundEffectToPlay);
             inventoryPanel.SetActive(false);
             pausePanel.SetActive(false);
             mainCanvas.SetActive(true);

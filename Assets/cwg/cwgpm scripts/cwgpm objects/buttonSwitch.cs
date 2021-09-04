@@ -29,7 +29,7 @@ public class buttonSwitch : Interactable
         {
             animator1.SetBool("Switch", false);
             animator2.SetBool("Switch", false);
-            FindObjectOfType<AudioManager>().Stop("Conveyor");
+            AudioManager.instance?.Stop("Conveyor");
             hideOnSwitch1.SetActive(false);
             hideOnSwitch2.SetActive(false);
         }
@@ -37,7 +37,7 @@ public class buttonSwitch : Interactable
         {
             animator1.SetBool("Switch", true);
             animator2.SetBool("Switch", true);
-FindObjectOfType<AudioManager>().Play("Conveyor");
+AudioManager.instance?.Play("Conveyor");
             hideOnSwitch1.SetActive(true);
             hideOnSwitch2.SetActive(true);
         }

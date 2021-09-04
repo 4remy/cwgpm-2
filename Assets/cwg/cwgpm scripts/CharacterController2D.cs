@@ -130,7 +130,7 @@ public class CharacterController2D : MonoBehaviour
             state = State.Idle;
             receivedItemSprite.sprite = null;
             Debug.Log("finishing recieving item");
-            FindObjectOfType<AudioManager>().Play("ItemGet");
+            AudioManager.instance?.Play("ItemGet");
             //player.inventory.currentItem = null;
         }
     }
@@ -181,7 +181,7 @@ public class CharacterController2D : MonoBehaviour
         if (currentHealth.RuntimeValue > 0)
         {
             StartCoroutine(KnockCo(knockTime, damage));
-            FindObjectOfType<AudioManager>().Play("Oink");
+            AudioManager.instance?.Play("Oink");
         }
         else
         {
