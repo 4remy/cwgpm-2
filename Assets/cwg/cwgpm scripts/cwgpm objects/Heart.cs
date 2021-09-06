@@ -7,6 +7,7 @@ public class Heart : powerUp
     public FloatValue playerHealth;
     public FloatValue heartContainers;
     public float amountToIncrease;
+    public string soundEffectToPlay;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class Heart : powerUp
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
+            AudioManager.Instance.Play(soundEffectToPlay);
             playerHealth.RuntimeValue += amountToIncrease;
             if(playerHealth.initialValue > heartContainers.RuntimeValue * 2f)
             {

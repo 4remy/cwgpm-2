@@ -99,6 +99,7 @@ namespace Schwer.ItemSystem {
             }
         }
 
+        // change to on mouse over button
         public void OnItemSelected(Item item) {
             selectedItem = item;
 
@@ -112,6 +113,7 @@ namespace Schwer.ItemSystem {
             }
         }
 
+        //change to on click?
         // Called by the add button's OnClick UnityEvent
         public void AddIngredient() {
             if (selectedItem != null) {

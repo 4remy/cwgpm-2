@@ -9672,6 +9672,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6148516424912367021}
     m_Modifications:
+    - target: {fileID: 3406819667371704141, guid: eaed761a8827c4d55b62651dd093aeb4,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406819667371704141, guid: eaed761a8827c4d55b62651dd093aeb4,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6148516425112632840}
+    - target: {fileID: 3406819667371704141, guid: eaed761a8827c4d55b62651dd093aeb4,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnItemSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406819667371704141, guid: eaed761a8827c4d55b62651dd093aeb4,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Schwer.ItemSystem.CraftingManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406819667371704141, guid: eaed761a8827c4d55b62651dd093aeb4,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: Schwer.ItemSystem.Item, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8568236110506362700, guid: eaed761a8827c4d55b62651dd093aeb4,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -9812,7 +9837,8 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3406819667371704141, guid: eaed761a8827c4d55b62651dd093aeb4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eaed761a8827c4d55b62651dd093aeb4, type: 3}
 --- !u!224 &8574986846057156674
 RectTransform:
