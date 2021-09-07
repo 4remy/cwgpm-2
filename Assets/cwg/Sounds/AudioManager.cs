@@ -75,9 +75,10 @@ public class AudioManager : DDOLSingleton<AudioManager>
             if (s == null) return;
 
             s.source.Play();
-           // themePlaying = true;
+            themePlaying = true;
             //turns volume on
             s.source.volume = s.volume * (1);
+            return;
         }
         else
         {

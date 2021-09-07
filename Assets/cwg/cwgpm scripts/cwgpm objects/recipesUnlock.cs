@@ -8,25 +8,31 @@ public class recipesUnlock : MonoBehaviour
    private bool milestone1;
    public GameObject unlockMe;
 
-    private bool HasCraftedFiveRecipes()
-    {
-        var recipeCount = discoveredRecipes.ints.Count;
-        milestone1 = true;
-        return recipeCount >= 5;
-}
+    private bool HasCraftedFiveRecipes;
+    private int recipeCount;
+    public int magicNumber;
+
     // Start is called before the first frame update
     void Start()
-    {
-
+{
+        var recipeCount = discoveredRecipes.ints.Count;
+        if (recipeCount >= magicNumber)
+        {
+            milestone1 = true;
+        }
+        else
+        {
+            milestone1 = false;
+        }
         if(!milestone1)
         {
-            Debug.Log("milestone1 is " + milestone1);
+            Debug.Log("Milestone " + gameObject.name + " is " + milestone1);
             unlockMe.SetActive(false);
             return;
         }
         else
         {
-            Debug.Log("milestone1 is " + milestone1);
+            Debug.Log("Milestone " + gameObject.name + " is " + milestone1);
             unlockMe.SetActive(true);
         }
 

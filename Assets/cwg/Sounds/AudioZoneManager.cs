@@ -34,11 +34,12 @@ public class AudioZoneManager : MonoBehaviour
                 AudioManager.Instance.PlayTheme(Theme);
                 Debug.Log("theme should play btw");
                 themePlaying = true;
+                return;
             }
         }
         else
         {
-            Debug.Log("Two themes playing?");
+            return;
         }
     }
 
