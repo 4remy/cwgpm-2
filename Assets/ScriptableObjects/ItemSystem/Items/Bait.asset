@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b904cede184f9a42869036f1c5b74ed, type: 3}
+  m_Name: Bait
+  m_EditorClassIdentifier: 
+  _id: 54
+  _name: Bait
+  _description: 
+  _sprite: {fileID: 21300096, guid: 3f198c94b65508c44a32b4b4072bb419, type: 3}
+  _stackable: 1
+  _isKey: 0
+  OnUse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1591828177920669519, guid: 00c9c55d0acd24c569da575fe7cc8720,
+          type: 3}
+        m_TargetAssemblyTypeName: Bait, Assembly-CSharp
+        m_MethodName: Use
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
