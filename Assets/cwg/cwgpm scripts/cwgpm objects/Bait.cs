@@ -11,6 +11,7 @@ public class Bait : MonoBehaviour
 
     //i think interact isnt working because of the triggers
 
+    public Signal BaitSignal;
     public bool baitZone;
 
     void Update()
@@ -40,15 +41,25 @@ public class Bait : MonoBehaviour
     public void Use()
     {
         //it never registers as in range
-        if(!baitZone)
+        BaitSignal.Raise();
+        Debug.Log("signal generated");
+        //doesnt say anything if no signal received.
+    }
+
+    public void baitRecieved()
+    {
+        Debug.Log("code can recieve signal");
+        Debug.Log("baitZone " + " is genuinely " + baitZone);
+        if (!baitZone)
         {
-            Debug.Log("used, not in range");
+            Debug.Log("signal recieved");
+            Debug.Log("not in range tho");
         }
         else
         {
-            Debug.Log("used in range");
+            Debug.Log("signal recieved");
+            Debug.Log("Dana voice: lets goo");
         }
-        
-    }
 
+    }
 }

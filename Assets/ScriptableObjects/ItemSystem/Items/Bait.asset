@@ -14,14 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 54
   _name: Bait
-  _description: 
+  _description: Bait
   _sprite: {fileID: 21300096, guid: 3f198c94b65508c44a32b4b4072bb419, type: 3}
   _stackable: 1
   _isKey: 0
   OnUse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1591828177920669519, guid: 00c9c55d0acd24c569da575fe7cc8720,
+      - m_Target: {fileID: 11400000, guid: 22994807c99650e458b5162009634ec3, type: 2}
+        m_TargetAssemblyTypeName: UnityEventNexus, Assembly-CSharp
+        m_MethodName: Log
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Used 'bait'
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 266374286888742483, guid: 61088db1730574991b356ae81c80b625,
           type: 3}
         m_TargetAssemblyTypeName: Bait, Assembly-CSharp
         m_MethodName: Use
