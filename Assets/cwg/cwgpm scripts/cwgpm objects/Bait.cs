@@ -21,25 +21,34 @@ public class Bait : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
             Debug.Log("player in bait zone");
             baitZone = true;
-        Debug.Log("baitZoneis " + gameObject.name + " is " + baitZone);
+        Debug.Log("baitZone " + " is " + baitZone);
 
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    public void OnTriggerExit2D(Collider2D other)
     {
             Debug.Log("player has exited bait zone");
             baitZone = false;
-            Debug.Log("baitZoneis " + gameObject.name + " is " + baitZone);
+            Debug.Log("baitZone" + " is " + baitZone);
     }
 
 
     public void Use()
     {
-        Debug.Log("you have pressed use lol");
+        //it never registers as in range
+        if(!baitZone)
+        {
+            Debug.Log("used, not in range");
+        }
+        else
+        {
+            Debug.Log("used in range");
+        }
+        
     }
 
 }
