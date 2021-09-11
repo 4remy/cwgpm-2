@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d57c1f3fa9bd497b9776b71f8244bd3, type: 3}
+  m_Name: iceCreamMachine
+  m_EditorClassIdentifier: 
+  fullName: IceCreamMachine
+  portrait: {fileID: 21300000, guid: bcf46ff05ba364c8dbaeb75b69eed91d, type: 3}
+  _overrideController: {fileID: 22100000, guid: af22f412c0ed440c99169b4ad9424688,
+    type: 2}
