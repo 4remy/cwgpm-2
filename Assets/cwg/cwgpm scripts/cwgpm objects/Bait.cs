@@ -48,6 +48,13 @@ public class Bait : MonoBehaviour
     public void ChildTrigger()
     {
         Debug.Log("general zone triggered");
+        animator.SetBool("flee", true);
+    }
+
+    public void ChildTriggerExit()
+    {
+        Debug.Log("general zone exit");
+        animator.SetBool("flee", false);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -58,18 +65,18 @@ public class Bait : MonoBehaviour
         }
         else
         {
-            Debug.Log("player in bait zone");
+            //Debug.Log("player in bait zone");
             baitZone = true;
-            Debug.Log("baitZone " + " is " + baitZone);
+           // Debug.Log("baitZone " + " is " + baitZone);
         }
     }
 
 
     public void OnTriggerExit2D(Collider2D other)
     {
-            Debug.Log("player has exited bait zone");
+           // Debug.Log("player has exited bait zone");
             baitZone = false;
-            Debug.Log("baitZone" + " is " + baitZone);
+           // Debug.Log("baitZone" + " is " + baitZone);
     }
 
 
@@ -85,7 +92,7 @@ public class Bait : MonoBehaviour
     public void baitRecieved()
     {
         Debug.Log("code can recieve signal");
-        Debug.Log("baitZone " + " is genuinely " + baitZone);
+       // Debug.Log("baitZone " + " is genuinely " + baitZone);
         if (!baitZone)
         {
             Debug.Log("signal recieved");
@@ -103,6 +110,7 @@ public class Bait : MonoBehaviour
   IEnumerator baitedCo()
     {
         Debug.Log("baited coroutine");
+        animator.SetBool("flee", false);
         bait.SetActive(true);
         animator.SetBool("return", true);
         yield return new WaitForSeconds(2f);
@@ -116,7 +124,6 @@ public class Bait : MonoBehaviour
         animator.SetBool("grab", false);
         animator.SetBool("flee", true);
         yield return new WaitForSeconds(2f);
-        animator.SetBool("flee", false);
-        //go to 'flee idle'
+
     }
 }

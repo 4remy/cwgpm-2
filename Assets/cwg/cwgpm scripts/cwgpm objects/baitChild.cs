@@ -13,13 +13,14 @@ public class baitChild : MonoBehaviour
         else
         {
             gameObject.GetComponentInParent<Bait>().ChildTrigger();
-            Debug.Log("main zone triggered!");
+            //Debug.Log("main zone triggered!");
         }
 
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("main zone left!");
+        gameObject.GetComponentInParent<Bait>().ChildTriggerExit();
+        //Debug.Log("main zone left!");
     }
 }
