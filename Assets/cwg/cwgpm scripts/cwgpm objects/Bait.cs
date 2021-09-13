@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 //using SchwerInventory = Schwer.ItemSystem.Inventory;
 using UnityEngine.UI;
+using SchwerInventory = Schwer.ItemSystem.Inventory;
+
 
 public class Bait : MonoBehaviour
 {
-    // [SerializeField] private Schwer.ItemSystem.Item item = default;
-
-
-    //i think interact isnt working because of the triggers
-
     [Header("Animation")]
     private Animator animator;
 
@@ -18,15 +15,23 @@ public class Bait : MonoBehaviour
     public bool baitZone;
 
     private bool trapped;
+    private bool grabbingOut;
 
     public GameObject bait;
+    public GameObject cutHandFake;
+    public GameObject cutHandReal;
 
+    private bool thatsAll;
 
+    //public string killSoundEffect;
 
     void Awake()
     {
+
         animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
         bait.SetActive(false);
+        cutHandFake.SetActive(false);
+        cutHandReal.SetActive(false);
     }
 
     void Update()
@@ -40,6 +45,7 @@ public class Bait : MonoBehaviour
             else
             {
                 Debug.Log("now is the Time");
+                StartCoroutine(killCo());
             }
 
         }
@@ -47,8 +53,15 @@ public class Bait : MonoBehaviour
 
     public void ChildTrigger()
     {
-        Debug.Log("general zone triggered");
-        animator.SetBool("flee", true);
+        if(!grabbingOut)
+        {
+            Debug.Log("general zone triggered");
+            animator.SetBool("flee", true);
+        }
+        else
+        {
+            animator.SetBool("grabOut", true);
+        }
     }
 
     public void ChildTriggerExit()
@@ -59,6 +72,8 @@ public class Bait : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
+        
+
         if (other.tag == "baitChild")
         {
             return; // do nothing
@@ -109,21 +124,45 @@ public class Bait : MonoBehaviour
 
   IEnumerator baitedCo()
     {
-        Debug.Log("baited coroutine");
-        animator.SetBool("flee", false);
-        bait.SetActive(true);
-        animator.SetBool("return", true);
-        yield return new WaitForSeconds(2f);
-        animator.SetBool("return", false);
-        animator.SetBool("grab", true);
-        trapped = true;
+        if(!thatsAll)
+        {
+            Debug.Log("baited coroutine");
+            animator.SetBool("flee", false);
+            bait.SetActive(true);
+            animator.SetBool("return", true);
+            yield return new WaitForSeconds(2f);
+            animator.SetBool("return", false);
+            animator.SetBool("grab", true);
+            trapped = true;
 
-        yield return new WaitForSeconds(5f);
-        trapped = false;
+            yield return new WaitForSeconds(5f);
+            trapped = false;
+            bait.SetActive(false);
+            animator.SetBool("grab", false);
+            grabbingOut = true;
+            animator.SetBool("grabOut", true);
+            yield return new WaitForSeconds(4f);
+            grabbingOut = false;
+            animator.SetBool("grabOut", false);
+        }
+        else
+        {
+            bait.SetActive(true);
+        }
+    }
+
+    IEnumerator killCo()
+    {
         bait.SetActive(false);
-        animator.SetBool("grab", false);
-        animator.SetBool("flee", true);
-        yield return new WaitForSeconds(2f);
-
+        // AudioManager.Instance.Play(killSoundEffect);
+        animator.SetBool("cut", true);
+        yield return new WaitForSeconds(0.1f);
+        cutHandFake.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        cutHandFake.SetActive(false);
+        cutHandReal.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        //bool saying event is over
+        thatsAll = true;
     }
 }
