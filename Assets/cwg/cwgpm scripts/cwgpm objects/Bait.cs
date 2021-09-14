@@ -22,6 +22,7 @@ public class Bait : MonoBehaviour
     public GameObject cutHandReal;
 
     private bool thatsAll;
+    public BoolValue handKill;
 
     //public string killSoundEffect;
 
@@ -164,5 +165,6 @@ public class Bait : MonoBehaviour
         yield return new WaitForSeconds(3f);
         //bool saying event is over
         thatsAll = true;
+        handKill.RuntimeValue = thatsAll;
     }
 }
