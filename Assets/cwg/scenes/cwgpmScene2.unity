@@ -7495,7 +7495,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisBehaviourType: 0
   handConvoCompleted: {fileID: 11400000, guid: 238831812ff0d403da464e8187584943, type: 2}
-  handGiven: {fileID: 11400000, guid: a753f5c323f3047518b9a1244a270063, type: 2}
+  isGiven: 0
+  storedHandGiven: {fileID: 11400000, guid: a753f5c323f3047518b9a1244a270063, type: 2}
 --- !u!114 &1199888554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13390,7 +13391,7 @@ PrefabInstance:
     - target: {fileID: 2391559289900922144, guid: 0437304d558b842baa33243a54118e8a,
         type: 3}
       propertyPath: sounds.Array.data[18].loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2391559289900922144, guid: 0437304d558b842baa33243a54118e8a,
         type: 3}

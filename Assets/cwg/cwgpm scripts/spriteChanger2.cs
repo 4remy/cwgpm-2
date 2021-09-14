@@ -9,17 +9,20 @@ public class spriteChanger2 : Interactable
     public BehaviourType thisBehaviourType;
 
 
-    private bool handCompleted;
+    private bool completeHand;
     public BoolValue handConvoCompleted;
+
+    public bool isGiven;
+    public BoolValue storedHandGiven;
 
     [Header("Animation")]
     private Animator animator;
 
     void Start()
     {
-        handCompleted = handConvoCompleted.RuntimeValue;
+        completeHand = handConvoCompleted.RuntimeValue;
         animator = GetComponent<Animator>();
-        if (handCompleted)
+        if (completeHand)
         {
             animator.SetBool("hand", true);
         }
@@ -28,21 +31,26 @@ public class spriteChanger2 : Interactable
     protected override void Interact()
     {
 
-        handCompleted = handConvoCompleted.RuntimeValue;
-        Debug.Log("handCompleted " + " is  " + handCompleted);
+        completeHand = handConvoCompleted.RuntimeValue;
+        Debug.Log("handCompleted " + " is  " + completeHand);
 
 
             if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
             {
-                if (!handCompleted)
+                if (!completeHand)
                 {
                     return;
                 }
                 else
                 {
+                    if(!isGiven)
+                    {
+                        AudioManager.Instance.Play("itemgive");
+                    }
                     animator.SetBool("hand", true);
-                   // AudioManager.Instance.Play("itemgive");
-                    Debug.Log("handCompleted " + " is  " + handCompleted);
+                    Debug.Log("handCompleted " + " is  " + completeHand);
+                    isGiven = true;
+                    storedHandGiven.RuntimeValue = isGiven;
                 }
             }
         else
