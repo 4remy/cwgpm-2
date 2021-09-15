@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ec5126e95424d6ebf919aa7e48526e, type: 3}
   m_Name: MondayConvo
   m_EditorClassIdentifier: 
-  speakerLeft: {fileID: 0}
-  speakerRight: {fileID: 0}
+  speakerLeft: {fileID: 11400000, guid: 75b6d12cbf5464665b60d91b2bbb6d8e, type: 2}
+  speakerRight: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
   lines:
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: 75b6d12cbf5464665b60d91b2bbb6d8e, type: 2}
     emotion: 0
     text: Hey, I'd like uh..
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
     emotion: 3
     text: Sadie quit.
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
     emotion: 3
     text: What?
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
     emotion: 3
     text: Sadie literally just quit.
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
     emotion: 2
     text: No burgers. None!!
