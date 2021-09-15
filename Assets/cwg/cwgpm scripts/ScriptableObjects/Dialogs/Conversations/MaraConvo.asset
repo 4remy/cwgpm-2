@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ec5126e95424d6ebf919aa7e48526e, type: 3}
   m_Name: MaraConvo
   m_EditorClassIdentifier: 
-  speakerLeft: {fileID: 11400000, guid: 75b6d12cbf5464665b60d91b2bbb6d8e, type: 2}
-  speakerRight: {fileID: 11400000, guid: fd7ef909d58a2480c92dd04bdeaa26bf, type: 2}
+  speakerLeft: {fileID: 0}
+  speakerRight: {fileID: 0}
   lines:
-  - character: {fileID: 11400000, guid: 75b6d12cbf5464665b60d91b2bbb6d8e, type: 2}
+  - character: {fileID: 0}
     emotion: 0
     text: Uh...
-  - character: {fileID: 11400000, guid: fd7ef909d58a2480c92dd04bdeaa26bf, type: 2}
+  - character: {fileID: 0}
     emotion: 0
     text: The Shrine is undergoing rennovations.

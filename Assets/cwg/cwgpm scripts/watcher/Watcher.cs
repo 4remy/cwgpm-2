@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Watcher : MonoBehaviour
 {
+
     void Start()
     {
         animator = GetComponent<Animator>();
