@@ -7291,7 +7291,6 @@ GameObject:
   - component: {fileID: 1144924904}
   - component: {fileID: 1144924906}
   - component: {fileID: 1144924905}
-  - component: {fileID: 1144924908}
   - component: {fileID: 1144924907}
   m_Layer: 0
   m_Name: dude
@@ -7408,21 +7407,6 @@ MonoBehaviour:
   priorEvent: {fileID: 11400000, guid: f5a1a891ba8af4810b9300047f94e578, type: 2}
   unlockMe: {fileID: 19762290}
   hideMe: {fileID: 900399284}
---- !u!114 &1144924908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144924903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c4a54fcef4c45a49fbeb67fd425f0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  priorEvent: {fileID: 0}
-  unlockMe: {fileID: 0}
-  hideMe: {fileID: 0}
 --- !u!1 &1153384293
 GameObject:
   m_ObjectHideFlags: 0
@@ -13497,8 +13481,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060142553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.63, y: -3.03, z: 0}
-  m_LocalScale: {x: 0.8474861, y: 0.8474861, z: 0.8474861}
+  m_LocalPosition: {x: -0.627, y: -2.888, z: 0}
+  m_LocalScale: {x: 0.63644487, y: 0.63644487, z: 0.63644487}
   m_Children: []
   m_Father: {fileID: 1187205395}
   m_RootOrder: 1
@@ -13543,7 +13527,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: d030914230afe41c29e9d2ad23245486, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca70dc88586a94cc582485c897a396c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 54
   _name: Bait
   _description: Bait
-  _sprite: {fileID: 21300000, guid: d1084124a8b4d4e3795413df208f4c3c, type: 3}
+  _sprite: {fileID: 21300000, guid: ca70dc88586a94cc582485c897a396c3, type: 3}
   _stackable: 1
   _isKey: 0
   OnUse:
