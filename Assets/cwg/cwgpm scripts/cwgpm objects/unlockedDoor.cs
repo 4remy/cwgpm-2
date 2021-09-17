@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class unlockedDoor : Interactable
 {
-    [Header("Door variables")]
-    public DoorType thisDoorType;
     public bool open;
 
 
@@ -46,15 +44,16 @@ public class unlockedDoor : Interactable
 
     public void OpenDoor()
     {
-
+        physicsCollider.enabled = false;
+        open = true;
         //change to different sprite
         animator.SetBool("Open", true);
         Debug.Log("door Opened");
 
         //the door needs an animator for open
-        open = true;
+        
         //the box collider block is diabled
-        physicsCollider.enabled = false;
+
     }
 
 
