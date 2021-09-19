@@ -7,9 +7,18 @@ using UnityEngine;
 public class trash : Interactable
 {
 
-
+    public bool isGone;
+    public BoolValue storedGone;
     //override interact, to say what happens during an interaction for this object
 
+    private void Start()
+    {
+        isGone = storedGone.RuntimeValue;
+        if (isGone)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
     protected override void Interact()
     {
         Debug.Log("interacting");
@@ -21,6 +30,8 @@ public class trash : Interactable
     private IEnumerator BreakCo()
     {
         yield return new WaitForSeconds(.3f);
+        isGone = true;
         this.gameObject.SetActive(false);
+        storedGone.RuntimeValue = isGone;
     }
 }

@@ -4219,6 +4219,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSaveManager
       objectReference: {fileID: 0}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: objects.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: objects.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: b324d93a5f4664586963342e3ca3add6,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: objects.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f42316cb8d904219a89a58c0a03cb54,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: objects.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: 44aa11fdf7af7468e972ac0c6dd769d7,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: objects.Array.data[17]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5c010204d9a224b5da4d4410ce1bcc44,
+        type: 2}
     - target: {fileID: 399764430589016223, guid: b492ca805184a462a8c166dd4e939521,
         type: 3}
       propertyPath: m_RootOrder

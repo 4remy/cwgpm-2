@@ -123,6 +123,7 @@ public class CharacterController2D : MonoBehaviour
             //receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
             receivedItemSprite.sprite = item.sprite;
             Debug.Log("should be recieving item");
+            AudioManager.Instance.Play("ItemGet");
         }
         else
         {
@@ -130,7 +131,7 @@ public class CharacterController2D : MonoBehaviour
             state = State.Idle;
             receivedItemSprite.sprite = null;
             Debug.Log("finishing recieving item");
-            AudioManager.Instance.Play("ItemGet");
+           
             //player.inventory.currentItem = null;
         }
     }
