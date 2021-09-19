@@ -843,6 +843,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -91.308
       objectReference: {fileID: 0}
+    - target: {fileID: 8205816588201536889, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: playerCoins
+      value: 
+      objectReference: {fileID: 11400000, guid: eed34757efe8149009b05f2391e1c1fa,
+        type: 2}
+    - target: {fileID: 8205816588201536891, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8205816588287472606, guid: 6387a9c6a2c0a418cb36300590338c55,
         type: 3}
       propertyPath: m_AnchorMax.x

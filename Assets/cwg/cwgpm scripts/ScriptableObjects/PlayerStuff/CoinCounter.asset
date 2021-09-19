@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d00e13e496694625be28b434f35c5d5, type: 3}
-  m_Name: PlayerInventory
+  m_Name: CoinCounter
   m_EditorClassIdentifier: 
-  currentItem: {fileID: 11400000, guid: bfbd800cabb184061b59bab386630e6c, type: 2}
+  currentItem: {fileID: 0}
   items:
-  - {fileID: 11400000, guid: fbf2fc2276bcd4f65971ae3a56176fc2, type: 2}
-  - {fileID: 11400000, guid: bfbd800cabb184061b59bab386630e6c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   numberOfKeys: 5
-  coins: 0
+  coins: 3

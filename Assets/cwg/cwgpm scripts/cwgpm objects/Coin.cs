@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Coin : powerUp
 {
-    public Inventory playerInventory;
+    public CoinCounter playerCoins;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class Coin : powerUp
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            playerInventory.coins += 1;
+            playerCoins.coins += 1;
             powerUpSignal.Raise();
             Destroy(this.gameObject);
         }

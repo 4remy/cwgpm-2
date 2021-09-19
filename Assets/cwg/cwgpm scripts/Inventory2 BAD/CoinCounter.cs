@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu]
 [System.Serializable]
-public class Inventory : ScriptableObject
+public class CoinCounter : ScriptableObject
 {
     public Item currentItem;
     public List<Item> items = new List<Item>();

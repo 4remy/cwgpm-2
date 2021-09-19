@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class CoinTextManager : MonoBehaviour
 {
-    public Inventory playerInventory;
+    public CoinCounter playerCoins;
     public Text coinDisplay;
     public void UpdateCoinCount()
     {
-        coinDisplay.text = "" + playerInventory.coins;
+        coinDisplay.text = "" + playerCoins.coins;
     }
 }
