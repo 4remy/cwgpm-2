@@ -3310,10 +3310,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.069369316, y: 0.5450719}
+  m_Offset: {x: 0.0052342415, y: 0.5883711}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3324,7 +3324,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3543243, y: 0.43985617}
+  m_Size: {x: 1.5035315, y: 0.35325778}
   m_EdgeRadius: 0
 --- !u!4 &712903484 stripped
 Transform:
@@ -7905,6 +7905,7 @@ GameObject:
   - component: {fileID: 2076579034}
   - component: {fileID: 2076579037}
   - component: {fileID: 2076579033}
+  - component: {fileID: 2076579036}
   m_Layer: 0
   m_Name: Mara
   m_TagString: Untagged
@@ -8004,6 +8005,32 @@ Transform:
   m_Father: {fileID: 162288459}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2076579036
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076579032}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.234701, y: 2.0624795}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.2, y: 6.88}
+    newSize: {x: 0.98, y: 1.42}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.9296284, y: 1.9132185}
+  m_EdgeRadius: 0
 --- !u!114 &2076579037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8771,6 +8798,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: busstop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753816798459455253, guid: d146b4ea5886d4181b851f95a5eb7a1d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.4187453
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753816798459455253, guid: d146b4ea5886d4181b851f95a5eb7a1d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.85376537
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753816798459455257, guid: d146b4ea5886d4181b851f95a5eb7a1d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.0310937
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753816798459455257, guid: d146b4ea5886d4181b851f95a5eb7a1d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.12823789
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778448232322096453, guid: d146b4ea5886d4181b851f95a5eb7a1d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.23394704
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778448232322096453, guid: d146b4ea5886d4181b851f95a5eb7a1d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.28729588
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778448232322096453, guid: d146b4ea5886d4181b851f95a5eb7a1d,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 1.1644591
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778448232322096453, guid: d146b4ea5886d4181b851f95a5eb7a1d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.40516976
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d146b4ea5886d4181b851f95a5eb7a1d, type: 3}

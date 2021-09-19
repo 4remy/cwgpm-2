@@ -13,29 +13,5 @@ MonoBehaviour:
   m_Name: SchwerInventory
   m_EditorClassIdentifier: 
   value:
-    keys:
-    - {fileID: 11400000, guid: f27f189dee1134d3fb831707a685628b, type: 2}
-    - {fileID: 11400000, guid: ba483179f48c1482b90cd8c91665939f, type: 2}
-    - {fileID: 11400000, guid: 9d908ac592f844b78a9d7c7fc3b8ac4c, type: 2}
-    - {fileID: 11400000, guid: 78fa0e3d6b56e4888a3e1706688869c9, type: 2}
-    - {fileID: 11400000, guid: 31f568523777c4451b08fc50c4d0f630, type: 2}
-    - {fileID: 11400000, guid: f3aaba6e407554eb2be05dc73120ec0c, type: 2}
-    - {fileID: 11400000, guid: bdc5d6f4ef12a499f8dc8632206b8e87, type: 2}
-    - {fileID: 11400000, guid: 1355eae0fe9e94db3bce3611c70c697a, type: 2}
-    - {fileID: 11400000, guid: f5e7197ffb48f4814b4cfb874260abef, type: 2}
-    - {fileID: 11400000, guid: 06b7d00e9d4c74b98b292835170dbb98, type: 2}
-    - {fileID: 11400000, guid: fe3ce0428da1c45fb98876a67eba8972, type: 2}
-    - {fileID: 11400000, guid: 9f42cc4f06b1d4ebe88dfc332bc9fead, type: 2}
-    - {fileID: 11400000, guid: d262773aa3c774692890a0acf82c19bb, type: 2}
-    - {fileID: 11400000, guid: e90f8c5570efb47118255095eed39d2c, type: 2}
-    - {fileID: 11400000, guid: adf05ffc083ce449b8987411b09337ab, type: 2}
-    - {fileID: 11400000, guid: c5ff2cee179574f6a936441a197442fa, type: 2}
-    - {fileID: 11400000, guid: 19414d383b7c742b7a77cff6a83b4514, type: 2}
-    - {fileID: 11400000, guid: 661f1da650ab640a896f046ac38f1029, type: 2}
-    - {fileID: 11400000, guid: 6b595b791ebe147c1a0f4cda6715b9e3, type: 2}
-    - {fileID: 11400000, guid: 255ce56e0c98a469e9de0053f32d27ed, type: 2}
-    - {fileID: 11400000, guid: 3156e5594b92842b2b96cd16bcefa90d, type: 2}
-    - {fileID: 11400000, guid: 9e2cd9c47d00b4990bde32a2ebee41d2, type: 2}
-    - {fileID: 11400000, guid: 450857e18c46c41d68aa5b3a072a1c8b, type: 2}
-    - {fileID: 11400000, guid: c68b92b13afe74f19b4639b1601f062e, type: 2}
-    values: 2200000024000000a400000030000000310000003100000037000000320000002e000000300000003100000030000000310000000f0000007c0000000a0000000100000001000000010000000300000001000000010000000600000004000000
+    keys: []
+    values: 
