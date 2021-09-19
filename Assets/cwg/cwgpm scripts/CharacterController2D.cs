@@ -141,10 +141,10 @@ public class CharacterController2D : MonoBehaviour
         // speed = 0; is bad
         // adding line below instead
         change = Vector3.zero;
-        //just added the line above
         // myRigidbody.velocity = Vector2.zero;
         animator.SetBool("IsSitting", true);
         //
+        //move these two vectors to be external arguments in bus stop script
         Vector3 sittingPosition1 = new Vector3(-5, 4, 0);
         gameObject.transform.position = sittingPosition1;
     }
@@ -159,20 +159,18 @@ public class CharacterController2D : MonoBehaviour
         else
         {
             state = State.Idle;
+            //move these two vectors to be external arguments in bus stop script
             Vector3 standingPosition1 = new Vector3(-5, 3, 0);
             gameObject.transform.position = standingPosition1;
             animator.SetBool("IsSitting", false);
-            //adding line below (didn't do anything)
-            //change = Vector3.zero;
-            //adding line above
         }
     }
 
     public void Interact()
     {
         change = Vector3.zero;
-        // ADD MOVEMENT ZERO
-        // myRigidbody.velocity = Vector2.zero;
+        // this is not stopping movement during dialogue
+
     }
 
     public void Knock(float knockTime, float damage)

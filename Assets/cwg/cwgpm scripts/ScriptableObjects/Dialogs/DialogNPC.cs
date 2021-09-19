@@ -115,6 +115,7 @@ AudioManager.Instance.Play("Whp");
         {
             Debug.Log("looping convo");
             DialogDisplay.NewConversation(conversation);
+            // check that the conversation is in progress?
             isCompleted = true;
             convoCompleted.RuntimeValue = isCompleted;
         }

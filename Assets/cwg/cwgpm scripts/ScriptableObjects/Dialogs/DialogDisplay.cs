@@ -50,6 +50,8 @@ public class DialogDisplay : MonoBehaviour
         if (Input.GetKeyDown("space") && activeConversation != null)
         {
             //check animator triggers?
+            //make it so character can't move
+            //player.Interact
             AdvanceConversation();
         }
     }
