@@ -42,4 +42,20 @@ AudioManager.Instance.Play("Conveyor");
             hideOnSwitch2.SetActive(true);
         }
     }
+    public void ChildTriggerExit()
+    {
+        Debug.Log("out of machine zone");
+        if(!switchPressed)
+        { return; }
+        else
+        {
+            switchPressed = false;
+            animator1.SetBool("Switch", false);
+            animator2.SetBool("Switch", false);
+            AudioManager.Instance.Stop("Conveyor");
+            hideOnSwitch1.SetActive(false);
+            hideOnSwitch2.SetActive(false);
+        }
+        
+    }
 }

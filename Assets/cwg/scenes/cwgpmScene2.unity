@@ -3701,7 +3701,7 @@ GameObject:
   - component: {fileID: 498457237}
   - component: {fileID: 498457241}
   - component: {fileID: 498457240}
-  - component: {fileID: 498457239}
+  - component: {fileID: 498457238}
   m_Layer: 0
   m_Name: dropPotato
   m_TagString: Untagged
@@ -3723,7 +3723,7 @@ Transform:
   m_Father: {fileID: 1878115839}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &498457239
+--- !u!114 &498457238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3732,11 +3732,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 498457236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e0b917b2a54f483cace23c152985f14, type: 3}
+  m_Script: {fileID: 11500000, guid: a54ccb2c43fef4fc79476fa81d9ec494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 255ce56e0c98a469e9de0053f32d27ed, type: 2}
-  soundEffectToPlay: ItemGet
+  soundEffectToPlay: itemget
+  isGone: 0
+  storedGone: {fileID: 11400000, guid: 990405bafdc3d45539ff6c2424e5dc20, type: 2}
 --- !u!61 &498457240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5093,8 +5095,8 @@ GameObject:
   m_Component:
   - component: {fileID: 697523515}
   - component: {fileID: 697523517}
-  - component: {fileID: 697523516}
   - component: {fileID: 697523518}
+  - component: {fileID: 697523516}
   m_Layer: 0
   m_Name: humanear
   m_TagString: trash
@@ -5125,11 +5127,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 697523514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e0b917b2a54f483cace23c152985f14, type: 3}
+  m_Script: {fileID: 11500000, guid: a54ccb2c43fef4fc79476fa81d9ec494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 450857e18c46c41d68aa5b3a072a1c8b, type: 2}
   soundEffectToPlay: itemget
+  isGone: 0
+  storedGone: {fileID: 11400000, guid: 80584fc1e20e546c3b3071457880c0cc, type: 2}
 --- !u!212 &697523517
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13545,11 +13549,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043040213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e0b917b2a54f483cace23c152985f14, type: 3}
+  m_Script: {fileID: 11500000, guid: a54ccb2c43fef4fc79476fa81d9ec494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 71d84b966d0e146dd99c83b177db9095, type: 2}
   soundEffectToPlay: itemget
+  isGone: 0
+  storedGone: {fileID: 11400000, guid: d536f57660288444dacafbbdc6506eb6, type: 2}
 --- !u!61 &2043040216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14380,7 +14386,7 @@ PrefabInstance:
     - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
         type: 3}
       propertyPath: objects.Array.size
-      value: 18
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
         type: 3}
@@ -14453,6 +14459,24 @@ PrefabInstance:
       propertyPath: objects.Array.data[17]
       value: 
       objectReference: {fileID: 11400000, guid: 5c010204d9a224b5da4d4410ce1bcc44,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: objects.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: 80584fc1e20e546c3b3071457880c0cc,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: objects.Array.data[19]
+      value: 
+      objectReference: {fileID: 11400000, guid: 990405bafdc3d45539ff6c2424e5dc20,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: objects.Array.data[20]
+      value: 
+      objectReference: {fileID: 11400000, guid: d536f57660288444dacafbbdc6506eb6,
         type: 2}
     - target: {fileID: 399764430589016223, guid: b492ca805184a462a8c166dd4e939521,
         type: 3}
