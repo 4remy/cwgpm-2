@@ -9,6 +9,7 @@ public class DialogDisplay : MonoBehaviour
     [SerializeField] private GameObject speakerLeft;
     [SerializeField] private GameObject speakerRight;
 
+
     private SpeakerUI speakerUILeft;
     private SpeakerUI speakerUIRight;
 
@@ -51,7 +52,7 @@ public class DialogDisplay : MonoBehaviour
         {
             //check animator triggers?
             //make it so character can't move
-            //player.Interact
+            
             AdvanceConversation();
         }
     }
@@ -62,6 +63,7 @@ public class DialogDisplay : MonoBehaviour
         {
             DisplayLine(activeConversation.lines[activeLineIndex]);
             activeLineIndex++;
+
         }
         else
         {

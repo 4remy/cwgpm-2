@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class buttonSwitch : Interactable
 {
@@ -17,7 +18,42 @@ public class buttonSwitch : Interactable
     {
         animator1 = gameObject.transform.GetChild(0).GetComponent<Animator>();
         animator2 = gameObject.transform.GetChild(1).GetComponent<Animator>();
+
+        //subscribe to listen to scene change
+        /*SceneManager.activeSceneChanged += ChangedActiveScene;
+        {
+            Debug.Log("this triggers after the scene changes BACK, or when a scene begins for the first time");
+        }
+        */
     }
+
+    //this should detect when the scene changes
+    private void ChangedActiveScene(Scene current, Scene next)
+    {
+        string currentName = current.name;
+
+        if (currentName == null)
+        {
+            // Scene1 has been removed
+            currentName = "Replaced";
+        }
+
+        Debug.Log("Scenes: " + currentName + ", " + next.name);
+        Debug.Log("turning off the machine if you left it on");
+        if (!switchPressed)
+            { return; }
+            else
+            {
+               // Debug.Log("the machine was turned on, but you changed scenes, so I'm turning the machine off");
+                switchPressed = false;
+              
+                AudioManager.Instance.Stop("Conveyor");
+               // hideOnSwitch1.SetActive(false);
+              //  hideOnSwitch2.SetActive(false);
+            
+        }
+    }
+
 
     protected override void Interact()
     {
@@ -44,7 +80,7 @@ AudioManager.Instance.Play("Conveyor");
     }
     public void ChildTriggerExit()
     {
-        Debug.Log("out of machine zone");
+      //  Debug.Log("out of machine zone");
         if(!switchPressed)
         { return; }
         else

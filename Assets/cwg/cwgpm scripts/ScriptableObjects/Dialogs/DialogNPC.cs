@@ -52,9 +52,7 @@ public class DialogNPC : Interactable
 
 
 
-
-    //how do you make it wait a coroutine if it requires a prior, and the prior is also on the same character
-    //maybe it would work good 2 convos on same character
+//issues - more than one conversation on a character?
 
 
     private void Start()
@@ -115,20 +113,12 @@ AudioManager.Instance.Play("Whp");
         {
             Debug.Log("looping convo");
             DialogDisplay.NewConversation(conversation);
+
             // check that the conversation is in progress?
+
             isCompleted = true;
             convoCompleted.RuntimeValue = isCompleted;
         }
 
     }
 }
-/*
-if (!priorSuccess)
-{
-    Debug.Log("the prior conversation is set to" + priorSuccess);
-
-}
-else
-{
-    Debug.Log("prior conversation is set to" + priorSuccess);
-} */
