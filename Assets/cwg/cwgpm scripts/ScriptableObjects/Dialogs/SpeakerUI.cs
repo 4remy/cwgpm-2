@@ -58,6 +58,12 @@ public class SpeakerUI : MonoBehaviour
     {
         var overrides = new List<KeyValuePair<AnimationClip, AnimationClip>>();
         character.overrideController.GetOverrides(overrides);
+
+        // Race condition with DialogDisplay, which disables the SpeakerUI in Awake,
+        // preventing this Awake from being called (Awake is not called on inactive objects)
+        // ∴ meaning overrideController could be null the first time UpdateAnimator is called
+        if (overrideController == null) Awake();
+
         overrideController.ApplyOverrides(overrides);
         animator.runtimeAnimatorController = overrideController;
     }
