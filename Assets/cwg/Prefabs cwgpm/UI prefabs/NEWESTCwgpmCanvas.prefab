@@ -396,6 +396,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5477017035014398210, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: ConvoStartSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: 74b1c34c475cf4d418f1b8f5abbd79d1,
+        type: 2}
+    - target: {fileID: 5477017035014398210, guid: 6387a9c6a2c0a418cb36300590338c55,
+        type: 3}
+      propertyPath: ConvoFinishSignal
+      value: 
+      objectReference: {fileID: 11400000, guid: f76f81989031b480f9c7c63bc83c338c,
+        type: 2}
     - target: {fileID: 5905202663883278064, guid: 6387a9c6a2c0a418cb36300590338c55,
         type: 3}
       propertyPath: m_SizeDelta.x

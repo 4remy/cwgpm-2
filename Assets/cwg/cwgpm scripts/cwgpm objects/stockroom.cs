@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class stockroom : Interactable
 {
     [SerializeField] private Schwer.ItemSystem.Item item = default;
     public int increaseBy;
     public string soundEffectToPlay;
+
 
     protected override void Interact()
     {
@@ -21,9 +23,12 @@ public class stockroom : Interactable
         }
         else
         {
-            return;
+
+            Debug.Log("already have some");
         }
     }
+
+
 
     IEnumerator itemCo()
     {

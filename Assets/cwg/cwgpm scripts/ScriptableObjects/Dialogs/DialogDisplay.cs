@@ -9,6 +9,8 @@ public class DialogDisplay : MonoBehaviour
     [SerializeField] private GameObject speakerLeft;
     [SerializeField] private GameObject speakerRight;
 
+    public Signal ConvoStartSignal;
+    public Signal ConvoFinishSignal;
 
     private SpeakerUI speakerUILeft;
     private SpeakerUI speakerUIRight;
@@ -41,6 +43,8 @@ public class DialogDisplay : MonoBehaviour
             speakerUILeft.Speaker = activeConversation.speakerLeft;
             speakerUIRight.Speaker = activeConversation.speakerRight;
 
+            Debug.Log("conversation starting ONCE");
+            ConvoStartSignal.Raise();
             // Show the first line
             AdvanceConversation();
         }
@@ -67,6 +71,8 @@ public class DialogDisplay : MonoBehaviour
         }
         else
         {
+            ConvoFinishSignal.Raise();
+            Debug.Log("conversation is finished : )");
             ClearDialog();
         }
     }

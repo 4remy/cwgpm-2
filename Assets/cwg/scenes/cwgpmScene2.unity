@@ -357,7 +357,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.7426417, y: -1.0567956}
+  m_Offset: {x: 2.7426417, y: -0.64785236}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -368,7 +368,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.033424, y: 0.4440261}
+  m_Size: {x: 3.033424, y: 0.38950074}
   m_EdgeRadius: 0
 --- !u!61 &12914398
 BoxCollider2D:
@@ -682,7 +682,7 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: 78fa0e3d6b56e4888a3e1706688869c9, type: 2}
   soundEffectToPlay: itemget
   isGone: 0
-  storedGone: {fileID: 0}
+  storedGone: {fileID: 11400000, guid: 9583eb9add63d43dd998ad548129fa8d, type: 2}
 --- !u!212 &30901160
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 255ce56e0c98a469e9de0053f32d27ed, type: 2}
-  increaseBy: 3
+  increaseBy: 5
   soundEffectToPlay: itemget
 --- !u!61 &62107441
 BoxCollider2D:
@@ -1697,7 +1697,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02794075, y: 1.1267949}
+  m_Offset: {x: -0.04596865, y: 1.3093822}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1708,7 +1708,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.1485643, y: 0.5040498}
+  m_Size: {x: 7.000746, y: 0.8692241}
   m_EdgeRadius: 0
 --- !u!212 &155703490
 SpriteRenderer:
@@ -10468,7 +10468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f27f189dee1134d3fb831707a685628b, type: 2}
-  increaseBy: 3
+  increaseBy: 5
   soundEffectToPlay: itemget
 --- !u!61 &1499833970
 BoxCollider2D:

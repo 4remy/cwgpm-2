@@ -21,8 +21,8 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
     emotion: 3
     text: Sadie quit.
-  - character: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
-    emotion: 3
+  - character: {fileID: 11400000, guid: 75b6d12cbf5464665b60d91b2bbb6d8e, type: 2}
+    emotion: 0
     text: What?
   - character: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
     emotion: 3

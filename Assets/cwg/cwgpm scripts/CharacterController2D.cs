@@ -43,6 +43,8 @@ public class CharacterController2D : MonoBehaviour
 
     void IdleState()
     {
+        //would be good if this preserved last direction you faced
+        //maybe check taft for this
         animator.SetBool("moving", false);
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
@@ -109,6 +111,19 @@ public class CharacterController2D : MonoBehaviour
         transform.position = startingPosition.initialValue;
     }
 
+    public void ConvoStartSignal()
+    {
+        animator.SetBool("moving", false);
+        state = State.Interact;
+        change = Vector3.zero;
+        Debug.Log("you shouldn't be able to move");
+    }
+
+    public void ConvoFinishSignal()
+    {
+        Debug.Log("convo finished signal recieved");
+        state = State.Idle;
+    }
 
     public void RaiseItem(SchwerItem item)
     {

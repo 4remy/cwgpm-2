@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 3871160447985254075}
   - component: {fileID: 3871160447930252990}
   - component: {fileID: 3871160447930252989}
+  - component: {fileID: 7442931846686564632}
+  - component: {fileID: 1307880846145878763}
   m_Layer: 0
   m_Name: character
   m_TagString: Player
@@ -145,14 +147,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   acceleration: 0.1
-  nextMoveCommand: {x: 0, y: 0, z: 0}
+  _inventory: {fileID: 0}
+  change: {x: 0, y: 0, z: 0}
   animator: {fileID: 3871160447985254055}
   flipX: 0
   currentHealth: {fileID: 11400000, guid: fb2980ab792a04753b232705a625fa48, type: 2}
   playerHealthSignal: {fileID: 11400000, guid: fb5ad688cefc74121b2450152d852a55, type: 2}
   knockTime: 0
-  playerInventory: {fileID: 11400000, guid: eed34757efe8149009b05f2391e1c1fa, type: 2}
   receivedItemSprite: {fileID: 3871160448078324559}
+  startingPosition: {fileID: 0}
 --- !u!58 &3871160447985254054
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -225,13 +228,57 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+--- !u!114 &7442931846686564632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3871160447985254050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff107f0a1ba442a4a6b1c8db49da206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: f76f81989031b480f9c7c63bc83c338c, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3871160447985254052}
+        m_TargetAssemblyTypeName: CharacterController2D, Assembly-CSharp
+        m_MethodName: ConvoFinishSignal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1307880846145878763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3871160447985254050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff107f0a1ba442a4a6b1c8db49da206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 74b1c34c475cf4d418f1b8f5abbd79d1, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3871160447985254052}
+        m_TargetAssemblyTypeName: CharacterController2D, Assembly-CSharp
+        m_MethodName: ConvoStartSignal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -427,6 +474,6 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
