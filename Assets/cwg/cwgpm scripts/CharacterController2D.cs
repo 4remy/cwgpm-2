@@ -67,9 +67,6 @@ public class CharacterController2D : MonoBehaviour
         //animator.SetFloat("WalkX", change.x < 0 ? -1 : change.x > 0 ? 1 : 0);
         //animator.SetFloat("WalkY", change.y < 0 ? 1 : change.y > 0 ? -1 : 0);
 
-        //last = Vector3.zero;
-        //last.x = animator.GetFloat("WalkX");
-        //last.y = animator.GetFloat("WalkY");
 
         if (change.x < 0)
         {
