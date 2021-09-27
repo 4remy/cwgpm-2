@@ -45,28 +45,17 @@ public class CharacterController2D : MonoBehaviour
     {
         //would be good if this preserved last direction you faced
         //maybe check taft for this
-        animator.SetBool("moving", false);
+
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
+        animator.SetBool("moving", false);
         if (change != Vector3.zero)
         {
             playerHealthSignal.Raise();
             animator.SetBool("moving", true);
             state = State.Moving;
 
-            /*
-            start = transform.position;
-            end = start + nextMoveCommand;
-            distance = (end - start).magnitude;
-            velocity = 0;
-
-            UpdateAnimator(nextMoveCommand);
-
-            nextMoveCommand = Vector3.zero;
-
-                state = State.Moving;
-                */
         }
     }
 
@@ -75,8 +64,35 @@ public class CharacterController2D : MonoBehaviour
         animator.SetBool("moving", true);
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("WalkX", change.x < 0 ? -1 : change.x > 0 ? 1 : 0);
-        animator.SetFloat("WalkY", change.y < 0 ? 1 : change.y > 0 ? -1 : 0);
+        //animator.SetFloat("WalkX", change.x < 0 ? -1 : change.x > 0 ? 1 : 0);
+        //animator.SetFloat("WalkY", change.y < 0 ? 1 : change.y > 0 ? -1 : 0);
+
+        //last = Vector3.zero;
+        //last.x = animator.GetFloat("WalkX");
+        //last.y = animator.GetFloat("WalkY");
+
+        if (change.x < 0)
+        {
+            animator.SetFloat("WalkX", -1);
+            animator.SetFloat("WalkY", 0);
+        }
+        if (change.x > 0)
+        {
+            animator.SetFloat("WalkX", 1);
+            animator.SetFloat("WalkY", 0);
+        }
+
+        if (change.y < 0)
+        {
+            animator.SetFloat("WalkY", 1);
+            animator.SetFloat("WalkX", 0);
+        }
+        if (change.y > 0)
+        {
+            animator.SetFloat("WalkY", -1);
+            animator.SetFloat("WalkX", 0);
+        }
+
         myRigidbody.MovePosition(transform.position + change.normalized * speed * Time.deltaTime);
         if (change == Vector3.zero)
         {
