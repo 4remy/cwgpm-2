@@ -80,6 +80,7 @@ public class CraftAchievement : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space) && achieveShown)
                 {
+                    effect.SetBool("Effect", false);
                     achievePanel.SetActive(false);
                 }
             }
@@ -94,9 +95,10 @@ public class CraftAchievement : MonoBehaviour
         AudioManager.Instance.Play(soundEffectToPlay);
         effect.SetBool("Effect", true);
         //animation goes here
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         Debug.Log("you can exit the event now");
-        effect.SetBool("Effect", false);
+       // effect.SetBool("Effect", false);
+       // achievePanel.SetActive(false);
 
     }
 
