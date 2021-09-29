@@ -8,15 +8,13 @@ public class recipesUnlock : MonoBehaviour
    private bool milestone1;
    public GameObject unlockMe;
 
-    private bool HasCraftedFiveRecipes;
-    private int recipeCount;
-    public int magicNumber;
+    public int magicNumber1;
 
     // Start is called before the first frame update
     void Start()
 {
         var recipeCount = discoveredRecipes.ints.Count;
-        if (recipeCount >= magicNumber)
+        if (recipeCount >= magicNumber1)
         {
             milestone1 = true;
         }

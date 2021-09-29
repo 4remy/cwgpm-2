@@ -59,5 +59,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 238831812ff0d403da464e8187584943, type: 2}
   - {fileID: 11400000, guid: a753f5c323f3047518b9a1244a270063, type: 2}
   - {fileID: 11400000, guid: 051b8ce1816aa4c6f86fb79fcc779fd5, type: 2}
+  - {fileID: 11400000, guid: b324d93a5f4664586963342e3ca3add6, type: 2}
+  - {fileID: 11400000, guid: 3f42316cb8d904219a89a58c0a03cb54, type: 2}
+  - {fileID: 11400000, guid: 44aa11fdf7af7468e972ac0c6dd769d7, type: 2}
+  - {fileID: 11400000, guid: 5c010204d9a224b5da4d4410ce1bcc44, type: 2}
+  - {fileID: 11400000, guid: 80584fc1e20e546c3b3071457880c0cc, type: 2}
+  - {fileID: 11400000, guid: 990405bafdc3d45539ff6c2424e5dc20, type: 2}
+  - {fileID: 11400000, guid: d536f57660288444dacafbbdc6506eb6, type: 2}
+  - {fileID: 11400000, guid: a0a5ebf927150441c998ea4e222118b9, type: 2}
+  - {fileID: 11400000, guid: b8ac3ba54162241a18f9d126cb474ecf, type: 2}
+  - {fileID: 11400000, guid: 95335abc1ec8a42abb5ed529bb063e68, type: 2}
+  - {fileID: 11400000, guid: 9583eb9add63d43dd998ad548129fa8d, type: 2}
+  - {fileID: 11400000, guid: dc4ae0100c4214c678fbd3f3b8383d85, type: 2}
+  - {fileID: 11400000, guid: b945793566dba4a91bbe34a5cc32b0ff, type: 2}
   playerInventory: {fileID: 11400000, guid: 19a63ed173fed413285668fc4c4bcf65, type: 2}
   discoveredRecipes: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac, type: 2}
