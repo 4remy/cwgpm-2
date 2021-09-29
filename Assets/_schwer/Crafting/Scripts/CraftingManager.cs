@@ -147,6 +147,7 @@ namespace Schwer.ItemSystem {
 
                     AudioManager.Instance.Play("Achieve");
                     Debug.Log($"Crafted {recipes[i].outputAmount}x {recipes[i].output.name}!");
+                    //this is where you would call a function displaying a nice achievement thing
                     return;
                 }
             }
