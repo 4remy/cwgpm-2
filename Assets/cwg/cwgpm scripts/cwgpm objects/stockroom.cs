@@ -9,10 +9,23 @@ public class stockroom : Interactable
     public int increaseBy;
     public string soundEffectToPlay;
 
+    public GameObject dialogBox;
+    public Text dialogText;
+    [Multiline]
+   public string dialog;
+
+    public bool textOn;
+    public Signal ConvoStartSignal;
+    public Signal ConvoFinishSignal;
 
     protected override void Interact()
     {
-        if (player.inventory[item] == 0)
+        if (!playerInRange)
+        {
+            return;
+        }
+
+        if (player.inventory[item] == 0 && playerInRange)
         {
             Debug.Log("damn u ran out of the item");
             Debug.Log("i give");
@@ -23,8 +36,14 @@ public class stockroom : Interactable
         }
         else
         {
-
-            Debug.Log("already have some");
+            if(!textOn)
+            {
+                ShowText();
+            }
+            else
+            {
+                TextAlreadyShown();
+            }
         }
     }
 
@@ -37,4 +56,24 @@ public class stockroom : Interactable
          player.RaiseItem(null);
 
     }
+
+    private void ShowText()
+    {
+        ConvoStartSignal.Raise();
+        Debug.Log("already have some");
+        dialogBox.SetActive(true);
+        // dialog text = contents text;
+        dialogText.text = dialog;
+        textOn = true;
+
+
+    }
+
+    private void TextAlreadyShown()
+    {
+        dialogBox.SetActive(false);
+        textOn = false;
+        ConvoFinishSignal.Raise();
+    }
+
 }
