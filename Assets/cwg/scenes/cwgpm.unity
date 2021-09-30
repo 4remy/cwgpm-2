@@ -2746,7 +2746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   discoveredRecipes: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac, type: 2}
   unlockMe: {fileID: 540675796}
-  magicNumber1: 0
+  magicNumber1: 5
 --- !u!4 &557018416 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7109618187349898589, guid: ce10371cd1c5e462fa24d57d91fa8101,
@@ -8621,6 +8621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BADInventory Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 37173835952287511, guid: 82ca771f5e196411d9430edc5ab548d3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9.000015
       objectReference: {fileID: 0}
     - target: {fileID: 37173836441590146, guid: 82ca771f5e196411d9430edc5ab548d3,
         type: 3}

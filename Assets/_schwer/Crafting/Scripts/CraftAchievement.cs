@@ -16,6 +16,7 @@ public class CraftAchievement : MonoBehaviour
     [Multiline]
     public string dialogAchieve1;
     public bool achieveShown;
+    public bool canDismiss;
 
 
     [Header("Animation")]
@@ -78,7 +79,7 @@ public class CraftAchievement : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Space) && achieveShown)
+                if (Input.GetKeyDown(KeyCode.Space) && canDismiss)
                 {
                     effect.SetBool("Effect", false);
                     achievePanel.SetActive(false);
@@ -92,18 +93,15 @@ public class CraftAchievement : MonoBehaviour
         achieveShown = true;
         storedAchievement1.RuntimeValue = achieveShown;
         Debug.Log("you can't exit yet");
-        AudioManager.Instance.Play(soundEffectToPlay);
         effect.SetBool("Effect", true);
-        //animation goes here
         yield return new WaitForSeconds(2f);
+        AudioManager.Instance.Play(soundEffectToPlay);
+        canDismiss = true;
         Debug.Log("you can exit the event now");
+
        // effect.SetBool("Effect", false);
        // achievePanel.SetActive(false);
 
     }
 
-    //coroutine
-    //animation
-    //for set amount of time
-    //on space press make the achievement panel not active
 }
