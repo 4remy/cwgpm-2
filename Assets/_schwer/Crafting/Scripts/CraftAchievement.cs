@@ -55,10 +55,24 @@ namespace Schwer.ItemSystem
 
         }
 
-        // Update is called once per frame
         void Update()
         {
-            // maybe change this to onclick instead
+            if (Input.GetKeyDown(KeyCode.Space) && canDismiss)
+            {
+                effect.SetBool("Effect", false);
+                achievePanel.SetActive(false);
+                animationObject.SetActive(false);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        public void onCookedEvent()
+        {
+            FindObjectOfType<CraftingManager>().cookedEvent -= onCookedEvent;
+            Debug.Log("The Cooked Event is happening bruh!!");
 
             var recipeCount = discoveredRecipes.ints.Count;
             if (recipeCount >= magicNumber1)
@@ -95,12 +109,6 @@ namespace Schwer.ItemSystem
                 }
             }
         }
-
-        public void onCookedEvent()
-        {
-            FindObjectOfType<CraftingManager>().cookedEvent -= onCookedEvent;
-            Debug.Log("The Cooked Event is happening bruh!!");
-        }
         IEnumerator AchieveCo()
         {
             animationObject.SetActive(true);
@@ -110,6 +118,7 @@ namespace Schwer.ItemSystem
             Debug.Log("you can't exit yet");
             effect.SetBool("Effect", true);
             yield return new WaitForSeconds(2f);
+            //note , get an additional NEW sound effect thats not achieve, and use it here ok
             AudioManager.Instance.Play(soundEffectToPlay);
             canDismiss = true;
             Debug.Log("you can exit the event now");
