@@ -33,6 +33,9 @@ namespace Schwer.ItemSystem {
 
         private Item selectedItem;
 
+        public delegate void CookedDelegate();
+        public event CookedDelegate cookedEvent;
+
         private void OnEnable() {
             inventory.OnContentsChanged += UpdateInventorySlots;
             ingredients.OnContentsChanged += UpdateIngredientSlots;
@@ -148,6 +151,8 @@ namespace Schwer.ItemSystem {
                     AudioManager.Instance.Play("Achieve");
                     Debug.Log($"Crafted {recipes[i].outputAmount}x {recipes[i].output.name}!");
                     //this is where you would call a function displaying a nice achievement thing
+                    //if (cookedEvent != null)
+                    cookedEvent();
                     return;
                 }
             }

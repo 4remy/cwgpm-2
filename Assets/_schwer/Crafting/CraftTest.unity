@@ -365,7 +365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.300049, y: -7.9000244}
+  m_AnchoredPosition: {x: -4.2998047, y: -7.8999023}
   m_SizeDelta: {x: -1052.5549, y: -878.23627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &137493391
@@ -2384,7 +2384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &850807740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3583,7 +3583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0009765625, y: 0.002380371}
+  m_AnchoredPosition: {x: -0.0009765625, y: 0.0024414062}
   m_SizeDelta: {x: 0.0024414062, y: 0.0048828125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1192080145
@@ -3605,7 +3605,9 @@ MonoBehaviour:
   dialogText: {fileID: 1922754932}
   dialogAchieve1: Well done! You made 5 recipes.
   achieveShown: 0
+  canDismiss: 0
   effect: {fileID: 850807741}
+  animationObject: {fileID: 850807739}
   soundEffectToPlay: Achieve
 --- !u!222 &1192080147
 CanvasRenderer:
@@ -5477,7 +5479,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -95.69165, y: -227.53914}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1922754932
@@ -5511,7 +5513,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: test text
 --- !u!222 &1922754933
