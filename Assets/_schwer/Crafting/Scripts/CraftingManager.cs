@@ -162,6 +162,7 @@ namespace Schwer.ItemSystem {
 
             AudioManager.Instance.Play("Oink");
             Debug.Log($"The ingredients didn't yield anything...");
+            //maybe add in like 'failure event ' for another notification , put the event on separate script
         }
 
         // Called by the recipe button's OnClick UnityEvent
