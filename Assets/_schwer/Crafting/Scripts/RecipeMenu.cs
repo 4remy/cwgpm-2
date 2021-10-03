@@ -4,7 +4,8 @@ using UnityEngine.EventSystems;
 
 namespace Schwer.ItemSystem {
     public class RecipeMenu : MonoBehaviour {
-        [SerializeField] private RecipeDatabase recipeDatabase = default;
+        [SerializeField] private RecipeList recipeList = default;
+
         [Header("Save Data")]
         [SerializeField] private IntListSO discoveredRecipes = default;
         [SerializeField] private InventorySO _inventory = default;
@@ -32,7 +33,7 @@ namespace Schwer.ItemSystem {
         }
 
         private void InitialiseSlots() {
-            var recipes = recipeDatabase.GetRecipes();
+            var recipes = recipeList.recipes;
             for (int i = 0; i < recipeSlots.Count; i++) {
                 var recipe = (i < recipes.Count) ? recipes[i] : null;
                 var discovered = (recipe != null) ? discoveredRecipes.Contains(recipe.id) : false;

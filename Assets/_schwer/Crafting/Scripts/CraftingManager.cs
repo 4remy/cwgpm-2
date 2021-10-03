@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 namespace Schwer.ItemSystem {
     public class CraftingManager : MonoBehaviour, IItemSlotManager {
-        [SerializeField] private RecipeDatabase recipeDatabase = default;
+        [SerializeField] private RecipeList recipeList = default;
+
         [Header("Save Data")]
         [SerializeField] private IntListSO discoveredRecipes = default;
         [SerializeField] private InventorySO _inventory = default;
@@ -140,7 +141,7 @@ namespace Schwer.ItemSystem {
 
         // Called by the craft button's OnClick UnityEvent
         public void TryCraft() {
-            var recipes = recipeDatabase.GetRecipes();
+            var recipes = recipeList.recipes;
             for (int i = 0; i < recipes.Count; i++) {
                 if (recipes[i].Matches(ingredients)) {
                     ingredients.Clear();
