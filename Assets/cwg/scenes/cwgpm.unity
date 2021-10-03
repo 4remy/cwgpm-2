@@ -1628,6 +1628,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 4778253460407004096, guid: e9a9d40831dec4c929d5cb3ca730ec56, type: 2}
     value: {fileID: 229061735}
+  - key: {fileID: 1435718050138295409, guid: e9a9d40831dec4c929d5cb3ca730ec56, type: 2}
+    value: {fileID: 229061735}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &229061735
@@ -4241,7 +4243,7 @@ PrefabInstance:
     - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
         type: 3}
       propertyPath: objects.Array.size
-      value: 27
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
         type: 3}
@@ -4320,6 +4322,12 @@ PrefabInstance:
       propertyPath: objects.Array.data[26]
       value: 
       objectReference: {fileID: 11400000, guid: b945793566dba4a91bbe34a5cc32b0ff,
+        type: 2}
+    - target: {fileID: 399764430589016222, guid: b492ca805184a462a8c166dd4e939521,
+        type: 3}
+      propertyPath: objects.Array.data[27]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6036ec3bd5ab34e258ec5d378abe6938,
         type: 2}
     - target: {fileID: 399764430589016223, guid: b492ca805184a462a8c166dd4e939521,
         type: 3}
@@ -7001,6 +7009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1764924015}
   - component: {fileID: 1764924014}
+  - component: {fileID: 1764924016}
   m_Layer: 0
   m_Name: TimelineManager
   m_TagString: Untagged
@@ -7018,11 +7027,15 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: e9a9d40831dec4c929d5cb3ca730ec56, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: 4778253460407004096, guid: e9a9d40831dec4c929d5cb3ca730ec56, type: 2}
+    value: {fileID: 229061735}
+  - key: {fileID: 1435718050138295409, guid: e9a9d40831dec4c929d5cb3ca730ec56, type: 2}
+    value: {fileID: 229061735}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1764924015
@@ -7039,6 +7052,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764924016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764924013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e341ba1394394e7490b4077214ba3b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 1764924014}
+  firstPlay: 0
+  storedFirstPlay: {fileID: 11400000, guid: 6036ec3bd5ab34e258ec5d378abe6938, type: 2}
 --- !u!4 &1781258411 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3871160447985254048, guid: 2c28cc3860b854b399b460f26e4ed5b4,
@@ -7933,7 +7961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   discoveredRecipes: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac, type: 2}
   unlockMe: {fileID: 2044774363}
-  magicNumber1: 0
+  magicNumber1: 10
 --- !u!212 &2044774366
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7973,7 +8001,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a9679186eb9e54fbda203569b77af390, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8692,7 +8720,7 @@ PrefabInstance:
     - target: {fileID: 37173835952287511, guid: 82ca771f5e196411d9430edc5ab548d3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.000015
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 37173836441590146, guid: 82ca771f5e196411d9430edc5ab548d3,
         type: 3}
