@@ -7010,6 +7010,7 @@ GameObject:
   - component: {fileID: 1764924015}
   - component: {fileID: 1764924014}
   - component: {fileID: 1764924016}
+  - component: {fileID: 1764924017}
   m_Layer: 0
   m_Name: TimelineManager
   m_TagString: Untagged
@@ -7029,13 +7030,15 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: e9a9d40831dec4c929d5cb3ca730ec56, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 3
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 4778253460407004096, guid: e9a9d40831dec4c929d5cb3ca730ec56, type: 2}
     value: {fileID: 229061735}
   - key: {fileID: 1435718050138295409, guid: e9a9d40831dec4c929d5cb3ca730ec56, type: 2}
     value: {fileID: 229061735}
+  - key: {fileID: 1132462222359823715, guid: e9a9d40831dec4c929d5cb3ca730ec56, type: 2}
+    value: {fileID: 1764924013}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1764924015
@@ -7067,6 +7070,50 @@ MonoBehaviour:
   director: {fileID: 1764924014}
   firstPlay: 0
   storedFirstPlay: {fileID: 11400000, guid: 6036ec3bd5ab34e258ec5d378abe6938, type: 2}
+--- !u!114 &1764924017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764924013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 2968ff3b10ee74a879bb0ff35b955a93, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1764924014}
+          m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+          m_MethodName: set_playableAsset
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: e9a9d40831dec4c929d5cb3ca730ec56,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Playables.PlayableAsset,
+              UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1764924016}
+          m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
+          m_MethodName: GetSkipTime
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 90
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1781258411 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3871160447985254048, guid: 2c28cc3860b854b399b460f26e4ed5b4,

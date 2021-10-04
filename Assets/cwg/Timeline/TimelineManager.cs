@@ -8,10 +8,14 @@ public class TimelineManager : MonoBehaviour
     public PlayableDirector director;
     public bool firstPlay;
     public BoolValue storedFirstPlay;
+    private bool sceneSkipped = true;
+    private float timeToSkipTo;
 
     // Start is called before the first frame update
-    void awake()
+    void Start()
     {
+        sceneSkipped = false;
+        firstPlay = storedFirstPlay.RuntimeValue;
         Debug.Log("the timeline manager is awake btw.");
 
         if (!firstPlay) //return true if the key exist
@@ -19,25 +23,26 @@ public class TimelineManager : MonoBehaviour
             Debug.Log("First time in the game.");
             firstPlay = true;
             storedFirstPlay.RuntimeValue = firstPlay;
-            StartTimeline();
+            director = GetComponent<PlayableDirector>();
+            director.Play();
         }
         else
         {
             Debug.Log("It is not the first time in the game.");
-           
-            //director.Stop();
+            director.Stop();
+            sceneSkipped = true;
+            director.time = 90f;
+            // this.gameObject.SetActive(false);
             return;
         }
 
     }
 
-    public void StartTimeline()
+    public void GetSkipTime(float skipTime)
     {
-        director = GetComponent<PlayableDirector>();
-        director.Play();
-        print("playable director is playing");
-
+        timeToSkipTo = skipTime;
     }
+
 
 
 
