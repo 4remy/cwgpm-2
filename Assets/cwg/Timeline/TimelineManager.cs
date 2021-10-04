@@ -9,8 +9,7 @@ public class TimelineManager : MonoBehaviour
     public bool firstPlay;
     public BoolValue storedFirstPlay;
 
-    // Start is called before the first frame update
-    void awake()
+    private void Awake()
     {
         Debug.Log("the timeline manager is awake btw.");
 
@@ -24,11 +23,10 @@ public class TimelineManager : MonoBehaviour
         else
         {
             Debug.Log("It is not the first time in the game.");
-           
+
             //director.Stop();
             return;
         }
-
     }
 
     public void StartTimeline()
@@ -36,9 +34,5 @@ public class TimelineManager : MonoBehaviour
         director = GetComponent<PlayableDirector>();
         director.Play();
         print("playable director is playing");
-
     }
-
-
-
 }
