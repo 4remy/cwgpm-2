@@ -6,18 +6,16 @@ using UnityEngine.Playables;
 public class TimelineManager : MonoBehaviour
 {
     public PlayableDirector director;
-    public bool firstPlay;
     public BoolValue storedFirstPlay;
 
     private void Awake()
     {
         Debug.Log("the timeline manager is awake btw.");
 
-        if (!firstPlay) //return true if the key exist
+        if (!storedFirstPlay.RuntimeValue) //return true if the key exist
         {
             Debug.Log("First time in the game.");
-            firstPlay = true;
-            storedFirstPlay.RuntimeValue = firstPlay;
+            storedFirstPlay.RuntimeValue = true;
             StartTimeline();
         }
         else
