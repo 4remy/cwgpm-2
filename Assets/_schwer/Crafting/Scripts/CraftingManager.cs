@@ -167,7 +167,10 @@ namespace Schwer.ItemSystem {
         }
 
         // Called by the recipe button's OnClick UnityEvent
-        public void OpenRecipeMenu() => recipeMenu.Open(this);
+        public void OpenRecipeMenu() {
+            recipeMenu.SetData(recipeList, discoveredRecipes, _inventory);
+            recipeMenu.Open(this);
+        }
 
         public void Enable(bool value) {
             // Disable canvas rather than game object
