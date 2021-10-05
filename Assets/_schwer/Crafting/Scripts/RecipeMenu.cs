@@ -42,6 +42,9 @@ namespace Schwer.ItemSystem {
                 if (recipe != null) {
                     recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipe));
                 }
+                else {
+                    recipeSlots[i].button.onClick.RemoveAllListeners();
+                }
             }
         }
 
@@ -71,6 +74,22 @@ namespace Schwer.ItemSystem {
             }
 
             this.gameObject.SetActive(true);
+        }
+
+        public void SetData(RecipeList recipeList, IntListSO discoveredRecipes, InventorySO inventorySO) {
+            var newData = false;
+            if (this.recipeList != recipeList || this.discoveredRecipes != discoveredRecipes) {
+                newData = true;
+            }
+
+            this.recipeList = recipeList;
+            this.discoveredRecipes = discoveredRecipes;
+
+            this._inventory = inventorySO;
+
+            if (newData) {
+                InitialiseSlots();
+            }
         }
 
         // Called when a recipe slot is clicked on.
