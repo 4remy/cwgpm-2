@@ -17,7 +17,6 @@ namespace Schwer.ItemSystem {
 
         private void Awake() {
             GetComponentsInChildren<RecipeSlot>(recipeSlots);
-            InitialiseSlots();
         }
 
         private void OnEnable() {
@@ -57,22 +56,15 @@ namespace Schwer.ItemSystem {
             }
 
             this.gameObject.SetActive(true);
+
+            InitialiseSlots();
         }
 
         public void SetData(RecipeList recipeList, IntListSO discoveredRecipes, InventorySO inventorySO) {
-            var newData = false;
-            if (this.recipeList != recipeList || this.discoveredRecipes != discoveredRecipes) {
-                newData = true;
-            }
-
             this.recipeList = recipeList;
             this.discoveredRecipes = discoveredRecipes;
 
             this._inventory = inventorySO;
-
-            if (newData) {
-                InitialiseSlots();
-            }
         }
 
         // Called when a recipe slot is clicked on.
