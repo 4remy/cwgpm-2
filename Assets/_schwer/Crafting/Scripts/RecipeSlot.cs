@@ -6,14 +6,15 @@ namespace Schwer.ItemSystem {
         [Header("Components")]
         [SerializeField] private Image sprite = default;
         [SerializeField] private Text text = default;
-        [SerializeField] private Button _button = default;
-        public Button button => _button;
+        [SerializeField] private Button button = default;
 
         public Recipe recipe { get; private set; }
 
-        public void Initialise(Recipe recipe, bool discovered) {
+        public void Initialise(Recipe recipe, bool discovered, RecipeMenu menu) {
             this.recipe = recipe;
             if (recipe != null) {
+                button.onClick.AddListener(() => menu.OnRecipeClick(recipe));
+
                 sprite.sprite = recipe.output.sprite;
                 sprite.enabled = true;
 
@@ -39,6 +40,8 @@ namespace Schwer.ItemSystem {
             text.text = "";
             sprite.enabled = false;
             sprite.sprite = null;
+
+            button.onClick.RemoveAllListeners();
         }
     }
 }

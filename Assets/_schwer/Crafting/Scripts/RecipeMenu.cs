@@ -21,7 +21,6 @@ namespace Schwer.ItemSystem {
         }
 
         private void OnEnable() {
-            UpdateSlots();
             SelectFirstSlot();
         }
 
@@ -37,23 +36,7 @@ namespace Schwer.ItemSystem {
             for (int i = 0; i < recipeSlots.Count; i++) {
                 var recipe = (i < recipes.Count) ? recipes[i] : null;
                 var discovered = (recipe != null) ? discoveredRecipes.Contains(recipe.id) : false;
-                recipeSlots[i].Initialise(recipe, discovered);
-
-                if (recipe != null) {
-                    recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipe));
-                }
-                else {
-                    recipeSlots[i].button.onClick.RemoveAllListeners();
-                }
-            }
-        }
-
-        private void UpdateSlots() {
-            for (int i = 0; i < recipeSlots.Count; i++) {
-                var recipe = recipeSlots[i].recipe;
-                if (recipe != null) {
-                    recipeSlots[i].Initialise(recipe, discoveredRecipes.Contains(recipe.id));
-                }
+                recipeSlots[i].Initialise(recipe, discovered, this);
             }
         }
 
