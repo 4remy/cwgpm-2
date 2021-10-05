@@ -178,5 +178,21 @@ namespace Schwer.ItemSystem {
             canvas.enabled = value;
             canvasGroup.interactable = value;
         }
+
+        public void SetData(RecipeList recipeList, IntListSO discoveredRecipes, InventorySO inventorySO) {
+            this.recipeList = recipeList;
+            this.discoveredRecipes = discoveredRecipes;
+
+            if (this._inventory != inventorySO) {
+                inventory.OnContentsChanged -= UpdateInventorySlots;
+
+                this._inventory = inventorySO;
+                inventory.OnContentsChanged += UpdateInventorySlots;
+
+                if (this.gameObject.activeSelf) {
+                    UpdateInventorySlots(null, 0);
+                }
+            }
+        }
     }
 }
