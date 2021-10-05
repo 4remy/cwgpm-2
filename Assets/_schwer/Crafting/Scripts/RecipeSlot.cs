@@ -17,20 +17,28 @@ namespace Schwer.ItemSystem {
                 sprite.sprite = recipe.output.sprite;
                 sprite.enabled = true;
 
-                if (discovered) {
-                    sprite.color = Color.white;
-                    text.text = recipe.output.name;
-                }
-                else {
-                    sprite.color = Color.black;
-                    text.text = "???";
-                }
+                UpdateDiscoveryStatus(discovered);
             }
             else {
-                text.text = "";
-                sprite.enabled = false;
-                sprite.sprite = null;
+                EmptySlot();
             }
+        }
+
+        private void UpdateDiscoveryStatus(bool discovered) {
+            if (discovered) {
+                sprite.color = Color.white;
+                text.text = recipe.output.name;
+            }
+            else {
+                sprite.color = Color.black;
+                text.text = "???";
+            }
+        }
+
+        private void EmptySlot() {
+            text.text = "";
+            sprite.enabled = false;
+            sprite.sprite = null;
         }
     }
 }
