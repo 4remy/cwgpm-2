@@ -13,6 +13,7 @@ namespace Schwer.ItemSystem {
         public void Initialise(Recipe recipe, bool discovered, RecipeMenu menu) {
             this.recipe = recipe;
             if (recipe != null) {
+                button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => menu.OnRecipeClick(recipe));
 
                 sprite.sprite = recipe.output.sprite;
