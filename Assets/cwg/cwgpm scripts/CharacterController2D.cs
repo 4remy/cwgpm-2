@@ -124,7 +124,7 @@ public class CharacterController2D : MonoBehaviour
         transform.position = startingPosition.initialValue;
     }
 
-    public void ConvoStartSignal()
+    public void StartInteraction()
     {
         animator.SetBool("moving", false);
         state = State.Interact;
@@ -132,9 +132,9 @@ public class CharacterController2D : MonoBehaviour
         Debug.Log("you shouldn't be able to move");
     }
 
-    public void ConvoFinishSignal()
+    public void FinishInteraction()
     {
-        Debug.Log("convo finished signal recieved");
+        Debug.Log("Interaction finished signal recieved");
         state = State.Idle;
     }
 
