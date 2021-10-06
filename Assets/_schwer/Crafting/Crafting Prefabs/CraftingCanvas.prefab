@@ -2073,7 +2073,6 @@ GameObject:
   - component: {fileID: 3132979511564336261}
   - component: {fileID: 3132979511564336260}
   - component: {fileID: 3132979511564336259}
-  - component: {fileID: 3132979511564336258}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -2182,10 +2181,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3132979511564336258}
-        m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
-        m_MethodName: runTransfer
-        m_Mode: 1
+      - m_Target: {fileID: 9090937341553043054}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2194,27 +2193,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3132979511564336258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3132979511564336256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fede581b4b2d4696b63f8442d800433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: cwgpmScene2
-  playerPosition: {x: -1.677, y: 13.06}
-  playerMemory: {fileID: 11400000, guid: dcfc3991317a44c5bae2b36da5d9d6d2, type: 2}
-  fadeInPanel: {fileID: 2360217536349382194, guid: 777478d710439404689126472442ef04,
-    type: 3}
-  fadeOutPanel: {fileID: 6381111927633495540, guid: fbf528878de5042bbbe12420d3f24b70,
-    type: 3}
-  fadeWait: 0.33
-  soundEffectToPlay: Oink
 --- !u!1 &3132979511611927064
 GameObject:
   m_ObjectHideFlags: 0
