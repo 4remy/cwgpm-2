@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Schwer.ItemSystem.Demo;
 using UnityEngine;
@@ -7,6 +8,9 @@ using UnityEngine.UI;
 
 namespace Schwer.ItemSystem {
     public class CraftingManager : MonoBehaviour, IItemSlotManager {
+        private static event Action<RecipeList> OnCraftingMenuRequested;
+        public static void RequestCraftingMenu(RecipeList recipeList) => OnCraftingMenuRequested?.Invoke(recipeList);
+
         [SerializeField] private RecipeList recipeList = default;
 
         [Header("Save Data")]
@@ -62,6 +66,16 @@ namespace Schwer.ItemSystem {
             foreach (var slot in inventorySlots) {
                 slot.manager = this;
             }
+
+            OnCraftingMenuRequested += Open;
+            gameObject.SetActive(false);
+        }
+
+        private void OnDestroy() => OnCraftingMenuRequested -= Open;
+
+        private void Open(RecipeList recipeList) {
+            SetData(recipeList, discoveredRecipes, _inventory);
+            gameObject.SetActive(true);
         }
 
         private void Initialise() {
