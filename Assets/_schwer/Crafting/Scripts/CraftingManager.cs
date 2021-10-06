@@ -45,6 +45,8 @@ namespace Schwer.ItemSystem {
         public delegate void CookedDelegate();
         public event CookedDelegate cookedEvent;
 
+        private int disabledFrame;  // Keyboard/gamepad input to close the crafting menu would also be received by `OpenCraft`, opening the menu again in the same frame 
+
         private void OnEnable() {
             inventory.OnContentsChanged += UpdateInventorySlots;
             ingredients.OnContentsChanged += UpdateIngredientSlots;
@@ -62,6 +64,7 @@ namespace Schwer.ItemSystem {
             ingredients.OnContentsChanged -= UpdateIngredientSlots;
 
             finishInteraction.Raise();
+            disabledFrame = Time.frameCount;
         }
 
         private void Awake() {
@@ -82,6 +85,8 @@ namespace Schwer.ItemSystem {
         private void OnDestroy() => OnCraftingMenuRequested -= Open;
 
         private void Open(RecipeList recipeList) {
+            if (disabledFrame == Time.frameCount) return;
+
             SetData(recipeList, discoveredRecipes, _inventory);
             gameObject.SetActive(true);
         }
