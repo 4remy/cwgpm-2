@@ -29,12 +29,13 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D myRigidbody;
     SpriteRenderer spriteRenderer;
 
-    enum State
+    public enum State
     {
         Idle, Moving, Interact, Sitting
     }
 
-    State state = State.Idle;
+    private State _state = State.Idle;
+    public State state { get => _state; private set => _state = value; }
     //  Vector3 start, end;
     //    Vector2 currentVelocity;
     //   float startTime;

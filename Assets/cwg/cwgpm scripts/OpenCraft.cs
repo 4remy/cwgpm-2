@@ -11,8 +11,10 @@ public class OpenCraft : Interactable
 
     protected override void Interact()
     {
-        AudioManager.Instance.Play(soundEffectToPlay);
-
-        CraftingManager.RequestCraftingMenu(recipeList);
+        if (player.state != CharacterController2D.State.Interact)
+        {
+            AudioManager.Instance.Play(soundEffectToPlay);
+            CraftingManager.RequestCraftingMenu(recipeList);
+        }
     }
 }
