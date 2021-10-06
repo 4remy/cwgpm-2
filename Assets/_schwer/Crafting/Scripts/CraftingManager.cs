@@ -184,13 +184,14 @@ namespace Schwer.ItemSystem {
             this.discoveredRecipes = discoveredRecipes;
 
             if (this._inventory != inventorySO) {
-                inventory.OnContentsChanged -= UpdateInventorySlots;
-
-                this._inventory = inventorySO;
-                inventory.OnContentsChanged += UpdateInventorySlots;
-
-                if (this.gameObject.activeSelf) {
+                if (this.isActiveAndEnabled) {
+                    inventory.OnContentsChanged -= UpdateInventorySlots;
+                    this._inventory = inventorySO;
+                    inventory.OnContentsChanged += UpdateInventorySlots;
                     UpdateInventorySlots(null, 0);
+                }
+                else {
+                    this._inventory = inventorySO;
                 }
             }
         }
