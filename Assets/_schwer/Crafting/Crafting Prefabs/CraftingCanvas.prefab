@@ -911,6 +911,8 @@ MonoBehaviour:
   recipeList: {fileID: 11400000, guid: b773615a0d23b3847948d5bb2b4f0bdf, type: 2}
   discoveredRecipes: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac, type: 2}
   _inventory: {fileID: 11400000, guid: 19a63ed173fed413285668fc4c4bcf65, type: 2}
+  startInteraction: {fileID: 11400000, guid: 74b1c34c475cf4d418f1b8f5abbd79d1, type: 2}
+  finishInteraction: {fileID: 11400000, guid: f76f81989031b480f9c7c63bc83c338c, type: 2}
   nameDisplay: {fileID: 4126741839154046066}
   addButton: {fileID: 176697718586907816}
   craftButton: {fileID: 8987889620885336729}

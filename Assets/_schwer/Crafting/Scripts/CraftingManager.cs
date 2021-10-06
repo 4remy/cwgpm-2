@@ -18,6 +18,10 @@ namespace Schwer.ItemSystem {
         [SerializeField] private InventorySO _inventory = default;
         private Inventory inventory => _inventory.value;
 
+        [Header("Signals")]
+        [SerializeField] private Signal startInteraction;
+        [SerializeField] private Signal finishInteraction;
+
         [Header("Components")]
         [SerializeField] private Text nameDisplay = default;
         [SerializeField] private Button addButton = default;
@@ -46,6 +50,8 @@ namespace Schwer.ItemSystem {
             ingredients.OnContentsChanged += UpdateIngredientSlots;
 
             Initialise();
+
+            startInteraction.Raise();
         }
 
         private void OnDisable() {
@@ -54,6 +60,8 @@ namespace Schwer.ItemSystem {
 
             inventory.OnContentsChanged -= UpdateInventorySlots;
             ingredients.OnContentsChanged -= UpdateIngredientSlots;
+
+            finishInteraction.Raise();
         }
 
         private void Awake() {
