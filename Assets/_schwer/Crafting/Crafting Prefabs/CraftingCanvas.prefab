@@ -5795,7 +5795,7 @@ MonoBehaviour:
   magicNumber1: 5
   storedAchievement1: {fileID: 11400000, guid: b945793566dba4a91bbe34a5cc32b0ff, type: 2}
   achievePanel: {fileID: 8987889621026653121}
-  dialogText: {fileID: 8987889622795014456}
+  dialogText: {fileID: 0}
   dialogAchieve1: Well done! You made 5 recipes.
   achieveShown: 0
   canDismiss: 0
@@ -6669,8 +6669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -95.69165, y: -227.53914}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: -100, y: -130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8987889622795014457
 CanvasRenderer:
