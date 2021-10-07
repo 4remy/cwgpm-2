@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Schwer.ItemSystem.Demo;
 using UnityEngine;
@@ -7,11 +8,20 @@ using UnityEngine.UI;
 
 namespace Schwer.ItemSystem {
     public class CraftingManager : MonoBehaviour, IItemSlotManager {
-        [SerializeField] private RecipeDatabase recipeDatabase = default;
+        private static event Action<RecipeList> OnCraftingMenuRequested;
+        public static void RequestCraftingMenu(RecipeList recipeList) => OnCraftingMenuRequested?.Invoke(recipeList);
+
+        [SerializeField] private RecipeList recipeList = default;
+        [SerializeField] private string openSFX = default;
+
         [Header("Save Data")]
         [SerializeField] private IntListSO discoveredRecipes = default;
         [SerializeField] private InventorySO _inventory = default;
         private Inventory inventory => _inventory.value;
+
+        [Header("Signals")]
+        [SerializeField] private Signal startInteraction;
+        [SerializeField] private Signal finishInteraction;
 
         [Header("Components")]
         [SerializeField] private Text nameDisplay = default;
@@ -36,11 +46,16 @@ namespace Schwer.ItemSystem {
         public delegate void CookedDelegate();
         public event CookedDelegate cookedEvent;
 
+        private int disabledFrame;  // Keyboard/gamepad input to close the crafting menu would also be received by `OpenCraft`, opening the menu again in the same frame 
+
         private void OnEnable() {
             inventory.OnContentsChanged += UpdateInventorySlots;
             ingredients.OnContentsChanged += UpdateIngredientSlots;
 
             Initialise();
+
+            AudioManager.Instance.Play(openSFX);
+            startInteraction.Raise();
         }
 
         private void OnDisable() {
@@ -49,6 +64,9 @@ namespace Schwer.ItemSystem {
 
             inventory.OnContentsChanged -= UpdateInventorySlots;
             ingredients.OnContentsChanged -= UpdateIngredientSlots;
+
+            finishInteraction.Raise();
+            disabledFrame = Time.frameCount;
         }
 
         private void Awake() {
@@ -61,6 +79,18 @@ namespace Schwer.ItemSystem {
             foreach (var slot in inventorySlots) {
                 slot.manager = this;
             }
+
+            OnCraftingMenuRequested += Open;
+            gameObject.SetActive(false);
+        }
+
+        private void OnDestroy() => OnCraftingMenuRequested -= Open;
+
+        private void Open(RecipeList recipeList) {
+            if (disabledFrame == Time.frameCount) return;
+
+            SetData(recipeList, discoveredRecipes, _inventory);
+            gameObject.SetActive(true);
         }
 
         private void Initialise() {
@@ -76,7 +106,12 @@ namespace Schwer.ItemSystem {
             EventSystem.current.SetSelectedGameObject(null);
             var selected = EventSystem.current.currentSelectedGameObject;
             if (selected == null || !selected.transform.IsChildOf(inventorySlotsHolder.transform)) {
-                EventSystem.current.SetSelectedGameObject(inventorySlots[0].gameObject);
+                var firstSlot = inventorySlots[0].gameObject;
+                EventSystem.current.SetSelectedGameObject(firstSlot);
+                // Above line doesn't reliably call OnSelect correctly, ∴ manually call
+                firstSlot.GetComponent<ItemSlot>().OnSelect(null);  // Update selection text
+                firstSlot.GetComponent<Button>().OnSelect(null);    // Button highlight
+                
             }
         }
 
@@ -140,7 +175,7 @@ namespace Schwer.ItemSystem {
 
         // Called by the craft button's OnClick UnityEvent
         public void TryCraft() {
-            var recipes = recipeDatabase.GetRecipes();
+            var recipes = recipeList.recipes;
             for (int i = 0; i < recipes.Count; i++) {
                 if (recipes[i].Matches(ingredients)) {
                     ingredients.Clear();
@@ -166,13 +201,33 @@ namespace Schwer.ItemSystem {
         }
 
         // Called by the recipe button's OnClick UnityEvent
-        public void OpenRecipeMenu() => recipeMenu.Open(this);
+        public void OpenRecipeMenu() {
+            recipeMenu.SetData(recipeList, discoveredRecipes, _inventory);
+            recipeMenu.Open(this);
+        }
 
         public void Enable(bool value) {
             // Disable canvas rather than game object
             // so that ingredients pouch is persistent
             canvas.enabled = value;
             canvasGroup.interactable = value;
+        }
+
+        public void SetData(RecipeList recipeList, IntListSO discoveredRecipes, InventorySO inventorySO) {
+            this.recipeList = recipeList;
+            this.discoveredRecipes = discoveredRecipes;
+
+            if (this._inventory != inventorySO) {
+                if (this.isActiveAndEnabled) {
+                    inventory.OnContentsChanged -= UpdateInventorySlots;
+                    this._inventory = inventorySO;
+                    inventory.OnContentsChanged += UpdateInventorySlots;
+                    UpdateInventorySlots(null, 0);
+                }
+                else {
+                    this._inventory = inventorySO;
+                }
+            }
         }
     }
 }

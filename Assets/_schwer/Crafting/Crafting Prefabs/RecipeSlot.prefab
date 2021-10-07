@@ -247,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 746190123164532227}
   text: {fileID: 598526285422794538}
-  _button: {fileID: 8571189712641439370}
+  button: {fileID: 8571189712641439370}
 --- !u!114 &8571189712641439370
 MonoBehaviour:
   m_ObjectHideFlags: 0

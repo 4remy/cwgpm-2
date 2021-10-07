@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c83a8db904ccd4f618e7c90df6e71c62, type: 3}
-  m_Name: ConvoStartSignal
+  m_Script: {fileID: 11500000, guid: 484e3f1edaa01954295291cca70296f9, type: 3}
+  m_Name: TestRecipes
   m_EditorClassIdentifier: 
-  listeners: []
+  _recipes:
+  - {fileID: 11400000, guid: 2510267b129e7cf408e18901e2c30d6b, type: 2}
+  - {fileID: 11400000, guid: 012f25cc1f12545c0b3935cb5fcc3c96, type: 2}

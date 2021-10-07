@@ -29,12 +29,13 @@ public class CharacterController2D : MonoBehaviour
     private Rigidbody2D myRigidbody;
     SpriteRenderer spriteRenderer;
 
-    enum State
+    public enum State
     {
         Idle, Moving, Interact, Sitting
     }
 
-    State state = State.Idle;
+    private State _state = State.Idle;
+    public State state { get => _state; private set => _state = value; }
     //  Vector3 start, end;
     //    Vector2 currentVelocity;
     //   float startTime;
@@ -124,7 +125,7 @@ public class CharacterController2D : MonoBehaviour
         transform.position = startingPosition.initialValue;
     }
 
-    public void ConvoStartSignal()
+    public void StartInteraction()
     {
         animator.SetBool("moving", false);
         state = State.Interact;
@@ -132,9 +133,9 @@ public class CharacterController2D : MonoBehaviour
         Debug.Log("you shouldn't be able to move");
     }
 
-    public void ConvoFinishSignal()
+    public void FinishInteraction()
     {
-        Debug.Log("convo finished signal recieved");
+        Debug.Log("Interaction finished signal recieved");
         state = State.Idle;
     }
 

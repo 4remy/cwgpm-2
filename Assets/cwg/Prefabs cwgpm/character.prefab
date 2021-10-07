@@ -246,7 +246,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3871160447985254052}
         m_TargetAssemblyTypeName: CharacterController2D, Assembly-CSharp
-        m_MethodName: ConvoFinishSignal
+        m_MethodName: FinishInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -274,7 +274,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3871160447985254052}
         m_TargetAssemblyTypeName: CharacterController2D, Assembly-CSharp
-        m_MethodName: ConvoStartSignal
+        m_MethodName: StartInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

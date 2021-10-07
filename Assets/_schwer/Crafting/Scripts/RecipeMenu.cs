@@ -4,7 +4,8 @@ using UnityEngine.EventSystems;
 
 namespace Schwer.ItemSystem {
     public class RecipeMenu : MonoBehaviour {
-        [SerializeField] private RecipeDatabase recipeDatabase = default;
+        [SerializeField] private RecipeList recipeList = default;
+
         [Header("Save Data")]
         [SerializeField] private IntListSO discoveredRecipes = default;
         [SerializeField] private InventorySO _inventory = default;
@@ -16,11 +17,9 @@ namespace Schwer.ItemSystem {
 
         private void Awake() {
             GetComponentsInChildren<RecipeSlot>(recipeSlots);
-            InitialiseSlots();
         }
 
         private void OnEnable() {
-            UpdateSlots();
             SelectFirstSlot();
         }
 
@@ -32,24 +31,11 @@ namespace Schwer.ItemSystem {
         }
 
         private void InitialiseSlots() {
-            var recipes = recipeDatabase.GetRecipes();
+            var recipes = recipeList.recipes;
             for (int i = 0; i < recipeSlots.Count; i++) {
                 var recipe = (i < recipes.Count) ? recipes[i] : null;
                 var discovered = (recipe != null) ? discoveredRecipes.Contains(recipe.id) : false;
-                recipeSlots[i].Initialise(recipe, discovered);
-
-                if (recipe != null) {
-                    recipeSlots[i].button.onClick.AddListener(() => OnRecipeClick(recipe));
-                }
-            }
-        }
-
-        private void UpdateSlots() {
-            for (int i = 0; i < recipeSlots.Count; i++) {
-                var recipe = recipeSlots[i].recipe;
-                if (recipe != null) {
-                    recipeSlots[i].Initialise(recipe, discoveredRecipes.Contains(recipe.id));
-                }
+                recipeSlots[i].Initialise(recipe, discovered, this);
             }
         }
 
@@ -70,6 +56,15 @@ namespace Schwer.ItemSystem {
             }
 
             this.gameObject.SetActive(true);
+
+            InitialiseSlots();
+        }
+
+        public void SetData(RecipeList recipeList, IntListSO discoveredRecipes, InventorySO inventorySO) {
+            this.recipeList = recipeList;
+            this.discoveredRecipes = discoveredRecipes;
+
+            this._inventory = inventorySO;
         }
 
         // Called when a recipe slot is clicked on.
