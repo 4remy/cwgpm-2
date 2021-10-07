@@ -106,7 +106,12 @@ namespace Schwer.ItemSystem {
             EventSystem.current.SetSelectedGameObject(null);
             var selected = EventSystem.current.currentSelectedGameObject;
             if (selected == null || !selected.transform.IsChildOf(inventorySlotsHolder.transform)) {
-                EventSystem.current.SetSelectedGameObject(inventorySlots[0].gameObject);
+                var firstSlot = inventorySlots[0].gameObject;
+                EventSystem.current.SetSelectedGameObject(firstSlot);
+                // Above line doesn't reliably call OnSelect correctly, ∴ manually call
+                firstSlot.GetComponent<ItemSlot>().OnSelect(null);  // Update selection text
+                firstSlot.GetComponent<Button>().OnSelect(null);    // Button highlight
+                
             }
         }
 
