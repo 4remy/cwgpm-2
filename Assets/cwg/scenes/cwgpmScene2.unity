@@ -4157,17 +4157,17 @@ PrefabInstance:
     - target: {fileID: 8987889621068526277, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8987889621068526277, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8987889621068526277, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -30.537094
       objectReference: {fileID: 0}
     - target: {fileID: 8987889621759569238, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
@@ -4279,20 +4279,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftingCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8987889621759569242, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8987889622510816003, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8987889622510816003, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8987889622510816003, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.51857746
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06c58330fbb0abe428b46d27644d1a97, type: 3}
@@ -9821,8 +9826,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipeList: {fileID: 11400000, guid: 85f8cd4892b5c0f44a8dda3b63b2627d, type: 2}
-  physicsCollider: {fileID: 1317689065}
-  soundEffectToPlay: Achieve
 --- !u!1 &1317897028
 GameObject:
   m_ObjectHideFlags: 0
