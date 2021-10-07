@@ -12,6 +12,7 @@ namespace Schwer.ItemSystem {
         public static void RequestCraftingMenu(RecipeList recipeList) => OnCraftingMenuRequested?.Invoke(recipeList);
 
         [SerializeField] private RecipeList recipeList = default;
+        [SerializeField] private string openSFX = default;
 
         [Header("Save Data")]
         [SerializeField] private IntListSO discoveredRecipes = default;
@@ -53,6 +54,7 @@ namespace Schwer.ItemSystem {
 
             Initialise();
 
+            AudioManager.Instance.Play(openSFX);
             startInteraction.Raise();
         }
 
