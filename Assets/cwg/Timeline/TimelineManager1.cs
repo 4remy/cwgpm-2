@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class TimelineManager : MonoBehaviour
+public class TimelineManager1 : MonoBehaviour
 {
     public PlayableDirector director;
     public BoolValue storedFirstPlay;
