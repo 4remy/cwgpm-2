@@ -75,5 +75,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6036ec3bd5ab34e258ec5d378abe6938, type: 2}
   - {fileID: 11400000, guid: 29c8e00e774304554b0bb3f7d6f76c41, type: 2}
   - {fileID: 11400000, guid: 27b4965632e534b069cc7b46e7170a0e, type: 2}
+  - {fileID: 11400000, guid: b24f28650d76c46f1abddb9a5458eab2, type: 2}
+  - {fileID: 11400000, guid: 36b19327e151a45bc8b3ee02a910fc16, type: 2}
+  - {fileID: 11400000, guid: 9da7e3d4912694d56820499e0465157f, type: 2}
   playerInventory: {fileID: 11400000, guid: 19a63ed173fed413285668fc4c4bcf65, type: 2}
   discoveredRecipes: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac, type: 2}
