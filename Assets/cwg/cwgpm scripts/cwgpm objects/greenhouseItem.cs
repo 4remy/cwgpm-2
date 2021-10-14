@@ -18,7 +18,11 @@ public class greenhouseItem : MonoBehaviour
 
     void Awake()
     {
-        chosenItem = myObjects[UnityEngine.Random.Range(0, myObjects.Length)];
+        chosenItem = myObjects[UnityEngine.Random.Range(0, myObjects.Length - 1)];
+
+        print("length is: " + myObjects.Length);
+
+        print("random length is: " + chosenItem);
 
         chosenItem.SetActive(true);
 
