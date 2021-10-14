@@ -4177,6 +4177,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8987889621026653121, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8987889621068526277, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4320,7 +4325,15 @@ PrefabInstance:
     - target: {fileID: 8987889621759569242, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987889621912947549, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: dialogAchieve1
+      value: 'Well done! You made five recipes.
+
+        A beautiful plant started
+        growing outside.'
       objectReference: {fileID: 0}
     - target: {fileID: 8987889622452581334, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
@@ -4351,6 +4364,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987889622795014456, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: m_Text
+      value: Test text
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987889622795014456, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987889622795014463, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -104.2063
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987889622795014463, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -66.90506
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987889622795014463, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.100006
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987889622795014463, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.0999985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06c58330fbb0abe428b46d27644d1a97, type: 3}
@@ -5396,6 +5439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695081991}
   - component: {fileID: 695081990}
+  - component: {fileID: 695081992}
   m_Layer: 0
   m_Name: TimelineManager
   m_TagString: Untagged
@@ -5413,14 +5457,12 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 2d995e621c6e84348b80cdb2fd8ff5f6, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -4989734551139077268, guid: 2d995e621c6e84348b80cdb2fd8ff5f6, type: 2}
-    value: {fileID: 1297585318}
-  - key: {fileID: -3053887233975949775, guid: 2d995e621c6e84348b80cdb2fd8ff5f6, type: 2}
     value: {fileID: 1297585318}
   - key: {fileID: 0}
     value: {fileID: 1584041415}
@@ -5428,6 +5470,8 @@ PlayableDirector:
     value: {fileID: 1297585317}
   - key: {fileID: -282434849328414000, guid: 2d995e621c6e84348b80cdb2fd8ff5f6, type: 2}
     value: {fileID: 933297140}
+  - key: {fileID: 2376481799644798414, guid: 2d995e621c6e84348b80cdb2fd8ff5f6, type: 2}
+    value: {fileID: 1297585318}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &695081991
@@ -5444,6 +5488,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695081992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695081989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85726a8ef95164c0eaede7766862c5e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 695081990}
+  discoveredRecipes: {fileID: 11400000, guid: 5cf8c73efc7145c4fb2e82c1f48491ac, type: 2}
+  magicNumber1: 10
 --- !u!1 &697523514
 GameObject:
   m_ObjectHideFlags: 0
@@ -5892,7 +5951,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8.988537, y: -1.7637482}
+  m_Offset: {x: 8.988537, y: 5.545452}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5903,7 +5962,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.811771, y: 28.761246}
+  m_Size: {x: 10.811771, y: 14.142845}
   m_EdgeRadius: 0
 --- !u!1 &817243797
 GameObject:
@@ -6998,7 +7057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fa623a848b242c3995d3b2cc16e81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conversation: {fileID: 11400000, guid: 3c9d214e5c53c4407a2f1fb762a7f5ab, type: 2}
+  conversation: {fileID: 11400000, guid: 7e7ecfe5a4a8949f8b93267d4547d32d, type: 2}
   isCompleted: 0
   convoCompleted: {fileID: 11400000, guid: 65daa6b91005d404caefed5e455b8dbb, type: 2}
   thisSpeechType: 1

@@ -14,6 +14,13 @@ public class shakeMachine : Interactable
     public Signal ConvoStartSignal;
     public Signal ConvoFinishSignal;
 
+    public bool textOn;
+
+    public GameObject dialogBox;
+    public Text dialogText;
+    [Multiline]
+    public string dialog;
+
     protected override void Interact()
     {
         if (!playerInRange)
@@ -31,10 +38,18 @@ public class shakeMachine : Interactable
 
         }
         else
+
         {
-            AudioManager.Instance.Play(soundEffectToPlay2);
-            return;
+            if (!textOn)
+            {
+                ShowText();
+            }
+            else
+            {
+                TextAlreadyShown();
+            }
         }
+
     }
 
 
@@ -49,6 +64,26 @@ public class shakeMachine : Interactable
         AudioManager.Instance.Play(soundEffectToPlay);
         player.RaiseItem(null);
 
+    }
+
+    private void ShowText()
+    {
+        AudioManager.Instance.Play(soundEffectToPlay2);
+        ConvoStartSignal.Raise();
+        Debug.Log("already have some");
+        dialogBox.SetActive(true);
+        // dialog text = contents text;
+        dialogText.text = dialog;
+        textOn = true;
+
+
+    }
+
+    private void TextAlreadyShown()
+    {
+        dialogBox.SetActive(false);
+        textOn = false;
+        ConvoFinishSignal.Raise();
     }
 
 
