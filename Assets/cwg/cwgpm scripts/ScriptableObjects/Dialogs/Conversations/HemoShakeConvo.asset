@@ -20,4 +20,7 @@ MonoBehaviour:
     text: KrrrRRR. Krakunk.
   - character: {fileID: 11400000, guid: fda4f299129d8469a82bfb698ac01446, type: 2}
     emotion: 2
-    text: HoHHHH did you get it working!!
+    text: Hohhh did you get it working!!
+  - character: {fileID: 11400000, guid: 75b6d12cbf5464665b60d91b2bbb6d8e, type: 2}
+    emotion: 1
+    text: 'Yeah! '
