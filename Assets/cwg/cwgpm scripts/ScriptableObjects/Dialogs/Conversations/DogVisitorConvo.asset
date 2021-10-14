@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec5126e95424d6ebf919aa7e48526e, type: 3}
+  m_Name: DogVisitorConvo
+  m_EditorClassIdentifier: 
+  speakerLeft: {fileID: 11400000, guid: 75b6d12cbf5464665b60d91b2bbb6d8e, type: 2}
+  speakerRight: {fileID: 11400000, guid: 19a7518ec7c684b1f81c7657f7e8cbb0, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 75b6d12cbf5464665b60d91b2bbb6d8e, type: 2}
+    emotion: 1
+    text: Hello?
+  - character: {fileID: 11400000, guid: 19a7518ec7c684b1f81c7657f7e8cbb0, type: 2}
+    emotion: 0
+    text: You've cooked a huge number of burgers recently.
+  - character: {fileID: 11400000, guid: 19a7518ec7c684b1f81c7657f7e8cbb0, type: 2}
+    emotion: 0
+    text: My stomach's not so good. But I appreciate the smell.
+  - character: {fileID: 11400000, guid: 19a7518ec7c684b1f81c7657f7e8cbb0, type: 2}
+    emotion: 0
+    text: Talent should be encouraged. I have paid for the construction of a greenhouse
+      for fresh ingredients.
+  - character: {fileID: 11400000, guid: 75b6d12cbf5464665b60d91b2bbb6d8e, type: 2}
+    emotion: 1
+    text: Are you from Bidicorp?
+  - character: {fileID: 11400000, guid: 19a7518ec7c684b1f81c7657f7e8cbb0, type: 2}
+    emotion: 1
+    text: ...
