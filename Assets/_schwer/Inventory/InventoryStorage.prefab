@@ -386,9 +386,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Schwer.ItemSystem.CraftingManager, Assembly-CSharp
-        m_MethodName: AddIngredient
+      - m_Target: {fileID: 9212400027805428095}
+        m_TargetAssemblyTypeName: Schwer.ItemSystem.InventoryStorageManager, Assembly-CSharp
+        m_MethodName: StoreItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -778,9 +778,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Schwer.ItemSystem.CraftingManager, Assembly-CSharp
-        m_MethodName: AddIngredient
+      - m_Target: {fileID: 9212400027805428095}
+        m_TargetAssemblyTypeName: Schwer.ItemSystem.InventoryStorageManager, Assembly-CSharp
+        m_MethodName: TakeItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -952,6 +952,7 @@ GameObject:
   - component: {fileID: 3065524285992133062}
   - component: {fileID: 1844337613766876808}
   - component: {fileID: 1985223699866092981}
+  - component: {fileID: 9212400027805428095}
   m_Layer: 5
   m_Name: InventoryStorage
   m_TagString: Untagged
@@ -1043,6 +1044,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &9212400027805428095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065524285992133060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4126466a6a40dd348b49462f10981b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventory: {fileID: 0}
+  _storage: {fileID: 0}
+  selectionDisplay: {fileID: 9212400029334565539}
+  storeButton: {fileID: 5188831306018138509}
+  takeButton: {fileID: 7735855482678345674}
+  inventorySlotsHolder: {fileID: 222718999793364608}
+  storageSlotsHolder: {fileID: 9212400028711876568}
 --- !u!1 &3065524286850904686
 GameObject:
   m_ObjectHideFlags: 0
