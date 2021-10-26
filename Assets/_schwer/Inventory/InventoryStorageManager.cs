@@ -78,15 +78,15 @@ namespace Schwer.ItemSystem {
         private void Open(Inventory player, Inventory storage) {
             if (disabledFrame == Time.frameCount) return;
 
-            this.inventory = SetData(this.inventory, player);
-            this.storage = SetData(this.storage, storage);
+            this.inventory = SetData(this.inventory, player, UpdateInventorySlots);
+            this.storage = SetData(this.storage, storage, UpdateStorageSlots);
             gameObject.SetActive(true); // Refer to OnEnable()
         }
 
-        private Inventory SetData(Inventory previous, Inventory incoming) {
+        private Inventory SetData(Inventory previous, Inventory incoming, Action<Item, int> action) {
             if (previous != incoming) {
-                if (previous != null) previous.OnContentsChanged -= UpdateInventorySlots;
-                if (incoming != null) incoming.OnContentsChanged += UpdateInventorySlots;
+                if (previous != null) previous.OnContentsChanged -= action;
+                if (incoming != null) incoming.OnContentsChanged += action;
                 return incoming;
             }
             else {
