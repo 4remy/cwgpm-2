@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Schwer.ItemSystem.Demo;
@@ -8,11 +9,11 @@ using UnityEngine.UI;
 
 namespace Schwer.ItemSystem {
     public class InventoryStorageManager : MonoBehaviour, IItemSlotManager {
-        [Header("Data")]
-        [SerializeField] private InventorySO _inventory = default;
-        private Inventory inventory => _inventory.value;
-        [SerializeField] private InventorySO _storage = default;
-        private Inventory storage => _storage.value;
+        private static event Action<Inventory, Inventory> OnInventoryStorageMenuRequested;
+        public static void Request(Inventory player, Inventory storage) => OnInventoryStorageMenuRequested?.Invoke(player, storage);
+
+        private Inventory inventory;
+        private Inventory storage;
 
         [Header("Components")]
         [SerializeField] private TMP_Text selectionDisplay = default;
@@ -28,16 +29,13 @@ namespace Schwer.ItemSystem {
 
         private Item selectedItem;
 
-        private void OnEnable() {
-            inventory.OnContentsChanged += UpdateInventorySlots;
-            storage.OnContentsChanged += UpdateStorageSlots;
-
-            Initialise();
-        }
-
         private void OnDisable() {
-            inventory.OnContentsChanged -= UpdateInventorySlots;
-            storage.OnContentsChanged -= UpdateStorageSlots;
+            // Unsubscribe from events
+            if (inventory != null) inventory.OnContentsChanged -= UpdateInventorySlots;
+            if (storage != null) storage.OnContentsChanged -= UpdateStorageSlots;
+            // Remove references
+            inventory = null;
+            storage = null;
         }
 
         private void Awake() {
@@ -52,23 +50,40 @@ namespace Schwer.ItemSystem {
                 storageSlots[i].manager = this;
             }
 
-            //! Open request event subscribe
-            //! Disable self
+            OnInventoryStorageMenuRequested += Open;
+            gameObject.SetActive(false);
         }
 
-        private void Initialise() {
-            UpdateInventorySlots(null, 0);
-            UpdateStorageSlots(null, 0);
+        private void OnDestroy() => OnInventoryStorageMenuRequested -= Open;
 
+        private void Open(Inventory player, Inventory storage) {
+            this.inventory = SetData(this.inventory, player);
+            this.storage = SetData(this.storage, storage);
+            UpdateInventorySlots();
+            UpdateStorageSlots();
             //! Select first item slot
+            UpdateButtons();
         }
 
+        private Inventory SetData(Inventory previous, Inventory incoming) {
+            if (previous != incoming) {
+                previous.OnContentsChanged -= UpdateInventorySlots;
+                incoming.OnContentsChanged += UpdateInventorySlots;
+                return incoming;
+            }
+            else {
+                return previous;
+            }
+        }
+
+        private void UpdateInventorySlots() => UpdateInventorySlots(null, 0);
         private void UpdateInventorySlots(Item item, int count) => UpdateItemSlots(inventorySlots, inventory);
+        private void UpdateStorageSlots() => UpdateStorageSlots(null, 0);
         private void UpdateStorageSlots(Item item, int count) => UpdateItemSlots(storageSlots, storage);
 
         private void UpdateItemSlots(ItemSlot[] itemSlots, Inventory inventory) {
             for (int i = 0; i < itemSlots.Length; i++) {
-                if (i < inventory.Count) {
+                if (inventory != null && i < inventory.Count) {
                     var entry = inventory.ElementAt(i);
                     itemSlots[i].SetItem(entry.Key, entry.Value);
                 }
@@ -79,8 +94,8 @@ namespace Schwer.ItemSystem {
         }
 
         private void UpdateButtons() {
-            storeButton.interactable = inventory[selectedItem] > 0;
-            takeButton.interactable = storage[selectedItem] > 0;
+            storeButton.interactable = inventory != null && inventory[selectedItem] > 0;
+            takeButton.interactable = storage != null && storage[selectedItem] > 0;
         }
 
         public void OnItemSelected(Item item) {
@@ -97,7 +112,7 @@ namespace Schwer.ItemSystem {
             }
         }
 
-        // Used by UI
+        // Used by UI buttons
         public void StoreItem() => Exchange(inventory, storage, selectedItem, Input.GetKey(KeyCode.LeftShift));
         public void TakeItem() => Exchange(storage, inventory, selectedItem, Input.GetKey(KeyCode.LeftShift));
 
@@ -115,7 +130,6 @@ namespace Schwer.ItemSystem {
             UpdateButtons();
         }
 
-        //! Runtime inventory data changing
         //! Enabling/disabling through game object interaction
     }
 }
