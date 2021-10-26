@@ -31,6 +31,10 @@ namespace Schwer.ItemSystem {
 
         private Item selectedItem;
 
+        private int disabledFrame;
+        // Keyboard/gamepad input to close the crafting menu would also be
+        // received by `StorageBin`, opening the menu again in the same frame 
+
         private void OnEnable() {
             // Expected to be active and enabled *after* data has been set
             UpdateInventorySlots();
@@ -50,6 +54,7 @@ namespace Schwer.ItemSystem {
             storage = null;
 
             finishInteraction.Raise();
+            disabledFrame = Time.frameCount;
         }
 
         private void Awake() {
@@ -71,6 +76,8 @@ namespace Schwer.ItemSystem {
         private void OnDestroy() => OnInventoryStorageMenuRequested -= Open;
 
         private void Open(Inventory player, Inventory storage) {
+            if (disabledFrame == Time.frameCount) return;
+
             this.inventory = SetData(this.inventory, player);
             this.storage = SetData(this.storage, storage);
             gameObject.SetActive(true); // Refer to OnEnable()
