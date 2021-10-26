@@ -78,8 +78,8 @@ namespace Schwer.ItemSystem {
 
         private Inventory SetData(Inventory previous, Inventory incoming) {
             if (previous != incoming) {
-                previous.OnContentsChanged -= UpdateInventorySlots;
-                incoming.OnContentsChanged += UpdateInventorySlots;
+                if (previous != null) previous.OnContentsChanged -= UpdateInventorySlots;
+                if (incoming != null) incoming.OnContentsChanged += UpdateInventorySlots;
                 return incoming;
             }
             else {
@@ -105,8 +105,8 @@ namespace Schwer.ItemSystem {
         }
 
         private void UpdateButtons() {
-            storeButton.interactable = inventory != null && inventory[selectedItem] > 0;
-            takeButton.interactable = storage != null && storage[selectedItem] > 0;
+            storeButton.interactable = inventory != null && selectedItem != null && inventory[selectedItem] > 0;
+            takeButton.interactable = storage != null && selectedItem != null && storage[selectedItem] > 0;
         }
 
         public void OnItemSelected(Item item) {
