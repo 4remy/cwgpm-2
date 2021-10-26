@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using Schwer.ItemSystem.Demo;
 using TMPro;
@@ -28,6 +26,14 @@ namespace Schwer.ItemSystem {
         private ItemSlot[] storageSlots;
 
         private Item selectedItem;
+
+        private void OnEnable() {
+            // Expected to be active and enabled *after* data has been set
+            UpdateInventorySlots();
+            UpdateStorageSlots();
+            //! Select first item slot
+            UpdateButtons();
+        }
 
         private void OnDisable() {
             // Unsubscribe from events
@@ -59,10 +65,7 @@ namespace Schwer.ItemSystem {
         private void Open(Inventory player, Inventory storage) {
             this.inventory = SetData(this.inventory, player);
             this.storage = SetData(this.storage, storage);
-            UpdateInventorySlots();
-            UpdateStorageSlots();
-            //! Select first item slot
-            UpdateButtons();
+            gameObject.SetActive(true); // Refer to OnEnable()
         }
 
         private Inventory SetData(Inventory previous, Inventory incoming) {
