@@ -1056,6 +1056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4126466a6a40dd348b49462f10981b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startInteraction: {fileID: 11400000, guid: 74b1c34c475cf4d418f1b8f5abbd79d1, type: 2}
+  finishInteraction: {fileID: 11400000, guid: f76f81989031b480f9c7c63bc83c338c, type: 2}
   selectionDisplay: {fileID: 9212400029334565539}
   storeButton: {fileID: 5188831306018138509}
   takeButton: {fileID: 7735855482678345674}

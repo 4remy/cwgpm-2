@@ -13,6 +13,10 @@ namespace Schwer.ItemSystem {
         private Inventory inventory;
         private Inventory storage;
 
+        [Header("Signals")]
+        [SerializeField] private Signal startInteraction;
+        [SerializeField] private Signal finishInteraction;
+
         [Header("Components")]
         [SerializeField] private TMP_Text selectionDisplay = default;
         [SerializeField] private Button storeButton = default;
@@ -33,6 +37,8 @@ namespace Schwer.ItemSystem {
             UpdateStorageSlots();
             //! Select first item slot
             UpdateButtons();
+            
+            startInteraction.Raise();
         }
 
         private void OnDisable() {
@@ -42,6 +48,8 @@ namespace Schwer.ItemSystem {
             // Remove references
             inventory = null;
             storage = null;
+
+            finishInteraction.Raise();
         }
 
         private void Awake() {
