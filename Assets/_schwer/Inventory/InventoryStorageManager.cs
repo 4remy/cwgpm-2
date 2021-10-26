@@ -39,9 +39,9 @@ namespace Schwer.ItemSystem {
             // Expected to be active and enabled *after* data has been set
             UpdateInventorySlots();
             UpdateStorageSlots();
-            //! Select first item slot
+            ItemSlot.SelectFirstSlotIfNoneSelected(inventorySlots[0].gameObject);
             UpdateButtons();
-            
+
             startInteraction.Raise();
         }
 
@@ -147,7 +147,5 @@ namespace Schwer.ItemSystem {
 
             UpdateButtons();
         }
-
-        //! Enabling/disabling through game object interaction
     }
 }

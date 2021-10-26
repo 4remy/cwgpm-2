@@ -97,22 +97,7 @@ namespace Schwer.ItemSystem {
             UpdateInventorySlots(null, 0);
             UpdateIngredientSlots(null, 0);
 
-            SelectFirstSlot();
-        }
-
-        private void SelectFirstSlot() {
-            // Need to set selection to null then select first slot to
-            // ensure the item slot button properly highlights
-            EventSystem.current.SetSelectedGameObject(null);
-            var selected = EventSystem.current.currentSelectedGameObject;
-            if (selected == null || !selected.transform.IsChildOf(inventorySlotsHolder.transform)) {
-                var firstSlot = inventorySlots[0].gameObject;
-                EventSystem.current.SetSelectedGameObject(firstSlot);
-                // Above line doesn't reliably call OnSelect correctly, ∴ manually call
-                firstSlot.GetComponent<ItemSlot>().OnSelect(null);  // Update selection text
-                firstSlot.GetComponent<Button>().OnSelect(null);    // Button highlight
-                
-            }
+            ItemSlot.SelectFirstSlotIfNoneSelected(inventorySlots[0].gameObject);
         }
 
         // Parameters unused but necessary for Inventory.OnContentsChanged event
