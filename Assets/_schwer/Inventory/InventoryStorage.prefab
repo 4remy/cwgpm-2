@@ -381,7 +381,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 7815673044369885785}
   m_OnClick:
     m_PersistentCalls:
@@ -773,7 +773,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 8944353983216526505}
   m_OnClick:
     m_PersistentCalls:
@@ -1056,8 +1056,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4126466a6a40dd348b49462f10981b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventory: {fileID: 0}
-  _storage: {fileID: 0}
   selectionDisplay: {fileID: 9212400029334565539}
   storeButton: {fileID: 5188831306018138509}
   takeButton: {fileID: 7735855482678345674}
