@@ -9,8 +9,8 @@ public class GameSaveManager : MonoBehaviour
     public static GameSaveManager gameSave;
     [SerializeField] private ItemDatabase itemDB = default;
     public List<ScriptableObject> objects = new List<ScriptableObject>();
-    [SerializeField] private InventorySO playerInventory = default;
     [SerializeField] private IntListSO discoveredRecipes = default;
+    [SerializeField] private InventorySO[] inventories = default;
 
     /*
     private void Awake()
@@ -53,8 +53,12 @@ public class GameSaveManager : MonoBehaviour
 
     public void SaveScriptables()
     {
-        BinaryIO.WriteFile(playerInventory.value.Serialize(), $"{Application.persistentDataPath}/player.inv");
         BinaryIO.WriteFile(discoveredRecipes.ints, $"{Application.persistentDataPath}/recipes.dat");
+
+        for (int i = 0; i < inventories.Length; i++)
+        {
+            BinaryIO.WriteFile(inventories[i].value.Serialize(), $"{Application.persistentDataPath}/{i}.inv");
+        }
 
         for (int i = 0; i < objects.Count; i++)
         {
@@ -65,8 +69,8 @@ public class GameSaveManager : MonoBehaviour
 
     public void LoadScriptables()
     {
-        LoadInventory();
         LoadRecipes();
+        LoadInventories();
 
         for (int i = 0; i < objects.Count; i++)
         {
@@ -79,11 +83,14 @@ public class GameSaveManager : MonoBehaviour
         }
     }
 
-    private void LoadInventory() {
-        var path = $"{Application.persistentDataPath}/player.inv";
-        if (File.Exists(path))
+    private void LoadInventories() {
+        for (int i = 0; i < inventories.Length; i++)
         {
-            playerInventory.value = BinaryIO.ReadFile<SerializableInventory>(path).Deserialize(itemDB);
+            var path = $"{Application.persistentDataPath}/{i}.inv";
+            if (File.Exists(path))
+            {
+                inventories[i].value = BinaryIO.ReadFile<SerializableInventory>(path).Deserialize(itemDB);
+            }
         }
     }
 
