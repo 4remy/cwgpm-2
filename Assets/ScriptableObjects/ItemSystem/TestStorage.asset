@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: TestStorage
   m_EditorClassIdentifier: 
   value:
-    keys:
-    - {fileID: 11400000, guid: c2f9b0d726b5d4ce0bbdbf814b8ac763, type: 2}
-    values: 0a000000
+    keys: []
+    values: 
