@@ -5,6 +5,7 @@ using UnityEngine;
 public class toppingFall : MonoBehaviour
 {
     private Rigidbody2D rb;
+    static public int IngredientValue = 20;
 
     // Start is called before the first frame update
     void Start()
