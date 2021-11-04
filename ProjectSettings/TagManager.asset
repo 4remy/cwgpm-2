@@ -9,6 +9,7 @@ TagManager:
   - trash
   - bait
   - baitChild
+  - wall
   layers:
   - Default
   - TransparentFX
