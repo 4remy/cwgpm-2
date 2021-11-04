@@ -26,7 +26,7 @@ public class destroyedByWall : MonoBehaviour
     {
         if (collision.GetComponent<Pizza>())
         {
-            Debug.Log("landed on pizza");
+           // Debug.Log("landed on pizza");
             //rb.velocity = Vector2.zero;
             moveSpeed = 0f;
 
