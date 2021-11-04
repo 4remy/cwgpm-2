@@ -32,22 +32,18 @@ public class itemCollisions : MonoBehaviour
         {
             //rb.velocity = Vector2.zero;
             moveSpeed = 0f;
-            //should add points here
-            // scoreCounter.score += 10;
+
             if (LandedEvent != null)
             {
                 LandedEvent();
             }
-            /* might be easier to write different score amounts here
-             *  if (other.gameObject.CompareTag("egg"))
-             *  {scoreCounter.score += 10;}
-             */
-            //scoreCounter.score += toppingFall.IngredientValue;
+
+
         }
 
         if (collision.GetComponent<Wall>())
         {
-            Debug.Log("egg destroyed");
+            Debug.Log("ingredient destroyed");
             Destroy(this.gameObject);
 
         }

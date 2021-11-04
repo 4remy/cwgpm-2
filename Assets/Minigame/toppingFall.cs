@@ -5,7 +5,13 @@ using UnityEngine;
 public class toppingFall : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public int setIngredientValue;
     static public int IngredientValue = 20;
+
+    void Awake()
+    {
+        IngredientValue = setIngredientValue;
+    }
 
     // Start is called before the first frame update
     void Start()

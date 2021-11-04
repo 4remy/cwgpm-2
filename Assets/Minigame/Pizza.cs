@@ -17,11 +17,11 @@ public class Pizza : MonoBehaviour
         
     }
 
+    
     public void onLandedEvent()
     {
         FindObjectOfType<itemCollisions>().LandedEvent -= onLandedEvent;
-       // Debug.Log("The item has landed!!");
        //code goes on the pizza
     }
-
+    
 }
