@@ -15,7 +15,7 @@ public class itemCollisions : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        moveSpeed = 3f;
+       
 
     }
 
