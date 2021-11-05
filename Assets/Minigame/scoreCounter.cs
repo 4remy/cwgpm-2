@@ -14,12 +14,18 @@ public class scoreCounter : MonoBehaviour
     {
         uiText = GetComponent<Text>();  //Set up the reference.
         score = 0;  //Reset the score.
+
+        FindObjectOfType<Timer>().TimeUpEvent += onTimeUpEvent;
     }
 
     void Update()
     {
         uiText.text = "Score: " + score;    // Set the displayed text to be the word "Score: " followed by the score value.
         
+    }
+    public void onTimeUpEvent()
+    {
+        uiText.color = Color.red;
     }
 
 

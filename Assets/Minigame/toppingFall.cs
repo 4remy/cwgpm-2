@@ -17,10 +17,13 @@ public class toppingFall : MonoBehaviour
     public bool canClick;
 
     public IngredientType setIngredientType;
+
     public static IngredientType thisIngredientType;
 
+ 
 
-
+    // this needs to be like, a new thing each time it appears
+    //so far it thinks this is the only topping ever - thats why score and ingredient types only register once
 
  void Awake()
     {
@@ -44,16 +47,13 @@ public class toppingFall : MonoBehaviour
         {
                if (Input.GetMouseButtonDown(0))
                 {
-                Debug.Log("ingredient clicked 1");
-                //transform.parent = null;
-                //rb.bodyType = RigidbodyType2D.Dynamic;
-                //rb.WakeUp();
+                //Debug.Log("ingredient clicked 1");
 
                 rb = GetComponent<Rigidbody2D>();
                 //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
 
-                }
+            }
         }
 
 

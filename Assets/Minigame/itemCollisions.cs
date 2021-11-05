@@ -9,8 +9,7 @@ public class itemCollisions : MonoBehaviour
     public float moveSpeed;
     public float dirX;
 
-    public delegate void LandedDelegate();
-    public event LandedDelegate LandedEvent;
+
 
     // Use this for initialization
     void Start()
@@ -35,10 +34,6 @@ public class itemCollisions : MonoBehaviour
             //rb.velocity = Vector2.zero;
             moveSpeed = 0f;
 
-            if (LandedEvent != null)
-            {
-                LandedEvent();
-            }
 
 
         }
