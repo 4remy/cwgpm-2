@@ -21,7 +21,9 @@ public class clickManager : MonoBehaviour
             if (hit.collider != null)
             {
                 Debug.Log(hit.collider.gameObject.name);
-                //only says room1, cant get it to hit specific item so they dont all fall down when clicked
+                //hit.collider.attachedRigidbody.AddForce(Vector2.up);
+                //rb.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+hit.collider.attachedRigidbody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
             }
         }
     }

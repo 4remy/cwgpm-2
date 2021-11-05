@@ -39,7 +39,7 @@ public class toppingFall : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if(!canClick)
         {return;}
@@ -58,6 +58,7 @@ public class toppingFall : MonoBehaviour
 
 
     }
+    */
 
     private void OnTriggerEnter2D(Collider2D other)
     {
