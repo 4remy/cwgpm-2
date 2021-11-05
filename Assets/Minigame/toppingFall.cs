@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum IngredientType
+{
+    egg,
+    tomato,
+    apple
+}
+
 public class toppingFall : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -9,9 +16,17 @@ public class toppingFall : MonoBehaviour
     static public int IngredientValue = 20;
     public bool canClick;
 
-    void Awake()
+    public IngredientType setIngredientType;
+    public static IngredientType thisIngredientType;
+
+
+
+
+ void Awake()
     {
         IngredientValue = setIngredientValue;
+
+        thisIngredientType = setIngredientType;
     }
 
     // Start is called before the first frame update
@@ -24,12 +39,12 @@ public class toppingFall : MonoBehaviour
     void Update()
     {
         if(!canClick)
-        { return; }
+        {return;}
         else
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log("egg clicked 1");
+               if (Input.GetMouseButtonDown(0))
+                {
+                Debug.Log("ingredient clicked 1");
                 //transform.parent = null;
                 //rb.bodyType = RigidbodyType2D.Dynamic;
                 //rb.WakeUp();
@@ -38,7 +53,7 @@ public class toppingFall : MonoBehaviour
                 //rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
 
-            }
+                }
         }
 
 
@@ -47,13 +62,13 @@ public class toppingFall : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         canClick = true;
-        Debug.Log("canClick is " + canClick);
+       // Debug.Log("canClick is " + canClick);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         canClick = false;
-        Debug.Log("canClick is " + canClick);
+        //Debug.Log("canClick is " + canClick);
 
     }
 

@@ -14,6 +14,7 @@ public class Pizza : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //it needs to count the NUMBER of items on it
         
     }
 
@@ -22,6 +23,14 @@ public class Pizza : MonoBehaviour
     {
         FindObjectOfType<itemCollisions>().LandedEvent -= onLandedEvent;
        //code goes on the pizza
+        scoreCounter.score += toppingFall.IngredientValue;
+        // Debug.Log("Score is " + scoreCounter.score);
+        Debug.Log("Ingredient type is " + toppingFall.thisIngredientType);
+        //return;
+
+        //you should maybe assign the types of topping a value here instead??
+
+        //this only registers once for each type of object. it doesn't register the new ones cloned by instantiator after the first egg and first tomato get points.
     }
     
 }

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2843477251578209189}
   - component: {fileID: 2843477251578209186}
   - component: {fileID: 2843477251578209187}
-  - component: {fileID: 2843477251578209184}
   - component: {fileID: 2843477251578209185}
+  - component: {fileID: 7184361108699079175}
   m_Layer: 0
   m_Name: item2
   m_TagString: bait
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.023181677, y: -0.016862273}
+  m_Offset: {x: 0.023181677, y: 0.025940083}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0406735, y: 1.0366864}
+  m_Size: {x: 1.0406735, y: 0.42930096}
   m_EdgeRadius: 0
 --- !u!61 &2843477251578209187
 BoxCollider2D:
@@ -147,7 +147,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.027387738, y: 0.0141355395}
+  m_Offset: {x: 0.015540622, y: 0.038593993}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -158,22 +158,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6486412, y: 0.40038943}
+  m_Size: {x: 0.45908737, y: 0.22918046}
   m_EdgeRadius: 0
---- !u!114 &2843477251578209184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2843477251578209198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4583db0c50ee4a5194bb3928dc243c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setIngredientValue: 5
-  canClick: 0
 --- !u!114 &2843477251578209185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +174,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   dirX: 1
+--- !u!114 &7184361108699079175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2843477251578209198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4583db0c50ee4a5194bb3928dc243c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setIngredientValue: 5
+  canClick: 0
+  setIngredientType: 1
