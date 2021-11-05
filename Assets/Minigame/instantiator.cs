@@ -1,28 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class instantiator : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float minWait;
+    public float maxWait;
+
+    private bool isSpawning;
+    private bool gameOver;
+
     public GameObject[] objectsToInstantiate;
 
-    void Start()
+    void Awake()
     {
-        InstantiateObjects();
+        isSpawning = false;
+        FindObjectOfType<Timer>().TimeUpEvent += onTimeUpEvent;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (!gameOver)
+        {
+            if (!isSpawning)
+            {
+                float timer = Random.Range(minWait, maxWait);
+                Invoke("SpawnObject", timer);
+                isSpawning = true;
+            }
+        }
+
     }
 
-    private void InstantiateObjects()
+    void SpawnObject()
     {
-        int n = Random.Range(0, objectsToInstantiate.Length);
-        Instantiate(objectsToInstantiate[n]);
+        if (!gameOver)
+        {
+            int n = Random.Range(0, objectsToInstantiate.Length);
+            Instantiate(objectsToInstantiate[n]);
+            isSpawning = false;
+        }
+    }
 
-        //i want it to wait random times then do it again
+    public void onTimeUpEvent()
+    {
+        FindObjectOfType<Timer>().TimeUpEvent -= onTimeUpEvent;
+        gameOver = true;
+       
+        Debug.Log("Items will not instantiate now that time is up.");
     }
 }

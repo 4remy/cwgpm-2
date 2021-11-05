@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setIngredientValue: 5
+  canClick: 0
 --- !u!114 &2843477251578209185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,3 +187,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  dirX: 1

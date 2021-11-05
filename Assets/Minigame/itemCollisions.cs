@@ -7,6 +7,7 @@ public class itemCollisions : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float moveSpeed;
+    public float dirX;
 
     public delegate void LandedDelegate();
     public event LandedDelegate LandedEvent;
@@ -22,7 +23,8 @@ public class itemCollisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+        //how do i make it go the opposite direction?
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
     }
 

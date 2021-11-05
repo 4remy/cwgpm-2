@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Timer : MonoBehaviour
 {
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
     public Text timeText;
+
+    public delegate void TimeOverDelegate();
+    public event TimeOverDelegate TimeUpEvent;
 
     private void Start()
     {
@@ -30,6 +34,10 @@ public class Timer : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 timeText.color = Color.red;
+                if (TimeUpEvent != null)
+                {
+                    TimeUpEvent();
+                }
             }
         }
     }
