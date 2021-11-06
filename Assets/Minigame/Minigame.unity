@@ -633,7 +633,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 921321751}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -642,7 +642,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!224 &743430162
 RectTransform:
@@ -820,6 +820,12 @@ MonoBehaviour:
   IgnoreMe:
     serializedVersion: 2
     m_Bits: 0
+--- !u!20 &921321751 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2469573257613326821, guid: fe435754069654f829b5a6efe2c5b18e,
+    type: 3}
+  m_PrefabInstance: {fileID: 452844484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &983941103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,6 +1508,19 @@ MonoBehaviour:
   - {fileID: 7921434457133598632, guid: 9fe901cd2bc274bce8be8023f677974c, type: 3}
   - {fileID: 2601707364414196791, guid: 20fc34d1f8bac47e58c2b677226b99af, type: 3}
   - {fileID: 5409188898405547614, guid: c94ebd052d8444276a493d82ff23d7e8, type: 3}
+  - {fileID: 4331252608193553801, guid: 84aa2d00fe0064ab2a0525db95738094, type: 3}
+  - {fileID: 1672694078865741301, guid: 29bb3902abd4e43de9b89b6c0699bdc9, type: 3}
+  - {fileID: 7828122725756821448, guid: a1a0bfd6c9180416d9cac78903b872a8, type: 3}
+  - {fileID: 404082502468353934, guid: 49aad914e729c4f48912802b79964826, type: 3}
+  - {fileID: 5973239521918245814, guid: 192495213004e499f96172c24b82410c, type: 3}
+  - {fileID: 4872191775219980762, guid: 25e18256972504e99b38c872f2e8c0e2, type: 3}
+  - {fileID: 8735056075878471403, guid: cf559cdb370bd4d0f83ab670c6467c6b, type: 3}
+  - {fileID: 7054727479841019853, guid: d499de00884314c08a2ea4c226963f47, type: 3}
+  - {fileID: 6631723594069520093, guid: 1536db7801dfe4ecfa1f6580bb33bb99, type: 3}
+  - {fileID: 8666681161106618610, guid: 9e76fe89e95574047a0432e02867abf9, type: 3}
+  - {fileID: 5063783145908271445, guid: 10b456640bba545b59f9dfebd5209755, type: 3}
+  - {fileID: 8397271928351890746, guid: a2371bc23789e48a2a924b00180561ef, type: 3}
+  - {fileID: 6479681271133622778, guid: 3f94b394c474c44c48b26726f0ab7212, type: 3}
 --- !u!4 &1708053048
 Transform:
   m_ObjectHideFlags: 0
@@ -1551,7 +1570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -148, y: -210.87}
+  m_AnchoredPosition: {x: -68, y: -210.87}
   m_SizeDelta: {x: 887.59814, y: 309.3155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1732100834

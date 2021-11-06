@@ -9,7 +9,15 @@ public enum IngredientType
     basil,
     pepperoni,
     cheese,
-    olives
+    olives,
+    bacon,
+    onion,
+    greenpepper,
+    mushroom,
+    shrimp,
+    redpepper,
+    flowers
+
 }
 
 public class toppingFall : MonoBehaviour
