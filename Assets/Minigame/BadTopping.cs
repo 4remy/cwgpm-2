@@ -2,37 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum IngredientType
+public enum BadIngredientType
 {
-    egg,
-    tomato,
-    basil,
-    pepperoni,
-    cheese,
-    olives
+    spider,
+    fetus
 }
 
-public class toppingFall : MonoBehaviour
+public class BadTopping : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public int setIngredientValue;
-    static public int IngredientValue = 20;
+    public int setBadIngredientValue;
+    static public int BadIngredientValue = 20;
     public bool canClick;
 
-    public IngredientType setIngredientType;
+    public BadIngredientType setBadIngredientType;
 
-    public static IngredientType thisIngredientType;
+    public static BadIngredientType thisBadIngredientType;
 
- 
 
-//box colliders need to ignore each other for foods
-//only pay attention to pizza
 
- void Awake()
+    // this needs to be like, a new thing each time it appears
+    //so far it thinks this is the only topping ever - thats why score and ingredient types only register once
+
+    void Awake()
     {
-        IngredientValue = setIngredientValue;
+        BadIngredientValue = setBadIngredientValue;
 
-        thisIngredientType = setIngredientType;
+        thisBadIngredientType = setBadIngredientType;
     }
 
     // Start is called before the first frame update
@@ -68,7 +64,7 @@ public class toppingFall : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         canClick = true;
-       // Debug.Log("canClick is " + canClick);
+        // Debug.Log("canClick is " + canClick);
     }
 
     private void OnTriggerExit2D(Collider2D other)
