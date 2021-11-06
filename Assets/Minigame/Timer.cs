@@ -6,12 +6,19 @@ using System.Linq;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 10;
+    static public float timeRemaining = 10;
+    public float setTimeRemaining;
+
     public bool timerIsRunning = false;
     public Text timeText;
 
     public delegate void TimeOverDelegate();
     public event TimeOverDelegate TimeUpEvent;
+
+    void Awake()
+    {
+        timeRemaining = setTimeRemaining;
+    }
 
     private void Start()
     {
