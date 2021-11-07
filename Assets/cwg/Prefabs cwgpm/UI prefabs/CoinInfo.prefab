@@ -197,5 +197,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3caf6ed64ad4b26a239c4324d36155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: {fileID: 11400000, guid: eed34757efe8149009b05f2391e1c1fa, type: 2}
+  playerCoins: {fileID: 11400000, guid: eed34757efe8149009b05f2391e1c1fa, type: 2}
   coinDisplay: {fileID: 334316322294591210}
