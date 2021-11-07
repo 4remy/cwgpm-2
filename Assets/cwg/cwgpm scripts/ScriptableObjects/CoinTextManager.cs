@@ -11,4 +11,9 @@ public class CoinTextManager : MonoBehaviour
     {
         coinDisplay.text = "" + playerCoins.coins;
     }
+
+    public void Awake()
+    {
+        coinDisplay.text = "" + playerCoins.coins;
+    }
 }
