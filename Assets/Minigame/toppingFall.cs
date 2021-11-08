@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//change enum to 'type'
+//enums are usually integers not pizza toppings
 public enum IngredientType
 {
     egg,
