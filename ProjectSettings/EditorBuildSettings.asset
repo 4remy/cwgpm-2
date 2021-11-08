@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_schwer/Crafting/CraftTest.unity
     guid: 36cb5efdfa33b194d9129f4a6143aad8
+  - enabled: 1
+    path: Assets/Minigame/Minigame.unity
+    guid: fd535fbd308884150811cfb8ccef9509
   m_configObjects: {}

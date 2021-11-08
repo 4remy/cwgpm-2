@@ -27,6 +27,8 @@ public class ScoreCounter2 : MonoBehaviour
     public void onTimeUpEvent()
     {
         uiText.color = Color.red;
+       // if score is over X, do Y, return;
+       // if score is over Z, do A, return;
     }
     */
 

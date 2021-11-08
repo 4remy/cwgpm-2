@@ -5,6 +5,9 @@ using System.Linq;
 
 public class Pizza : MonoBehaviour
 {
+    public string soundEffectToPlay;
+    public bool isPlaying;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +26,33 @@ public class Pizza : MonoBehaviour
     {
         if (collision.GetComponent<toppingFall>())
         {
+            //if ingredient type is special play different sound, and score and return
 
             scoreCounter.score += toppingFall.IngredientValue;
+
+
+            StartCoroutine(playSound1Co());
+
             // Debug.Log("Score is " + scoreCounter.score);
             //Debug.Log("Ingredient type is " + toppingFall.thisIngredientType);
 
-            // play a sound
             //advanced: play a sound according to ingredient type?
         }
 
     }
+
+    IEnumerator playSound1Co()
+
+    {
+        if(!isPlaying)
+        {
+            isPlaying = true;
+            AudioManager.Instance.Play(soundEffectToPlay);
+            yield return new WaitForSeconds(1f);
+            isPlaying = false;
+        }
+        
+    }
+
+
 }

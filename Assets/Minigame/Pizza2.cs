@@ -5,6 +5,7 @@ using System.Linq;
 
 public class Pizza2 : MonoBehaviour
 {
+    public string soundEffectToPlay;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,9 @@ public class Pizza2 : MonoBehaviour
         {
 
             scoreCounter.score -= BadTopping.BadIngredientValue;
+
+            AudioManager.Instance.Play(soundEffectToPlay);
+
             // Debug.Log("Score is " + scoreCounter.score);
             //Debug.Log("Ingredient type is " + toppingFall.thisIngredientType);
 
