@@ -12,6 +12,12 @@ public class Timer : MonoBehaviour
     public bool timerIsRunning = false;
     public Text timeText;
 
+    [Header("GameOverPanel")]
+    public GameObject timeUpPanel;
+    //the thing with animator must be first child of panel
+   // public Animator effect;
+   // public GameObject animationObject;
+
     public delegate void TimeOverDelegate();
     public event TimeOverDelegate TimeUpEvent;
 
@@ -24,6 +30,8 @@ public class Timer : MonoBehaviour
     {
         // Starts the timer automatically
         timerIsRunning = true;
+        //  effect = gameObject.transform.GetChild(1).GetComponent<Animator>();
+        //effect.SetBool("Effect", false);
     }
 
     void Update()
@@ -41,6 +49,12 @@ public class Timer : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 timeText.color = Color.red;
+
+               // effect.SetBool("Effect", true);
+                timeUpPanel.SetActive(true);
+               //animationObject.SetActive(true);
+               //add IEnumerator from CraftAchievement if you don't want it to last
+
                 if (TimeUpEvent != null)
                 {
                     TimeUpEvent();

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setBadIngredientValue: 50
   canClick: 0
-  setBadIngredientType: 0
+  setBadIngredientType: 1
 --- !u!1001 &6658475548168683533
 PrefabInstance:
   m_ObjectHideFlags: 0

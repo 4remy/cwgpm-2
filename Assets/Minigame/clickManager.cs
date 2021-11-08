@@ -29,7 +29,8 @@ public class clickManager : MonoBehaviour
                     Timer.timeRemaining += 20;
                     return;
                 }
-                Debug.Log(hit.collider.gameObject.name);
+              
+                    Debug.Log(hit.collider.gameObject.name);
                 //hit.collider.attachedRigidbody.AddForce(Vector2.up);
                 //rb.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
 hit.collider.attachedRigidbody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;

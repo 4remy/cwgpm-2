@@ -28,6 +28,8 @@ public class Pizza : MonoBehaviour
             // Debug.Log("Score is " + scoreCounter.score);
             //Debug.Log("Ingredient type is " + toppingFall.thisIngredientType);
 
+            // play a sound
+            //advanced: play a sound according to ingredient type?
         }
 
     }
