@@ -8347,12 +8347,12 @@ PrefabInstance:
     - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
       propertyPath: playerPosition.x
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
       propertyPath: playerPosition.y
-      value: -3
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
@@ -13704,12 +13704,12 @@ PrefabInstance:
     - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
       propertyPath: playerPosition.x
-      value: 12
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
       propertyPath: playerPosition.y
-      value: 20
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3559096510864668972, guid: 3af0fea0f6a454c3ca6af6857078ae26,
         type: 3}
