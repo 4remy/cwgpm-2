@@ -34,6 +34,8 @@ public class TimelineManagerRecipes : MonoBehaviour
             Debug.Log("Milestone " + gameObject.name + " is " + milestone1);
             director = GetComponent<PlayableDirector>();
             director.Play();
+
+            //need to add a boolvalue here, or in the timeline thing itself to show event has already happened
         }
 
     }

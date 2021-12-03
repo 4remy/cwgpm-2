@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: ae3f2e44bb4bd470c854ffbcb5e07fad
+guid: 27223c7ce481545c6aa04ddb754c7af1
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -5942884519175615502
-    second: dogvisitor2 b_0
-  - first:
-      213: -5281100439271228608
-    second: dogvisitor2 b_1
-  - first:
-      213: 6303077713535951195
-    second: dogvisitor2 b_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,70 +99,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: dogvisitor2 b_0
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 77
-        width: 365
-        height: 956
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2fb8e5d3402a68da0800000000000000
-      internalID: -5942884519175615502
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogvisitor2 b_1
-      rect:
-        serializedVersion: 2
-        x: 503
-        y: 82
-        width: 362
-        height: 951
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04b34168123c5b6b0800000000000000
-      internalID: -5281100439271228608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogvisitor2 b_2
-      rect:
-        serializedVersion: 2
-        x: 938
-        y: 79
-        width: 339
-        height: 955
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b51edfa09c7097750800000000000000
-      internalID: 6303077713535951195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
