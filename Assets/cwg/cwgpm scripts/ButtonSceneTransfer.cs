@@ -18,7 +18,13 @@ public class ButtonSceneTransfer : MonoBehaviour
     public string soundEffectToPlay;
 
 
-
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            runTransfer();
+        }
+    }
 
     public IEnumerator FadeCo()
     {
