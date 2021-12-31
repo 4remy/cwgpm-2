@@ -86,6 +86,7 @@ public class DialogNPC : Interactable
             {
                 Debug.Log("one off convo");
                 DialogDisplay.NewConversation(conversation);
+                //would like this to set the bool as true after the convo finished signal is received 
                 isCompleted = true;
                 convoCompleted.RuntimeValue = isCompleted;
                 onlyOnce = true;
