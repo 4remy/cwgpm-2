@@ -13,6 +13,8 @@ namespace Schwer.ItemSystem {
         private Inventory inventory;
         private Inventory storage;
 
+
+
         [Header("Signals")]
         [SerializeField] private Signal startInteraction;
         [SerializeField] private Signal finishInteraction;
@@ -42,6 +44,8 @@ namespace Schwer.ItemSystem {
             ItemSlot.SelectFirstSlotIfNoneSelected(inventorySlots[0].gameObject);
             UpdateButtons();
 
+            
+
             startInteraction.Raise();
         }
 
@@ -52,6 +56,7 @@ namespace Schwer.ItemSystem {
             // Remove references
             inventory = null;
             storage = null;
+
 
             finishInteraction.Raise();
             disabledFrame = Time.frameCount;
@@ -70,6 +75,7 @@ namespace Schwer.ItemSystem {
             }
 
             OnInventoryStorageMenuRequested += Open;
+
             gameObject.SetActive(false);
         }
 
@@ -81,6 +87,8 @@ namespace Schwer.ItemSystem {
             this.inventory = SetData(this.inventory, player, UpdateInventorySlots);
             this.storage = SetData(this.storage, storage, UpdateStorageSlots);
             gameObject.SetActive(true); // Refer to OnEnable()
+
+
         }
 
         private Inventory SetData(Inventory previous, Inventory incoming, Action<Item, int> action) {
