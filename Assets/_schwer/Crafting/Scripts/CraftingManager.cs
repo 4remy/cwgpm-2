@@ -23,6 +23,9 @@ namespace Schwer.ItemSystem {
         [SerializeField] private Signal startInteraction;
         [SerializeField] private Signal finishInteraction;
 
+        public Signal UIbusy;
+        public Signal UIfree;
+
         [Header("Components")]
         [SerializeField] private Text nameDisplay = default;
         [SerializeField] private Button addButton = default;
@@ -52,6 +55,8 @@ namespace Schwer.ItemSystem {
             inventory.OnContentsChanged += UpdateInventorySlots;
             ingredients.OnContentsChanged += UpdateIngredientSlots;
 
+            UIbusy.Raise();
+
             Initialise();
 
             AudioManager.Instance.Play(openSFX);
@@ -66,6 +71,8 @@ namespace Schwer.ItemSystem {
             ingredients.OnContentsChanged -= UpdateIngredientSlots;
 
             finishInteraction.Raise();
+            UIfree.Raise();
+
             disabledFrame = Time.frameCount;
         }
 
@@ -212,6 +219,14 @@ namespace Schwer.ItemSystem {
                 else {
                     this._inventory = inventorySO;
                 }
+            }
+        }
+
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                gameObject.SetActive(false);
             }
         }
     }
