@@ -4177,6 +4177,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3019820648311096900, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: UIbusy
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b4d079345b594056bf8375462e00479,
+        type: 2}
+    - target: {fileID: 3019820648311096900, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: UIfree
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f2fea7d01aa444228f0a37bc14ed2ef,
+        type: 2}
     - target: {fileID: 8987889620956814338, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
       propertyPath: m_IsActive
@@ -4201,6 +4213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987889621235425476, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 8987889621663839684, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
