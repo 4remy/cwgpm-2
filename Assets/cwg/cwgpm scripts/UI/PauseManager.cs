@@ -14,6 +14,9 @@ public class PauseManager : MonoBehaviour
     public bool usingPausePanel;
     public string soundEffectToPlay;
 
+    private bool busyUI;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +24,23 @@ public class PauseManager : MonoBehaviour
         pausePanel.SetActive(false);
         inventoryPanel.SetActive(false);
         usingPausePanel = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause"))
         {
+            if (!busyUI)
+            {
                 ChangePause();
-                
+            }
+            else
+            {
+                return;
+            }
+
         }
     }
 
@@ -78,5 +88,19 @@ public class PauseManager : MonoBehaviour
             mainCanvas.SetActive(true);
             pausePanel.SetActive(false);
         }
+    }
+
+    public void UIBusyRecieved()
+    {
+        busyUI = true;
+        Debug.Log("UI busy signal recieved");
+        Debug.Log("busy UI" + busyUI);
+    }
+
+    public void UIFreeRecieved()
+    {
+        busyUI = false;
+        Debug.Log("UI free signal recieved");
+        Debug.Log("busy UI" + busyUI);
     }
 }

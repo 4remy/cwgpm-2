@@ -13,11 +13,15 @@ namespace Schwer.ItemSystem {
         private Inventory inventory;
         private Inventory storage;
 
+      
+
 
 
         [Header("Signals")]
         [SerializeField] private Signal startInteraction;
         [SerializeField] private Signal finishInteraction;
+        public Signal UIbusy;
+        public Signal UIfree;
 
         [Header("Components")]
         [SerializeField] private TMP_Text selectionDisplay = default;
@@ -44,8 +48,7 @@ namespace Schwer.ItemSystem {
             ItemSlot.SelectFirstSlotIfNoneSelected(inventorySlots[0].gameObject);
             UpdateButtons();
 
-            
-
+            UIbusy.Raise();
             startInteraction.Raise();
         }
 
@@ -57,6 +60,7 @@ namespace Schwer.ItemSystem {
             inventory = null;
             storage = null;
 
+            UIfree.Raise();
 
             finishInteraction.Raise();
             disabledFrame = Time.frameCount;

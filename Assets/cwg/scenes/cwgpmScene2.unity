@@ -6200,7 +6200,7 @@ PrefabInstance:
     - target: {fileID: 222718999793364623, guid: 1c20e2c1fd8c9b14f98b731d6da250fc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 222718999894703246, guid: 1c20e2c1fd8c9b14f98b731d6da250fc,
         type: 3}
@@ -6357,6 +6357,18 @@ PrefabInstance:
       propertyPath: m_Size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9212400027805428095, guid: 1c20e2c1fd8c9b14f98b731d6da250fc,
+        type: 3}
+      propertyPath: UIbusy
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b4d079345b594056bf8375462e00479,
+        type: 2}
+    - target: {fileID: 9212400027805428095, guid: 1c20e2c1fd8c9b14f98b731d6da250fc,
+        type: 3}
+      propertyPath: UIfree
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f2fea7d01aa444228f0a37bc14ed2ef,
+        type: 2}
     - target: {fileID: 9212400028065145348, guid: 1c20e2c1fd8c9b14f98b731d6da250fc,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -6390,7 +6402,7 @@ PrefabInstance:
     - target: {fileID: 9212400028711876569, guid: 1c20e2c1fd8c9b14f98b731d6da250fc,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9212400029382491569, guid: 1c20e2c1fd8c9b14f98b731d6da250fc,
         type: 3}
@@ -11057,6 +11069,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1398762478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2315304840646276405, guid: f55e62a2dab5f49e6acf451cb1a2c4e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2315304839410269764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1398762479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2315304840646276402, guid: f55e62a2dab5f49e6acf451cb1a2c4e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2315304839410269764}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398762478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1062eb16b655947e291a96eec64bc766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1398762484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398762478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff107f0a1ba442a4a6b1c8db49da206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 8f2fea7d01aa444228f0a37bc14ed2ef, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1398762479}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: UIFreeRecieved
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1398762485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398762478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff107f0a1ba442a4a6b1c8db49da206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signal: {fileID: 11400000, guid: 7b4d079345b594056bf8375462e00479, type: 2}
+  signalEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1398762479}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: UIBusyRecieved
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1410934760 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2469573257613326816, guid: fe435754069654f829b5a6efe2c5b18e,
