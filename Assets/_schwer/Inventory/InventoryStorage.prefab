@@ -1220,6 +1220,8 @@ GameObject:
   - component: {fileID: 1844337613766876808}
   - component: {fileID: 1985223699866092981}
   - component: {fileID: 9212400027805428095}
+  - component: {fileID: 4141961069177505438}
+  - component: {fileID: 2363052686929257014}
   m_Layer: 5
   m_Name: InventoryStorage
   m_TagString: Untagged
@@ -1331,6 +1333,44 @@ MonoBehaviour:
   takeButton: {fileID: 7735855482678345674}
   inventorySlotsHolder: {fileID: 222718999793364608}
   storageSlotsHolder: {fileID: 9212400028711876568}
+--- !u!222 &4141961069177505438
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065524285992133060}
+  m_CullTransparentMesh: 0
+--- !u!114 &2363052686929257014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065524285992133060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.14509805, g: 0.16470589, b: 0.2, a: 0.6666667}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3065524286850904686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.78431374}
+  m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1681,7 +1721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.78431374}
+  m_Color: {r: 0.4811321, g: 0.47432363, b: 0.47432363, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
