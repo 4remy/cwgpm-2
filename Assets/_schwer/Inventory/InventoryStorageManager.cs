@@ -92,7 +92,6 @@ namespace Schwer.ItemSystem {
             this.storage = SetData(this.storage, storage, UpdateStorageSlots);
             gameObject.SetActive(true); // Refer to OnEnable()
 
-
         }
 
         private Inventory SetData(Inventory previous, Inventory incoming, Action<Item, int> action) {
@@ -158,6 +157,14 @@ namespace Schwer.ItemSystem {
             }
 
             UpdateButtons();
+        }
+
+        public void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }
