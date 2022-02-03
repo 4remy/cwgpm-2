@@ -12,8 +12,9 @@ public class TimelineManagerRecipes : MonoBehaviour
 
     public int magicNumber1;
 
+    public BoolValue convoCompleted;
 
-        void Start()
+    void Start()
     {
         var recipeCount = discoveredRecipes.ints.Count;
         if (recipeCount >= magicNumber1)
@@ -32,10 +33,23 @@ public class TimelineManagerRecipes : MonoBehaviour
         else
         {
             Debug.Log("Milestone " + gameObject.name + " is " + milestone1);
-            director = GetComponent<PlayableDirector>();
-            director.Play();
 
-            //need to add a boolvalue here, or in the timeline thing itself to show event has already happened
+
+            if (!convoCompleted.RuntimeValue)
+            {
+                director = GetComponent<PlayableDirector>();
+                director.Play();
+                return;
+
+            }
+            else
+            {
+
+                this.gameObject.SetActive(false);
+
+            }
+
+
         }
 
     }
