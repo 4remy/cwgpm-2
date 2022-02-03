@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08629bc0c9315ef4ca89ea274e155c5b, type: 3}
   m_Name: DiscoveredRecipes
   m_EditorClassIdentifier: 
-  _ints: 00000000
+  _ints: 

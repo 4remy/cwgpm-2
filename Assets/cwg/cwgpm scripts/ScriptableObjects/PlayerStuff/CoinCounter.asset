@@ -12,9 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d00e13e496694625be28b434f35c5d5, type: 3}
   m_Name: CoinCounter
   m_EditorClassIdentifier: 
-  currentItem: {fileID: 0}
-  items:
-  - {fileID: 0}
-  - {fileID: 0}
-  numberOfKeys: 5
-  coins: 3
+  coins: 0

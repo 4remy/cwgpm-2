@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: cloudGone
   m_EditorClassIdentifier: 
   initialValue: 0
-  RuntimeValue: 1
+  RuntimeValue: 0
