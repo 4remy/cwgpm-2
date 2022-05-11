@@ -3,29 +3,14 @@ using System.IO;
 using UnityEngine;
 using Schwer.ItemSystem;
 using Schwer.IO;
+using Schwer;
 
-public class GameSaveManager : MonoBehaviour
+public class GameSaveManager : DDOLSingleton<GameSaveManager>
 {
-    public static GameSaveManager gameSave;
     [SerializeField] private ItemDatabase itemDB = default;
-    public List<ScriptableObject> objects = new List<ScriptableObject>();
+    [SerializeField] private List<ScriptableObject> objects = new List<ScriptableObject>();
     [SerializeField] private IntListSO discoveredRecipes = default;
     [SerializeField] private InventorySO[] inventories = default;
-
-    /*
-    private void Awake()
-    {
-        if(gameSave == null)
-        {
-            gameSave = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-        DontDestroyOnLoad(this);
-    }
-    */
 
     public void ResetScriptables()
     {
@@ -83,7 +68,8 @@ public class GameSaveManager : MonoBehaviour
         }
     }
 
-    private void LoadInventories() {
+    private void LoadInventories()
+    {
         for (int i = 0; i < inventories.Length; i++)
         {
             var path = $"{Application.persistentDataPath}/{i}.inv";
@@ -94,9 +80,11 @@ public class GameSaveManager : MonoBehaviour
         }
     }
 
-    private void LoadRecipes() {
+    private void LoadRecipes()
+    {
         var path = $"{Application.persistentDataPath}/recipes.dat";
-        if (File.Exists(path)) {
+        if (File.Exists(path))
+        {
             discoveredRecipes.ints = BinaryIO.ReadFile<List<int>>(path);
         }
     }
