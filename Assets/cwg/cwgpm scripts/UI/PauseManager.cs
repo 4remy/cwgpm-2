@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
- 
+
 public class PauseManager : MonoBehaviour
 {
-
     private bool isPaused;
     public GameObject pausePanel;
     public GameObject inventoryPanel;
@@ -16,35 +13,23 @@ public class PauseManager : MonoBehaviour
 
     private bool busyUI;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         isPaused = false;
         pausePanel.SetActive(false);
         inventoryPanel.SetActive(false);
         usingPausePanel = false;
-
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause") && !busyUI)
         {
-            if (!busyUI)
-            {
-                ChangePause();
-            }
-            else
-            {
-                return;
-            }
-
+            ChangePause();
         }
     }
 
-   public void ChangePause()
+    public void ChangePause()
     {
         isPaused = !isPaused;
 
@@ -64,7 +49,6 @@ public class PauseManager : MonoBehaviour
             mainCanvas.SetActive(true);
             Time.timeScale = 1f;
         }
-
     }
 
     public void QuitToMain()
@@ -76,7 +60,7 @@ public class PauseManager : MonoBehaviour
     public void SwitchPanels()
     {
         usingPausePanel = !usingPausePanel;
-        if(usingPausePanel)
+        if (usingPausePanel)
         {
             pausePanel.SetActive(true);
             mainCanvas.SetActive(false);
