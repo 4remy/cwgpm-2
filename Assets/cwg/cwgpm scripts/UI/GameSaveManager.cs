@@ -7,24 +7,12 @@ using Schwer;
 
 public class GameSaveManager : DDOLSingleton<GameSaveManager>
 {
+    private static string recipePath => $"{Application.persistentDataPath}/recipes.dat";
+
     [SerializeField] private ItemDatabase itemDB = default;
     [SerializeField] private List<ScriptableObject> objects = new List<ScriptableObject>();
     [SerializeField] private IntListSO discoveredRecipes = default;
     [SerializeField] private InventorySO[] inventories = default;
-
-    public void ResetScriptables()
-    {
-        // this needs to reset the boolvalues to false
-        //or do i just do it by hand
-        for (int i = 0; i < objects.Count; i++)
-        {
-            var path = Application.persistentDataPath + string.Format("/{0}.json", i);
-            if (File.Exists(path))
-            {
-                File.Delete(path);
-            }
-        }
-    }
 
     private void OnEnable()
     {
@@ -36,9 +24,69 @@ public class GameSaveManager : DDOLSingleton<GameSaveManager>
         SaveScriptables();
     }
 
+    public void ResetScriptables()
+    {
+        ResetDiscoveredRecipes();
+        ResetObjects();
+        ResetInventories();
+        Debug.Log("Reset scriptables");
+    }
+
+    private void ResetDiscoveredRecipes()
+    {
+        discoveredRecipes.ints.Clear();
+
+        if (File.Exists(recipePath))
+        {
+            File.Delete(recipePath);
+        }
+    }
+
+    private void ResetObjects()
+    {
+        for (int i = 0; i < objects.Count; i++)
+        {
+            // Not ideal, but other methods would require restructuring some Scriptable Objects
+            switch (objects[i])
+            {
+                default:
+                    break;
+                case BoolValue boolValue:
+                    boolValue.RuntimeValue = boolValue.initialValue;
+                    break;
+                case FloatValue floatValue:
+                    floatValue.RuntimeValue = floatValue.initialValue;
+                    break;
+                case CoinCounter coins:
+                    coins.coins = 0;
+                    break;
+            }
+
+            var path = Application.persistentDataPath + string.Format("/{0}.json", i);
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
+    }
+
+    private void ResetInventories()
+    {
+        for (int i = 0; i < inventories.Length; i++)
+        {
+            inventories[i].value.Clear();
+
+            var path = $"{Application.persistentDataPath}/{i}.inv";
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
+    }
+
     public void SaveScriptables()
     {
-        BinaryIO.WriteFile(discoveredRecipes.ints, $"{Application.persistentDataPath}/recipes.dat");
+        BinaryIO.WriteFile(discoveredRecipes.ints, recipePath);
 
         for (int i = 0; i < inventories.Length; i++)
         {
@@ -50,6 +98,8 @@ public class GameSaveManager : DDOLSingleton<GameSaveManager>
             var json = JsonUtility.ToJson(objects[i]);
             BinaryIO.WriteFile(json, Application.persistentDataPath + string.Format("/{0}.json", i));
         }
+
+        Debug.Log("Saved scriptables");
     }
 
     public void LoadScriptables()
@@ -82,10 +132,9 @@ public class GameSaveManager : DDOLSingleton<GameSaveManager>
 
     private void LoadRecipes()
     {
-        var path = $"{Application.persistentDataPath}/recipes.dat";
-        if (File.Exists(path))
+        if (File.Exists(recipePath))
         {
-            discoveredRecipes.ints = BinaryIO.ReadFile<List<int>>(path);
+            discoveredRecipes.ints = BinaryIO.ReadFile<List<int>>(recipePath);
         }
     }
 }
