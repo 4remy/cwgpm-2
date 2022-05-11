@@ -12445,11 +12445,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 37173835647192123, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 37173835647192124, guid: 82ca771f5e196411d9430edc5ab548d3,
         type: 3}
       propertyPath: mainCanvas
@@ -12460,11 +12455,6 @@ PrefabInstance:
       propertyPath: inventoryPanel
       value: 
       objectReference: {fileID: 1742999726}
-    - target: {fileID: 37173835647192124, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: soundEffectToPlay
-      value: Settings
-      objectReference: {fileID: 0}
     - target: {fileID: 37173835647192127, guid: 82ca771f5e196411d9430edc5ab548d3,
         type: 3}
       propertyPath: m_Pivot.x
@@ -12569,61 +12559,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173835667068455, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173835952287510, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_Name
-      value: BADInventory Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173835952287511, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -9
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173836441590146, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173836441590146, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173836441590146, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173836441590146, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173836441590146, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SaveScriptables
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173836441590146, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameSaveManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 37173836441590146, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1066711907703014702, guid: 82ca771f5e196411d9430edc5ab548d3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82ca771f5e196411d9430edc5ab548d3, type: 3}
@@ -14417,17 +14352,17 @@ PrefabInstance:
     - target: {fileID: 5878690872114416838, guid: 13cd19ac97de84e41951ac3a599d8a1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.29000044
+      value: 0.16445446
       objectReference: {fileID: 0}
     - target: {fileID: 5878690872114416838, guid: 13cd19ac97de84e41951ac3a599d8a1a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1
+      value: -0.23228733
       objectReference: {fileID: 0}
     - target: {fileID: 5878690872114416838, guid: 13cd19ac97de84e41951ac3a599d8a1a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -19301.1
       objectReference: {fileID: 0}
     - target: {fileID: 5878690872114416838, guid: 13cd19ac97de84e41951ac3a599d8a1a,
         type: 3}

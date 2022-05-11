@@ -51,6 +51,11 @@ public class PauseManager : MonoBehaviour
         }
     }
 
+    // Called by UI button
+    public void Save() => GameSaveManager.Instance?.SaveScriptables();
+    // Called by UI button
+    public void ResetSave() => GameSaveManager.Instance?.ResetScriptables();
+
     public void QuitToMain()
     {
         SceneManager.LoadScene(mainMenu);
