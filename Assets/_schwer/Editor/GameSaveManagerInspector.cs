@@ -6,6 +6,10 @@ public class GameSaveManagerInspector : Editor {
     public override void OnInspectorGUI() {
         var gsm = (GameSaveManager)target;
 
+        if (GUILayout.Button("Open Save Location")) {
+            Application.OpenURL(Application.persistentDataPath);
+        }
+
         EditorGUI.BeginDisabledGroup(!Application.isPlaying);
         if (GUILayout.Button("Save")) {
             gsm.SaveScriptables();

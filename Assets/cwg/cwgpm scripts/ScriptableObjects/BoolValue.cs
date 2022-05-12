@@ -1,29 +1,12 @@
-﻿//using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu]
 //[System.Serializable]
 public class BoolValue : ScriptableObject
-    //, ISerializationCallbackReceiver
 {
-    public bool initialValue;
-    //  [NonSerialized]
-    public bool RuntimeValue;
-
-/*
-    public void OnAfterDeserialize()
-    {
-        RuntimeValue = initialValue;
-    }
-
-    public void OnBeforeSerialize()
-    { }
-*/
-    //this did not help
-    //private void OnEnable()
-    // {
-    //    initialValue = RuntimeValue;
-    //}
+    /// <summary>
+    /// Default value for new/reset saves. Do not use this anywhere else.
+    /// </summary>
+    [Tooltip("Default value for new/reset saves")] public bool initialValue;
+    [Tooltip("Value to use in game")] public bool RuntimeValue;
 }
