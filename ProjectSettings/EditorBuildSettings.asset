@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigame/Minigame.unity
     guid: fd535fbd308884150811cfb8ccef9509
+  - enabled: 1
+    path: Assets/cwg/scenes/cwgpmScene3.unity
+    guid: ad6bc89e42d63478780c5d74138bc3ad
   m_configObjects: {}
