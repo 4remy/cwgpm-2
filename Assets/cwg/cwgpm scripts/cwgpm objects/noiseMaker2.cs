@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // make a noise when interact
-// this has a Wait Time so you cant spam it
+// this has no wait time
 
-public class noiseMaker : MonoBehaviour
+public class noiseMaker2 : MonoBehaviour
 {
     public bool playerInRange;
     public string soundEffectToPlay;
-    private bool soundPlaying;
 
 
     // Start is called before the first frame update
@@ -23,14 +22,7 @@ public class noiseMaker : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
-           if(soundPlaying)
-            {
-                return;
-            }
-           else
-            {
-                StartCoroutine(NoiseCo());
-            }
+            AudioManager.Instance.Play(soundEffectToPlay);
         }
     }
 
@@ -50,11 +42,5 @@ public class noiseMaker : MonoBehaviour
         }
     }
 
-    private IEnumerator NoiseCo()
-    {
-        soundPlaying = true;
-        AudioManager.Instance.Play(soundEffectToPlay);
-        yield return new WaitForSeconds(1.3f);
-        soundPlaying = false;
-    }
+
 }

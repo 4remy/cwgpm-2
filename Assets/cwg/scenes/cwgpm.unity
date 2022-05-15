@@ -9000,6 +9000,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2391559289900922144, guid: 0437304d558b842baa33243a54118e8a,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391559289900922144, guid: 0437304d558b842baa33243a54118e8a,
+        type: 3}
+      propertyPath: sounds.Array.data[18].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c98c87e3f8eb4c149a9b3e215962340, type: 3}
+    - target: {fileID: 2391559289900922144, guid: 0437304d558b842baa33243a54118e8a,
+        type: 3}
+      propertyPath: sounds.Array.data[18].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391559289900922144, guid: 0437304d558b842baa33243a54118e8a,
+        type: 3}
+      propertyPath: sounds.Array.data[18].name
+      value: Laughter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391559289900922144, guid: 0437304d558b842baa33243a54118e8a,
+        type: 3}
+      propertyPath: sounds.Array.data[18].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391559289900922144, guid: 0437304d558b842baa33243a54118e8a,
+        type: 3}
+      propertyPath: sounds.Array.data[18].volume
+      value: 0.37
+      objectReference: {fileID: 0}
     - target: {fileID: 2391559289900922145, guid: 0437304d558b842baa33243a54118e8a,
         type: 3}
       propertyPath: m_RootOrder
