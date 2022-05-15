@@ -53,7 +53,6 @@ public class CharacterController2D : MonoBehaviour
         animator.SetBool("moving", false);
         if (change != Vector3.zero)
         {
-            playerHealthSignal.Raise();
             animator.SetBool("moving", true);
             state = State.Moving;
 
