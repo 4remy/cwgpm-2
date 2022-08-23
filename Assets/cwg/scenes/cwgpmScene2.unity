@@ -4386,6 +4386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987889621912947549, guid: 06c58330fbb0abe428b46d27644d1a97,
         type: 3}
+      propertyPath: dialogText
+      value: 
+      objectReference: {fileID: 540688623}
+    - target: {fileID: 8987889621912947549, guid: 06c58330fbb0abe428b46d27644d1a97,
+        type: 3}
       propertyPath: dialogAchieve1
       value: 'Well done! You made five recipes.
 
@@ -4454,6 +4459,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06c58330fbb0abe428b46d27644d1a97, type: 3}
+--- !u!114 &540688623 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8987889622795014456, guid: 06c58330fbb0abe428b46d27644d1a97,
+    type: 3}
+  m_PrefabInstance: {fileID: 540688622}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596376437
 GameObject:
   m_ObjectHideFlags: 0
@@ -13286,17 +13303,17 @@ PrefabInstance:
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.16445446
+      value: -0.8411857
       objectReference: {fileID: 0}
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.23228733
+      value: 0.07394242
       objectReference: {fileID: 0}
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19301.1
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 2469573257613326820, guid: fe435754069654f829b5a6efe2c5b18e,
         type: 3}
